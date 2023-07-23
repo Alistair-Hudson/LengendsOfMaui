@@ -37,6 +37,15 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""df7b0708-ffdf-4f9d-8c10-80ce7c0aa8dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -59,6 +68,28 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""groups"": ""GamePad"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b96d1940-7371-4981-8cd6-c3f0a45413dc"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69451992-8735-4cb9-88a3-5e1fb9a76210"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -98,6 +129,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+            m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -160,11 +192,13 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Jump;
+        private readonly InputAction m_Player_Dodge;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
             public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
+            public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -177,6 +211,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -184,6 +221,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
+                @Dodge.started -= instance.OnDodge;
+                @Dodge.performed -= instance.OnDodge;
+                @Dodge.canceled -= instance.OnDodge;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -222,6 +262,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public interface IPlayerActions
         {
             void OnJump(InputAction.CallbackContext context);
+            void OnDodge(InputAction.CallbackContext context);
         }
     }
 }
