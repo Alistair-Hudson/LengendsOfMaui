@@ -28,6 +28,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
+            if (_stateMachine.InputReader.IsAttacking)
+            {
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine));
+                return;
+            }
+
             Vector2 inputValue = _stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
 
