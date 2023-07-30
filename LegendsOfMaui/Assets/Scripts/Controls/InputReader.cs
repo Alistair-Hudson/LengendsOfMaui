@@ -10,8 +10,12 @@ namespace AlictronicGames.LegendsOfMaui.Controls
     {
         private Controls _controls = null;
 
+        public Vector2 MovementValue { get; private set; } = Vector2.zero;
+
         public event Action JumpEvent;
         public event Action DodgeEvent;
+        public event Action TargetEvent;
+        public event Action CancelTargetEvent;
 
         private void Start()
         {
@@ -39,6 +43,32 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 DodgeEvent?.Invoke();
+            }
+        }
+
+        public void OnMovement(InputAction.CallbackContext context)
+        {
+            MovementValue = context.ReadValue<Vector2>();
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnTarget(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                TargetEvent?.Invoke();
+            }
+        }
+
+        public void OnCancelTarget(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                CancelTargetEvent?.Invoke();
             }
         }
     }
