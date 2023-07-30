@@ -11,6 +11,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private Controls _controls = null;
 
         public Vector2 MovementValue { get; private set; } = Vector2.zero;
+        public bool IsAttacking { get; private set; } = false;
 
         public event Action JumpEvent;
         public event Action DodgeEvent;
@@ -69,6 +70,18 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 CancelTargetEvent?.Invoke();
+            }
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsAttacking = true;
+            }
+            else if (context.canceled)
+            {
+                IsAttacking = false;
             }
         }
     }
