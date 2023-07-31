@@ -1,4 +1,5 @@
 using AlictronicGames.LegendsOfMaui.Combat.Targeting;
+using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.Controls;
 using System;
 using System.Collections;
@@ -14,6 +15,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float FreeLookMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
         public float TargetingMoveSpeed { get; private set; } = 6f;
+        [field: SerializeField]
+        public AttackData[] Attacks { get; private set; }
 
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
@@ -21,6 +24,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Transform MainCameraTransform { get; private set; } = null;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
+        public WeaponDamage WeaponDamage { get; private set; } = null;
 
         private void Awake()
         {
@@ -29,6 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             ForceReceiver = GetComponent<ForceReceiver>();
             Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
+            WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
         }
 
         private void Start()

@@ -18,7 +18,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             _stateMachine.InputReader.CancelTargetEvent += HandleOnCancelTargetEvent;
-            _stateMachine.Animator.Play(TARGETING_BLENDTREE);
+            _stateMachine.Animator.CrossFadeInFixedTime(TARGETING_BLENDTREE, 0.1f);
         }
 
         public override void Exit()
@@ -30,7 +30,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             if (_stateMachine.InputReader.IsAttacking)
             {
-                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine));
+                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, 0));
                 return;
             }
 
