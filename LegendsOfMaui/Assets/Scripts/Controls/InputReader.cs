@@ -12,6 +12,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
         public Vector2 MovementValue { get; private set; } = Vector2.zero;
         public bool IsAttacking { get; private set; } = false;
+        public bool IsBlocking { get; private set; } = false;
 
         public event Action JumpEvent;
         public event Action DodgeEvent;
@@ -82,6 +83,18 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             else if (context.canceled)
             {
                 IsAttacking = false;
+            }
+        }
+
+        public void OnBlock(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsBlocking = true;
+            }
+            else if (context.canceled)
+            {
+                IsBlocking = false;
             }
         }
     }

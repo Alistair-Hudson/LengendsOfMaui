@@ -20,8 +20,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
 
-        private Health _health = null;
-
+        public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
         public Animator Animator { get; private set; } = null;
@@ -35,7 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader = GetComponent<InputReader>();
             CharacterController = GetComponent<CharacterController>();
             ForceReceiver = GetComponent<ForceReceiver>();
-            _health = GetComponent<Health>();
+            Health = GetComponent<Health>();
 
             Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
@@ -60,14 +59,14 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void OnEnable()
         {
-            _health.OnTakeDamage += HandleOnTakeDamage;
-            _health.OnDeath += HandleOnDeath;
+            Health.OnTakeDamage += HandleOnTakeDamage;
+            Health.OnDeath += HandleOnDeath;
         }
 
         private void OnDisable()
         {
-            _health.OnTakeDamage -= HandleOnTakeDamage;
-            _health.OnDeath -= HandleOnDeath;
+            Health.OnTakeDamage -= HandleOnTakeDamage;
+            Health.OnDeath -= HandleOnDeath;
         }
 
         private void HandleOnDeath()

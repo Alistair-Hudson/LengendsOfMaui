@@ -13,6 +13,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private float _currentHealth = 0;
 
         private bool _isDead = false;
+        private bool _isInvulnerable = false;
 
         public event Action OnTakeDamage;
         public event Action OnDeath;
@@ -29,6 +30,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
                 return;
             }
 
+            if (_isInvulnerable)
+            {
+                return;
+            }
+
             _currentHealth -= damage;
             OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
@@ -41,6 +47,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void RestoreHealth(float heal)
         {
             _currentHealth = Mathf.Min(_currentHealth + heal, _maxHealth);
+        }
+
+        public void SetInvulnerability(bool invulnerable)
+        {
+            _isInvulnerable = invulnerable;
         }
     }
 }

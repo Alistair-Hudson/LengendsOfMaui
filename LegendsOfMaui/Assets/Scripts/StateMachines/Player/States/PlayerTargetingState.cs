@@ -34,6 +34,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 return;
             }
 
+            if (stateMachine.InputReader.IsBlocking)
+            {
+                stateMachine.SwitchState(new PlayerBlockState(stateMachine));
+                return;
+            }
+
             if (stateMachine.Targeter.CurrentTarget == null)
             {
                 stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));

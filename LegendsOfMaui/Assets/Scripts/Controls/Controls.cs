@@ -91,6 +91,15 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1e47ccc-6605-4707-b779-7539a5dabd3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -291,6 +300,28 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e183f243-8d54-4550-bd60-63ee39e30d3f"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5db609d0-c2bc-4d08-abf0-5b560b2a7e1d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -334,6 +365,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
             m_Player_CancelTarget = m_Player.FindAction("CancelTarget", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+            m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -402,6 +434,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputAction m_Player_Target;
         private readonly InputAction m_Player_CancelTarget;
         private readonly InputAction m_Player_Attack;
+        private readonly InputAction m_Player_Block;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -413,6 +446,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             public InputAction @Target => m_Wrapper.m_Player_Target;
             public InputAction @CancelTarget => m_Wrapper.m_Player_CancelTarget;
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
+            public InputAction @Block => m_Wrapper.m_Player_Block;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -443,6 +477,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -468,6 +505,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Attack.started -= instance.OnAttack;
                 @Attack.performed -= instance.OnAttack;
                 @Attack.canceled -= instance.OnAttack;
+                @Block.started -= instance.OnBlock;
+                @Block.performed -= instance.OnBlock;
+                @Block.canceled -= instance.OnBlock;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -512,6 +552,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             void OnTarget(InputAction.CallbackContext context);
             void OnCancelTarget(InputAction.CallbackContext context);
             void OnAttack(InputAction.CallbackContext context);
+            void OnBlock(InputAction.CallbackContext context);
         }
     }
 }
