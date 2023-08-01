@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 3666452003108342152}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5197517346416187285
 CharacterController:
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc964a13d937d54b9a2f62d4095fe1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PlayerChaseRange>k__BackingField: 10
 --- !u!1001 &3849280080278171235
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,29 +17,29 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Enter()
         {
-            _stateMachine.InputReader.TargetEvent += HandleOnTarget;
-            _stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, 0.1f);
+            stateMachine.InputReader.TargetEvent += HandleOnTarget;
+            stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, 0.1f);
         }
 
         public override void Exit()
         {
-            _stateMachine.InputReader.TargetEvent -= HandleOnTarget;
+            stateMachine.InputReader.TargetEvent -= HandleOnTarget;
         }
 
         public override void Tick(float deltaTime)
         {
-            if (_stateMachine.InputReader.IsAttacking)
+            if (stateMachine.InputReader.IsAttacking)
             {
-                _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, 0));
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
                 return;
             }
 
-            Vector2 inputValue = _stateMachine.InputReader.MovementValue;
+            Vector2 inputValue = stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
 
-            Move(movement * _stateMachine.FreeLookMoveSpeed, deltaTime);
+            Move(movement * stateMachine.FreeLookMoveSpeed, deltaTime);
 
-            _stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, inputValue.magnitude, ANIMATOR_DAMP_TIME, deltaTime);
+            stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, inputValue.magnitude, ANIMATOR_DAMP_TIME, deltaTime);
 
             if (inputValue == Vector2.zero)
             {
@@ -51,13 +51,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void FaceMovementDirection(Vector3 movement)
         {
-            _stateMachine.transform.rotation = Quaternion.LookRotation(movement);
+            stateMachine.transform.rotation = Quaternion.LookRotation(movement);
         }
 
         private Vector3 CalculateMovement(Vector2 inputValue)
         {
-            Vector3 forward = _stateMachine.MainCameraTransform.forward;
-            Vector3 right = _stateMachine.MainCameraTransform.right;
+            Vector3 forward = stateMachine.MainCameraTransform.forward;
+            Vector3 right = stateMachine.MainCameraTransform.right;
 
             forward.y = 0;
             right.y = 0;
@@ -70,12 +70,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnTarget()
         {
-            if (!_stateMachine.Targeter.SelectTarget())
+            if (!stateMachine.Targeter.SelectTarget())
             {
                 return;
             }
 
-            _stateMachine.SwitchState(new PlayerTargetingState(_stateMachine));
+            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
         }
     }
 }

@@ -18,8 +18,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Enter()
         {
-            _stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
-            _stateMachine.WeaponDamage.BaseDamage = _attack.AtackDamage;
+            stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
+            stateMachine.WeaponDamage.BaseDamage = _attack.AtackDamage;
         }
 
         public override void Exit()
@@ -41,7 +41,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             if (normalizedTime < 1)
             {
-                if (_stateMachine.InputReader.IsAttacking)
+                if (stateMachine.InputReader.IsAttacking)
                 {
                     TryComboAttack(normalizedTime);
                 }
@@ -63,19 +63,19 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             {
                 return;
             }
-            _stateMachine.SwitchState(new PlayerAttackingState(_stateMachine, _attack.ComboStateIndex));
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.ComboStateIndex));
         }
 
         private float GetNormalizedTime()
         {
-            var currentInfo = _stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-            var nextInfo = _stateMachine.Animator.GetNextAnimatorStateInfo(0);
+            var currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
+            var nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
 
-            if (_stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
+            if (stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
             {
                 return nextInfo.normalizedTime;
             }
-            else if (!_stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
+            else if (!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
             {
                 return currentInfo.normalizedTime;
             }
@@ -91,7 +91,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             {
                 return;
             }
-            _stateMachine.ForceReceiver.AddForce(_stateMachine.transform.forward * _attack.Force);
+            stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
             _isForcedApplied = true;
         }
     }
