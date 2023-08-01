@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat.Targeting;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
+            stateMachine.Weapon.gameObject.SetActive(false);
+            GameObject.Destroy(stateMachine.GetComponent<Target>());
         }
 
         public override void Exit()
