@@ -28,7 +28,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         {
             Move(deltaTime);
 
-            if (isInChaseRange)
+            if (isInChaseRange && !stateMachine.Player.Health.IsDead)
             {
                 stateMachine.SwitchState(new EnemyChaseState(stateMachine));
                 return;

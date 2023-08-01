@@ -1,5 +1,6 @@
 using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
+using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private Health _health = null;
 
         public Animator Animator { get; private set; } = null;
-        public GameObject Player { get; private set; } = null;
+        public PlayerStateMachine Player { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public NavMeshAgent NavMeshAgent { get; private set; } = null;
@@ -42,7 +43,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             Animator = GetComponentInChildren<Animator>();
             Weapon = GetComponentInChildren<WeaponDamage>(true);
 
-            Player = FindFirstObjectByType<Player.PlayerStateMachine>().gameObject;
+            Player = FindFirstObjectByType<PlayerStateMachine>();
 
             NavMeshAgent.updatePosition = false;
             NavMeshAgent.updateRotation = false;

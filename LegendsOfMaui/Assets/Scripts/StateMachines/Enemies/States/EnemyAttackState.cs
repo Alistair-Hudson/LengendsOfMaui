@@ -26,6 +26,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Tick(float deltaTime)
         {
+            FacePlayer();
             if (GetNormalizedTime(stateMachine.Animator) >= 1)
             {
                 stateMachine.SwitchState(new EnemyChaseState(stateMachine));

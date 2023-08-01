@@ -389,7 +389,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584904407197374662}
-  m_LocalRotation: {x: 0.1784248, y: 0.000000008465139, z: -0.0000000015350226, w: 0.98395354}
+  m_LocalRotation: {x: 0.1784248, y: 0.000000017473749, z: -0.0000000031685952, w: 0.98395354}
   m_LocalPosition: {x: -0.96567225, y: 1.355075, z: -3.7818887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -431,8 +431,8 @@ MonoBehaviour:
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -462,7 +462,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128686649769950305}
-  m_LocalRotation: {x: 0.14521313, y: 0.00000003296683, z: -0.000000004838502, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.000000032966824, z: -0.000000004838501, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1096,8 +1096,8 @@ MonoBehaviour:
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -1240,7 +1240,7 @@ Transform:
   m_GameObject: {fileID: 6778655129984752518}
   m_LocalRotation: {x: 0.000000045621327, y: -0.00000011944606, z: -0.0000000010510147,
     w: 1}
-  m_LocalPosition: {x: -0.000000068825514, y: -0.00000011920929, z: 4.2720017}
+  m_LocalPosition: {x: -0.0000001420697, y: -0.00000011920929, z: 4.2720017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
+  m_HorizontalDamping: 0
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -1365,9 +1365,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 1.5, z: -4}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -1443,8 +1443,8 @@ MonoBehaviour:
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0.5
+    m_Style: 2
+    m_Time: 0.25
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -1455,13 +1455,59 @@ MonoBehaviour:
   m_ParentHash:
   - m_Hash: 662400098
     m_ParentHash: 756556552
-  - m_Hash: -1268892215
+  - m_Hash: -1060068118
     m_ParentHash: 662400098
-  - m_Hash: 1868104522
+  - m_Hash: -1855624278
     m_ParentHash: 662400098
-  - m_Hash: -398930126
+  - m_Hash: 1677489507
     m_ParentHash: 662400098
   - m_Hash: -479991077
+    m_ParentHash: 756556552
+  - m_Hash: -1347473096
+    m_ParentHash: -479991077
+  - m_Hash: 723921918
+    m_ParentHash: -479991077
+  - m_Hash: -1861147175
+    m_ParentHash: -479991077
+  - m_Hash: -866073951
+    m_ParentHash: -479991077
+  - m_Hash: 1596229892
+    m_ParentHash: -479991077
+  - m_Hash: 211209563
+    m_ParentHash: -479991077
+  - m_Hash: -1699886931
+    m_ParentHash: -479991077
+  - m_Hash: -686165984
+    m_ParentHash: -479991077
+  - m_Hash: -823817510
+    m_ParentHash: -479991077
+  - m_Hash: 181170356
+    m_ParentHash: -479991077
+  - m_Hash: -262373502
+    m_ParentHash: -479991077
+  - m_Hash: -1117325095
+    m_ParentHash: -479991077
+  - m_Hash: -1543746526
+    m_ParentHash: -479991077
+  - m_Hash: -1698787442
+    m_ParentHash: -479991077
+  - m_Hash: -69168394
+    m_ParentHash: -479991077
+  - m_Hash: 1621492068
+    m_ParentHash: -479991077
+  - m_Hash: -398458364
+    m_ParentHash: -479991077
+  - m_Hash: -637412921
+    m_ParentHash: 756556552
+  - m_Hash: 1124632701
+    m_ParentHash: 756556552
+  - m_Hash: 873445611
+    m_ParentHash: 756556552
+  - m_Hash: -1134564086
+    m_ParentHash: 756556552
+  - m_Hash: -235152657
+    m_ParentHash: 756556552
+  - m_Hash: -2141854131
     m_ParentHash: 756556552
 --- !u!1 &7757202249857437976
 GameObject:

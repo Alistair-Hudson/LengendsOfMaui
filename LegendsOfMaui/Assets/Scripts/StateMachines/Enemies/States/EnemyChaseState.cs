@@ -28,8 +28,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Tick(float deltaTime)
         {
-
-            if (!isInChaseRange)
+            if (!isInChaseRange || stateMachine.Player.Health.IsDead)
             {
                 stateMachine.SwitchState(new EnemyIdleState(stateMachine));
                 return;

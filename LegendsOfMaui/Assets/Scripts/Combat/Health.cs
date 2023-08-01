@@ -12,9 +12,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private float _currentHealth = 0;
 
-        private bool _isDead = false;
         private bool _isInvulnerable = false;
 
+        public bool IsDead => _currentHealth <= 0;
+        
         public event Action OnTakeDamage;
         public event Action OnDeath;
 
@@ -25,7 +26,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public void DealDamage(float damage)
         {
-            if (_isDead)
+            if (IsDead)
             {
                 return;
             }
@@ -40,7 +41,6 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_currentHealth <= 0)
             {
                 OnDeath?.Invoke();
-                _isDead = true;
             }
         }
 
