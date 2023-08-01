@@ -24,5 +24,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float Force { get; private set; } = 0;
         [field: SerializeField]
         public float AtackDamage { get; private set; } = 0;
+        [field: SerializeField]
+        public float KnockbackForce { get; private set; } = 0;
     }
 }

@@ -7,11 +7,12 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
     public class WeaponDamage : MonoBehaviour
     {
         [SerializeField]
-        private Collider _playerCollider = null;
+        private Collider _characterCollider = null;
 
         private List<Collider> _collidedWith = new List<Collider>();
 
-        public float BaseDamage { get; set; } = 0;
+        private float _damage = 0;
+        private float _knockBack = 0;
 
         private void OnEnable()
         {
@@ -20,7 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other == _playerCollider)
+            if (other == _characterCollider)
             {
                 return;
             }
@@ -34,8 +35,19 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(BaseDamage);
+                health.DealDamage(_damage);
             }
+            if (other.TryGetComponent<ForceReceiver>(out var forceReceiver))
+            {
+                var direction = other.transform.position - _characterCollider.transform.position;
+                forceReceiver.AddForce(direction.normalized * _knockBack);
+            }
+        }
+
+        public void SetAttack(float damage, float knockback)
+        {
+            _damage = damage;
+            _knockBack = knockback;
         }
     }
 }

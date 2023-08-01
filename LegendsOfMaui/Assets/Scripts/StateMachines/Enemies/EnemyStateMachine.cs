@@ -16,6 +16,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         [field: SerializeField]
         public float AttackDamage { get; private set; } = 0f;
         [field: SerializeField]
+        public float KnockBackForce { get; private set; } = 0f;
+        [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;
 
         public Animator Animator { get; private set; } = null;
@@ -31,7 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             ForceReceiver = GetComponent<ForceReceiver>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
             Animator = GetComponentInChildren<Animator>();
-            Weapon = GetComponentInChildren<WeaponDamage>();
+            Weapon = GetComponentInChildren<WeaponDamage>(true);
             Player = FindFirstObjectByType<Player.PlayerStateMachine>().gameObject;
 
             NavMeshAgent.updatePosition = false;

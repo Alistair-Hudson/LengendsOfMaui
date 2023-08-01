@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace AlictronicGames.LegendsOfMaui
 {
@@ -11,6 +12,7 @@ namespace AlictronicGames.LegendsOfMaui
         private float _drag = 0.3f;
 
         private CharacterController _controller = null;
+        private NavMeshAgent _navMeshAgent = null;
 
         private Vector3 _impact = Vector3.zero;
         private Vector3 _dampingVelocity = Vector3.zero;
@@ -22,6 +24,7 @@ namespace AlictronicGames.LegendsOfMaui
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+            _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         private void Update()
@@ -36,11 +39,20 @@ namespace AlictronicGames.LegendsOfMaui
             }
 
             _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, _drag);
+
+            if (_impact == Vector3.zero && _navMeshAgent != null)
+            {
+                _navMeshAgent.enabled = true;
+            }
         }
 
         public void AddForce(Vector3 force)
         {
             _impact += force;
+            if (_navMeshAgent != null)
+            {
+                _navMeshAgent.enabled = false;
+            }
         }
     }
 }

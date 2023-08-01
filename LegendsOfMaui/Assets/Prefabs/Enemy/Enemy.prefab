@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af66ca0d801e4d429dc1e463447edff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCollider: {fileID: 5197517346416187285}
+  _characterCollider: {fileID: 5197517346416187285}
 --- !u!135 &970513282510658338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   <PlayerChaseRange>k__BackingField: 10
   <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 10
+  <KnockBackForce>k__BackingField: 0
   <MovementSpeed>k__BackingField: 1
 --- !u!114 &7438010807381184623
 MonoBehaviour:

@@ -15,7 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Enter()
         {
-            stateMachine.Weapon.BaseDamage = stateMachine.AttackDamage;
+            stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.KnockBackForce);
             stateMachine.Animator.CrossFadeInFixedTime(ATTACK, ANIMATOR_DAMP_TIME);
         }
 
@@ -26,13 +26,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Tick(float deltaTime)
         {
-            Move(deltaTime);
-            FacePlayer();
-
-            if (!isInAttackRange)
+            if (GetNormalizedTime(stateMachine.Animator) >= 1)
             {
                 stateMachine.SwitchState(new EnemyChaseState(stateMachine));
-                return;
             }
         }
     }
