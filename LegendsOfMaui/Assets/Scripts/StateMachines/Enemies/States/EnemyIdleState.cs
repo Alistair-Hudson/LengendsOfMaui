@@ -30,6 +30,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
             if (isInChaseRange)
             {
+                stateMachine.SwitchState(new EnemyChaseState(stateMachine));
                 return;
             }
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 0, ANIMATOR_DAMP_TIME, deltaTime);

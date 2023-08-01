@@ -1,0 +1,49 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
+{
+    public class EnemyChaseState : EnemyBaseState
+    {
+        private readonly int FORWARD_SPEED = Animator.StringToHash("ForwardMovement");
+        private readonly int MOVEMENT = Animator.StringToHash("Movement");
+        private const float ANIMATOR_DAMP_TIME = 0.1f;
+
+        public EnemyChaseState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
+        {
+        }
+
+        public override void Enter()
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
+        }
+
+        public override void Exit()
+        {
+            stateMachine.NavMeshAgent.ResetPath();
+            stateMachine.NavMeshAgent.velocity = Vector3.zero;
+        }
+
+        public override void Tick(float deltaTime)
+        {
+
+            if (!isInChaseRange)
+            {
+                stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+                return;
+            }
+            MoveToPlayer(deltaTime);
+            stateMachine.Animator.SetFloat(FORWARD_SPEED, 1, ANIMATOR_DAMP_TIME, deltaTime);
+        }
+
+        private void MoveToPlayer(float deltaTime)
+        {
+            stateMachine.NavMeshAgent.destination = stateMachine.Player.transform.position;
+
+            Move(stateMachine.NavMeshAgent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
+            stateMachine.NavMeshAgent.velocity = stateMachine.CharacterController.velocity;
+        }
+    }
+}
