@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         [field: SerializeField]
         public float AttackRange { get; private set; } = 0f;
         [field: SerializeField]
+        public float AttackDamage { get; private set; } = 0f;
+        [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;
 
         public Animator Animator { get; private set; } = null;
@@ -20,6 +23,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public CharacterController CharacterController { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public NavMeshAgent NavMeshAgent { get; private set; } = null;
+        public WeaponDamage Weapon { get; private set; } = null;
 
         private void Awake()
         {
@@ -27,6 +31,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             ForceReceiver = GetComponent<ForceReceiver>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
             Animator = GetComponentInChildren<Animator>();
+            Weapon = GetComponentInChildren<WeaponDamage>();
             Player = FindFirstObjectByType<Player.PlayerStateMachine>().gameObject;
 
             NavMeshAgent.updatePosition = false;
