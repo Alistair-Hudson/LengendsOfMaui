@@ -56,11 +56,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void OnEnable()
         {
             _health.OnTakeDamage += HandleOnTakeDamage;
+            _health.OnDeath += HandleOnDeath;
         }
 
         private void OnDisable()
         {
             _health.OnTakeDamage -= HandleOnTakeDamage;
+            _health.OnDeath -= HandleOnDeath;
+        }
+
+        private void HandleOnDeath()
+        {
+            SwitchState(new EnemyDeathState(this));
         }
 
         private void HandleOnTakeDamage()

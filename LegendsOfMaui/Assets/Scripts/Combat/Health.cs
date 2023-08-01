@@ -15,6 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private bool _isDead = false;
 
         public event Action OnTakeDamage;
+        public event Action OnDeath;
 
         private void Awake()
         {
@@ -32,6 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
+                OnDeath?.Invoke();
                 _isDead = true;
             }
         }

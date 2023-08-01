@@ -61,11 +61,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private void OnEnable()
         {
             _health.OnTakeDamage += HandleOnTakeDamage;
+            _health.OnDeath += HandleOnDeath;
         }
 
         private void OnDisable()
         {
             _health.OnTakeDamage -= HandleOnTakeDamage;
+            _health.OnDeath -= HandleOnDeath;
+        }
+
+        private void HandleOnDeath()
+        {
+            SwitchState(new PlayerDeathState(this));
         }
 
         private void HandleOnTakeDamage()
