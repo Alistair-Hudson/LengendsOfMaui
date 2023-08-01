@@ -40,8 +40,9 @@ namespace AlictronicGames.LegendsOfMaui
 
             _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, _drag);
 
-            if (_impact == Vector3.zero && _navMeshAgent != null)
+            if (_impact.sqrMagnitude <= 0.2f * 0.2f && _navMeshAgent != null)
             {
+                _impact = Vector3.zero;
                 _navMeshAgent.enabled = true;
             }
         }

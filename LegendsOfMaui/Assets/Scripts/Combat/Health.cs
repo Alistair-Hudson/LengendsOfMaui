@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private bool _isDead = false;
 
+        public event Action OnTakeDamage;
+
         private void Awake()
         {
             _currentHealth = _maxHealth;
@@ -26,6 +29,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             }
 
             _currentHealth -= damage;
+            OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
                 _isDead = true;

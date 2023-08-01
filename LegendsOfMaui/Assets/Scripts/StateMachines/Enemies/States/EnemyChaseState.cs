@@ -46,9 +46,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         private void MoveToPlayer(float deltaTime)
         {
-            stateMachine.NavMeshAgent.destination = stateMachine.Player.transform.position;
+            if (stateMachine.NavMeshAgent.isOnNavMesh)
+            {
+                stateMachine.NavMeshAgent.destination = stateMachine.Player.transform.position;
 
-            Move(stateMachine.NavMeshAgent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
+                Move(stateMachine.NavMeshAgent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
+            }
             stateMachine.NavMeshAgent.velocity = stateMachine.CharacterController.velocity;
         }
     }

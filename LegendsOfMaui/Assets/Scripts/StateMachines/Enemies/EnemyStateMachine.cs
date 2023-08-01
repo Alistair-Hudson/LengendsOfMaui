@@ -1,4 +1,6 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +9,7 @@ using UnityEngine.AI;
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 {
     [RequireComponent(typeof(CharacterController), typeof(ForceReceiver), typeof(NavMeshAgent))]
+    [RequireComponent(typeof(Health))]
     public class EnemyStateMachine : StateMachine
     {
         [field: SerializeField]
@@ -20,6 +23,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;
 
+        private Health _health = null;
+
         public Animator Animator { get; private set; } = null;
         public GameObject Player { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
@@ -32,8 +37,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             CharacterController = GetComponent<CharacterController>();
             ForceReceiver = GetComponent<ForceReceiver>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            _health = GetComponent<Health>();
+
             Animator = GetComponentInChildren<Animator>();
             Weapon = GetComponentInChildren<WeaponDamage>(true);
+
             Player = FindFirstObjectByType<Player.PlayerStateMachine>().gameObject;
 
             NavMeshAgent.updatePosition = false;
@@ -43,6 +51,21 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void Start()
         {
             SwitchState(new EnemyIdleState(this));
+        }
+
+        private void OnEnable()
+        {
+            _health.OnTakeDamage += HandleOnTakeDamage;
+        }
+
+        private void OnDisable()
+        {
+            _health.OnTakeDamage -= HandleOnTakeDamage;
+        }
+
+        private void HandleOnTakeDamage()
+        {
+            SwitchState(new EnemyImpactState(this));
         }
 
         private void OnDrawGizmosSelected()

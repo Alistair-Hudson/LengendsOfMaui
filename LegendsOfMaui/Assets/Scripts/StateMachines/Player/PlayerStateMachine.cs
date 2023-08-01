@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Targeting;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.Controls;
@@ -9,6 +10,7 @@ using UnityEngine;
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     [RequireComponent(typeof(InputReader), typeof(CharacterController), typeof(ForceReceiver))]
+    [RequireComponent(typeof(Health))]
     public class PlayerStateMachine : StateMachine
     {
         [field: SerializeField]
@@ -17,6 +19,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float TargetingMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
+
+        private Health _health = null;
 
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
@@ -31,6 +35,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader = GetComponent<InputReader>();
             CharacterController = GetComponent<CharacterController>();
             ForceReceiver = GetComponent<ForceReceiver>();
+            _health = GetComponent<Health>();
+
             Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
             WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
@@ -50,6 +56,21 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             InputReader.JumpEvent -= HandleOnJump;
             InputReader.DodgeEvent -= HandleOnDodge;
+        }
+
+        private void OnEnable()
+        {
+            _health.OnTakeDamage += HandleOnTakeDamage;
+        }
+
+        private void OnDisable()
+        {
+            _health.OnTakeDamage -= HandleOnTakeDamage;
+        }
+
+        private void HandleOnTakeDamage()
+        {
+            SwitchState(new PlayerImapctState(this));
         }
 
         private void HandleOnDodge()
