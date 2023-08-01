@@ -11,6 +11,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         [field: SerializeField]
         public float PlayerChaseRange { get; private set; } = 0f;
         [field: SerializeField]
+        public float AttackRange { get; private set; } = 0f;
+        [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;
 
         public Animator Animator { get; private set; } = null;

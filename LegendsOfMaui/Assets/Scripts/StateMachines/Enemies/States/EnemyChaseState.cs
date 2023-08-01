@@ -34,7 +34,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 stateMachine.SwitchState(new EnemyIdleState(stateMachine));
                 return;
             }
+            if (isInAttackRange)
+            {
+                stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                return;
+            }
             MoveToPlayer(deltaTime);
+            FacePlayer();
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 1, ANIMATOR_DAMP_TIME, deltaTime);
         }
 
