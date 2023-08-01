@@ -17,6 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
             stateMachine.WeaponDamage.gameObject.SetActive(false);
+            stateMachine.CharacterController.enabled = false;
         }
 
         public override void Exit()
