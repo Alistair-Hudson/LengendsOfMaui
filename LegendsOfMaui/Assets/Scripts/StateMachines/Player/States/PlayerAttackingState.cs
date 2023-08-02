@@ -32,7 +32,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Move(deltaTime);
             FaceTarget();
 
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator);
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
 
             if (normalizedTime > _attack.ForceTime)
             {

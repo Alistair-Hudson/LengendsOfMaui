@@ -17,7 +17,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action JumpEvent;
         public event Action DodgeEvent;
         public event Action TargetEvent;
-        public event Action CancelTargetEvent;
 
         private void Start()
         {
@@ -63,14 +62,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 TargetEvent?.Invoke();
-            }
-        }
-
-        public void OnCancelTarget(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                CancelTargetEvent?.Invoke();
             }
         }
 

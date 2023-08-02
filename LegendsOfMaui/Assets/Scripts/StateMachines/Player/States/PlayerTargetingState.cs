@@ -19,7 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMethods
         public override void Enter()
         {
-            stateMachine.InputReader.CancelTargetEvent += HandleOnCancelTargetEvent;
+            stateMachine.InputReader.TargetEvent += HandleOnCancelTargetEvent;
             stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
             stateMachine.Animator.CrossFadeInFixedTime(TARGETING_BLENDTREE, 0.1f);
@@ -27,7 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Exit()
         {
-            stateMachine.InputReader.CancelTargetEvent -= HandleOnCancelTargetEvent;
+            stateMachine.InputReader.TargetEvent -= HandleOnCancelTargetEvent;
             stateMachine.InputReader.DodgeEvent -= HandleOnDodgeEvent;
             stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
         }

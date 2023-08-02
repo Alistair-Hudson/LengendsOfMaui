@@ -27,7 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
-            if (stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+            if (GetNormalizedTime(stateMachine.Animator, "Climbing") < 1)
             {
                 return;
             }

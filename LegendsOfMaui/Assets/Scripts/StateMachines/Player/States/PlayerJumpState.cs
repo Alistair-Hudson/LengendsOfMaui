@@ -46,9 +46,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #endregion
 
         #region EventHandlers
-        private void HandleLedgeDetect(Vector3 direction)
+        private void HandleLedgeDetect(Vector3 position, Vector3 direction)
         {
-            stateMachine.SwitchState(new PlayerHangingState(stateMachine, direction));
+            stateMachine.SwitchState(new PlayerHangingState(stateMachine, position, direction));
         }
         #endregion
     }

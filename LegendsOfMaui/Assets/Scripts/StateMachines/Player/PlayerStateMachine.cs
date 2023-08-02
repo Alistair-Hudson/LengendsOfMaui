@@ -58,6 +58,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             MainCameraTransform = Camera.main.transform;
 
             InputReader.JumpEvent += HandleOnJump;

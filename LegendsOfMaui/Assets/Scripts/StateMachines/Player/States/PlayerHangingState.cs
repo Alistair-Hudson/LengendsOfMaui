@@ -13,8 +13,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private Vector3 _closestPoint = Vector3.zero;
         private Vector3 _direction = Vector3.zero;
 
-        public PlayerHangingState(PlayerStateMachine playerStateMachine, Vector3 direction) : base(playerStateMachine)
+        public PlayerHangingState(PlayerStateMachine playerStateMachine, Vector3 position, Vector3 direction) : base(playerStateMachine)
         {
+            _closestPoint = position;
             _direction = direction;
         }
 
@@ -22,7 +23,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.transform.rotation = Quaternion.LookRotation(_direction, Vector3.up);
-
+            stateMachine.CharacterController.enabled = false;
+            stateMachine.transform.position = _closestPoint - (stateMachine.LedgeDetector.transform.position - stateMachine.transform.position);
+            stateMachine.CharacterController.enabled = true;
             stateMachine.Animator.CrossFadeInFixedTime(LEDGE_GRAB, ANIMATOR_DAMP_TIME);
         }
 
