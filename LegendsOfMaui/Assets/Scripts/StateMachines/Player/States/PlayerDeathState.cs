@@ -6,7 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerDeathState : PlayerBaseState
     {
-        private readonly int DEATH = Animator.StringToHash("Armed-Death1");
+        private readonly int DEATH = Animator.StringToHash("Death");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         public PlayerDeathState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)

@@ -15,15 +15,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
         }
 
+        #region StateMethods
         public override void Enter()
         {
             stateMachine.InputReader.TargetEvent += HandleOnTarget;
+            stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
             stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, 0.1f);
         }
 
         public override void Exit()
         {
             stateMachine.InputReader.TargetEvent -= HandleOnTarget;
+            stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
         }
 
         public override void Tick(float deltaTime)
@@ -48,7 +51,26 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             FaceMovementDirection(movement);
         }
+        #endregion
 
+        #region EventHandlers
+        private void HandleOnTarget()
+        {
+            if (!stateMachine.Targeter.SelectTarget())
+            {
+                return;
+            }
+
+            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        }
+
+        private void HandleOnJumpEvent()
+        {
+            stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+        }
+        #endregion
+
+        #region PrivateMethods
         private void FaceMovementDirection(Vector3 movement)
         {
             stateMachine.transform.rotation = Quaternion.LookRotation(movement);
@@ -67,15 +89,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             return forward * inputValue.y + right * inputValue.x;
         }
-
-        private void HandleOnTarget()
-        {
-            if (!stateMachine.Targeter.SelectTarget())
-            {
-                return;
-            }
-
-            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
-        }
+        #endregion
     }
 }

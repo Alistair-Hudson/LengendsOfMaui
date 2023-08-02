@@ -4,29 +4,29 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
-    public class PlayerJumpState : PlayerBaseState
+    public class PlayerFallingState : PlayerBaseState
     {
-        private readonly int JUMP = Animator.StringToHash("Jump");
+        private readonly int FALL = Animator.StringToHash("Fall");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
-        public PlayerJumpState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
+        public PlayerFallingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
         {
         }
 
         #region StateMethods
         public override void Enter()
         {
-            stateMachine.Animator.CrossFadeInFixedTime(JUMP, ANIMATOR_DAMP_TIME);
+            stateMachine.Animator.CrossFadeInFixedTime(FALL, ANIMATOR_DAMP_TIME);
         }
 
         public override void Exit()
         {
-            
+
         }
 
         public override void Tick(float deltaTime)
         {
-            
+
         }
         #endregion
     }

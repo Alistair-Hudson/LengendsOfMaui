@@ -6,7 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerBlockState : PlayerBaseState
     {
-        private readonly int BLOCK = Animator.StringToHash("Shield-Block");
+        private readonly int BLOCK = Animator.StringToHash("Block");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         public PlayerBlockState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)

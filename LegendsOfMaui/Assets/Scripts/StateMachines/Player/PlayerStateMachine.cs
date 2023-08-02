@@ -18,6 +18,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: SerializeField]
         public float TargetingMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
+        public float DodgeDuration { get; private set; } = 0f;
+        [field: SerializeField]
+        public float DodgeDistance { get; private set; } = 0f;
+        [field: SerializeField]
+        public float DodgeCooldown { get; private set; } = 0f;
+        [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
 
         public Health Health { get; private set; } = null;
@@ -28,7 +34,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public WeaponDamage WeaponDamage { get; private set; } = null;
+        public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
+        #region UnityMethods
         private void Awake()
         {
             InputReader = GetComponent<InputReader>();
@@ -68,7 +76,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Health.OnTakeDamage -= HandleOnTakeDamage;
             Health.OnDeath -= HandleOnDeath;
         }
+        #endregion
 
+        #region EventHandlers
         private void HandleOnDeath()
         {
             SwitchState(new PlayerDeathState(this));
@@ -81,12 +91,20 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnDodge()
         {
-            SwitchState(new PlayerDodgeState(this));
+            //SwitchState(new PlayerDodgeState(this));
         }
 
         private void HandleOnJump()
         {
-            SwitchState(new PlayerJumpState(this));
+            //SwitchState(new PlayerJumpState(this));
         }
+        #endregion
+
+        #region PublicMethods
+        public void SetDodgeTime(float time)
+        {
+            PreviousDodgeTime = time;
+        }
+        #endregion
     }
 }

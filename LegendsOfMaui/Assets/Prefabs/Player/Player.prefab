@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 1.942471, z: -5.4913034}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -113.23762
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -276,8 +276,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FreeLookMoveSpeed>k__BackingField: 6
   <TargetingMoveSpeed>k__BackingField: 6
+  <DodgeDuration>k__BackingField: 0.1
+  <DodgeDistance>k__BackingField: 1
+  <DodgeCooldown>k__BackingField: 1
   <Attacks>k__BackingField:
-  - <AnimationName>k__BackingField: Sword-Attack-R1
+  - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
     <ComboAttackTime>k__BackingField: 0.6
@@ -285,7 +288,7 @@ MonoBehaviour:
     <Force>k__BackingField: 15
     <AtackDamage>k__BackingField: 20
     <KnockbackForce>k__BackingField: 10
-  - <AnimationName>k__BackingField: Sword-Attack-R2
+  - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
@@ -293,7 +296,7 @@ MonoBehaviour:
     <Force>k__BackingField: 15
     <AtackDamage>k__BackingField: 20
     <KnockbackForce>k__BackingField: 10
-  - <AnimationName>k__BackingField: Sword-Attack-R3
+  - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
@@ -389,7 +392,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584904407197374662}
-  m_LocalRotation: {x: 0.1784248, y: 0.000000017473749, z: -0.0000000031685952, w: 0.98395354}
+  m_LocalRotation: {x: 0.1784248, y: 0.000000018927183, z: -0.000000003432153, w: 0.9839536}
   m_LocalPosition: {x: -0.96567225, y: 1.355075, z: -3.7818887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -462,8 +465,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128686649769950305}
-  m_LocalRotation: {x: 0.14521313, y: 0.000000032966824, z: -0.000000004838501, w: 0.98940045}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.015813464, y: -0.06308487, z: 0.01185927, w: 0.9978125}
+  m_LocalPosition: {x: -0.00000026089901, y: -0.00000018373669, z: -0.00000089870326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -541,8 +544,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292066278084277662}
-  m_LocalRotation: {x: 0.10917738, y: -0.000000017629906, z: 0.0000000019363622, w: 0.9940223}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.052048523, y: -0.06347397, z: 0.009559881, w: 0.9965795}
+  m_LocalPosition: {x: -0.00000026089901, y: -0.00000018373669, z: -0.00000089870326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -717,8 +720,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4176331117139593520}
-  m_LocalRotation: {x: 0.12719242, y: 0.00000001706663, z: -0.0000000021885211, w: 0.9918781}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.03396056, y: -0.06329009, z: 0.010709815, w: 0.99735975}
+  m_LocalPosition: {x: -0.00000026089901, y: -0.00000018373669, z: -0.00000089870326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -831,7 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 1.942471, z: -5.4913034}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -851,7 +854,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -113.23762
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -958,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 1.942471, z: -5.4913034}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -978,7 +981,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -113.23762
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1052,8 +1055,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510306905866561925}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96567225, y: 1.355075, z: -4.781889}
+  m_LocalRotation: {x: 0.060666725, y: -0.79393554, z: 0.08032785, w: 0.5996111}
+  m_LocalPosition: {x: 4.0801573, y: 0.797546, z: 2.38468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1103,7 +1106,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1
+    Value: 0.8176314
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -1127,7 +1130,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -113.23762
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1240,7 +1243,7 @@ Transform:
   m_GameObject: {fileID: 6778655129984752518}
   m_LocalRotation: {x: 0.000000045621327, y: -0.00000011944606, z: -0.0000000010510147,
     w: 1}
-  m_LocalPosition: {x: -0.0000001420697, y: -0.00000011920929, z: 4.2720017}
+  m_LocalPosition: {x: -0.00000015388682, y: 0, z: 4.2720017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,7 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerImapctState : PlayerBaseState
     {
-        private readonly int IMPACT = Animator.StringToHash("Armed-GetHit-F2");
+        private readonly int IMPACT = Animator.StringToHash("GetHit");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         private float _duration = 1f;
