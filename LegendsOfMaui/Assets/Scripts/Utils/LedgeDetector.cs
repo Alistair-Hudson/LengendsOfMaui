@@ -8,13 +8,13 @@ namespace AlictronicGames.LegendsOfMaui.Utils
     public class LedgeDetector : MonoBehaviour
     {
         /// <summary>
-        /// Position detected, direction
+        /// direction
         /// </summary>
-        public event Action<Vector3, Vector3> OnLedgeDected;
+        public event Action<Vector3> OnLedgeDected;
 
         private void OnTriggerEnter(Collider other)
         {
-            OnLedgeDected?.Invoke(other.ClosestPoint(transform.position), other.transform.forward);
+            OnLedgeDected?.Invoke(other.transform.forward);
         }
     }
 }

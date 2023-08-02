@@ -21,6 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Utils
 
         public Vector3 Movement => _impact + Vector3.up * _vertVelocity;
 
+        #region UnityMethods
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
@@ -46,7 +47,9 @@ namespace AlictronicGames.LegendsOfMaui.Utils
                 _navMeshAgent.enabled = true;
             }
         }
+        #endregion
 
+        #region PublicMethods
         public void AddForce(Vector3 force)
         {
             _impact += force;
@@ -60,5 +63,12 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         {
             _vertVelocity += jumpForce;
         }
+
+        public void ResetForces()
+        {
+            _impact = Vector3.zero;
+            _vertVelocity = 0;
+        }
+        #endregion
     }
 }

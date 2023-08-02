@@ -22,11 +22,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             momentum = stateMachine.CharacterController.velocity;
             momentum.y = 0;
             stateMachine.Animator.CrossFadeInFixedTime(FALL, ANIMATOR_DAMP_TIME);
+            stateMachine.LedgeDetector.OnLedgeDected += HandleLedgeDetect;
         }
 
         public override void Exit()
         {
-
+            stateMachine.LedgeDetector.OnLedgeDected -= HandleLedgeDetect;
         }
 
         public override void Tick(float deltaTime)
@@ -39,6 +40,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
 
             FaceTarget();
+        }
+        #endregion
+
+        #region EventHandlers
+        private void HandleLedgeDetect(Vector3 direction)
+        {
+            stateMachine.SwitchState(new PlayerHangingState(stateMachine, direction));
         }
         #endregion
     }

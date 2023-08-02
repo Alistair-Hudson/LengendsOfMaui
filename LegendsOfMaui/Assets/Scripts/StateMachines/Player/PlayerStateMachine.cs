@@ -19,11 +19,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: SerializeField]
         public float TargetingMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
+        public float HangingSpeed { get; private set; } = 6f;
+        [field: SerializeField]
         public float DodgeDuration { get; private set; } = 0f;
         [field: SerializeField]
         public float DodgeDistance { get; private set; } = 0f;
         [field: SerializeField]
         public float JumpForce { get; private set; } = 0f;
+        [field: SerializeField]
+        public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
         [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
 

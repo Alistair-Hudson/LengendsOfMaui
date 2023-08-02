@@ -11,16 +11,27 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private readonly int FREE_LOOK_MOVEMENT = Animator.StringToHash("FreeLookMovement");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
-        public PlayerFreeLookState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
+        private bool _shouldFade = true;
+
+        public PlayerFreeLookState(PlayerStateMachine playerStateMachine, bool shouldFade = true) : base(playerStateMachine)
         {
+            _shouldFade = shouldFade;
         }
 
         #region StateMethods
         public override void Enter()
         {
+            stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, 0);
             stateMachine.InputReader.TargetEvent += HandleOnTarget;
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
-            stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, 0.1f);
+            if (_shouldFade)
+            {
+                stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, ANIMATOR_DAMP_TIME);
+            }
+            else
+            {
+                stateMachine.Animator.Play(FREE_LOOK_MOVEMENT);
+            }
         }
 
         public override void Exit()
