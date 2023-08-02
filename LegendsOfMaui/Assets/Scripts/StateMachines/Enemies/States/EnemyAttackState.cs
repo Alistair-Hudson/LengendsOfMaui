@@ -6,7 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 {
     public class EnemyAttackState : EnemyBaseState
     {
-        private readonly int ATTACK = Animator.StringToHash("Unarmed-Attack-R1");
+        private readonly int ATTACK = Animator.StringToHash("Attack");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         public EnemyAttackState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
