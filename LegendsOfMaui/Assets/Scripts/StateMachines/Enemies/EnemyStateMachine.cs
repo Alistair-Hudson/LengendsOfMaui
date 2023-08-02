@@ -1,6 +1,7 @@
 using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
+using AlictronicGames.LegendsOfMaui.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;

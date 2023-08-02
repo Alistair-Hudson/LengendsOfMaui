@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace AlictronicGames.LegendsOfMaui
+namespace AlictronicGames.LegendsOfMaui.Utils
 {
     [RequireComponent(typeof(CharacterController))]
     public class ForceReceiver : MonoBehaviour

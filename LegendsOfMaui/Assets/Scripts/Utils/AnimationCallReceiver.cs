@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AlictronicGames.LegendsOfMaui
+namespace AlictronicGames.LegendsOfMaui.Utils
 {
 
     public class AnimationCallReceiver : MonoBehaviour

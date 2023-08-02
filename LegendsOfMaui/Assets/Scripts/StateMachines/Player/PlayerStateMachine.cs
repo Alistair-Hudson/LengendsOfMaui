@@ -2,6 +2,7 @@ using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Targeting;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.Controls;
+using AlictronicGames.LegendsOfMaui.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public WeaponDamage WeaponDamage { get; private set; } = null;
+        public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
         #region UnityMethods
@@ -47,6 +49,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
             WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
+            LedgeDetector = GetComponentInChildren<LedgeDetector>();
         }
 
         private void Start()
