@@ -55,5 +55,10 @@ namespace AlictronicGames.LegendsOfMaui
                 _navMeshAgent.enabled = false;
             }
         }
+
+        public void Jump(float jumpForce)
+        {
+            _vertVelocity += jumpForce;
+        }
     }
 }

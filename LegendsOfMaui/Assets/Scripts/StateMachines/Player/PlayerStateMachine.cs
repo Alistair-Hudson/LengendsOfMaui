@@ -24,6 +24,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: SerializeField]
         public float DodgeCooldown { get; private set; } = 0f;
         [field: SerializeField]
+        public float JumpForce { get; private set; } = 0f;
+        [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
 
         public Health Health { get; private set; } = null;
