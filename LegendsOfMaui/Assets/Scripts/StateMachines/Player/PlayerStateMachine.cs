@@ -14,6 +14,17 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
     [RequireComponent(typeof(Health))]
     public class PlayerStateMachine : StateMachine
     {
+        private enum WeaponType
+        {
+            Mere = 0,
+            Taiaha
+        }
+
+        [SerializeField]
+        private AnimatorOverrideController _mereController = null;
+        [SerializeField]
+        private AnimatorOverrideController _taiahaController = null;
+
         [field: SerializeField]
         public float FreeLookMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
@@ -30,6 +41,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
         [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
+
+        private WeaponType _activeWeapon = WeaponType.Mere;
 
         public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
@@ -65,6 +78,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             InputReader.JumpEvent += HandleOnJump;
             InputReader.DodgeEvent += HandleOnDodge;
+            InputReader.SwapWeapon += HandleWeaponSwap;
+
+            Animator.runtimeAnimatorController = _mereController;
 
             SwitchState(new PlayerFreeLookState(this));
         }
@@ -73,6 +89,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             InputReader.JumpEvent -= HandleOnJump;
             InputReader.DodgeEvent -= HandleOnDodge;
+            InputReader.SwapWeapon -= HandleWeaponSwap;
         }
 
         private void OnEnable()
@@ -97,6 +114,25 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private void HandleOnTakeDamage()
         {
             SwitchState(new PlayerImapctState(this));
+        }
+
+        private void HandleWeaponSwap()
+        {
+            switch (_activeWeapon)
+            {
+                case WeaponType.Mere:
+                    SwapWeapon(WeaponType.Taiaha, _taiahaController);
+                    break;
+                case WeaponType.Taiaha:
+                    SwapWeapon(WeaponType.Mere, _mereController);
+                    break;
+            }
+        }
+
+        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController)
+        {
+            _activeWeapon = nextWeaponType;
+            Animator.runtimeAnimatorController = nextOverrideController;
         }
 
         private void HandleOnDodge()

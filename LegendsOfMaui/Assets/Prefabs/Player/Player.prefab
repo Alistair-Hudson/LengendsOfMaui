@@ -368,11 +368,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c97ddf347a335458dabc122292860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mereController: {fileID: 22100000, guid: e00caae59c3262a40835960da96b2253, type: 2}
+  _taiahaController: {fileID: 22100000, guid: aa2fec5e714c2064d8ac7adf1e4a41ba, type: 2}
   <FreeLookMoveSpeed>k__BackingField: 6
   <TargetingMoveSpeed>k__BackingField: 6
+  <HangingSpeed>k__BackingField: 6
   <DodgeDuration>k__BackingField: 0.1
   <DodgeDistance>k__BackingField: 1
   <JumpForce>k__BackingField: 4
+  <PullUpOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1

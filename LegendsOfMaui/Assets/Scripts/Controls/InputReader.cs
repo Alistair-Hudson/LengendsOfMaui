@@ -17,6 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action JumpEvent;
         public event Action DodgeEvent;
         public event Action TargetEvent;
+        public event Action SwapWeapon;
 
         private void Start()
         {
@@ -86,6 +87,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             else if (context.canceled)
             {
                 IsBlocking = false;
+            }
+        }
+
+        public void OnSwapWeapon(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                SwapWeapon?.Invoke();
             }
         }
     }
