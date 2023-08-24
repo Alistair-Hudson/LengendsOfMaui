@@ -147,7 +147,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #endregion
 
         #region PublicMethods
-
+        public void AddAttack(AttackData newAttack)
+        {
+            var oldAttacks = Attacks;
+            Attacks = new AttackData[Attacks.Length + 1];
+            for (int i = 0; i < oldAttacks.Length; i++)
+            {
+                Attacks[i] = oldAttacks[i];
+            }
+            Attacks[oldAttacks.Length] = newAttack;
+        }
         #endregion
     }
 }
