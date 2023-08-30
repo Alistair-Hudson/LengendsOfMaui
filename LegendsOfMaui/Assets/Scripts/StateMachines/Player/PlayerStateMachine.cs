@@ -21,6 +21,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         }
 
         [SerializeField]
+        private WeaponDamage _mereLogic = null;
+        [SerializeField]
+        private WeaponDamage _taiahaLogic = null;
+        [SerializeField]
         private AnimatorOverrideController _mereController = null;
         [SerializeField]
         private AnimatorOverrideController _taiahaController = null;
@@ -43,6 +47,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public AttackData[] Attacks { get; private set; }
 
         private WeaponType _activeWeapon = WeaponType.Mere;
+        private WeaponHandler _weaponHandler = null;
+
 
         public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
@@ -51,7 +57,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Transform MainCameraTransform { get; private set; } = null;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
-        public WeaponDamage WeaponDamage { get; private set; } = null;
+        public WeaponDamage CurrentWeaponDamage { get; private set; } = null;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
@@ -63,10 +69,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             ForceReceiver = GetComponent<ForceReceiver>();
             Health = GetComponent<Health>();
 
+            _weaponHandler = GetComponentInChildren<WeaponHandler>();
             Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
-            WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
+
+            CurrentWeaponDamage = _mereLogic;
         }
 
         private void Start()
@@ -121,18 +129,20 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             switch (_activeWeapon)
             {
                 case WeaponType.Mere:
-                    SwapWeapon(WeaponType.Taiaha, _taiahaController);
+                    SwapWeapon(WeaponType.Taiaha, _taiahaController, _taiahaLogic);
                     break;
                 case WeaponType.Taiaha:
-                    SwapWeapon(WeaponType.Mere, _mereController);
+                    SwapWeapon(WeaponType.Mere, _mereController, _mereLogic);
                     break;
             }
         }
 
-        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController)
+        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController, WeaponDamage weaponLogic)
         {
             _activeWeapon = nextWeaponType;
             Animator.runtimeAnimatorController = nextOverrideController;
+            _weaponHandler.SetWeaponLogic(weaponLogic);
+            CurrentWeaponDamage = weaponLogic;
         }
 
         private void HandleOnDodge()

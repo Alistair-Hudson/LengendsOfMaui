@@ -19,7 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
-            stateMachine.WeaponDamage.SetAttack(_attack.AtackDamage, _attack.KnockbackForce);
+            stateMachine.CurrentWeaponDamage.SetAttack(_attack.AtackDamage, _attack.KnockbackForce);
         }
 
         public override void Exit()
