@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 7c9db31f129988243a1b1c8cd5fc7404
+timeCreated: 1526493890
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: root
+    100002: //RootNode
+    100004: Wereshark_
+    100006: Wereshark_ Head
+    100008: Wereshark_ L Calf
+    100010: Wereshark_ L Clavicle
+    100012: Wereshark_ L Finger0
+    100014: Wereshark_ L Finger01
+    100016: Wereshark_ L Finger02
+    100018: Wereshark_ L Finger1
+    100020: Wereshark_ L Finger11
+    100022: Wereshark_ L Finger12
+    100024: Wereshark_ L Finger2
+    100026: Wereshark_ L Finger21
+    100028: Wereshark_ L Finger22
+    100030: Wereshark_ L Finger3
+    100032: Wereshark_ L Finger31
+    100034: Wereshark_ L Finger32
+    100036: Wereshark_ L Foot
+    100038: Wereshark_ L Forearm
+    100040: Wereshark_ L Hand
+    100042: Wereshark_ L Thigh
+    100044: Wereshark_ L Toe0
+    100046: Wereshark_ L Toe01
+    100048: Wereshark_ L Toe1
+    100050: Wereshark_ L Toe11
+    100052: Wereshark_ L Toe2
+    100054: Wereshark_ L Toe21
+    100056: Wereshark_ L Toe3
+    100058: Wereshark_ L Toe31
+    100060: Wereshark_ L UpperArm
+    100062: Wereshark_ Neck
+    100064: Wereshark_ Neck1
+    100066: Wereshark_ Neck2
+    100068: Wereshark_ Pelvis
+    100070: Wereshark_ Ponytail1
+    100072: Wereshark_ R Calf
+    100074: Wereshark_ R Clavicle
+    100076: Wereshark_ R Finger0
+    100078: Wereshark_ R Finger01
+    100080: Wereshark_ R Finger02
+    100082: Wereshark_ R Finger1
+    100084: Wereshark_ R Finger11
+    100086: Wereshark_ R Finger12
+    100088: Wereshark_ R Finger2
+    100090: Wereshark_ R Finger21
+    100092: Wereshark_ R Finger22
+    100094: Wereshark_ R Finger3
+    100096: Wereshark_ R Finger31
+    100098: Wereshark_ R Finger32
+    100100: Wereshark_ R Foot
+    100102: Wereshark_ R Forearm
+    100104: Wereshark_ R Hand
+    100106: Wereshark_ R Thigh
+    100108: Wereshark_ R Toe0
+    100110: Wereshark_ R Toe01
+    100112: Wereshark_ R Toe1
+    100114: Wereshark_ R Toe11
+    100116: Wereshark_ R Toe2
+    100118: Wereshark_ R Toe21
+    100120: Wereshark_ R Toe3
+    100122: Wereshark_ R Toe31
+    100124: Wereshark_ R UpperArm
+    100126: Wereshark_ Spine
+    100128: Wereshark_ Spine1
+    100130: Wereshark_ Spine2
+    100132: Wereshark_ Tail
+    100134: Wereshark_ Tail1
+    100136: Wereshark_ Tail2
+    100138: Wereshark_ Tail3
+    100140: Wereshark_ Tail4
+    100142: Wereshark_ Tail5
+    100144: Wereshark_ Tail6
+    100146: Wereshark_SkirtFront_1
+    100148: Wereshark_SkirtFront_2
+    100150: Wereshark_SkirtFront_3
+    100152: Wereshark_SkirtLeftA_1
+    100154: Wereshark_SkirtLeftA_2
+    100156: Wereshark_SkirtLeftB_1
+    100158: Wereshark_SkirtLeftB_2
+    100160: Wereshark_SkirtLeftB_3
+    100162: Wereshark_SkirtRightA_1
+    100164: Wereshark_SkirtRightA_2
+    100166: Wereshark_SkirtRightB_1
+    100168: Wereshark_SkirtRightB_2
+    100170: Wereshark_SkirtRightB_3
+    400000: root
+    400002: //RootNode
+    400004: Wereshark_
+    400006: Wereshark_ Head
+    400008: Wereshark_ L Calf
+    400010: Wereshark_ L Clavicle
+    400012: Wereshark_ L Finger0
+    400014: Wereshark_ L Finger01
+    400016: Wereshark_ L Finger02
+    400018: Wereshark_ L Finger1
+    400020: Wereshark_ L Finger11
+    400022: Wereshark_ L Finger12
+    400024: Wereshark_ L Finger2
+    400026: Wereshark_ L Finger21
+    400028: Wereshark_ L Finger22
+    400030: Wereshark_ L Finger3
+    400032: Wereshark_ L Finger31
+    400034: Wereshark_ L Finger32
+    400036: Wereshark_ L Foot
+    400038: Wereshark_ L Forearm
+    400040: Wereshark_ L Hand
+    400042: Wereshark_ L Thigh
+    400044: Wereshark_ L Toe0
+    400046: Wereshark_ L Toe01
+    400048: Wereshark_ L Toe1
+    400050: Wereshark_ L Toe11
+    400052: Wereshark_ L Toe2
+    400054: Wereshark_ L Toe21
+    400056: Wereshark_ L Toe3
+    400058: Wereshark_ L Toe31
+    400060: Wereshark_ L UpperArm
+    400062: Wereshark_ Neck
+    400064: Wereshark_ Neck1
+    400066: Wereshark_ Neck2
+    400068: Wereshark_ Pelvis
+    400070: Wereshark_ Ponytail1
+    400072: Wereshark_ R Calf
+    400074: Wereshark_ R Clavicle
+    400076: Wereshark_ R Finger0
+    400078: Wereshark_ R Finger01
+    400080: Wereshark_ R Finger02
+    400082: Wereshark_ R Finger1
+    400084: Wereshark_ R Finger11
+    400086: Wereshark_ R Finger12
+    400088: Wereshark_ R Finger2
+    400090: Wereshark_ R Finger21
+    400092: Wereshark_ R Finger22
+    400094: Wereshark_ R Finger3
+    400096: Wereshark_ R Finger31
+    400098: Wereshark_ R Finger32
+    400100: Wereshark_ R Foot
+    400102: Wereshark_ R Forearm
+    400104: Wereshark_ R Hand
+    400106: Wereshark_ R Thigh
+    400108: Wereshark_ R Toe0
+    400110: Wereshark_ R Toe01
+    400112: Wereshark_ R Toe1
+    400114: Wereshark_ R Toe11
+    400116: Wereshark_ R Toe2
+    400118: Wereshark_ R Toe21
+    400120: Wereshark_ R Toe3
+    400122: Wereshark_ R Toe31
+    400124: Wereshark_ R UpperArm
+    400126: Wereshark_ Spine
+    400128: Wereshark_ Spine1
+    400130: Wereshark_ Spine2
+    400132: Wereshark_ Tail
+    400134: Wereshark_ Tail1
+    400136: Wereshark_ Tail2
+    400138: Wereshark_ Tail3
+    400140: Wereshark_ Tail4
+    400142: Wereshark_ Tail5
+    400144: Wereshark_ Tail6
+    400146: Wereshark_SkirtFront_1
+    400148: Wereshark_SkirtFront_2
+    400150: Wereshark_SkirtFront_3
+    400152: Wereshark_SkirtLeftA_1
+    400154: Wereshark_SkirtLeftA_2
+    400156: Wereshark_SkirtLeftB_1
+    400158: Wereshark_SkirtLeftB_2
+    400160: Wereshark_SkirtLeftB_3
+    400162: Wereshark_SkirtRightA_1
+    400164: Wereshark_SkirtRightA_2
+    400166: Wereshark_SkirtRightB_1
+    400168: Wereshark_SkirtRightB_2
+    400170: Wereshark_SkirtRightB_3
+    7400000: Attack2HitComboB
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack2HitComboB
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Wereshark_
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe0
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe0/Wereshark_ L Toe01
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe1/Wereshark_ L Toe11
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe2/Wereshark_ L Toe21
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ L Thigh/Wereshark_ L Calf/Wereshark_
+          L Foot/Wereshark_ L Toe3/Wereshark_ L Toe31
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe0
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe0/Wereshark_ R Toe01
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe1/Wereshark_ R Toe11
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe2/Wereshark_ R Toe21
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ R Thigh/Wereshark_ R Calf/Wereshark_
+          R Foot/Wereshark_ R Toe3/Wereshark_ R Toe31
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger0
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger0/Wereshark_ L Finger01
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger0/Wereshark_ L Finger01/Wereshark_ L Finger02
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger1/Wereshark_ L Finger11
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger1/Wereshark_ L Finger11/Wereshark_ L Finger12
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger2/Wereshark_ L Finger21
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger2/Wereshark_ L Finger21/Wereshark_ L Finger22
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger3/Wereshark_ L Finger31
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ L Clavicle/Wereshark_ L UpperArm/Wereshark_ L Forearm/Wereshark_
+          L Hand/Wereshark_ L Finger3/Wereshark_ L Finger31/Wereshark_ L Finger32
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ Neck
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ Neck/Wereshark_ Neck1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ Neck/Wereshark_ Neck1/Wereshark_ Neck2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ Neck/Wereshark_ Neck1/Wereshark_ Neck2/Wereshark_ Head
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ Neck/Wereshark_ Neck1/Wereshark_ Neck2/Wereshark_ Head/Wereshark_
+          Ponytail1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger0
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger0/Wereshark_ R Finger01
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger0/Wereshark_ R Finger01/Wereshark_ R Finger02
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger1/Wereshark_ R Finger11
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger1/Wereshark_ R Finger11/Wereshark_ R Finger12
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger2/Wereshark_ R Finger21
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger2/Wereshark_ R Finger21/Wereshark_ R Finger22
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger3/Wereshark_ R Finger31
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Spine/Wereshark_ Spine1/Wereshark_
+          Spine2/Wereshark_ R Clavicle/Wereshark_ R UpperArm/Wereshark_ R Forearm/Wereshark_
+          R Hand/Wereshark_ R Finger3/Wereshark_ R Finger31/Wereshark_ R Finger32
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1/Wereshark_
+          Tail2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1/Wereshark_
+          Tail2/Wereshark_ Tail3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1/Wereshark_
+          Tail2/Wereshark_ Tail3/Wereshark_ Tail4
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1/Wereshark_
+          Tail2/Wereshark_ Tail3/Wereshark_ Tail4/Wereshark_ Tail5
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_ Tail/Wereshark_ Tail1/Wereshark_
+          Tail2/Wereshark_ Tail3/Wereshark_ Tail4/Wereshark_ Tail5/Wereshark_ Tail6
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtFront_1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtFront_1/Wereshark_SkirtFront_2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtFront_1/Wereshark_SkirtFront_2/Wereshark_SkirtFront_3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtLeftA_1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtLeftA_1/Wereshark_SkirtLeftA_2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtLeftB_1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtLeftB_1/Wereshark_SkirtLeftB_2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtLeftB_1/Wereshark_SkirtLeftB_2/Wereshark_SkirtLeftB_3
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtRightA_1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtRightA_1/Wereshark_SkirtRightA_2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtRightB_1
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtRightB_1/Wereshark_SkirtRightB_2
+        weight: 1
+      - path: root/Wereshark_/Wereshark_ Pelvis/Wereshark_SkirtRightB_1/Wereshark_SkirtRightB_2/Wereshark_SkirtRightB_3
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: root
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 9d448160163fd48408b89a06675f7e6d,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120142
+  packageName: WERESHARK
+  packageVersion: 1.1
+  assetPath: Assets/HEROIC FANTASY CREATURES FULL PACK VOL3/Heroic Fantasy Were Creatures
+    Pack Vol2/Wereshark/FBX Files/Wereshark@Attack2HitComboB.FBX
+  uploadId: 400139

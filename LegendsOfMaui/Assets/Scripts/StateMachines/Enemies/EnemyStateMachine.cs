@@ -14,6 +14,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
     [RequireComponent(typeof(Health))]
     public class EnemyStateMachine : StateMachine
     {
+        [SerializeField]
+        private AnimatorOverrideController _animatorOverrideController = null;
+
         [field: SerializeField]
         public float PlayerChaseRange { get; private set; } = 0f;
         [field: SerializeField]
@@ -46,6 +49,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
             Player = FindFirstObjectByType<PlayerStateMachine>();
 
+            if (_animatorOverrideController != null)
+            {
+                Animator.runtimeAnimatorController = _animatorOverrideController;
+            }
             NavMeshAgent.updatePosition = false;
             NavMeshAgent.updateRotation = false;
         }

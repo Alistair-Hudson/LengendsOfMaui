@@ -1,125 +1,342 @@
 fileFormatVersion: 2
 guid: 224b5739c6ec161499c4334dc7306875
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5032
+  packageName: ANIMALS FULL PACK
+  packageVersion: 2.51
+  assetPath: Assets/ANIMALS FULL PACK/Birds Pack/Golden Eagle/FBX Files/SK_Eagle.FBX
+  uploadId: 515590
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: EAGLE_
-    100002: EAGLE_ Head
-    100004: EAGLE_ L Calf
-    100006: EAGLE_ L Clavicle
-    100008: EAGLE_ L Foot
-    100010: EAGLE_ L Forearm
-    100012: EAGLE_ L Hand
-    100014: EAGLE_ L HorseLink
-    100016: EAGLE_ L Thigh
-    100018: EAGLE_ L Toe0
-    100020: EAGLE_ L Toe01
-    100022: EAGLE_ L Toe02
-    100024: EAGLE_ L Toe1
-    100026: EAGLE_ L Toe11
-    100028: EAGLE_ L Toe12
-    100030: EAGLE_ L UpperArm
-    100032: EAGLE_ Neck
-    100034: EAGLE_ Neck1
-    100036: EAGLE_ Pelvis
-    100038: EAGLE_ Queue de cheval 1
-    100040: EAGLE_ R Calf
-    100042: EAGLE_ R Clavicle
-    100044: EAGLE_ R Foot
-    100046: EAGLE_ R Forearm
-    100048: EAGLE_ R Hand
-    100050: EAGLE_ R HorseLink
-    100052: EAGLE_ R Thigh
-    100054: EAGLE_ R Toe0
-    100056: EAGLE_ R Toe01
-    100058: EAGLE_ R Toe02
-    100060: EAGLE_ R Toe1
-    100062: EAGLE_ R Toe11
-    100064: EAGLE_ R Toe12
-    100066: EAGLE_ R UpperArm
-    100068: EAGLE_ Spine
-    100070: EAGLE_ Tail
-    100072: Eagle_ TailL
-    100074: Eagle_ TailR
-    100076: Eagle_WingLeftFeathers1
-    100078: Eagle_WingLeftFeathers2
-    100080: Eagle_WingLeftFeathers3
-    100082: Eagle_WingLefttFeathers4
-    100084: Eagle_WingRightFeathers1
-    100086: Eagle_WingRightFeathers2
-    100088: Eagle_WingRightFeathers3
-    100090: Eagle_WingRightFeathers4
-    100092: root
-    100094: //RootNode
-    100096: SK_Eagle2Sided
-    400000: EAGLE_
-    400002: EAGLE_ Head
-    400004: EAGLE_ L Calf
-    400006: EAGLE_ L Clavicle
-    400008: EAGLE_ L Foot
-    400010: EAGLE_ L Forearm
-    400012: EAGLE_ L Hand
-    400014: EAGLE_ L HorseLink
-    400016: EAGLE_ L Thigh
-    400018: EAGLE_ L Toe0
-    400020: EAGLE_ L Toe01
-    400022: EAGLE_ L Toe02
-    400024: EAGLE_ L Toe1
-    400026: EAGLE_ L Toe11
-    400028: EAGLE_ L Toe12
-    400030: EAGLE_ L UpperArm
-    400032: EAGLE_ Neck
-    400034: EAGLE_ Neck1
-    400036: EAGLE_ Pelvis
-    400038: EAGLE_ Queue de cheval 1
-    400040: EAGLE_ R Calf
-    400042: EAGLE_ R Clavicle
-    400044: EAGLE_ R Foot
-    400046: EAGLE_ R Forearm
-    400048: EAGLE_ R Hand
-    400050: EAGLE_ R HorseLink
-    400052: EAGLE_ R Thigh
-    400054: EAGLE_ R Toe0
-    400056: EAGLE_ R Toe01
-    400058: EAGLE_ R Toe02
-    400060: EAGLE_ R Toe1
-    400062: EAGLE_ R Toe11
-    400064: EAGLE_ R Toe12
-    400066: EAGLE_ R UpperArm
-    400068: EAGLE_ Spine
-    400070: EAGLE_ Tail
-    400072: Eagle_ TailL
-    400074: Eagle_ TailR
-    400076: Eagle_WingLeftFeathers1
-    400078: Eagle_WingLeftFeathers2
-    400080: Eagle_WingLeftFeathers3
-    400082: Eagle_WingLefttFeathers4
-    400084: Eagle_WingRightFeathers1
-    400086: Eagle_WingRightFeathers2
-    400088: Eagle_WingRightFeathers3
-    400090: Eagle_WingRightFeathers4
-    400092: root
-    400094: //RootNode
-    400096: SK_Eagle2Sided
-    2100000: M_Eagle
-    4300000: SK_Eagle2Sided
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: SK_Eagle2Sided
-  externalObjects: {}
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: EAGLE_
+  - first:
+      1: 100002
+    second: EAGLE_ Head
+  - first:
+      1: 100004
+    second: EAGLE_ L Calf
+  - first:
+      1: 100006
+    second: EAGLE_ L Clavicle
+  - first:
+      1: 100008
+    second: EAGLE_ L Foot
+  - first:
+      1: 100010
+    second: EAGLE_ L Forearm
+  - first:
+      1: 100012
+    second: EAGLE_ L Hand
+  - first:
+      1: 100014
+    second: EAGLE_ L HorseLink
+  - first:
+      1: 100016
+    second: EAGLE_ L Thigh
+  - first:
+      1: 100018
+    second: EAGLE_ L Toe0
+  - first:
+      1: 100020
+    second: EAGLE_ L Toe01
+  - first:
+      1: 100022
+    second: EAGLE_ L Toe02
+  - first:
+      1: 100024
+    second: EAGLE_ L Toe1
+  - first:
+      1: 100026
+    second: EAGLE_ L Toe11
+  - first:
+      1: 100028
+    second: EAGLE_ L Toe12
+  - first:
+      1: 100030
+    second: EAGLE_ L UpperArm
+  - first:
+      1: 100032
+    second: EAGLE_ Neck
+  - first:
+      1: 100034
+    second: EAGLE_ Neck1
+  - first:
+      1: 100036
+    second: EAGLE_ Pelvis
+  - first:
+      1: 100038
+    second: EAGLE_ Queue de cheval 1
+  - first:
+      1: 100040
+    second: EAGLE_ R Calf
+  - first:
+      1: 100042
+    second: EAGLE_ R Clavicle
+  - first:
+      1: 100044
+    second: EAGLE_ R Foot
+  - first:
+      1: 100046
+    second: EAGLE_ R Forearm
+  - first:
+      1: 100048
+    second: EAGLE_ R Hand
+  - first:
+      1: 100050
+    second: EAGLE_ R HorseLink
+  - first:
+      1: 100052
+    second: EAGLE_ R Thigh
+  - first:
+      1: 100054
+    second: EAGLE_ R Toe0
+  - first:
+      1: 100056
+    second: EAGLE_ R Toe01
+  - first:
+      1: 100058
+    second: EAGLE_ R Toe02
+  - first:
+      1: 100060
+    second: EAGLE_ R Toe1
+  - first:
+      1: 100062
+    second: EAGLE_ R Toe11
+  - first:
+      1: 100064
+    second: EAGLE_ R Toe12
+  - first:
+      1: 100066
+    second: EAGLE_ R UpperArm
+  - first:
+      1: 100068
+    second: EAGLE_ Spine
+  - first:
+      1: 100070
+    second: EAGLE_ Tail
+  - first:
+      1: 100072
+    second: Eagle_ TailL
+  - first:
+      1: 100074
+    second: Eagle_ TailR
+  - first:
+      1: 100076
+    second: Eagle_WingLeftFeathers1
+  - first:
+      1: 100078
+    second: Eagle_WingLeftFeathers2
+  - first:
+      1: 100080
+    second: Eagle_WingLeftFeathers3
+  - first:
+      1: 100082
+    second: Eagle_WingLefttFeathers4
+  - first:
+      1: 100084
+    second: Eagle_WingRightFeathers1
+  - first:
+      1: 100086
+    second: Eagle_WingRightFeathers2
+  - first:
+      1: 100088
+    second: Eagle_WingRightFeathers3
+  - first:
+      1: 100090
+    second: Eagle_WingRightFeathers4
+  - first:
+      1: 100092
+    second: root
+  - first:
+      1: 100094
+    second: //RootNode
+  - first:
+      1: 100096
+    second: SK_Eagle2Sided
+  - first:
+      4: 400000
+    second: EAGLE_
+  - first:
+      4: 400002
+    second: EAGLE_ Head
+  - first:
+      4: 400004
+    second: EAGLE_ L Calf
+  - first:
+      4: 400006
+    second: EAGLE_ L Clavicle
+  - first:
+      4: 400008
+    second: EAGLE_ L Foot
+  - first:
+      4: 400010
+    second: EAGLE_ L Forearm
+  - first:
+      4: 400012
+    second: EAGLE_ L Hand
+  - first:
+      4: 400014
+    second: EAGLE_ L HorseLink
+  - first:
+      4: 400016
+    second: EAGLE_ L Thigh
+  - first:
+      4: 400018
+    second: EAGLE_ L Toe0
+  - first:
+      4: 400020
+    second: EAGLE_ L Toe01
+  - first:
+      4: 400022
+    second: EAGLE_ L Toe02
+  - first:
+      4: 400024
+    second: EAGLE_ L Toe1
+  - first:
+      4: 400026
+    second: EAGLE_ L Toe11
+  - first:
+      4: 400028
+    second: EAGLE_ L Toe12
+  - first:
+      4: 400030
+    second: EAGLE_ L UpperArm
+  - first:
+      4: 400032
+    second: EAGLE_ Neck
+  - first:
+      4: 400034
+    second: EAGLE_ Neck1
+  - first:
+      4: 400036
+    second: EAGLE_ Pelvis
+  - first:
+      4: 400038
+    second: EAGLE_ Queue de cheval 1
+  - first:
+      4: 400040
+    second: EAGLE_ R Calf
+  - first:
+      4: 400042
+    second: EAGLE_ R Clavicle
+  - first:
+      4: 400044
+    second: EAGLE_ R Foot
+  - first:
+      4: 400046
+    second: EAGLE_ R Forearm
+  - first:
+      4: 400048
+    second: EAGLE_ R Hand
+  - first:
+      4: 400050
+    second: EAGLE_ R HorseLink
+  - first:
+      4: 400052
+    second: EAGLE_ R Thigh
+  - first:
+      4: 400054
+    second: EAGLE_ R Toe0
+  - first:
+      4: 400056
+    second: EAGLE_ R Toe01
+  - first:
+      4: 400058
+    second: EAGLE_ R Toe02
+  - first:
+      4: 400060
+    second: EAGLE_ R Toe1
+  - first:
+      4: 400062
+    second: EAGLE_ R Toe11
+  - first:
+      4: 400064
+    second: EAGLE_ R Toe12
+  - first:
+      4: 400066
+    second: EAGLE_ R UpperArm
+  - first:
+      4: 400068
+    second: EAGLE_ Spine
+  - first:
+      4: 400070
+    second: EAGLE_ Tail
+  - first:
+      4: 400072
+    second: Eagle_ TailL
+  - first:
+      4: 400074
+    second: Eagle_ TailR
+  - first:
+      4: 400076
+    second: Eagle_WingLeftFeathers1
+  - first:
+      4: 400078
+    second: Eagle_WingLeftFeathers2
+  - first:
+      4: 400080
+    second: Eagle_WingLeftFeathers3
+  - first:
+      4: 400082
+    second: Eagle_WingLefttFeathers4
+  - first:
+      4: 400084
+    second: Eagle_WingRightFeathers1
+  - first:
+      4: 400086
+    second: Eagle_WingRightFeathers2
+  - first:
+      4: 400088
+    second: Eagle_WingRightFeathers3
+  - first:
+      4: 400090
+    second: Eagle_WingRightFeathers4
+  - first:
+      4: 400092
+    second: root
+  - first:
+      4: 400094
+    second: //RootNode
+  - first:
+      4: 400096
+    second: SK_Eagle2Sided
+  - first:
+      21: 2100000
+    second: M_Eagle
+  - first:
+      43: 4300000
+    second: SK_Eagle2Sided
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: SK_Eagle2Sided
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eagle
+    second: {fileID: 2100000, guid: a218abac735177f42bdcf430b2de0e9e, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -141,25 +358,36 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -168,10 +396,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -181,21 +409,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 5032
-  packageName: ANIMALS FULL PACK
-  packageVersion: 2.51
-  assetPath: Assets/ANIMALS FULL PACK/Birds Pack/Golden Eagle/FBX Files/SK_Eagle.FBX
-  uploadId: 515590
