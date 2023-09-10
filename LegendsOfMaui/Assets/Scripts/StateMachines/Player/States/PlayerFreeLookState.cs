@@ -42,7 +42,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
-            if (stateMachine.InputReader.IsAttacking)
+            if (stateMachine.InputReader.IsAttacking && !stateMachine.IsShapeShifted)
             {
                 stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
                 return;
@@ -67,6 +67,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region EventHandlers
         private void HandleOnTarget()
         {
+            if (stateMachine.IsShapeShifted)
+            {
+                return;
+            }
+
             if (!stateMachine.Targeter.SelectTarget())
             {
                 return;

@@ -18,6 +18,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action DodgeEvent;
         public event Action TargetEvent;
         public event Action SwapWeapon;
+        public event Action ShapeShift;
+        public event Action PerformAction;
 
         private void Start()
         {
@@ -95,6 +97,22 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 SwapWeapon?.Invoke();
+            }
+        }
+
+        public void OnTransform(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                ShapeShift?.Invoke();
+            }
+        }
+
+        public void OnAction(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                PerformAction?.Invoke();
             }
         }
     }

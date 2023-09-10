@@ -21,6 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Targeting
         private void OnDestroy()
         {
             TargetDestroyed?.Invoke(this);
+            SetDisplayState(false);
         }
         #endregion
 

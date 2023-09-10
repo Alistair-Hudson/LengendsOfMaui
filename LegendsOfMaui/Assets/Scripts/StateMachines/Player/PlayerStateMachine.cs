@@ -28,6 +28,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private AnimatorOverrideController _mereController = null;
         [SerializeField]
         private AnimatorOverrideController _taiahaController = null;
+        [SerializeField]
+        private GameObject _humanForm = null;
+        [SerializeField]
+        private GameObject _birdForm = null;
 
         [field: SerializeField]
         public float FreeLookMoveSpeed { get; private set; } = 6f;
@@ -60,6 +64,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public WeaponDamage CurrentWeaponDamage { get; private set; } = null;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
+        public bool IsShapeShifted { get; private set; } = false;
 
         #region UnityMethods
         private void Awake()
@@ -70,9 +75,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Health = GetComponent<Health>();
 
             _weaponHandler = GetComponentInChildren<WeaponHandler>();
-            Animator = GetComponentInChildren<Animator>();
             Targeter = GetComponentInChildren<Targeter>();
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
+            Animator = _humanForm.GetComponent<Animator>();
 
             CurrentWeaponDamage = _mereLogic;
         }
@@ -87,6 +92,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader.JumpEvent += HandleOnJump;
             InputReader.DodgeEvent += HandleOnDodge;
             InputReader.SwapWeapon += HandleWeaponSwap;
+            InputReader.ShapeShift += HandleShapeShift;
+            InputReader.PerformAction += HandlePerformAction;
 
             Animator.runtimeAnimatorController = _mereController;
 
@@ -98,6 +105,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader.JumpEvent -= HandleOnJump;
             InputReader.DodgeEvent -= HandleOnDodge;
             InputReader.SwapWeapon -= HandleWeaponSwap;
+            InputReader.ShapeShift += HandleShapeShift;
+            InputReader.PerformAction += HandlePerformAction;
         }
 
         private void OnEnable()
@@ -126,6 +135,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleWeaponSwap()
         {
+            if (IsShapeShifted)
+            {
+                return;
+            }
+
             switch (_activeWeapon)
             {
                 case WeaponType.Mere:
@@ -137,14 +151,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
         }
 
-        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController, WeaponDamage weaponLogic)
-        {
-            _activeWeapon = nextWeaponType;
-            Animator.runtimeAnimatorController = nextOverrideController;
-            _weaponHandler.SetWeaponLogic(weaponLogic);
-            CurrentWeaponDamage = weaponLogic;
-        }
-
         private void HandleOnDodge()
         {
             //SwitchState(new PlayerDodgeState(this));
@@ -153,6 +159,41 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private void HandleOnJump()
         {
             //SwitchState(new PlayerJumpState(this));
+        }
+
+        private void HandleShapeShift()
+        {
+            IsShapeShifted ^= true;
+            _humanForm.SetActive(!IsShapeShifted);
+            _birdForm.SetActive(IsShapeShifted);
+            if (IsShapeShifted)
+            {
+                Animator = _birdForm.GetComponent<Animator>();
+            }
+            else
+            {
+                Animator = _humanForm.GetComponent<Animator>();
+            }
+        }
+
+        private void HandlePerformAction()
+        {
+
+        }
+        #endregion
+
+        #region PrivateMethods
+        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController, WeaponDamage weaponLogic)
+        {
+            _activeWeapon = nextWeaponType;
+            Animator.runtimeAnimatorController = nextOverrideController;
+            _weaponHandler.SetWeaponLogic(weaponLogic);
+            CurrentWeaponDamage = weaponLogic;
+        }
+
+        private void ShapeShift()
+        {
+
         }
         #endregion
 

@@ -100,6 +100,24 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Transform"",
+                    ""type"": ""Button"",
+                    ""id"": ""41ff05b3-e77e-4c67-a3b5-f47305aa9778"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""5894e9fb-d466-42d7-8788-cbd145649ff2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,7 +289,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 {
                     ""name"": """",
                     ""id"": ""23632d53-9b95-441d-ab06-683e0189f36c"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -322,6 +340,50 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""action"": ""SwapWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d2c7154-344d-40a7-86e5-8fdd8b47ef72"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Transform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c37c486-b697-494f-895b-e16963ec7cd6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Transform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7aa9dcfa-ebfe-4131-8115-53a83c040a06"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c9a74fa-bf72-49c3-ad3a-eed53da89da0"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -366,6 +428,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
             m_Player_SwapWeapon = m_Player.FindAction("SwapWeapon", throwIfNotFound: true);
+            m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
+            m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -435,6 +499,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_Block;
         private readonly InputAction m_Player_SwapWeapon;
+        private readonly InputAction m_Player_Transform;
+        private readonly InputAction m_Player_Action;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -447,6 +513,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @Block => m_Wrapper.m_Player_Block;
             public InputAction @SwapWeapon => m_Wrapper.m_Player_SwapWeapon;
+            public InputAction @Transform => m_Wrapper.m_Player_Transform;
+            public InputAction @Action => m_Wrapper.m_Player_Action;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -480,6 +548,12 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @SwapWeapon.started += instance.OnSwapWeapon;
                 @SwapWeapon.performed += instance.OnSwapWeapon;
                 @SwapWeapon.canceled += instance.OnSwapWeapon;
+                @Transform.started += instance.OnTransform;
+                @Transform.performed += instance.OnTransform;
+                @Transform.canceled += instance.OnTransform;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -508,6 +582,12 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @SwapWeapon.started -= instance.OnSwapWeapon;
                 @SwapWeapon.performed -= instance.OnSwapWeapon;
                 @SwapWeapon.canceled -= instance.OnSwapWeapon;
+                @Transform.started -= instance.OnTransform;
+                @Transform.performed -= instance.OnTransform;
+                @Transform.canceled -= instance.OnTransform;
+                @Action.started -= instance.OnAction;
+                @Action.performed -= instance.OnAction;
+                @Action.canceled -= instance.OnAction;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -553,6 +633,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             void OnAttack(InputAction.CallbackContext context);
             void OnBlock(InputAction.CallbackContext context);
             void OnSwapWeapon(InputAction.CallbackContext context);
+            void OnTransform(InputAction.CallbackContext context);
+            void OnAction(InputAction.CallbackContext context);
         }
     }
 }
