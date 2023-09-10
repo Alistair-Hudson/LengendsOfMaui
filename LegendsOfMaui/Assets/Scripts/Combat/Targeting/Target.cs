@@ -7,11 +7,28 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Targeting
 {
     public class Target : MonoBehaviour
     {
+        [SerializeField]
+        private Canvas _targetDisplay = null;
+
         public event Action<Target> TargetDestroyed;
+
+        #region UnityCalls
+        private void Awake()
+        {
+            SetDisplayState(false);
+        }
 
         private void OnDestroy()
         {
             TargetDestroyed?.Invoke(this);
         }
+        #endregion
+
+        #region PublicMethods
+        public void SetDisplayState(bool state)
+        {
+            _targetDisplay.gameObject.SetActive(state);
+        }
+        #endregion
     }
 }

@@ -119,7 +119,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             SwitchState(new PlayerDeathState(this));
         }
 
-        private void HandleOnTakeDamage()
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth)
         {
             SwitchState(new PlayerImapctState(this));
         }
