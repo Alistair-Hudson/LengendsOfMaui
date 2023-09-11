@@ -34,8 +34,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Tick(float deltaTime)
         {
             Move(momentum, deltaTime);
-
-            if (stateMachine.CharacterController.velocity.y <= 0)
+            if (stateMachine.IsShapeShifted)
+            {
+                stateMachine.SwitchState(new PlayerFlyingState(stateMachine));
+            }
+            else if (stateMachine.CharacterController.velocity.y <= 0)
             {
                 stateMachine.SwitchState(new PlayerFallingState(stateMachine));
                 return;

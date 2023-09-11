@@ -173,6 +173,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             else
             {
                 Animator = _humanForm.GetComponent<Animator>();
+                SwitchState(new PlayerFallingState(this));
             }
         }
 
