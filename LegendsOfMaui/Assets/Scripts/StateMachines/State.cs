@@ -8,6 +8,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
     {
         public abstract void Enter();
         public abstract void Tick(float deltaTime);
+        public abstract void FixedTick();
         public abstract void Exit();
 
         protected float GetNormalizedTime(Animator animator, string tag)

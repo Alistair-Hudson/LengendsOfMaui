@@ -54,6 +54,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             stateMachine.Animator.SetFloat(HANGING_SPEED, inputValue.magnitude, ANIMATOR_DAMP_TIME, deltaTime);
         }
+
+        public override void FixedTick()
+        {
+
+        }
         #endregion
     }
 }

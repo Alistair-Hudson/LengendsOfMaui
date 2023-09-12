@@ -28,15 +28,15 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (_vertVelocity < 0 && _controller.isGrounded)
             {
-                _vertVelocity = Physics.gravity.y * Time.deltaTime;
+                _vertVelocity = Physics.gravity.y * Time.fixedDeltaTime;
             }
             else
             {
-                _vertVelocity += Physics.gravity.y * Time.deltaTime;
+                _vertVelocity += Physics.gravity.y * Time.fixedDeltaTime;
             }
 
             _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, _drag);

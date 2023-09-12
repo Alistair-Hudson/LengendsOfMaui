@@ -7,6 +7,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerFlyingState : PlayerBaseState
     {
+        private float _delayBeforeForceReset = 0.5f;
+
         public PlayerFlyingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
         {
         }
@@ -14,6 +16,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMethods
         public override void Enter()
         {
+            stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
+            stateMachine.StartCoroutine(ResetForceAfterJump());
         }
 
         public override void Exit()
@@ -27,6 +31,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             Move(movement * stateMachine.FreeLookMoveSpeed, deltaTime);
 
+            if (stateMachine.CharacterController.isGrounded)
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
+
             if (inputValue == Vector2.zero)
             {
                 return;
@@ -34,10 +43,22 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             FaceMovementDirection(movement);
         }
+
+        public override void FixedTick()
+        {
+            if (!stateMachine.InputReader.IsAttacking)
+            {
+                stateMachine.ForceReceiver.Jump(-Physics.gravity.y * Time.fixedDeltaTime);
+            }
+        }
         #endregion
 
         #region EventHandlers
-
+        private void HandleOnJumpEvent()
+        {
+            stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
+            stateMachine.StartCoroutine(ResetForceAfterJump());
+        }
         #endregion
 
         #region PrivateMethods
@@ -58,6 +79,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             right.Normalize();
 
             return forward * inputValue.y + right * inputValue.x;
+        }
+
+        private IEnumerator ResetForceAfterJump()
+        {
+            yield return new WaitForSeconds(_delayBeforeForceReset);
+            stateMachine.ForceReceiver.ResetForces();
         }
         #endregion
     }

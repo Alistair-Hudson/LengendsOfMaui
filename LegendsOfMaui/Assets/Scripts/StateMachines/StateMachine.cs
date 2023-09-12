@@ -13,6 +13,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
             _currentState?.Tick(Time.deltaTime);
         }
 
+        private void FixedUpdate()
+        {
+            _currentState?.FixedTick();   
+        }
+
         public void SwitchState(State newState)
         {
             _currentState?.Exit();

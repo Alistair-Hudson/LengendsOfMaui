@@ -15,7 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             _attack = playerStateMachine.Attacks[attackIndex];
         }
-
+        #region StateMachine
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
@@ -52,6 +52,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
         }
 
+        public override void FixedTick()
+        {
+
+        }
+        #endregion
+
+        #region PrivateMethods
         private void TryComboAttack(float normalizedTime)
         {
             if (_attack.ComboStateIndex == -1)
@@ -75,5 +82,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
             _isForcedApplied = true;
         }
+        #endregion
     }
 }

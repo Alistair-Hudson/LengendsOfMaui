@@ -36,6 +36,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.CharacterController.enabled = true;
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine, false));
         }
+
+        public override void FixedTick()
+        {
+            
+        }
         #endregion
     }
 }

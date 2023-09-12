@@ -29,5 +29,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             
         }
+
+        public override void FixedTick()
+        {
+
+        }
     }
 }

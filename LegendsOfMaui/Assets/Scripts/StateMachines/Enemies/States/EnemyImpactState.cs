@@ -34,5 +34,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             }
         }
+
+        public override void FixedTick()
+        {
+
+        }
     }
 }

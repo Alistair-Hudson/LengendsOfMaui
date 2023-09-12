@@ -43,6 +43,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 1, ANIMATOR_DAMP_TIME, deltaTime);
         }
 
+        public override void FixedTick()
+        {
+
+        }
+
         private void MoveToPlayer(float deltaTime)
         {
             if (stateMachine.NavMeshAgent.isOnNavMesh)

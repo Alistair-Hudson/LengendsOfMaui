@@ -34,5 +34,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 SwitchBackToLocmotion();
             }
         }
+
+        public override void FixedTick()
+        {
+
+        }
     }
 }

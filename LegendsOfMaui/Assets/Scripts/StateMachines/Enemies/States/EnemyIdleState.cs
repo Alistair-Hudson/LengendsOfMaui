@@ -35,5 +35,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             }
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 0, ANIMATOR_DAMP_TIME, deltaTime);
         }
+
+        public override void FixedTick()
+        {
+
+        }
     }
 }

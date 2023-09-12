@@ -53,6 +53,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
             }
         }
+
+        public override void FixedTick()
+        {
+
+        }
         #endregion
     }
 }

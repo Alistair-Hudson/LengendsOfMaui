@@ -62,6 +62,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             FaceMovementDirection(movement);
         }
+
+        public override void FixedTick()
+        {
+            
+        }
         #endregion
 
         #region EventHandlers

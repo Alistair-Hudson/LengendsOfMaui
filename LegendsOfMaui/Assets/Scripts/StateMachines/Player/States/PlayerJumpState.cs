@@ -46,6 +46,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             FaceTarget();
         }
+
+        public override void FixedTick()
+        {
+            
+        }
         #endregion
 
         #region EventHandlers

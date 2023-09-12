@@ -31,5 +31,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         {
 
         }
+
+        public override void FixedTick()
+        {
+
+        }
     }
 }
