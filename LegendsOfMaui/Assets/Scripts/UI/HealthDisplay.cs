@@ -21,7 +21,11 @@ namespace AlictronicGames.LegendsOfMaui.UI
 
         private void OnDestroy()
         {
-            GetComponentInParent<Health>().OnTakeDamage -= HandleOnTakeDamage;
+            var health = GetComponentInParent<Health>();
+            if (health)
+            {
+                health.OnTakeDamage -= HandleOnTakeDamage;
+            }
         }
 
         private void HandleOnTakeDamage(float maxHealth, float currentHealth)
