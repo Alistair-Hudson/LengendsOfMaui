@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
@@ -78,6 +78,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5694438019591820529, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5227251938221010594, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3785810997628688734, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2605218440250731332, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -91,7 +106,7 @@ PrefabInstance:
     - target: {fileID: -989291331977985356, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 457328233370736012, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
@@ -111,7 +126,12 @@ PrefabInstance:
     - target: {fileID: 1277386687221980518, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318924106373548632, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4804499628052858776, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
@@ -138,6 +158,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8030928143101726626, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 04b8169c3b8b61743ab284b0f27706fc, type: 2}
     - target: {fileID: 8597511850384217672, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -166,9 +191,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2013658923620277462 stripped
+--- !u!1 &2426562563455571121 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 948016356122695993, guid: 8660ef0f8ae48694e8e411e648569047,
+  m_CorrespondingSourceObject: {fileID: -5227251938221010594, guid: 8660ef0f8ae48694e8e411e648569047,
+    type: 3}
+  m_PrefabInstance: {fileID: 1646615166933698031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2747399249122209504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5694438019591820529, guid: 8660ef0f8ae48694e8e411e648569047,
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
@@ -178,15 +209,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5138172246666121900 stripped
+--- !u!1 &3960787184040464311 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5879317004104800067, guid: 8660ef0f8ae48694e8e411e648569047,
+  m_CorrespondingSourceObject: {fileID: 2318924106373548632, guid: 8660ef0f8ae48694e8e411e648569047,
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6085754193523294839 stripped
+--- !u!1 &6750872964306674509 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4804499628052858776, guid: 8660ef0f8ae48694e8e411e648569047,
+  m_CorrespondingSourceObject: {fileID: -3785810997628688734, guid: 8660ef0f8ae48694e8e411e648569047,
+    type: 3}
+  m_PrefabInstance: {fileID: 1646615166933698031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6911605656389075031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5274567819927504312, guid: 8660ef0f8ae48694e8e411e648569047,
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
@@ -199,18 +236,6 @@ GameObject:
 --- !u!1 &8310764522315978398 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7317284559715472241, guid: 8660ef0f8ae48694e8e411e648569047,
-    type: 3}
-  m_PrefabInstance: {fileID: 1646615166933698031}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8593577564224675059 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2190026472738367204, guid: 8660ef0f8ae48694e8e411e648569047,
-    type: 3}
-  m_PrefabInstance: {fileID: 1646615166933698031}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8970560107655574966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7684309912251478105, guid: 8660ef0f8ae48694e8e411e648569047,
     type: 3}
   m_PrefabInstance: {fileID: 1646615166933698031}
   m_PrefabAsset: {fileID: 0}
@@ -336,27 +361,27 @@ PrefabInstance:
         type: 3}
       propertyPath: 'HairStyles.Array.data[0]'
       value: 
-      objectReference: {fileID: 8970560107655574966}
+      objectReference: {fileID: 6911605656389075031}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[1]'
       value: 
-      objectReference: {fileID: 5138172246666121900}
+      objectReference: {fileID: 2426562563455571121}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[2]'
       value: 
-      objectReference: {fileID: 2013658923620277462}
+      objectReference: {fileID: 2747399249122209504}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[3]'
       value: 
-      objectReference: {fileID: 6085754193523294839}
+      objectReference: {fileID: 3960787184040464311}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[4]'
       value: 
-      objectReference: {fileID: 8593577564224675059}
+      objectReference: {fileID: 6750872964306674509}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairColours.Array.data[0]'

@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6417912908095200079}
     m_Modifications:
+    - target: {fileID: -9196793682289631721, guid: b15c97de5b38a664ca99c1e9a7c37266,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8877191665853785419, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -21,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
@@ -73,6 +78,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 56835d5418d2ae8449cfd8470a516696, type: 2}
+    - target: {fileID: -7950859541580781557, guid: b15c97de5b38a664ca99c1e9a7c37266,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 04b8169c3b8b61743ab284b0f27706fc, type: 2}
     - target: {fileID: -7802941987137369227, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: m_IsActive
@@ -81,7 +91,7 @@ PrefabInstance:
     - target: {fileID: -7645040890860434525, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7082732789292345511, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
@@ -103,15 +113,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -713627384824065132, guid: b15c97de5b38a664ca99c1e9a7c37266,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: m_Name
       value: PatupaiareheMale
       objectReference: {fileID: 0}
-    - target: {fileID: 3033250936810753577, guid: b15c97de5b38a664ca99c1e9a7c37266,
+    - target: {fileID: 1743656024573548476, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033250936810753577, guid: b15c97de5b38a664ca99c1e9a7c37266,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: b15c97de5b38a664ca99c1e9a7c37266,
         type: 3}
@@ -155,9 +175,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1700182080472648432 stripped
+--- !u!1 &2965071268632113975 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -4692712480443996208, guid: b15c97de5b38a664ca99c1e9a7c37266,
+  m_CorrespondingSourceObject: {fileID: -9196793682289631721, guid: b15c97de5b38a664ca99c1e9a7c37266,
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
@@ -167,27 +187,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3804825118240062073 stripped
+--- !u!1 &3551886199724735132 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -7082732789292345511, guid: b15c97de5b38a664ca99c1e9a7c37266,
-    type: 3}
-  m_PrefabInstance: {fileID: 2988244200385506592}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4237326353196328533 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7802941987137369227, guid: b15c97de5b38a664ca99c1e9a7c37266,
+  m_CorrespondingSourceObject: {fileID: 1743656024573548476, guid: b15c97de5b38a664ca99c1e9a7c37266,
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4368275670631245443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7645040890860434525, guid: b15c97de5b38a664ca99c1e9a7c37266,
-    type: 3}
-  m_PrefabInstance: {fileID: 2988244200385506592}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4936459501402317870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7924562414005553422, guid: b15c97de5b38a664ca99c1e9a7c37266,
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
@@ -200,6 +208,18 @@ GameObject:
 --- !u!1 &6707642411039910109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8389701977100617213, guid: b15c97de5b38a664ca99c1e9a7c37266,
+    type: 3}
+  m_PrefabInstance: {fileID: 2988244200385506592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6872721627705736884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -713627384824065132, guid: b15c97de5b38a664ca99c1e9a7c37266,
+    type: 3}
+  m_PrefabInstance: {fileID: 2988244200385506592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7658594257495880901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4841557216059857381, guid: b15c97de5b38a664ca99c1e9a7c37266,
     type: 3}
   m_PrefabInstance: {fileID: 2988244200385506592}
   m_PrefabAsset: {fileID: 0}
@@ -325,22 +345,22 @@ PrefabInstance:
         type: 3}
       propertyPath: 'HairStyles.Array.data[0]'
       value: 
-      objectReference: {fileID: 4237326353196328533}
+      objectReference: {fileID: 7658594257495880901}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[1]'
       value: 
-      objectReference: {fileID: 4936459501402317870}
+      objectReference: {fileID: 3551886199724735132}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[2]'
       value: 
-      objectReference: {fileID: 1700182080472648432}
+      objectReference: {fileID: 2965071268632113975}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairStyles.Array.data[3]'
       value: 
-      objectReference: {fileID: 3804825118240062073}
+      objectReference: {fileID: 6872721627705736884}
     - target: {fileID: 2715733171637461081, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: 'HairColours.Array.data[0]'
