@@ -143,6 +143,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3db0a8eea670e3d448b8fbdf8293d4e8, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 8660ef0f8ae48694e8e411e648569047,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5879317004104800067, guid: 8660ef0f8ae48694e8e411e648569047,
         type: 3}
       propertyPath: m_IsActive
@@ -301,6 +306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178931881211741234, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 679991859407615863, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}

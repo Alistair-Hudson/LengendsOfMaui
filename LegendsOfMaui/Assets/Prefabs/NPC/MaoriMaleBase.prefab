@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3db0a8eea670e3d448b8fbdf8293d4e8, type: 2}
+    - target: {fileID: 5866666021909216657, guid: e72f56b58ad8feb4e91a5b8d2c9e51e1,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6190408980362737120, guid: e72f56b58ad8feb4e91a5b8d2c9e51e1,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -271,6 +276,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 178931881211741234, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 679991859407615863, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
         type: 3}
       propertyPath: m_Name
@@ -376,6 +386,16 @@ PrefabInstance:
       propertyPath: 'HairColours.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 04b8169c3b8b61743ab284b0f27706fc, type: 2}
+    - target: {fileID: 3835878524031482384, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835878524031482384, guid: d0d8a5ab2bbc1874ba4a9038ee49e98f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
