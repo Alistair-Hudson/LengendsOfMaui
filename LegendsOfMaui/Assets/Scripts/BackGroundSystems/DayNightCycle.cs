@@ -14,9 +14,6 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         [SerializeField]
         private Vector3 _noonRotation;
 
-        private float _time = 0;
-        private float _timeRate = 0;
-
         [Header("Sun")]
         [SerializeField]
         private Light _sun = null;
@@ -39,34 +36,38 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         [SerializeField]
         private AnimationCurve _reflectionsIntensityMultiplier;
 
-        private void Start()
+        private float _timeRate = 0;
+        
+        public static float Time { get; private set; } = 0;
+
+        private void Awake()
         {
             _timeRate = 1 / _fullDayLength;
-            _time = _startTime;
+            Time = _startTime;
         }
 
         private void Update()
         {
-            _time += _timeRate * Time.deltaTime;
-            while (_time >= 1)
+            Time += _timeRate * UnityEngine.Time.deltaTime;
+            while (Time >= 1)
             {
-                _time--;
+                Time--;
             }
 
-            _sun.transform.eulerAngles = (_time - 0.25f) * _noonRotation * 4;
-            _moon.transform.eulerAngles = (_time - 0.75f) * _noonRotation * 4;
+            _sun.transform.eulerAngles = (Time - 0.25f) * _noonRotation * 4;
+            _moon.transform.eulerAngles = (Time - 0.75f) * _noonRotation * 4;
 
-            _sun.intensity = _sunIntensity.Evaluate(_time);
-            _moon.intensity = _moonIntensity.Evaluate(_time);
+            _sun.intensity = _sunIntensity.Evaluate(Time);
+            _moon.intensity = _moonIntensity.Evaluate(Time);
 
-            _sun.color = _sunColour.Evaluate(_time);
-            _moon.color = _moonColour.Evaluate(_time);
+            _sun.color = _sunColour.Evaluate(Time);
+            _moon.color = _moonColour.Evaluate(Time);
 
             ActivateDeactivateLight(_sun);
             ActivateDeactivateLight(_moon);
 
-            RenderSettings.ambientIntensity = _lightingIntensityMultiplier.Evaluate(_time);
-            RenderSettings.reflectionIntensity = _reflectionsIntensityMultiplier.Evaluate(_time);
+            RenderSettings.ambientIntensity = _lightingIntensityMultiplier.Evaluate(Time);
+            RenderSettings.reflectionIntensity = _reflectionsIntensityMultiplier.Evaluate(Time);
         }
 
         private void ActivateDeactivateLight(Light light)
@@ -83,14 +84,14 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         public object CaptureState()
         {
-            return _time;
+            return Time;
         }
 
         public void RestoreState(object state)
         {
             if (state is float)
             {
-                _time = (float)state;
+                Time = (float)state;
             }
         }
     }
