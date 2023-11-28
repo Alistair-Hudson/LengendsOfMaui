@@ -1,4 +1,5 @@
 using AlictronicGames.LegendsOfMaui.Saving;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,10 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         private float _fullDayLength = 0;
         [SerializeField]
         private float _startTime = 0;
+        [SerializeField]
+        private static float _dawnTime = 0.3f;
+        [SerializeField]
+        private static float _duskTime = 0.7f;
         [SerializeField]
         private Vector3 _noonRotation;
 
@@ -39,6 +44,9 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         private float _timeRate = 0;
         
         public static float Time { get; private set; } = 0;
+        public static bool IsNight { get => !(Time > _dawnTime && Time < _duskTime); }
+
+        public static Action<bool> NightIsActiveEvent; 
 
         private void Awake()
         {
@@ -52,6 +60,15 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             while (Time >= 1)
             {
                 Time--;
+            }
+
+            if (IsNight)
+            {
+                NightIsActiveEvent?.Invoke(IsNight);
+            }
+            else
+            {
+                NightIsActiveEvent?.Invoke(IsNight);
             }
 
             _sun.transform.eulerAngles = (Time - 0.25f) * _noonRotation * 4;
