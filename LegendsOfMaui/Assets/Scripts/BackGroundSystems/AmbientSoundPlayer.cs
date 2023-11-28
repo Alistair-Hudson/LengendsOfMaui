@@ -26,13 +26,13 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         {
             while (true)
             {
-                if (DayNightCycle.Time >= 0.3f && DayNightCycle.Time < 0.7f)
-                {
-                    PlaySound(_dayBirdSounds);
-                }
-                else if (DayNightCycle.Time < 0.2f || DayNightCycle.Time > 0.8f)
+                if (DayNightCycle.IsNight)
                 {
                     PlaySound(_nightBirdSounds);
+                }
+                else
+                {
+                    PlaySound(_dayBirdSounds);
                 }
                 yield return new WaitForSeconds(_delayBetweenSounds);
             }

@@ -1,4 +1,6 @@
+using AlictronicGames.LegendsOfMaui.BackGroundSystems;
 using AlictronicGames.LegendsOfMaui.DeveloperTools;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +15,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
         private WayPoint _destination = null;
         [SerializeField]
         private float _wayPointStopDistance = 1;
+        [SerializeField]
+        private bool _isNocturnal = false;
 
         private readonly int FORWARD_SPEED = Animator.StringToHash("ForwardMovement");
         private readonly int MOVEMENT = Animator.StringToHash("Movement");
@@ -41,15 +45,42 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             }
             _animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
             _animator.SetFloat(FORWARD_SPEED, animationSpeed, ANIMATOR_DAMP_TIME, Time.deltaTime);
+
+            if (_isNocturnal)
+            {
+                DayNightCycle.NightIsActiveEvent += HandleNightActivation;
+                HandleNightActivation(DayNightCycle.IsNight);
+            }
         }
 
         private void Update()
+        {
+            if (_destination)
+            {
+                ChangeDestinationIfClose();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_isNocturnal)
+            {
+                DayNightCycle.NightIsActiveEvent -= HandleNightActivation;
+            }
+        }
+
+        private void ChangeDestinationIfClose()
         {
             if (Vector3.Distance(_destination.Position, transform.position) <= _wayPointStopDistance)
             {
                 _destination = _destination.NextWayPoint;
                 _navMeshAgent.SetDestination(_destination.Position);
             }
+        }
+
+        private void HandleNightActivation(bool state)
+        {
+            gameObject.SetActive(state);
         }
     }
 }
