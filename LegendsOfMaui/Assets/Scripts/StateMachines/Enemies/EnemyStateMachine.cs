@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.BackGroundSystems;
 using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
@@ -16,6 +17,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
     {
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
+        [SerializeField]
+        private bool _isNocternal = false;
 
         [field: SerializeField]
         public float PlayerChaseRange { get; private set; } = 0f;
@@ -60,6 +63,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void Start()
         {
             SwitchState(new EnemyIdleState(this));
+            if (_isNocternal)
+            {
+                DayNightCycle.NightIsActiveEvent += HandleNightActivation;
+                HandleNightActivation(DayNightCycle.IsNight);
+            }
         }
 
         private void OnEnable()
@@ -74,6 +82,14 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             _health.OnDeath -= HandleOnDeath;
         }
 
+        private void OnDestroy()
+        {
+            if (_isNocternal)
+            {
+                DayNightCycle.NightIsActiveEvent -= HandleNightActivation;
+            }
+        }
+
         private void HandleOnDeath()
         {
             SwitchState(new EnemyDeathState(this));
@@ -82,6 +98,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void HandleOnTakeDamage(float maxHealth, float currentHealth)
         {
             SwitchState(new EnemyImpactState(this));
+        }
+
+        private void HandleNightActivation(bool state)
+        {
+            gameObject.SetActive(state);
         }
 
         private void OnDrawGizmosSelected()
