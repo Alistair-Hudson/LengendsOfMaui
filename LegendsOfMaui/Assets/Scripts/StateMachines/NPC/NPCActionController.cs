@@ -12,6 +12,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
     public class NPCActionController : MonoBehaviour
     {
         [SerializeField]
+        private AnimatorOverrideController _animatorOverrideController = null;
+        [SerializeField]
         private WayPoint _destination = null;
         [SerializeField]
         private float _wayPointStopDistance = 1;
@@ -33,6 +35,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _collider = GetComponent<Collider>();
             _animator = GetComponentInChildren<Animator>();
+
+            if (_animatorOverrideController)
+            {
+                _animator.runtimeAnimatorController = _animatorOverrideController;
+            }
         }
 
         private void Start()
