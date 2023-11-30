@@ -19,11 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private AnimatorOverrideController _animatorOverrideController = null;
 
         [field: SerializeField]
-        public float Attack1Damage { get; private set; } = 0f;
-        [field: SerializeField]
-        public float Attack2Damage { get; private set; } = 0f;
-        [field: SerializeField]
-        public float Attack3Damage { get; private set; } = 0f;
+        public float[] AttackDamage { get; private set; }
         [field: SerializeField]
         public float KnockBackForce { get; private set; } = 0f;
 
