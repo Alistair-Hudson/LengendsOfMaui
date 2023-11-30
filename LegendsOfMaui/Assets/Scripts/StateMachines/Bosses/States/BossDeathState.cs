@@ -17,7 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
-            stateMachine.CharacterController.enabled = false;
+            stateMachine.Collider.enabled = false;
             GameObject.Destroy(stateMachine.GetComponent<Target>());
         }
 

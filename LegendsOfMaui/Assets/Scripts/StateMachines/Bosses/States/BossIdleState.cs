@@ -26,8 +26,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            Move(deltaTime);
-
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 0, ANIMATOR_DAMP_TIME, deltaTime);
         }
 

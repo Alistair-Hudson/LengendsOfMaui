@@ -11,8 +11,7 @@ using UnityEngine.AI;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 {
-    [RequireComponent(typeof(CharacterController), typeof(ForceReceiver), typeof(NavMeshAgent))]
-    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(Collider), typeof(Health))]
     public class BossStateMachine : StateMachine
     {
         [SerializeField]
@@ -26,11 +25,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private Health _health = null;
 
         public Animator Animator { get; private set; } = null;
-        public CharacterController CharacterController { get; private set; } = null;
+        public Collider Collider { get; private set; } = null;
 
         private void Awake()
         {
-            CharacterController = GetComponent<CharacterController>();
+            Collider = GetComponent<Collider>();
             _health = GetComponent<Health>();
 
             Animator = GetComponentInChildren<Animator>();

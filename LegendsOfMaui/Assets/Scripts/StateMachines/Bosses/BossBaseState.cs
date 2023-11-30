@@ -12,15 +12,5 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         {
             stateMachine = bossStateMachine;
         }
-
-        protected void Move(Vector3 motion, float deltaTime)
-        {
-            stateMachine.CharacterController.Move(motion * deltaTime);
-        }
-
-        protected void Move(float deltaTime)
-        {
-            Move(Vector3.zero, deltaTime);
-        }
     }
 }
