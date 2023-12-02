@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -26,12 +26,12 @@ PrefabInstance:
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -123,6 +123,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8592918227696481782}
     m_Modifications:
+    - target: {fileID: 1834789084390922583, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: -2.3561945
+      objectReference: {fileID: 0}
     - target: {fileID: 2030086647175827319, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -178,10 +183,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2475394861040476783, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 2.3561945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896113932439322216, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: -1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563955470331301182, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212839457442175403, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212839457442175403, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212839457442175403, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212839457442175403, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212839457442175403, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753038336083597326, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: -0.7853981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773094758067609258, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0.7853981
+      objectReference: {fileID: 0}
     - target: {fileID: 7743345670294161292, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
         type: 3}
       propertyPath: m_Name
       value: Tama-Nui-Te-RaModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060270406413758002, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
