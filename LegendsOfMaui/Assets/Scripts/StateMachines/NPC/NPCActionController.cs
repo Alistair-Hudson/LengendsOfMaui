@@ -44,15 +44,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
 
         private void Start()
         {
-            float animationSpeed = IDLE_SPEED;
-            if (_destination)
-            {
-                _navMeshAgent.SetDestination(_destination.Position);
-                animationSpeed = WALK_SPEED;
-            }
-            _animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
-            _animator.SetFloat(FORWARD_SPEED, animationSpeed, ANIMATOR_DAMP_TIME, Time.deltaTime);
-
             if (_isNocturnal)
             {
                 DayNightCycle.NightIsActiveEvent += HandleNightActivation;
@@ -66,6 +57,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             {
                 ChangeDestinationIfClose();
             }
+        }
+
+        private void OnEnable()
+        {
+            float animationSpeed = IDLE_SPEED;
+            if (_destination)
+            {
+                _navMeshAgent.SetDestination(_destination.Position);
+                animationSpeed = WALK_SPEED;
+            }
+            _animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
+            _animator.SetFloat(FORWARD_SPEED, animationSpeed, ANIMATOR_DAMP_TIME, Time.deltaTime);
         }
 
         private void OnDestroy()
