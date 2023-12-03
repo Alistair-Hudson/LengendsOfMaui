@@ -14,6 +14,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 14ed58d93601cef4d929f20eef3065ce,
         type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: <AttackRange>k__BackingField
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: <AttackDamage>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 759411736839749815, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
       propertyPath: m_Height
@@ -99,6 +109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maero
       objectReference: {fileID: 0}
+    - target: {fileID: 8027280511357074165, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4155144632826237746, guid: 5c0d47298f45a1e41a264ba17638bb1f, type: 3}
@@ -142,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 8613355205632913198, guid: 4509efb18c68b084189c862af4533e84,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9007132664398282783, guid: 4509efb18c68b084189c862af4533e84,
         type: 3}
@@ -237,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6057971398241364418}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af66ca0d801e4d429dc1e463447edff, type: 3}
   m_Name: 

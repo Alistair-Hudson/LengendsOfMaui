@@ -138,6 +138,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 2b9ab6fe64efc9046982183876c18e80,
         type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: <AttackRange>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: <AttackDamage>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 759411736839749815, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
       propertyPath: m_Height
@@ -266,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 8613355205632913198, guid: 4509efb18c68b084189c862af4533e84,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9007132664398282783, guid: 4509efb18c68b084189c862af4533e84,
         type: 3}
@@ -375,7 +385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8285324802612554605}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392846631746569283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af66ca0d801e4d429dc1e463447edff, type: 3}
   m_Name: 

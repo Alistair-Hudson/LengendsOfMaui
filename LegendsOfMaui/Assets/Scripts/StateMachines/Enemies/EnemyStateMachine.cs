@@ -109,6 +109,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, PlayerChaseRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, AttackRange);
         }
     }
 }
