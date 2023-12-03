@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -63,6 +63,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: <AttackDamage>k__BackingField.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0]._delayBetweenUse
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<AttackDamage>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_Name
@@ -107,7 +127,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 12.5
+  m_Radius: 14.94
   m_Center: {x: 0, y: 9.87, z: 0}
 --- !u!4 &8592918227696481782 stripped
 Transform:
@@ -183,6 +203,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2030086647175827319, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2475394861040476783, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
         type: 3}
       propertyPath: InitialModule.startRotation.scalar
@@ -251,6 +276,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7363528114574159249}
+    - targetCorrespondingSourceObject: {fileID: 7743345670294161292, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4966648064778596361}
   m_SourcePrefab: {fileID: 100100000, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa, type: 3}
 --- !u!1 &852057451527251232 stripped
 GameObject:
@@ -268,10 +297,10 @@ Animator:
   m_GameObject: {fileID: 852057451527251232}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce2213e4c05ca9c4098a8c16f0427a26, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -280,6 +309,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4966648064778596361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852057451527251232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de00b9cacb0d0294fbc2cc99bad31813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8974178086155005403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2030086647175827319, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,

@@ -14,11 +14,38 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
     [RequireComponent(typeof(Collider), typeof(Health))]
     public class BossStateMachine : StateMachine
     {
+        [Serializable]
+        public class AttackData
+        {
+            [SerializeField]
+            private float _delayBetweenUse = 0;
+
+            [field: SerializeField]
+            public float AttackDamage { get; private set; } = 0;
+
+            public float TimeSinceLastUsed { get; private set; } = 0;
+
+            public void UpdateTimeSinceLastUsed(float deltaTime)
+            {
+                TimeSinceLastUsed += deltaTime;
+            }
+
+            public bool AttackIsReadyForUse()
+            {
+                if (TimeSinceLastUsed >= _delayBetweenUse)
+                {
+                    TimeSinceLastUsed = 0;
+                    return true;
+                }
+                return false;
+            }
+        }
+
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
 
         [field: SerializeField]
-        public float[] AttackDamage { get; private set; }
+        public AttackData[] Attacks { get; private set; }
         [field: SerializeField]
         public float KnockBackForce { get; private set; } = 0f;
 

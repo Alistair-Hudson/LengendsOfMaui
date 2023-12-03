@@ -6,8 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 {
     public class BossIdleState : BossBaseState
     {
-        private readonly int FORWARD_SPEED = Animator.StringToHash("ForwardMovement");
-        private readonly int MOVEMENT = Animator.StringToHash("Movement");
+        private readonly int IDLE = Animator.StringToHash("Idle");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         public BossIdleState(BossStateMachine bossStateMachine) : base(bossStateMachine)
@@ -16,7 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Enter()
         {
-            stateMachine.Animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
+            stateMachine.Animator.CrossFadeInFixedTime(IDLE, ANIMATOR_DAMP_TIME);
         }
 
         public override void Exit()
@@ -26,7 +25,14 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            stateMachine.Animator.SetFloat(FORWARD_SPEED, 0, ANIMATOR_DAMP_TIME, deltaTime);
+            for (int i = 0; i < stateMachine.Attacks.Length; i++)
+            {
+                stateMachine.Attacks[i].UpdateTimeSinceLastUsed(deltaTime);
+                if (stateMachine.Attacks[i].AttackIsReadyForUse())
+                {
+                    stateMachine.SwitchState(new BossAttackState(stateMachine, i));
+                }
+            }
         }
 
         public override void FixedTick()
