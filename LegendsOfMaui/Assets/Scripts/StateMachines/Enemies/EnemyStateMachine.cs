@@ -95,9 +95,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             SwitchState(new EnemyDeathState(this));
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
         {
-            SwitchState(new EnemyImpactState(this));
+            if (causesImpact)
+            {
+                SwitchState(new EnemyImpactState(this));
+            }
         }
 
         private void HandleNightActivation(bool state)

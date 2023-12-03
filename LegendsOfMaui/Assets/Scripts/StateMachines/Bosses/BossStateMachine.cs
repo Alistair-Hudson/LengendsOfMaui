@@ -94,9 +94,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             SwitchState(new BossDeathState(this));
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
         {
-            SwitchState(new BossImpactState(this));
+            if (causesImpact)
+            {
+                SwitchState(new BossImpactState(this));
+            }
         }
     }
 }

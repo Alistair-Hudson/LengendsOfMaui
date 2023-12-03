@@ -128,9 +128,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             SwitchState(new PlayerDeathState(this));
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
         {
-            SwitchState(new PlayerImapctState(this));
+            if (causesImpact)
+            {
+                SwitchState(new PlayerImapctState(this));
+            }
         }
 
         private void HandleWeaponSwap()

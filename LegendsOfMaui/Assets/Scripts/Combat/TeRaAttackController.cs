@@ -49,13 +49,14 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public void CallAttack1()
         {
-            var attackInstance = Instantiate(_attack1Prefab, transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.Attacks[1].AttackDamage);
+            var attackInstance = Instantiate(_attack1Prefab, _playerStateMachine.transform.position, Quaternion.identity);
+            attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.Attacks[1].AttackDamage);
         }
 
         public void CallAttack2()
         {
-            var attackInstance = Instantiate(_attack2Prefab);
+            var attackInstance = Instantiate(_attack2Prefab, transform.position, Quaternion.identity);
+            attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.Attacks[2].AttackDamage);
         }
     }
 }
