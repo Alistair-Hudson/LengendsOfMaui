@@ -43,7 +43,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
-
+        [field: SerializeField]
+        public Animator Animator { get; private set; } = null;
         [field: SerializeField]
         public AttackData[] Attacks { get; private set; }
         [field: SerializeField]
@@ -51,15 +52,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         private Health _health = null;
 
-        public Animator Animator { get; private set; } = null;
         public Collider Collider { get; private set; } = null;
 
         private void Awake()
         {
             Collider = GetComponent<Collider>();
             _health = GetComponent<Health>();
-
-            Animator = GetComponentInChildren<Animator>();
 
             if (_animatorOverrideController != null)
             {

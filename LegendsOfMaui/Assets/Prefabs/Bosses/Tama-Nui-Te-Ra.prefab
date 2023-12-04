@@ -96,6 +96,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
+      propertyPath: <Animator>k__BackingField
+      value: 
+      objectReference: {fileID: 7363528114574159249}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -107,17 +112,17 @@ PrefabInstance:
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0]._delayBetweenUse
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1]._delayBetweenUse
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2]._delayBetweenUse
-      value: 10
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -127,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1].<AttackDamage>k__BackingField
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
@@ -156,6 +161,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2734725068149245214}
+    - targetCorrespondingSourceObject: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6805932846654878996}
   m_SourcePrefab: {fileID: 100100000, guid: cf14943fd9776a5479713572192f88e2, type: 3}
 --- !u!1 &3892878457089982708 stripped
 GameObject:
@@ -184,6 +193,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 14.94
   m_Center: {x: 0, y: 9.87, z: 0}
+--- !u!95 &6805932846654878996
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892878457089982708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8592918227696481782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
@@ -355,7 +386,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ce2213e4c05ca9c4098a8c16f0427a26, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -378,7 +409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackSpawnpoint: {fileID: 1715947937941511854}
   _attack0Prefab: {fileID: 100008, guid: 87a347a6f99d3224eab2eb8a05ad22ed, type: 3}
-  _attack1Prefab: {fileID: 100010, guid: bff1f89ca779145478cf5f59dbd47ad9, type: 3}
+  _attack1Prefab: {fileID: 1865603112017772757, guid: ad5c5c71a3198e64fa06d11e8fecf4dc,
+    type: 3}
   _attack2Prefab: {fileID: 100010, guid: bff1f89ca779145478cf5f59dbd47ad9, type: 3}
   _attack0Speed: 10
   _attack1Speed: 1
