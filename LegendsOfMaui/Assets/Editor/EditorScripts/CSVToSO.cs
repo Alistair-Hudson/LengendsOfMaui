@@ -10,7 +10,7 @@ namespace AlictronicGames.LegendsOfMaui.Editor
 {
     public class CSVToSO : MonoBehaviour
     {
-        private static string _progressCSVPath = "/Editor/CSVs/Moves.csv";
+        private static string _progressCSVPath = "/Editor/CSVs/PlayerStats.csv";
         private static string _monstersCSVPath = "/Editor/CSVs/Monsters";
 
         [MenuItem("Tools/Generate Monster Stats")]
@@ -42,7 +42,30 @@ namespace AlictronicGames.LegendsOfMaui.Editor
             for (int i = 1; i < lines.Length; i++)
             {
                 string[] line = lines[i].Split(',');
-                monsterStats.SetMonsterStats();
+                monsterStats.SetMonsterStats(i, line);
+            }
+        }
+
+        [MenuItem("Tools/Generate Player Progession Stats")]
+        public static void GeneratePlayerProgessionStats()
+        {
+            string[] lines = File.ReadAllLines(Application.dataPath + _progressCSVPath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] line = lines[i].Split(',');
+                PlayerProgession playerProgession = AssetDatabase.LoadAssetAtPath("Assets/Resources/PlayerProgression.asset", typeof(PlayerProgession)) as PlayerProgession;
+                if (playerProgession)
+                {
+                    playerProgession.SetStat(i, line);
+                }
+                else
+                {
+                    playerProgession = ScriptableObject.CreateInstance<PlayerProgession>();
+                    playerProgession.SetStat(i, line);
+                    AssetDatabase.CreateAsset(playerProgession, "Assets/Resources/PlayerProgression.asset");
+                }
+
+                AssetDatabase.SaveAssets();
             }
         }
     }
