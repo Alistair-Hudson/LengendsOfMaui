@@ -9,6 +9,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
     {
         [SerializeField]
         private float _maxHealth = 100f;
+        [SerializeField]
+        private float _healthRegenPerSecond = 0;
 
         private float _currentHealth = 0;
 
@@ -52,6 +54,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void SetInvulnerability(bool invulnerable)
         {
             _isInvulnerable = invulnerable;
+        }
+
+        public void RegenerateHealth(float deltaTime)
+        {
+            RestoreHealth(_healthRegenPerSecond * deltaTime);
         }
     }
 }

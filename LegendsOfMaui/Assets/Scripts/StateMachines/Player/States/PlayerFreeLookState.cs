@@ -60,6 +60,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 return;
             }
 
+            stateMachine.Health.RestoreHealth(deltaTime);
             FaceMovementDirection(movement);
         }
 
