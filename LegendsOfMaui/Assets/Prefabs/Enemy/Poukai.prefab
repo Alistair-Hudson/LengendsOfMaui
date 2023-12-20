@@ -146,6 +146,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
+      propertyPath: _statsTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 190a92c56f3da834c81868f0c24a854d,
+        type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
       propertyPath: _animatorOverrideController
       value: 
       objectReference: {fileID: 22100000, guid: c8345fed63a718245b9b8fdc66dcd081,
@@ -393,7 +399,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
