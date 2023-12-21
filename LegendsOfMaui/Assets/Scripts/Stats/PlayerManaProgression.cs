@@ -102,9 +102,18 @@ namespace AlictronicGames.LegendsOfMaui.Stats
                 _manaPool = saveData.ManaPool;
                 _totalMatuMana = saveData.TotalMatuMana;
                 _totalKoruMana = saveData.TotalKoruMana;
-                _matuLevel = saveData.MatuLevel;
-                _koruLevel = saveData.KoruLevel;
+
+                for (int i = 0; i <= saveData.MatuLevel; i++)
+                {
+                    MatuLevelUp();
+                }
+
+                for (int j = 0; j <= saveData.KoruLevel; j++)
+                {
+                    KoruLevelUp();
+                }
             }
+
         }
     }
 }
