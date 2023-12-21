@@ -66,7 +66,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             MaxHealth = newMaxHealth;
         }
 
-        public void SetHelathRegen(float newHealthRegen)
+        public void SetHealthRegen(float newHealthRegen)
         {
             HealthRegenPerSecond = newHealthRegen;
         }

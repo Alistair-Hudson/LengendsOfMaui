@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Stats
 {
-    public class PlayerProgession : ScriptableObject
+    public class PlayerProgessionTable : ScriptableObject
     {
         [SerializeField]
         private int AtackDamageIndex = 1;

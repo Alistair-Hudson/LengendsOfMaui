@@ -53,7 +53,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private WeaponType _activeWeapon = WeaponType.Mere;
         private WeaponHandler _weaponHandler = null;
 
-
         public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
@@ -64,6 +63,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public WeaponDamage CurrentWeaponDamage { get; private set; } = null;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
+        public float AdditionalAttackDamage { get; private set; } = 0;
         public bool IsShapeShifted { get; private set; } = false;
 
         #region UnityMethods
@@ -211,6 +211,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 Attacks[i] = oldAttacks[i];
             }
             Attacks[oldAttacks.Length] = newAttack;
+        }
+
+        public void IncreaseAdditionalAttackDamage(float damageIncrease)
+        {
+            AdditionalAttackDamage += damageIncrease;
         }
         #endregion
     }

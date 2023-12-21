@@ -53,14 +53,14 @@ namespace AlictronicGames.LegendsOfMaui.Editor
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] line = lines[i].Split(',');
-                PlayerProgession playerProgession = AssetDatabase.LoadAssetAtPath("Assets/Resources/PlayerProgression.asset", typeof(PlayerProgession)) as PlayerProgession;
+                PlayerProgessionTable playerProgession = AssetDatabase.LoadAssetAtPath("Assets/Resources/PlayerProgression.asset", typeof(PlayerProgessionTable)) as PlayerProgessionTable;
                 if (playerProgession)
                 {
                     playerProgession.SetStat(i, line);
                 }
                 else
                 {
-                    playerProgession = ScriptableObject.CreateInstance<PlayerProgession>();
+                    playerProgession = ScriptableObject.CreateInstance<PlayerProgessionTable>();
                     playerProgession.SetStat(i, line);
                     AssetDatabase.CreateAsset(playerProgession, "Assets/Resources/PlayerProgression.asset");
                 }
