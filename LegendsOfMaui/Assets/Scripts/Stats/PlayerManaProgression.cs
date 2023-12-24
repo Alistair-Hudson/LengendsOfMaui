@@ -50,9 +50,9 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             _matuLevel++;
             var matuLevelData = _progessionTable.MatuDatas[_matuLevel];
             _playerStateMachine.IncreaseAdditionalAttackDamage(matuLevelData.AttackDamageIncrease);
-            if (matuLevelData.IncreaseNumberOfAttacks)
+            if (matuLevelData.NewAttack != null)
             {
-                _playerStateMachine.AddAttack(null);
+                _playerStateMachine.AddAttack(matuLevelData.NewAttack);
             }
         }
 

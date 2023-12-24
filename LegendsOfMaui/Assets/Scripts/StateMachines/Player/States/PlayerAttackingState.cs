@@ -19,7 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
-            stateMachine.CurrentWeaponDamage.SetAttack(_attack.AtackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
+            stateMachine.CurrentWeaponDamage.SetAttack(_attack.AttackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
         }
 
         public override void Exit()
@@ -61,7 +61,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region PrivateMethods
         private void TryComboAttack(float normalizedTime)
         {
-            if (_attack.ComboStateIndex == -1)
+            if (_attack.ComboStateIndex == -1 || _attack.ComboStateIndex >= stateMachine.Attacks.Length)
             {
                 return;
             }

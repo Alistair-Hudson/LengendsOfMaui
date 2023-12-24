@@ -23,8 +23,20 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: SerializeField]
         public float Force { get; private set; } = 0;
         [field: SerializeField]
-        public float AtackDamage { get; private set; } = 0;
+        public float AttackDamage { get; private set; } = 0;
         [field: SerializeField]
         public float KnockbackForce { get; private set; } = 0;
+
+        public AttackData(string animationName, float tranistionDuration, int comboStateIndex, float comboAttackTime, float forceTime, float force, float attackDamage, float knockbackForce)
+        {
+            AnimationName = animationName;
+            TransitionDuration = tranistionDuration;
+            ComboStateIndex = comboStateIndex;
+            ComboAttackTime = comboAttackTime;
+            ForceTime = forceTime;
+            Force = force;
+            AttackDamage = attackDamage;
+            KnockbackForce = knockbackForce;
+        }
     }
 }

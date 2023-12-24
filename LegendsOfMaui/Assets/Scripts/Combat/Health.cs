@@ -64,6 +64,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void SetMaxHealth(float newMaxHealth)
         {
             MaxHealth = newMaxHealth;
+            _currentHealth = MaxHealth;
         }
 
         public void SetHealthRegen(float newHealthRegen)

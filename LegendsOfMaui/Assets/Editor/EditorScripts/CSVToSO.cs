@@ -10,7 +10,8 @@ namespace AlictronicGames.LegendsOfMaui.Editor
 {
     public class CSVToSO
     {
-        private static string _progressCSVPath = "/Editor/CSVs/PlayerStats.csv";
+        private static string _matuProgressCSVPath = "/Editor/CSVs/MatuProgress.csv";
+        private static string _koruProgressCSVPath = "/Editor/CSVs/KoruProgress.csv";
         private static string _monstersCSVPath = "/Editor/CSVs/Monsters";
 
         [MenuItem("Tools/Generate Monster Stats")]
@@ -49,19 +50,26 @@ namespace AlictronicGames.LegendsOfMaui.Editor
         [MenuItem("Tools/Generate Player Progession Stats")]
         public static void GeneratePlayerProgessionStats()
         {
-            string[] lines = File.ReadAllLines(Application.dataPath + _progressCSVPath);
-            for (int i = 0; i < lines.Length; i++)
+            string[] matuLines = File.ReadAllLines(Application.dataPath + _matuProgressCSVPath);
+            string[] koruLines = File.ReadAllLines(Application.dataPath + _koruProgressCSVPath);
+            if (matuLines.Length != koruLines.Length)
             {
-                string[] line = lines[i].Split(',');
+                Debug.LogError("Ensure that the number of Matu levels and Koru Levels are equal");
+            }
+
+            for (int i = 0; i < matuLines.Length; i++)
+            {
+                string[] matuLine = matuLines[i].Split(',');
+                string[] koruLine = koruLines[i].Split(',');
                 PlayerProgessionTable playerProgession = AssetDatabase.LoadAssetAtPath("Assets/Resources/PlayerProgression.asset", typeof(PlayerProgessionTable)) as PlayerProgessionTable;
                 if (playerProgession)
                 {
-                    playerProgession.SetStat(i, line);
+                    playerProgession.SetStat(i, matuLine, koruLine);
                 }
                 else
                 {
                     playerProgession = ScriptableObject.CreateInstance<PlayerProgessionTable>();
-                    playerProgession.SetStat(i, line);
+                    playerProgession.SetStat(i, matuLine, koruLine);
                     AssetDatabase.CreateAsset(playerProgession, "Assets/Resources/PlayerProgression.asset");
                 }
 

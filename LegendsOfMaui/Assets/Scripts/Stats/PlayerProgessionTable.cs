@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System.Collections;
@@ -8,19 +9,38 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 {
     public class PlayerProgessionTable : SerializedScriptableObject
     {
+        [Header("Matu Indicies")]
         [SerializeField]
-        private int AtackDamageIndex = 1;
+        private int _attackDamageIncreaseIndex = 1;
         [SerializeField]
-        private int AttackNumberIndex = 2;
+        private int _attackNumberIndex = 2;
         [SerializeField]
-        private int MaxHealthIndex = 3;
+        private int _animationNameIndex = 3;
         [SerializeField]
-        private int HealthRegenIndex = 4;
+        private int _transitionDurationIndex = 4;
+        [SerializeField]
+        private int _comboStateIndex = 5;
+        [SerializeField]
+        private int _comboAttackTimeIndex = 6;
+        [SerializeField]
+        private int _forceTimeIndex = 7;
+        [SerializeField]
+        private int _forceIndex = 8;
+        [SerializeField]
+        private int _attackDamageIndex = 9;
+        [SerializeField]
+        private int _knockbackForce = 10;
+
+        [Header("Koru Indicies")]
+        [SerializeField]
+        private int _maxHealthIndex = 1;
+        [SerializeField]
+        private int _healthRegenIndex = 2;
 
         public struct MatuData
         {
             public float AttackDamageIncrease;
-            public bool IncreaseNumberOfAttacks;
+            public AttackData NewAttack;
         }
 
         public struct KoruData
@@ -34,19 +54,32 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         [OdinSerialize]
         public Dictionary<int, KoruData> KoruDatas { get; private set; } = new Dictionary<int, KoruData>();
 
-        public void SetStat(int level, string[] stats)
+        public void SetStat(int level, string[] matuStats, string[] koruStats)
         {
+            AttackData newAttackData = null;
+            if (bool.Parse(matuStats[_attackNumberIndex]))
+            {
+                newAttackData = new AttackData(matuStats[_animationNameIndex], 
+                                                float.Parse(matuStats[_transitionDurationIndex]), 
+                                                int.Parse(matuStats[_comboStateIndex]),
+                                                float.Parse(matuStats[_comboAttackTimeIndex]),
+                                                float.Parse(matuStats[_forceTimeIndex]),
+                                                float.Parse(matuStats[_forceIndex]),
+                                                float.Parse(matuStats[_attackDamageIndex]),
+                                                float.Parse(matuStats[_knockbackForce])
+                                                );
+            }
             MatuData matuData = new MatuData
             {
-                AttackDamageIncrease = float.Parse(stats[AtackDamageIndex]),
-                IncreaseNumberOfAttacks = bool.Parse(stats[AttackNumberIndex])
+                AttackDamageIncrease = float.Parse(matuStats[_attackDamageIncreaseIndex]),
+                NewAttack = newAttackData
             };
             MatuDatas[level] = matuData;
 
             KoruData koruData = new KoruData
             {
-                MaxHealthIncrease = float.Parse(stats[MaxHealthIndex]),
-                HealthRegenIncrease = float.Parse(stats[HealthRegenIndex])
+                MaxHealthIncrease = float.Parse(koruStats[_maxHealthIndex]),
+                HealthRegenIncrease = float.Parse(koruStats[_healthRegenIndex])
             };
             KoruDatas[level] = koruData;
         }
