@@ -16,8 +16,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
     [RequireComponent(typeof(Health))]
     public class EnemyStateMachine : StateMachine
     {
-        //[SerializeField]
-        //MonsterStats _statsTable = null;
+        [SerializeField]
+        MonsterStats _statsTable = null;
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
         [SerializeField]
@@ -74,8 +74,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 DayNightCycle.NightIsActiveEvent += HandleNightActivation;
                 HandleNightActivation(DayNightCycle.IsNight);
             }
-            //AttackDamage = _statsTable.AttackPerLevel[_level];
-            //_health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
+            AttackDamage = _statsTable.AttackPerLevel[_level];
+            _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
         }
 
         private void OnEnable()
@@ -96,13 +96,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             {
                 DayNightCycle.NightIsActiveEvent -= HandleNightActivation;
             }
-            //float mana = _statsTable.ManaPerLevel[_level];
-            //Debug.Log($"{mana} is given to the player");
         }
 
         private void HandleOnDeath()
         {
             SwitchState(new EnemyDeathState(this));
+            float mana = _statsTable.ManaPerLevel[_level];
+            PlayerManaProgression.AddManaToPool(mana);
         }
 
         private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)

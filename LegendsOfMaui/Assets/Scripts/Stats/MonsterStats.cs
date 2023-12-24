@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,11 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 {
     public class MonsterStats : SerializedScriptableObject
     {
-        [ShowInInspector]
+        [OdinSerialize]
         public Dictionary<int, float> HealthPerLevel { get; private set; } = new Dictionary<int, float>();
-        [ShowInInspector]
+        [OdinSerialize]
         public Dictionary<int, float> AttackPerLevel { get; private set; } = new Dictionary<int, float>();
-        [ShowInInspector]
+        [OdinSerialize]
         public Dictionary<int, float> ManaPerLevel { get; private set; } = new Dictionary<int, float>();
 
         public void SetMonsterStats(int level, string[] stats)

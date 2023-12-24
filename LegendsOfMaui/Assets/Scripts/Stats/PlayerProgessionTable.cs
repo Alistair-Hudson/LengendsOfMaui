@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,9 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             public float HealthRegenIncrease;
         }
 
-        [ShowInInspector]
+        [OdinSerialize]
         public Dictionary<int, MatuData> MatuDatas { get; private set; } = new Dictionary<int, MatuData>();
-        [ShowInInspector]
+        [OdinSerialize]
         public Dictionary<int, KoruData> KoruDatas { get; private set; } = new Dictionary<int, KoruData>();
 
         public void SetStat(int level, string[] stats)
