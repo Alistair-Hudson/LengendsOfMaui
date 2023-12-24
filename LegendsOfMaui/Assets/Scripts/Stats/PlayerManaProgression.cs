@@ -1,5 +1,6 @@
 using AlictronicGames.LegendsOfMaui.Saving;
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,7 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private PlayerStateMachine _playerStateMachine = null;
 
-        private float _manaPool = 0;
+        private static float _manaPool = 0;
         private float _totalMatuMana = 0;
         private float _totalKoruMana = 0;
         private int _matuLevel = 0;
@@ -63,27 +64,42 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             _playerStateMachine.Health.SetHealthRegen(_playerStateMachine.Health.HealthRegenPerSecond + koruData.HealthRegenIncrease);
         }
 
+        private bool LevelUp(ref float mana, int level)
+        {
+            float manaRequired= 1000 * (level + 1); //Temporary level up formula
+            if (mana >= manaRequired)
+            {
+                mana -= manaRequired;
+                return true;
+            }
+            return false;
+        }
+
+        private void AddManaToProgressionTree(ref float treeMana, ref int treeLevel, float mana, Action levelUpFunction)
+        {
+            if (_manaPool < mana)
+            {
+                return;
+            }
+            treeMana += mana;
+            _manaPool -= mana;
+            while (LevelUp(ref treeMana, treeLevel))
+            {
+                levelUpFunction();
+            }
+        }
+
         public void AddManaToMatu(float mana)
         {
-            _totalMatuMana += mana;
-            if (/*level up formula*/false)
-            {
-                MatuLevelUp();
-            }
-
+            AddManaToProgressionTree(ref _totalMatuMana, ref _matuLevel, mana, MatuLevelUp);
         }
 
         public void AddManaToKoru(float mana)
         {
-            _totalKoruMana += mana;
-            if (/*level up formula*/false)
-            {
-                KoruLevelUp();
-            }
-
+            AddManaToProgressionTree(ref _totalKoruMana, ref _koruLevel, mana, KoruLevelUp);
         }
 
-        public void AddManaToPool(float mana)
+        public static void AddManaToPool(float mana)
         {
             _manaPool += mana;
         }

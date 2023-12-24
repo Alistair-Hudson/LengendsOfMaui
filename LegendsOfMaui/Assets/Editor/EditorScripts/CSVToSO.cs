@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Editor
 {
-    public class CSVToSO : MonoBehaviour
+    public class CSVToSO
     {
         private static string _progressCSVPath = "/Editor/CSVs/PlayerStats.csv";
         private static string _monstersCSVPath = "/Editor/CSVs/Monsters";

@@ -1,10 +1,11 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Stats
 {
-    public class PlayerProgessionTable : ScriptableObject
+    public class PlayerProgessionTable : SerializedScriptableObject
     {
         [SerializeField]
         private int AtackDamageIndex = 1;
@@ -27,7 +28,9 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             public float HealthRegenIncrease;
         }
 
+        [ShowInInspector]
         public Dictionary<int, MatuData> MatuDatas { get; private set; } = new Dictionary<int, MatuData>();
+        [ShowInInspector]
         public Dictionary<int, KoruData> KoruDatas { get; private set; } = new Dictionary<int, KoruData>();
 
         public void SetStat(int level, string[] stats)
