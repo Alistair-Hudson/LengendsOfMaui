@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class HeldButtonHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
-    private UnityEvent<float> _buttonActionCall = null;
+    private UnityEvent _buttonActionCall = null;
 
     private bool _isHeld = false;
 
@@ -16,7 +16,7 @@ public class HeldButtonHandler : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (_isHeld)
         {
-            _buttonActionCall.Invoke(1);
+            _buttonActionCall?.Invoke();
         }
     }
 

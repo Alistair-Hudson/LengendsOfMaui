@@ -40,9 +40,19 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         private int _matuLevel = 0;
         private int _koruLevel = 0;
 
+        public int MaxMatuLevel { get => 100; }// _progessionTable.MatuDatas.Count; }
+        public int MaxKoruLevel { get => 100; }// _progessionTable.KoruDatas.Count; }
+        public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }
+        public float ManaRequiredForMaxKoruLevel { get => ManaRequiredToLevelUp(MaxKoruLevel); }
+
+        public event Action<float> MatuManaAdded;
+        public event Action<float> KoruManaAdded;
+
         private void Awake()
         {
             _playerStateMachine = GetComponent<PlayerStateMachine>();
+            MatuManaAdded?.Invoke(_totalMatuMana);
+            KoruManaAdded?.Invoke(_totalKoruMana);
         }
 
         private void MatuLevelUp()
@@ -66,13 +76,17 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private bool LevelUp(ref float mana, int level)
         {
-            float manaRequired= 1000 * (level + 1); //Temporary level up formula
+            float manaRequired = ManaRequiredToLevelUp(level);
             if (mana >= manaRequired)
             {
-                mana -= manaRequired;
                 return true;
             }
             return false;
+        }
+
+        private float ManaRequiredToLevelUp(int level)
+        {
+            return 1000 * (level + 1); //Temporary level up formula
         }
 
         private void AddManaToProgressionTree(ref float treeMana, ref int treeLevel, float mana, Action levelUpFunction)
@@ -92,11 +106,13 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public void AddManaToMatu(float mana)
         {
             AddManaToProgressionTree(ref _totalMatuMana, ref _matuLevel, mana, MatuLevelUp);
+            MatuManaAdded?.Invoke(_totalMatuMana);
         }
 
         public void AddManaToKoru(float mana)
         {
             AddManaToProgressionTree(ref _totalKoruMana, ref _koruLevel, mana, KoruLevelUp);
+            KoruManaAdded?.Invoke(_totalKoruMana);
         }
 
         public static void AddManaToPool(float mana)
@@ -123,13 +139,14 @@ namespace AlictronicGames.LegendsOfMaui.Stats
                 {
                     MatuLevelUp();
                 }
+                MatuManaAdded?.Invoke(_totalMatuMana);
 
                 for (int j = 0; j <= saveData.KoruLevel; j++)
                 {
                     KoruLevelUp();
                 }
+                KoruManaAdded?.Invoke(_totalKoruMana);
             }
-
         }
     }
 }
