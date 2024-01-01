@@ -10,8 +10,8 @@ namespace AlictronicGames.LegendsOfMaui.Editor
 {
     public class CSVToSO
     {
-        private static string _matuProgressCSVPath = "/Editor/CSVs/MatuProgress.csv";
-        private static string _koruProgressCSVPath = "/Editor/CSVs/KoruProgress.csv";
+        private static string _matuProgressCSVPath = "/Editor/CSVs/MatuProgression.csv";
+        private static string _koruProgressCSVPath = "/Editor/CSVs/KoruProgression.csv";
         private static string _monstersCSVPath = "/Editor/CSVs/Monsters";
 
         [MenuItem("Tools/Generate Monster Stats")]
@@ -57,7 +57,7 @@ namespace AlictronicGames.LegendsOfMaui.Editor
                 Debug.LogError("Ensure that the number of Matu levels and Koru Levels are equal");
             }
 
-            for (int i = 0; i < matuLines.Length; i++)
+            for (int i = 1; i < matuLines.Length; i++)
             {
                 string[] matuLine = matuLines[i].Split(',');
                 string[] koruLine = koruLines[i].Split(',');

@@ -35,11 +35,15 @@ namespace AlictronicGames.LegendsOfMaui.UI
 
         private void OnEnable()
         {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
 
         private void OnDisable()
         {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 

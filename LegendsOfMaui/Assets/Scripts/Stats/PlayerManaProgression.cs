@@ -34,14 +34,14 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private PlayerStateMachine _playerStateMachine = null;
 
-        private static float _manaPool = 10000;
+        private static float _manaPool = 3500;
         private float _totalMatuMana = 0;
         private float _totalKoruMana = 0;
         private int _matuLevel = 0;
         private int _koruLevel = 0;
 
-        public int MaxMatuLevel { get => 100; }// _progessionTable.MatuDatas.Count; }
-        public int MaxKoruLevel { get => 100; }// _progessionTable.KoruDatas.Count; }
+        public int MaxMatuLevel { get => _progessionTable.MatuDatas.Count; }
+        public int MaxKoruLevel { get => _progessionTable.KoruDatas.Count; }
         public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }
         public float ManaRequiredForMaxKoruLevel { get => ManaRequiredToLevelUp(MaxKoruLevel); }
 

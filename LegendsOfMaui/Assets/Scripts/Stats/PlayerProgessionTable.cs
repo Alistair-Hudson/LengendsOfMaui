@@ -57,7 +57,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public void SetStat(int level, string[] matuStats, string[] koruStats)
         {
             AttackData newAttackData = null;
-            if (bool.Parse(matuStats[_attackNumberIndex]))
+            if (matuStats[_attackNumberIndex] == "TRUE")
             {
                 newAttackData = new AttackData(matuStats[_animationNameIndex], 
                                                 float.Parse(matuStats[_transitionDurationIndex]), 
