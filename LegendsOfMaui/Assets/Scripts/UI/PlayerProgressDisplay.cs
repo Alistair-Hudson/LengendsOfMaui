@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Controls;
 using AlictronicGames.LegendsOfMaui.Stats;
 using System;
 using System.Collections;
@@ -27,6 +28,9 @@ namespace AlictronicGames.LegendsOfMaui.UI
 
             _playerManaProgression.MatuManaAdded += MatuLevelUpHandler;
             _playerManaProgression.KoruManaAdded += KoruLevelUpHandler;
+
+            _playerManaProgression.GetComponent<InputReader>().OpenCloseProgressMenu += OpenCloseProgressMenuHandler;
+            OpenCloseProgressMenuHandler();
         }
 
         private void OnEnable()
@@ -43,6 +47,7 @@ namespace AlictronicGames.LegendsOfMaui.UI
         {
             _playerManaProgression.MatuManaAdded -= MatuLevelUpHandler;
             _playerManaProgression.KoruManaAdded -= KoruLevelUpHandler;
+            _playerManaProgression.GetComponent<InputReader>().OpenCloseProgressMenu -= OpenCloseProgressMenuHandler;
         }
 
         private void MatuLevelUpHandler(float matuMana, int matuLevel)
@@ -55,6 +60,11 @@ namespace AlictronicGames.LegendsOfMaui.UI
         {
             _koruLevelDisplay.text = $"Koru Level: {koruLevel}";
             _koruProgressDisplay.fillAmount = _playerManaProgression.ProgessPercentage(koruMana, koruLevel);
+        }
+
+        private void OpenCloseProgressMenuHandler()
+        {
+            gameObject.SetActive(!gameObject.activeSelf);
         }
     }
 }

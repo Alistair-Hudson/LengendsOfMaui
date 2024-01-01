@@ -118,6 +118,15 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenProgressMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""785bec42-6e39-43ab-ab67-cdddfb3924c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -384,6 +393,17 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c61b786-001a-438f-899d-ae8384e16510"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""OpenProgressMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -430,6 +450,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             m_Player_SwapWeapon = m_Player.FindAction("SwapWeapon", throwIfNotFound: true);
             m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
             m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
+            m_Player_OpenProgressMenu = m_Player.FindAction("OpenProgressMenu", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -501,6 +522,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputAction m_Player_SwapWeapon;
         private readonly InputAction m_Player_Transform;
         private readonly InputAction m_Player_Action;
+        private readonly InputAction m_Player_OpenProgressMenu;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -515,6 +537,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             public InputAction @SwapWeapon => m_Wrapper.m_Player_SwapWeapon;
             public InputAction @Transform => m_Wrapper.m_Player_Transform;
             public InputAction @Action => m_Wrapper.m_Player_Action;
+            public InputAction @OpenProgressMenu => m_Wrapper.m_Player_OpenProgressMenu;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -554,6 +577,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Action.started += instance.OnAction;
                 @Action.performed += instance.OnAction;
                 @Action.canceled += instance.OnAction;
+                @OpenProgressMenu.started += instance.OnOpenProgressMenu;
+                @OpenProgressMenu.performed += instance.OnOpenProgressMenu;
+                @OpenProgressMenu.canceled += instance.OnOpenProgressMenu;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -588,6 +614,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Action.started -= instance.OnAction;
                 @Action.performed -= instance.OnAction;
                 @Action.canceled -= instance.OnAction;
+                @OpenProgressMenu.started -= instance.OnOpenProgressMenu;
+                @OpenProgressMenu.performed -= instance.OnOpenProgressMenu;
+                @OpenProgressMenu.canceled -= instance.OnOpenProgressMenu;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -635,6 +664,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             void OnSwapWeapon(InputAction.CallbackContext context);
             void OnTransform(InputAction.CallbackContext context);
             void OnAction(InputAction.CallbackContext context);
+            void OnOpenProgressMenu(InputAction.CallbackContext context);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action SwapWeapon;
         public event Action ShapeShift;
         public event Action PerformAction;
+        public event Action OpenCloseProgressMenu;
 
         private void Start()
         {
@@ -113,6 +114,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 PerformAction?.Invoke();
+            }
+        }
+
+        public void OnOpenProgressMenu(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OpenCloseProgressMenu?.Invoke();
             }
         }
     }
