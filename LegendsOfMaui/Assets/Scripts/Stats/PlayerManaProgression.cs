@@ -45,18 +45,22 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }
         public float ManaRequiredForMaxKoruLevel { get => ManaRequiredToLevelUp(MaxKoruLevel); }
 
-        public event Action<float> MatuManaAdded;
-        public event Action<float> KoruManaAdded;
+        public event Action<float, int> MatuManaAdded;
+        public event Action<float, int> KoruManaAdded;
 
         private void Awake()
         {
             _playerStateMachine = GetComponent<PlayerStateMachine>();
-            MatuManaAdded?.Invoke(_totalMatuMana);
-            KoruManaAdded?.Invoke(_totalKoruMana);
+            MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
+            KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
         }
 
         private void MatuLevelUp()
         {
+            if (_matuLevel >= MaxMatuLevel)
+            {
+                return;
+            }
             _matuLevel++;
             var matuLevelData = _progessionTable.MatuDatas[_matuLevel];
             _playerStateMachine.IncreaseAdditionalAttackDamage(matuLevelData.AttackDamageIncrease);
@@ -68,6 +72,10 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private void KoruLevelUp()
         {
+            if (_koruLevel >= MaxKoruLevel)
+            {
+                return;
+            }
             _koruLevel++;
             var koruData = _progessionTable.KoruDatas[_koruLevel];
             _playerStateMachine.Health.SetMaxHealth(_playerStateMachine.Health.MaxHealth + koruData.MaxHealthIncrease);
@@ -76,7 +84,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private bool LevelUp(ref float mana, int level)
         {
-            float manaRequired = ManaRequiredToLevelUp(level);
+            float manaRequired = ManaRequiredToLevelUp(level + 1);
             if (mana >= manaRequired)
             {
                 return true;
@@ -86,7 +94,12 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private float ManaRequiredToLevelUp(int level)
         {
-            return 1000 * (level + 1); //Temporary level up formula
+            if (level < 0)
+            {
+                return 0;
+            }
+            float manaRequired = 1000 * (level) + ManaRequiredToLevelUp(level - 1); //Temporary level up formula
+            return manaRequired;
         }
 
         private void AddManaToProgressionTree(ref float treeMana, ref int treeLevel, float mana, Action levelUpFunction)
@@ -106,13 +119,13 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public void AddManaToMatu(float mana)
         {
             AddManaToProgressionTree(ref _totalMatuMana, ref _matuLevel, mana, MatuLevelUp);
-            MatuManaAdded?.Invoke(_totalMatuMana);
+            MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
         }
 
         public void AddManaToKoru(float mana)
         {
             AddManaToProgressionTree(ref _totalKoruMana, ref _koruLevel, mana, KoruLevelUp);
-            KoruManaAdded?.Invoke(_totalKoruMana);
+            KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
         }
 
         public static void AddManaToPool(float mana)
@@ -139,14 +152,24 @@ namespace AlictronicGames.LegendsOfMaui.Stats
                 {
                     MatuLevelUp();
                 }
-                MatuManaAdded?.Invoke(_totalMatuMana);
+                MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
 
                 for (int j = 0; j <= saveData.KoruLevel; j++)
                 {
                     KoruLevelUp();
                 }
-                KoruManaAdded?.Invoke(_totalKoruMana);
+                KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
             }
+        }
+
+        public float ProgessPercentage(float mana, int level)
+        {
+            float requiredToLevelUp = ManaRequiredToLevelUp(level + 1);
+            float requiredForCurrentLevel = ManaRequiredToLevelUp(level);
+            float requiredDifference = requiredToLevelUp - requiredForCurrentLevel;
+            float manaMinusForCurrentLevel = mana - requiredForCurrentLevel;
+            float percentageAchievedBetweenLevels = manaMinusForCurrentLevel / requiredDifference;
+            return percentageAchievedBetweenLevels;
         }
     }
 }
