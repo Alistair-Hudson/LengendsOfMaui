@@ -14,24 +14,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
     [RequireComponent(typeof(Health))]
     public class PlayerStateMachine : StateMachine
     {
-        private enum WeaponType
-        {
-            Mere = 0,
-            Taiaha
-        }
-
-        [SerializeField]
-        private WeaponDamage _mereLogic = null;
-        [SerializeField]
-        private WeaponDamage _taiahaLogic = null;
-        [SerializeField]
-        private AnimatorOverrideController _mereController = null;
-        [SerializeField]
-        private AnimatorOverrideController _taiahaController = null;
         [SerializeField]
         private GameObject _humanForm = null;
         [SerializeField]
         private GameObject _birdForm = null;
+        [SerializeField]
+        private List<AttackData> _attacks = new List<AttackData>();
 
         [field: SerializeField]
         public float FreeLookMoveSpeed { get; private set; } = 6f;
@@ -47,10 +35,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float JumpForce { get; private set; } = 0f;
         [field: SerializeField]
         public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
-        [field: SerializeField]
-        public AttackData[] Attacks { get; private set; }
 
-        private WeaponType _activeWeapon = WeaponType.Mere;
         private WeaponHandler _weaponHandler = null;
 
         public Health Health { get; private set; } = null;
@@ -60,10 +45,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Transform MainCameraTransform { get; private set; } = null;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
-        public WeaponDamage CurrentWeaponDamage { get; private set; } = null;
+        public WeaponDamage WeaponDamage { get; private set; } = null;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
         public float AdditionalAttackDamage { get; private set; } = 0;
+        public float DodgeDurationModifier { get; private set; } = 0;
+        public float DodgeDistanceModifier { get; private set; } = 0;
         public bool IsShapeShifted { get; private set; } = false;
 
         #region UnityMethods
@@ -78,8 +65,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Targeter = GetComponentInChildren<Targeter>();
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
             Animator = _humanForm.GetComponent<Animator>();
-
-            CurrentWeaponDamage = _mereLogic;
+            WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
         }
 
         private void Start()
@@ -94,8 +80,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader.SwapWeapon += HandleWeaponSwap;
             InputReader.ShapeShift += HandleShapeShift;
             InputReader.PerformAction += HandlePerformAction;
-
-            Animator.runtimeAnimatorController = _mereController;
 
             SwitchState(new PlayerFreeLookState(this));
         }
@@ -142,16 +126,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             {
                 return;
             }
-
-            switch (_activeWeapon)
-            {
-                case WeaponType.Mere:
-                    SwapWeapon(WeaponType.Taiaha, _taiahaController, _taiahaLogic);
-                    break;
-                case WeaponType.Taiaha:
-                    SwapWeapon(WeaponType.Mere, _mereController, _mereLogic);
-                    break;
-            }
         }
 
         private void HandleOnDodge()
@@ -187,30 +161,24 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #endregion
 
         #region PrivateMethods
-        private void SwapWeapon(WeaponType nextWeaponType, AnimatorOverrideController nextOverrideController, WeaponDamage weaponLogic)
-        {
-            _activeWeapon = nextWeaponType;
-            Animator.runtimeAnimatorController = nextOverrideController;
-            _weaponHandler.SetWeaponLogic(weaponLogic);
-            CurrentWeaponDamage = weaponLogic;
-        }
-
-        private void ShapeShift()
-        {
-
-        }
+        
         #endregion
 
         #region PublicMethods
+
+        public AttackData GetAttackAtIndex(int index)
+        {
+            return _attacks[index];
+        }
+
         public void AddAttack(AttackData newAttack)
         {
-            var oldAttacks = Attacks;
-            Attacks = new AttackData[Attacks.Length + 1];
-            for (int i = 0; i < oldAttacks.Length; i++)
-            {
-                Attacks[i] = oldAttacks[i];
-            }
-            Attacks[oldAttacks.Length] = newAttack;
+            _attacks.Add(newAttack);
+        }
+
+        public int GetNumberOfAttacks()
+        {
+            return _attacks.Count;
         }
 
         public void IncreaseAdditionalAttackDamage(float damageIncrease)

@@ -34,7 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         private PlayerStateMachine _playerStateMachine = null;
 
-        private static float _manaPool = 3500;
+        private static float _manaPool = 0;
         private float _totalMatuMana = 0;
         private float _totalKoruMana = 0;
         private int _matuLevel = 0;
@@ -110,7 +110,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             }
             treeMana += mana;
             _manaPool -= mana;
-            while (LevelUp(ref treeMana, treeLevel))
+            if (LevelUp(ref treeMana, treeLevel))
             {
                 levelUpFunction();
             }

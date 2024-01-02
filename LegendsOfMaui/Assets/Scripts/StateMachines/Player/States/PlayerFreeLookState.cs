@@ -88,7 +88,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnJumpEvent()
         {
-            stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+            if (stateMachine.CharacterController.isGrounded || stateMachine.IsShapeShifted)
+            {
+                stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+            }
         }
         #endregion
 

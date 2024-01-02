@@ -13,13 +13,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public PlayerAttackingState(PlayerStateMachine playerStateMachine, int attackIndex) : base(playerStateMachine)
         {
-            _attack = playerStateMachine.Attacks[attackIndex];
+            _attack = playerStateMachine.GetAttackAtIndex(attackIndex);
         }
         #region StateMachine
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
-            stateMachine.CurrentWeaponDamage.SetAttack(_attack.AttackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
+            stateMachine.WeaponDamage.SetAttack(_attack.AttackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
         }
 
         public override void Exit()
@@ -61,7 +61,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region PrivateMethods
         private void TryComboAttack(float normalizedTime)
         {
-            if (_attack.ComboStateIndex == -1 || _attack.ComboStateIndex >= stateMachine.Attacks.Length)
+            if (_attack.ComboStateIndex == -1 || _attack.ComboStateIndex >= stateMachine.GetNumberOfAttacks())
             {
                 return;
             }
