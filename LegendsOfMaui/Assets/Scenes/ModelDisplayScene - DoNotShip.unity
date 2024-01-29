@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196588622}
   - component: {fileID: 196588623}
+  - component: {fileID: 196588624}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -303,6 +304,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationPerSecond: 45
+--- !u!114 &196588624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196588621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f6a2ee97639246854f7d1c2508bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1656802125}
+    - {fileID: 2800000, guid: 81715fc83dda91745ac157225865851e, type: 3}
+    - {fileID: 2800000, guid: bf3fa5caf4846ee4db01d6ec65fa9c0f, type: 3}
+    - {fileID: 2800000, guid: 5fa8a5ac4b95ab64d929f315aa79faf0, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: skinLUT
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.Renderer, UnityEngine.CoreModule],[UnityEngine.Texture[],
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.Renderer,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|UnityEngine.Texture[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textureMapInput: _BaseMap
 --- !u!1001 &1656802123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,6 +444,12 @@ PrefabInstance:
 --- !u!4 &1656802124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400014, guid: 9d448160163fd48408b89a06675f7e6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1656802123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1656802125 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700002, guid: 9d448160163fd48408b89a06675f7e6d,
     type: 3}
   m_PrefabInstance: {fileID: 1656802123}
   m_PrefabAsset: {fileID: 0}

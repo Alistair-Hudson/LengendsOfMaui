@@ -419,7 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d191763f11fff1e4a8a751a9f37f9c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  <MaxHealth>k__BackingField: 100
+  <HealthRegenPerSecond>k__BackingField: 0
 --- !u!114 &161162870184717329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc964a13d937d54b9a2f62d4095fe1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _statsTable: {fileID: 0}
   _animatorOverrideController: {fileID: 0}
+  _level: 1
+  _isNocternal: 0
   <PlayerChaseRange>k__BackingField: 10
   <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 10
