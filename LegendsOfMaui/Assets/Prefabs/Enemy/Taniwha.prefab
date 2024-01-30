@@ -81,6 +81,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 9191997291182220352}
   m_SourcePrefab: {fileID: 100100000, guid: 9d448160163fd48408b89a06675f7e6d, type: 3}
+--- !u!137 &3720446827472839533 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700002, guid: 9d448160163fd48408b89a06675f7e6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3720446827484309711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3720446827483918913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400014, guid: 9d448160163fd48408b89a06675f7e6d,
@@ -286,7 +292,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 3720446827472839533}
+    - {fileID: 2800000, guid: 81715fc83dda91745ac157225865851e, type: 3}
+    - {fileID: 2800000, guid: bf3fa5caf4846ee4db01d6ec65fa9c0f, type: 3}
+    - {fileID: 2800000, guid: 5fa8a5ac4b95ab64d929f315aa79faf0, type: 3}
+    - {fileID: 2800000, guid: 84dc961813d3eb54a9a5ca5bc2e91b0e, type: 3}
+    - {fileID: 2800000, guid: 36ee5ba3e4ff210498d0afe6bbc9840d, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -305,7 +317,43 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
       Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|UnityEngine.Texture[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 

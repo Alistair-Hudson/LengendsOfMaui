@@ -14,7 +14,7 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         [OdinSerialize]
         private Dictionary<Renderer, Texture[]> skinLUT = new Dictionary<Renderer, Texture[]>();
 
-        private void Awake()
+        private void OnEnable()
         {
             foreach (Renderer renderer in skinLUT.Keys)
             {
