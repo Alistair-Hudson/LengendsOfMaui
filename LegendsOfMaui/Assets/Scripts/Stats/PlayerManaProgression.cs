@@ -45,14 +45,14 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }
         public float ManaRequiredForMaxKoruLevel { get => ManaRequiredToLevelUp(MaxKoruLevel); }
 
-        public event Action<float, int> MatuManaAdded;
-        public event Action<float, int> KoruManaAdded;
+        public event Action<float, int, string> MatuManaAdded;
+        public event Action<float, int, string> KoruManaAdded;
 
         private void Awake()
         {
             _playerStateMachine = GetComponent<PlayerStateMachine>();
-            MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
-            KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
+            AddManaToMatu(0);
+            AddManaToKoru(0);
         }
 
         private void MatuLevelUp()
@@ -119,13 +119,27 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public void AddManaToMatu(float mana)
         {
             AddManaToProgressionTree(ref _totalMatuMana, ref _matuLevel, mana, MatuLevelUp);
-            MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
+            
+            string nextMatuBonus = "";
+            if (_matuLevel < MaxMatuLevel)
+            {
+                nextMatuBonus = $"Attack + {_progessionTable.MatuDatas[_matuLevel + 1].AttackDamageIncrease} \n" + (_progessionTable.MatuDatas[_matuLevel + 1].NewAttack == null ? "" : "New attack added");
+            }
+            
+            MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel, nextMatuBonus);
         }
 
         public void AddManaToKoru(float mana)
         {
             AddManaToProgressionTree(ref _totalKoruMana, ref _koruLevel, mana, KoruLevelUp);
-            KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
+            
+            string nextKoruBonus = "";
+            if (_koruLevel < MaxKoruLevel)
+            {
+                nextKoruBonus = $"Max Health + {_progessionTable.KoruDatas[_koruLevel + 1].MaxHealthIncrease} \n Rgeneration + {_progessionTable.KoruDatas[_koruLevel + 1].HealthRegenIncrease}";
+            }
+
+            KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel, nextKoruBonus);
         }
 
         public static void AddManaToPool(float mana)
@@ -152,13 +166,13 @@ namespace AlictronicGames.LegendsOfMaui.Stats
                 {
                     MatuLevelUp();
                 }
-                MatuManaAdded?.Invoke(_totalMatuMana, _matuLevel);
+                AddManaToMatu(0);
 
                 for (int j = 0; j <= saveData.KoruLevel; j++)
                 {
                     KoruLevelUp();
                 }
-                KoruManaAdded?.Invoke(_totalKoruMana, _koruLevel);
+                AddManaToKoru(0);
             }
         }
 

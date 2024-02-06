@@ -19,6 +19,10 @@ namespace AlictronicGames.LegendsOfMaui.UI
         private TMP_Text _matuLevelDisplay = null;
         [SerializeField]
         private TMP_Text _koruLevelDisplay = null;
+        [SerializeField]
+        private TMP_Text _matuNextDisplay = null;
+        [SerializeField]
+        private TMP_Text _koruNextDisplay = null;
 
         private PlayerManaProgression _playerManaProgression = null;
 
@@ -54,15 +58,17 @@ namespace AlictronicGames.LegendsOfMaui.UI
             _playerManaProgression.GetComponent<InputReader>().OpenCloseProgressMenu -= OpenCloseProgressMenuHandler;
         }
 
-        private void MatuLevelUpHandler(float matuMana, int matuLevel)
+        private void MatuLevelUpHandler(float matuMana, int matuLevel, string nextMatuBonus)
         {
-            _matuLevelDisplay.text = $"Matu Level: {matuLevel}";
+            _matuLevelDisplay.text = $"Matau Level: {matuLevel}";
+            _matuNextDisplay.text = nextMatuBonus;
             _matuProgressDisplay.fillAmount = _playerManaProgression.ProgessPercentage(matuMana, matuLevel);
         }
 
-        private void KoruLevelUpHandler(float koruMana, int koruLevel)
+        private void KoruLevelUpHandler(float koruMana, int koruLevel, string nextKoruBonus)
         {
             _koruLevelDisplay.text = $"Koru Level: {koruLevel}";
+            _koruNextDisplay.text = nextKoruBonus;
             _koruProgressDisplay.fillAmount = _playerManaProgression.ProgessPercentage(koruMana, koruLevel);
         }
 
