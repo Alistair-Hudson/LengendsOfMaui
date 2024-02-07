@@ -99,11 +99,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 964123733630755784, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d04980f0c163fec4781edfdf793fe5ca, type: 2}
     - target: {fileID: 4543925105643963039, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: _statsTable
       value: 
       objectReference: {fileID: 11400000, guid: 3a2e67a8cd857b14bb9cb42fb17e5427,
+        type: 2}
+    - target: {fileID: 4543925105643963039, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
+        type: 3}
+      propertyPath: _animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: aa2fec5e714c2064d8ac7adf1e4a41ba,
         type: 2}
     - target: {fileID: 6289108350442854047, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
@@ -113,22 +124,22 @@ PrefabInstance:
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -18.256998
       objectReference: {fileID: 0}
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.1820836
       objectReference: {fileID: 0}
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16.795738
       objectReference: {fileID: 0}
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
