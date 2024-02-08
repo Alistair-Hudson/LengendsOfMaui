@@ -11,10 +11,19 @@ namespace AlictronicGames.LegendsOfMaui.UI
     {
         private TMP_Text _nameDisplay;
 
-        private void Awake()
+        private void OnEnable()
         {
             _nameDisplay = GetComponent<TMP_Text>();
-            _nameDisplay.text = GetComponentInParent<StateMachine>().gameObject.name;
+            string name = GetComponentInParent<StateMachine>().gameObject.name;
+            for (int i = 1; i < name.Length; i++)
+            {
+                if (char.IsUpper(name[i]))
+                {
+                    name = name.Insert(i, " ");
+                    i++;
+                }   
+            }
+            _nameDisplay.text = name;
         }
     }
 }

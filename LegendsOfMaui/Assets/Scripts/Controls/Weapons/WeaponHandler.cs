@@ -7,23 +7,27 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
     public class WeaponHandler : MonoBehaviour
     {
         [SerializeField]
-        private WeaponDamage _weaponLogic = null;
+        private List<WeaponDamage> _weaponLogics = new List<WeaponDamage>();
 
         public void EnableWeapon()
         {
-            _weaponLogic.enabled = true;
+            foreach (var logic in _weaponLogics)
+            {
+                logic.enabled = true;
+            }
         }
 
         public void DisableWeapon()
         {
-            _weaponLogic.enabled = false;
+            foreach (var logic in _weaponLogics)
+            {
+                logic.enabled = false;
+            }
         }
 
         public void SetWeaponLogic(WeaponDamage weaponLogic)
         {
-            _weaponLogic.gameObject.SetActive(false);
-            _weaponLogic = weaponLogic;
-            _weaponLogic.gameObject.SetActive(true);
+            _weaponLogics.Add(weaponLogic);
         }
     }
 }

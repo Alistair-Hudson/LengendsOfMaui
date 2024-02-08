@@ -124,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6497030957067043307, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
@@ -179,6 +179,11 @@ PrefabInstance:
     - target: {fileID: 6713007371422818119, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
         type: 3}
       propertyPath: _weaponLogic
+      value: 
+      objectReference: {fileID: 3965043910290913143}
+    - target: {fileID: 6713007371422818119, guid: 2c0a1a9062d2f9845a6c59c311e2ad9d,
+        type: 3}
+      propertyPath: '_weaponLogics.Array.data[0]'
       value: 
       objectReference: {fileID: 3965043910290913143}
     m_RemovedComponents: []
