@@ -6,7 +6,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
 {
     public abstract class StateMachine : MonoBehaviour
     {
-        private State _currentState = null;
+        protected State _currentState = null;
 
         private void Update()
         {

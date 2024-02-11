@@ -25,6 +25,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         int _level = 1;
         [SerializeField]
         private bool _isNocternal = false;
+        [SerializeField]
+        private bool _isDiurnal = false;
 
         [field: SerializeField]
         public float PlayerChaseRange { get; private set; } = 0f;
@@ -74,6 +76,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 DayNightCycle.NightIsActiveEvent += HandleNightActivation;
                 HandleNightActivation(DayNightCycle.IsNight);
             }
+            if (_isDiurnal)
+            {
+                DayNightCycle.DayIsActiveEvent += HandleDayActivation;
+                HandleDayActivation(!DayNightCycle.IsNight);
+            }
             AttackDamage = _statsTable.AttackPerLevel[_level];
             _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
         }
@@ -115,7 +122,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         private void HandleNightActivation(bool state)
         {
-            gameObject.SetActive(state);
+            if (_currentState is EnemyIdleState)
+            {
+                gameObject.SetActive(state);
+            }
+        }
+
+        private void HandleDayActivation(bool state)
+        {
+            if (_currentState is EnemyIdleState)
+            {
+                gameObject.SetActive(state);
+            }
         }
 
         private void OnDrawGizmosSelected()

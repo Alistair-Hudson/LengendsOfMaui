@@ -46,7 +46,8 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         public static float Time { get; private set; } = 0;
         public static bool IsNight { get => !(Time > _dawnTime && Time < _duskTime); }
 
-        public static Action<bool> NightIsActiveEvent; 
+        public static Action<bool> NightIsActiveEvent;
+        public static Action<bool> DayIsActiveEvent;
 
         private void Awake()
         {
@@ -62,14 +63,8 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
                 Time--;
             }
 
-            if (IsNight)
-            {
-                NightIsActiveEvent?.Invoke(IsNight);
-            }
-            else
-            {
-                NightIsActiveEvent?.Invoke(IsNight);
-            }
+            NightIsActiveEvent?.Invoke(IsNight);
+            DayIsActiveEvent?.Invoke(!IsNight);
 
             _sun.transform.eulerAngles = (Time - 0.25f) * _noonRotation * 4;
             _moon.transform.eulerAngles = (Time - 0.75f) * _noonRotation * 4;
