@@ -204,7 +204,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8060262999906350330}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7670955837092935697, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3051588620863356043}
   m_SourcePrefab: {fileID: 100100000, guid: 5c0d47298f45a1e41a264ba17638bb1f, type: 3}
 --- !u!4 &90080963609480709 stripped
 Transform:
@@ -212,6 +216,96 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7375150280829149536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &877491273732430193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7670955837092935697, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7375150280829149536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3051588620863356043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877491273732430193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f6a2ee97639246854f7d1c2508bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8060262999903135188}
+    - {fileID: 2800000, guid: f97f8260d6995f740a5dae79537d2308, type: 3}
+    - {fileID: 2800000, guid: 8c72c1aa9b796fe4fbdef7bca651a02a, type: 3}
+    - {fileID: 2800000, guid: 2646af241d716fa4a898fa9be58ce7dd, type: 3}
+    - {fileID: 2800000, guid: 19f5dd2daeb6df24da1a156f3190bfe9, type: 3}
+    - {fileID: 2800000, guid: ed56d2cc1d62c3040bf155c5684ea73e, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: skinLUT
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.Renderer, UnityEngine.CoreModule],[UnityEngine.Texture[],
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.Renderer,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|UnityEngine.Texture[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textureMapInput: _BaseMap
 --- !u!1001 &8060262999906217584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,6 +391,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8713888579258772983}
   m_SourcePrefab: {fileID: 100100000, guid: ac5e81e8eb65e2b4a8564a4a14cc6f74, type: 3}
+--- !u!137 &8060262999903135188 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700004, guid: ac5e81e8eb65e2b4a8564a4a14cc6f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 8060262999906217584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8060262999906314458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100010, guid: ac5e81e8eb65e2b4a8564a4a14cc6f74,

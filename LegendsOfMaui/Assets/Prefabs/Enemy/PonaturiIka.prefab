@@ -121,6 +121,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4639052865395684740}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &4639052865409383972 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: 0fee7ae564f8c3344ad15a7804b291fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4639052865395684740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7375150280829149536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,7 +235,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4639052865395814150}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7670955837092935697, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5766884619775021156}
   m_SourcePrefab: {fileID: 100100000, guid: 5c0d47298f45a1e41a264ba17638bb1f, type: 3}
 --- !u!4 &90080963609480709 stripped
 Transform:
@@ -237,6 +247,96 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7375150280829149536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &877491273732430193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7670955837092935697, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7375150280829149536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5766884619775021156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877491273732430193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f6a2ee97639246854f7d1c2508bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 4639052865409383972}
+    - {fileID: 2800000, guid: 005a5fd0471f5c94da4424a61f56cb89, type: 3}
+    - {fileID: 2800000, guid: 41be1a1c60f06df478a57341d6a1ea36, type: 3}
+    - {fileID: 2800000, guid: 0efdc24920bbaa1478cb53453ea69aa1, type: 3}
+    - {fileID: 2800000, guid: 6240fe28a3c069c4f8fd80cfbfccaf50, type: 3}
+    - {fileID: 2800000, guid: 93dd04da9e2aea84bb0c9b438662c897, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: skinLUT
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.Renderer, UnityEngine.CoreModule],[UnityEngine.Texture[],
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.Renderer,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|UnityEngine.Texture[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textureMapInput: _BaseMap
 --- !u!1001 &9205768095129268816
 PrefabInstance:
   m_ObjectHideFlags: 0
