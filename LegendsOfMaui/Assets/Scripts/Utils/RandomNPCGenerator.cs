@@ -7,16 +7,27 @@ using UnityEngine;
 public class RandomNPCGenerator : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] Heads;
+    private GameObject[] Heads;
     [SerializeField]
-    GameObject[] HairStyles;
+    private GameObject[] HairStyles;
     [SerializeField]
-    Material[] HairColours;
+    private Material[] HairColours;
     [SerializeField]
-    Material[] TaoMokos;
+    private Material[] TaoMokos;
+
+    [SerializeField]
+    private bool autoGenerateOnEnable = false;
+
+    private void OnEnable()
+    {
+        if (autoGenerateOnEnable)
+        {
+            GenerateNPC();
+        }
+    }
 
     [Button("Generate NPC")]
-    void GenerateNPC()
+    public void GenerateNPC()
     {
         HideGameObjects(Heads);
         HideGameObjects(HairStyles);
