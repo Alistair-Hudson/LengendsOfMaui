@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +15,13 @@ namespace AlictronicGames.LegendsOfMaui.Saving
             savingSystem = GetComponent<SavingSystem>();
         }
 
+        [Button("Quick Load")]
         public static void Load(string fileName)
         {
             savingSystem.Load(fileName);
         }
 
+        [Button("Quick Save")]
         public static void Save(string fileName)
         {
             savingSystem.Save(fileName);

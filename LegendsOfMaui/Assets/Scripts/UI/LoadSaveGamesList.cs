@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadSaveGamesList : MonoBehaviour
 {
     [SerializeField]
-    private Button saveGameTemplatePrefab = null;
+    private LoadGame saveGameTemplatePrefab = null;
 
     private void OnEnable()
     {
-        //get save games
+        var saveFiles = Directory.GetFiles(Application.persistentDataPath);
 
-        //foreach save file
-            //create a saveGameTemplate
-            //Set name
-            //Set save date
-            //Set file to load on click
+        foreach (var saveFile in saveFiles)
+        {
+            var saveInstance = Instantiate(saveGameTemplatePrefab, transform);
+            string[] pathComponents = saveFile.Split('/');
+            string name = pathComponents[pathComponents.Length - 1];
+            var lastWriteTime = File.GetLastWriteTimeUtc(saveFile);
+            saveInstance.Setup(name, lastWriteTime.ToString());
+        }
     }
 }

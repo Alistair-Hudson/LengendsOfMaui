@@ -13,11 +13,11 @@ public class LoadGame : MonoBehaviour
 
     private string fileName = "";
 
-    public void Setup(string name, string date, string fileName)
+    public void Setup(string name, string date)
     {
         _name.text = name;
         _date.text = date;
-        this.fileName = fileName;
+        this.fileName = name;
     }
 
     public void Load()
