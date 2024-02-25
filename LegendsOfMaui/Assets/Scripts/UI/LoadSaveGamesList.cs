@@ -9,11 +9,19 @@ public class LoadSaveGamesList : MonoBehaviour
 {
     [SerializeField]
     private LoadGame saveGameTemplatePrefab = null;
+    [SerializeField]
+    private Button backButton = null;
 
     private void OnEnable()
     {
         var saveFiles = Directory.GetFiles(Application.persistentDataPath);
         bool isFirstSelected = false;
+
+        if (saveFiles.Length <= 0)
+        {
+            EventSystem.current.SetSelectedGameObject(backButton.gameObject);
+            return;
+        }
 
         foreach (var saveFile in saveFiles)
         {
