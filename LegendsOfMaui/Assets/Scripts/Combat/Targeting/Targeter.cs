@@ -51,6 +51,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Targeting
                 return false;
             }
 
+            CancelTarget();
+
             CurrentTarget = closestTarget;
             CurrentTarget.SetDisplayState(true);
             _targetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
@@ -97,7 +99,6 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Targeting
             {
                 target.TargetDestroyed -= HandleTargetDestroyed;
                 _targets.Remove(target);
-                CurrentTarget = null;
                 CancelTarget();
             }
         }
