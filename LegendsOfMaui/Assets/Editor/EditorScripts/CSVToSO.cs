@@ -40,11 +40,14 @@ namespace AlictronicGames.LegendsOfMaui.Editor
             }
 
             string[] lines = File.ReadAllLines(csv);
+
             for (int i = 1; i < lines.Length; i++)
             {
                 string[] line = lines[i].Split(',');
                 monsterStats.SetMonsterStats(i, line);
             }
+            EditorUtility.SetDirty(monsterStats);
+            AssetDatabase.SaveAssets();
         }
 
         [MenuItem("Tools/Generate Player Progession Stats")]
@@ -73,6 +76,7 @@ namespace AlictronicGames.LegendsOfMaui.Editor
                     AssetDatabase.CreateAsset(playerProgession, "Assets/Resources/PlayerProgression.asset");
                 }
 
+                EditorUtility.SetDirty(playerProgession);
                 AssetDatabase.SaveAssets();
             }
         }
