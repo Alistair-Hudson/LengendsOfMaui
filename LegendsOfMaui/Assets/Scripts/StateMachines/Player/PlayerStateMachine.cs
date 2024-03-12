@@ -37,12 +37,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
 
         private WeaponHandler _weaponHandler = null;
+        private Transform _mainCameraTransform = null;
 
         public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
         public Animator Animator { get; private set; } = null;
-        public Transform MainCameraTransform { get; private set; } = null;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public WeaponDamage WeaponDamage { get; private set; } = null;
@@ -52,6 +52,22 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float DodgeDurationModifier { get; private set; } = 0;
         public float DodgeDistanceModifier { get; private set; } = 0;
         public bool IsShapeShifted { get; private set; } = false;
+
+        public Transform MainCameraTransform
+        {
+            get
+            {
+                if (!_mainCameraTransform)
+                {
+                    _mainCameraTransform = Camera.main.transform;
+                }
+                return _mainCameraTransform;
+            }
+            private set
+            {
+                _mainCameraTransform = value;
+            }
+        }
 
         #region UnityMethods
         private void Awake()

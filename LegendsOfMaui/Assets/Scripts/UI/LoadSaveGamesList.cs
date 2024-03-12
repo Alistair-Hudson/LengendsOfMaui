@@ -11,6 +11,8 @@ public class LoadSaveGamesList : MonoBehaviour
     private LoadGame saveGameTemplatePrefab = null;
     [SerializeField]
     private Button backButton = null;
+    [SerializeField]
+    private GameObject contentHolder = null;
 
     private void OnEnable()
     {
@@ -25,7 +27,11 @@ public class LoadSaveGamesList : MonoBehaviour
 
         foreach (var saveFile in saveFiles)
         {
-            var saveInstance = Instantiate(saveGameTemplatePrefab, transform);
+            if (!saveFile.EndsWith(".sav"))
+            {
+                continue;
+            }
+            var saveInstance = Instantiate(saveGameTemplatePrefab, contentHolder.transform);
             string[] pathComponents = saveFile.Split('/');
             string name = pathComponents[pathComponents.Length - 1];
             var lastWriteTime = File.GetLastWriteTimeUtc(saveFile);
@@ -34,6 +40,14 @@ public class LoadSaveGamesList : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(saveInstance.gameObject);
             }
+        }
+    }
+
+    private void OnDisable()
+    {
+        for (int i = contentHolder.transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(contentHolder.transform.GetChild(i).gameObject);
         }
     }
 }
