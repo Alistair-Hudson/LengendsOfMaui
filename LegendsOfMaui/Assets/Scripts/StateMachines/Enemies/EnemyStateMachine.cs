@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 {
@@ -47,6 +48,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public NavMeshAgent NavMeshAgent { get; private set; } = null;
         public WeaponDamage Weapon { get; private set; } = null;
+
+        public event Action<EnemyStateMachine> OnDeathEvent;
 
         private void Awake()
         {
@@ -142,6 +145,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             Gizmos.DrawWireSphere(transform.position, PlayerChaseRange);
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, AttackRange);
+        }
+
+        public void CallOnDeath()
+        {
+            OnDeathEvent?.Invoke(this);
         }
     }
 }
