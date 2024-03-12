@@ -1,6 +1,7 @@
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
@@ -8,6 +9,8 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
     [RequireComponent(typeof(AudioSource))]
     public class SoundTrigger : MonoBehaviour
     {
+        [SerializeField]
+        private TMP_Text subtitles = null;
         [SerializeField]
         private List<AudioClip> audioClipsToPlay = new List<AudioClip>();
         [SerializeField]
@@ -37,6 +40,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         private IEnumerator PlayAudioClipsInList()
         {
+            subtitles.gameObject.SetActive(true);
             foreach (var audioClip in audioClipsToPlay)
             {
                 _audioSource.PlayOneShot(audioClip);
