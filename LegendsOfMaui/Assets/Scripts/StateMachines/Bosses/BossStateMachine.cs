@@ -54,6 +54,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public Collider Collider { get; private set; } = null;
 
+        public event Action<BossStateMachine> OnDeathEvent;
+
         private void Awake()
         {
             Collider = GetComponent<Collider>();
@@ -98,6 +100,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             {
                 SwitchState(new BossImpactState(this));
             }
+        }
+
+        public void CallOnDeath()
+        {
+            OnDeathEvent?.Invoke(this);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         {
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
             stateMachine.Collider.enabled = false;
+            stateMachine.CallOnDeath();
             GameObject.Destroy(stateMachine.GetComponent<Target>());
         }
 
