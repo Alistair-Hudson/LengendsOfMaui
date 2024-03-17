@@ -6,6 +6,7 @@ using AlictronicGames.LegendsOfMaui.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
@@ -35,6 +36,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float JumpForce { get; private set; } = 0f;
         [field: SerializeField]
         public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
+        [field: SerializeField]
+        public TMP_Text PressToIntreract { get; private set; } = null;
 
         private WeaponHandler _weaponHandler = null;
         private Transform _mainCameraTransform = null;
@@ -52,6 +55,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float DodgeDurationModifier { get; private set; } = 0;
         public float DodgeDistanceModifier { get; private set; } = 0;
         public bool IsShapeShifted { get; private set; } = false;
+
+        public event Action InteractCall;
 
         public Transform MainCameraTransform
         {
