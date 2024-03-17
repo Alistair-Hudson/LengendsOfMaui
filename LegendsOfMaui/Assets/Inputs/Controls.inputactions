@@ -69,15 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwapWeapon",
-                    "type": "Button",
-                    "id": "bf9d2248-921e-470f-9cb1-9cfd2dde5029",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Transform",
                     "type": "Button",
                     "id": "41ff05b3-e77e-4c67-a3b5-f47305aa9778",
@@ -99,6 +90,15 @@
                     "name": "OpenProgressMenu",
                     "type": "Button",
                     "id": "785bec42-6e39-43ab-ab67-cdddfb3924c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ReduceHeight",
+                    "type": "Button",
+                    "id": "6fa0f46f-5982-4891-b39d-ca6f2c60d9bf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -306,30 +306,8 @@
                 },
                 {
                     "name": "",
-                    "id": "0a21c5eb-e235-471f-b629-9a2c2f1223ee",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "SwapWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8772f91c-f214-4533-91ba-42cb4661ce38",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "SwapWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0d2c7154-344d-40a7-86e5-8fdd8b47ef72",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -378,6 +356,28 @@
                     "processors": "",
                     "groups": "Mouse & Keyboard",
                     "action": "OpenProgressMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85b73132-cee5-4340-b870-9bc532c5f5e3",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "ReduceHeight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7f626a4-f92a-4669-96f9-d581159290c5",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "ReduceHeight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

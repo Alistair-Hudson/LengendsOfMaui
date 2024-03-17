@@ -93,6 +93,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }
         }
+
         #endregion
 
         #region PrivateMethods

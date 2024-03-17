@@ -29,6 +29,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Vector2 inputValue = stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
 
+            if (stateMachine.InputReader.IsTravelingDown)
+            {
+                movement += Vector3.down;
+            }
+
             Move(movement * stateMachine.FreeLookMoveSpeed, deltaTime);
 
             if (stateMachine.CharacterController.isGrounded)

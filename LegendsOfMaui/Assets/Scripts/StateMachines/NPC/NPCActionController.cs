@@ -84,13 +84,22 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             if (Vector3.Distance(_destination.Position, transform.position) <= _wayPointStopDistance)
             {
                 _destination = _destination.NextWayPoint;
-                _navMeshAgent.SetDestination(_destination.Position);
+                if (_destination)
+                {
+                    _navMeshAgent.SetDestination(_destination.Position);
+                }
             }
         }
 
         private void HandleNightActivation(bool state)
         {
             gameObject.SetActive(state);
+        }
+
+        public void SetDestination(WayPoint destination)
+        {
+            _destination = destination;
+            OnEnable();
         }
     }
 }

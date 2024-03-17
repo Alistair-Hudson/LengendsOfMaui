@@ -51,6 +51,7 @@ MonoBehaviour:
   HairStyles: []
   HairColours: []
   TaoMokos: []
+  autoGenerateOnEnable: 0
 --- !u!195 &7063595718680638511
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -108,5 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f77916b031a8364595b99b07d9b3d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animatorOverrideController: {fileID: 0}
   _destination: {fileID: 0}
   _wayPointStopDistance: 1
+  _isNocturnal: 0

@@ -13,6 +13,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public Vector2 MovementValue { get; private set; } = Vector2.zero;
         public bool IsAttacking { get; private set; } = false;
         public bool IsBlocking { get; private set; } = false;
+        public bool IsTravelingDown { get; private set; } = false;
 
         public event Action JumpEvent;
         public event Action DodgeEvent;
@@ -122,6 +123,18 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             if (context.performed)
             {
                 OpenCloseProgressMenu?.Invoke();
+            }
+        }
+
+        public void OnReduceHeight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsTravelingDown = true;
+            }
+            else if (context.canceled)
+            {
+                IsTravelingDown = false;
             }
         }
     }

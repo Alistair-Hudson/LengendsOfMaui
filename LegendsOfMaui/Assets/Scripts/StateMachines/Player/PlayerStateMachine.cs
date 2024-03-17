@@ -177,7 +177,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandlePerformAction()
         {
-
+            InteractCall?.Invoke();
         }
         #endregion
 

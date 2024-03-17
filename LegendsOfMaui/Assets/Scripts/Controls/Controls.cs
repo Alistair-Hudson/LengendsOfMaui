@@ -93,15 +93,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwapWeapon"",
-                    ""type"": ""Button"",
-                    ""id"": ""bf9d2248-921e-470f-9cb1-9cfd2dde5029"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Transform"",
                     ""type"": ""Button"",
                     ""id"": ""41ff05b3-e77e-4c67-a3b5-f47305aa9778"",
@@ -123,6 +114,15 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""name"": ""OpenProgressMenu"",
                     ""type"": ""Button"",
                     ""id"": ""785bec42-6e39-43ab-ab67-cdddfb3924c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ReduceHeight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fa0f46f-5982-4891-b39d-ca6f2c60d9bf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -330,30 +330,8 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0a21c5eb-e235-471f-b629-9a2c2f1223ee"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""SwapWeapon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8772f91c-f214-4533-91ba-42cb4661ce38"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""SwapWeapon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0d2c7154-344d-40a7-86e5-8fdd8b47ef72"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -404,6 +382,28 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""action"": ""OpenProgressMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85b73132-cee5-4340-b870-9bc532c5f5e3"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""ReduceHeight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7f626a4-f92a-4669-96f9-d581159290c5"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""ReduceHeight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -447,10 +447,10 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
-            m_Player_SwapWeapon = m_Player.FindAction("SwapWeapon", throwIfNotFound: true);
             m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
             m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
             m_Player_OpenProgressMenu = m_Player.FindAction("OpenProgressMenu", throwIfNotFound: true);
+            m_Player_ReduceHeight = m_Player.FindAction("ReduceHeight", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -519,10 +519,10 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputAction m_Player_Target;
         private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_Block;
-        private readonly InputAction m_Player_SwapWeapon;
         private readonly InputAction m_Player_Transform;
         private readonly InputAction m_Player_Action;
         private readonly InputAction m_Player_OpenProgressMenu;
+        private readonly InputAction m_Player_ReduceHeight;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -534,10 +534,10 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             public InputAction @Target => m_Wrapper.m_Player_Target;
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @Block => m_Wrapper.m_Player_Block;
-            public InputAction @SwapWeapon => m_Wrapper.m_Player_SwapWeapon;
             public InputAction @Transform => m_Wrapper.m_Player_Transform;
             public InputAction @Action => m_Wrapper.m_Player_Action;
             public InputAction @OpenProgressMenu => m_Wrapper.m_Player_OpenProgressMenu;
+            public InputAction @ReduceHeight => m_Wrapper.m_Player_ReduceHeight;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -568,9 +568,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
-                @SwapWeapon.started += instance.OnSwapWeapon;
-                @SwapWeapon.performed += instance.OnSwapWeapon;
-                @SwapWeapon.canceled += instance.OnSwapWeapon;
                 @Transform.started += instance.OnTransform;
                 @Transform.performed += instance.OnTransform;
                 @Transform.canceled += instance.OnTransform;
@@ -580,6 +577,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @OpenProgressMenu.started += instance.OnOpenProgressMenu;
                 @OpenProgressMenu.performed += instance.OnOpenProgressMenu;
                 @OpenProgressMenu.canceled += instance.OnOpenProgressMenu;
+                @ReduceHeight.started += instance.OnReduceHeight;
+                @ReduceHeight.performed += instance.OnReduceHeight;
+                @ReduceHeight.canceled += instance.OnReduceHeight;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -605,9 +605,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Block.started -= instance.OnBlock;
                 @Block.performed -= instance.OnBlock;
                 @Block.canceled -= instance.OnBlock;
-                @SwapWeapon.started -= instance.OnSwapWeapon;
-                @SwapWeapon.performed -= instance.OnSwapWeapon;
-                @SwapWeapon.canceled -= instance.OnSwapWeapon;
                 @Transform.started -= instance.OnTransform;
                 @Transform.performed -= instance.OnTransform;
                 @Transform.canceled -= instance.OnTransform;
@@ -617,6 +614,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @OpenProgressMenu.started -= instance.OnOpenProgressMenu;
                 @OpenProgressMenu.performed -= instance.OnOpenProgressMenu;
                 @OpenProgressMenu.canceled -= instance.OnOpenProgressMenu;
+                @ReduceHeight.started -= instance.OnReduceHeight;
+                @ReduceHeight.performed -= instance.OnReduceHeight;
+                @ReduceHeight.canceled -= instance.OnReduceHeight;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -661,10 +661,10 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             void OnTarget(InputAction.CallbackContext context);
             void OnAttack(InputAction.CallbackContext context);
             void OnBlock(InputAction.CallbackContext context);
-            void OnSwapWeapon(InputAction.CallbackContext context);
             void OnTransform(InputAction.CallbackContext context);
             void OnAction(InputAction.CallbackContext context);
             void OnOpenProgressMenu(InputAction.CallbackContext context);
+            void OnReduceHeight(InputAction.CallbackContext context);
         }
     }
 }
