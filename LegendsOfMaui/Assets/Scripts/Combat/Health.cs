@@ -14,12 +14,16 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private float _currentHealth = 0;
 
+        private bool _isDodging = false;
+        private bool _isBlocking = false;
         private bool _isInvulnerable = false;
 
         public bool IsDead => _currentHealth <= 0;
         
         public event Action<float, float, bool> OnTakeDamage;
         public event Action OnDeath;
+        public event Action OnBlocked;
+        public event Action OnDodged;
 
         private void Awake()
         {
@@ -35,6 +39,18 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             if (_isInvulnerable)
             {
+                return;
+            }
+
+            if (_isBlocking)
+            {
+                OnBlocked?.Invoke();
+                return;
+            }
+
+            if (_isDodging)
+            {
+                OnDodged?.Invoke();
                 return;
             }
 
@@ -54,6 +70,16 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void SetInvulnerability(bool invulnerable)
         {
             _isInvulnerable = invulnerable;
+        }
+
+        public void SetDodging(bool dodging)
+        {
+            _isDodging = dodging;
+        }
+
+        public void SetBlocking(bool blocking)
+        {
+            _isBlocking = blocking;
         }
 
         public void RegenerateHealth(float deltaTime)

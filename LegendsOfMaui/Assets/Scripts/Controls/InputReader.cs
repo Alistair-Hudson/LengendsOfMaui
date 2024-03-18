@@ -26,6 +26,12 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private void Start()
         {
             _controls = new Controls();
+            if (_controls == null)
+            {
+                Debug.LogError("Constrols not created!");
+                return;
+            }
+
             _controls.Player.SetCallbacks(this);
 
             _controls.Player.Enable();
@@ -33,7 +39,17 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
         private void OnDestroy()
         {
-            _controls.Player.Disable();
+            _controls?.Player.Disable();
+        }
+
+        private void OnEnable()
+        {
+            _controls?.Player.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _controls?.Player.Disable();
         }
 
         public void OnJump(InputAction.CallbackContext context)

@@ -28,12 +28,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.Animator.SetFloat(DODGE_RIGHT, _dodgeDirection.x);
             stateMachine.Animator.CrossFadeInFixedTime(DODGE, ANIMATOR_DAMP_TIME);
 
-            stateMachine.Health.SetInvulnerability(true);
+            stateMachine.Health.SetDodging(true);
         }
 
         public override void Exit()
         {
-            stateMachine.Health.SetInvulnerability(false);
+            stateMachine.Health.SetDodging(false);
         }
 
         public override void Tick(float deltaTime)

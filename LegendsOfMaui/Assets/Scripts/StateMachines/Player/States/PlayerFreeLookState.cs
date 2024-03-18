@@ -42,6 +42,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
+            if (stateMachine.IsShapeShifted && !stateMachine.CharacterController.isGrounded)
+            {
+                stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+            }
             if (stateMachine.InputReader.IsAttacking && !stateMachine.IsShapeShifted)
             {
                 stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));

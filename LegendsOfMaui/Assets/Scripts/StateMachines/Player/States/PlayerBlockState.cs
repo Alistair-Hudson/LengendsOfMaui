@@ -16,12 +16,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(BLOCK, ANIMATOR_DAMP_TIME);
-            stateMachine.Health.SetInvulnerability(true);
+            stateMachine.Health.SetBlocking(true);
         }
 
         public override void Exit()
         {
-            stateMachine.Health.SetInvulnerability(false);
+            stateMachine.Health.SetBlocking(false);
         }
 
         public override void Tick(float deltaTime)

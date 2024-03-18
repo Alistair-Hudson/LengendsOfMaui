@@ -7,6 +7,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerFlyingState : PlayerBaseState
     {
+        private readonly int FLYING = Animator.StringToHash("Flying");
+        private const float ANIMATOR_DAMP_TIME = 0.1f;
+
         private float _delayBeforeForceReset = 0.5f;
 
         public PlayerFlyingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
@@ -16,6 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMethods
         public override void Enter()
         {
+            stateMachine.Animator.CrossFadeInFixedTime(FLYING, ANIMATOR_DAMP_TIME);
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
             stateMachine.StartCoroutine(ResetForceAfterJump());
         }
@@ -34,7 +38,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 movement += Vector3.down;
             }
 
-            Move(movement * stateMachine.FreeLookMoveSpeed, deltaTime);
+            Move(movement * stateMachine.FreeLookMoveSpeed * 2, deltaTime); //The 2 is to make flying faster than walking
 
             if (stateMachine.CharacterController.isGrounded)
             {

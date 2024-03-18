@@ -70,6 +70,7 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         public void TurnOffTrigger()
         {
             GetComponent<Collider>().enabled = false;
+            FindFirstObjectByType<PlayerStateMachine>().InteractCall -= HandleInteraction;
         }
     }
 }
