@@ -206,6 +206,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             AdditionalAttackDamage += damageIncrease;
         }
+
+        public void MoveToLocation(Vector3 newLocation)
+        {
+            transform.position = newLocation;
+        }
         #endregion
     }
 }

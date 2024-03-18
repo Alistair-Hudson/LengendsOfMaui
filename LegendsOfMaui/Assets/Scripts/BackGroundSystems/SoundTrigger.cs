@@ -46,6 +46,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
                 _audioSource.PlayOneShot(audioClip);
                 yield return new WaitUntil(() => !_audioSource.isPlaying);
             }
+            subtitles.gameObject.SetActive(false);
 
             if (isDisabledOnFinish)
             {
