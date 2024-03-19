@@ -88,6 +88,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
         }
 
+        protected override void Update()
+        {
+            base.Update();
+            _health.RegenerateHealth(Time.deltaTime);
+        }
+
         private void OnEnable()
         {
             _health.OnTakeDamage += HandleOnTakeDamage;

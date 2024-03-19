@@ -8,7 +8,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
     {
         protected State _currentState = null;
 
-        private void Update()
+        virtual protected void Update()
         {
             _currentState?.Tick(Time.deltaTime);
         }

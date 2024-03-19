@@ -17,15 +17,15 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void OnEnable()
         {
-            FindFirstObjectByType<PlayerStateMachine>().Health.OnDodged += HandleOnDodge;
+            FindFirstObjectByType<PlayerStateMachine>().Health.OnBlocked += HandleOnBlock;
         }
 
         private void OnDisable()
         {
-            FindFirstObjectByType<PlayerStateMachine>().Health.OnDodged -= HandleOnDodge;
+            FindFirstObjectByType<PlayerStateMachine>().Health.OnBlocked -= HandleOnBlock;
         }
 
-        private void HandleOnDodge()
+        private void HandleOnBlock()
         {
             _timesBlocked++;
             if (_timesBlocked >= numberOfBlocksRequired)
