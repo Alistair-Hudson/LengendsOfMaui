@@ -1934,15 +1934,114 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.7075652
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 959130608290995706, guid: d4a145909073657419315e34ce8f8cd7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2925277957470031382, guid: d4a145909073657419315e34ce8f8cd7,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4903375772862987941}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2418551905907395284, guid: d4a145909073657419315e34ce8f8cd7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6921518815997273440}
+    - targetCorrespondingSourceObject: {fileID: 2418551905907395284, guid: d4a145909073657419315e34ce8f8cd7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6661111370314631940}
+    - targetCorrespondingSourceObject: {fileID: 2418551905907395284, guid: d4a145909073657419315e34ce8f8cd7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6706305719566410594}
+    - targetCorrespondingSourceObject: {fileID: 2418551905907395284, guid: d4a145909073657419315e34ce8f8cd7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7918317559282554382}
   m_SourcePrefab: {fileID: 100100000, guid: d4a145909073657419315e34ce8f8cd7, type: 3}
+--- !u!1 &3714231304183280891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2418551905907395284, guid: d4a145909073657419315e34ce8f8cd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304906540793118255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &6921518815997273440
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714231304183280891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6661111370314631940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714231304183280891}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7052fa642a68164bb2fd6671972ae5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drag: 0.3
+--- !u!114 &6706305719566410594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714231304183280891}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d191763f11fff1e4a8a751a9f37f9c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 100
+  <HealthRegenPerSecond>k__BackingField: 100
+--- !u!114 &7918317559282554382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714231304183280891}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc964a13d937d54b9a2f62d4095fe1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsTable: {fileID: 11400000, guid: 1084844d17030dc4e8eb9fa59c70e7b1, type: 2}
+  _animatorOverrideController: {fileID: 22100000, guid: 15af0715d4a57514e923478437b5655f,
+    type: 2}
+  _level: 1
+  _isNocternal: 0
+  _isDiurnal: 0
+  <PlayerChaseRange>k__BackingField: 5
+  <AttackRange>k__BackingField: 1
+  <AttackDamage>k__BackingField: 0
+  <KnockBackForce>k__BackingField: 0
+  <MovementSpeed>k__BackingField: 1.5
 --- !u!4 &4216311912675586105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2925277957470031382, guid: d4a145909073657419315e34ce8f8cd7,
