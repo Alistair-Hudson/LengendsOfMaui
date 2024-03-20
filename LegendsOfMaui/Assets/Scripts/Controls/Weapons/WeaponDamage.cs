@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 {
+    [RequireComponent(typeof(AudioSource))]
     public class WeaponDamage : MonoBehaviour
     {
         [SerializeField]
@@ -12,8 +13,14 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
         private List<Collider> _collidedWith = new List<Collider>();
 
+        private AudioSource _weaponCollisionAudio = null;
         private float _damage = 0;
         private float _knockBack = 0;
+
+        private void Awake()
+        {
+            _weaponCollisionAudio = GetComponent<AudioSource>();
+        }
 
         private void OnEnable()
         {
@@ -37,6 +44,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
             if (other.TryGetComponent<Health>(out var health))
             {
                 health.DealDamage(_damage);
+                _weaponCollisionAudio.Play();
             }
             if (other.TryGetComponent<ForceReceiver>(out var forceReceiver))
             {

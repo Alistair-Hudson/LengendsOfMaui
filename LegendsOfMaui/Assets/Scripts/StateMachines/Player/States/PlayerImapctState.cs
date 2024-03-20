@@ -9,7 +9,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private readonly int IMPACT = Animator.StringToHash("GetHit");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
-        private float _duration = 1f;
+        private float _duration = 0.1f;
 
         public PlayerImapctState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
         {

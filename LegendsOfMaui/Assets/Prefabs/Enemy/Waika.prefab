@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: a438d0c6a218e474cb5078f33989eaa5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: a438d0c6a218e474cb5078f33989eaa5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: a438d0c6a218e474cb5078f33989eaa5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: a438d0c6a218e474cb5078f33989eaa5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,6 +264,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 0ebf285890cc970489f74f358f66979b,
         type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: <AttackRange>k__BackingField
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 759411736839749815, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: m_Height
+      value: 5.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 759411736839749815, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197517346416187285, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: m_Height
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197517346416187285, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197517346416187285, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7429184780711128933, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
       propertyPath: m_RootOrder

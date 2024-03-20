@@ -15,6 +15,8 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         [SerializeField]
         private bool NeedsToBeHuman = false;
 
+        private bool _hasPlayed = false;
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent<PlayerStateMachine>(out var playerStateMachine))
@@ -59,18 +61,22 @@ namespace AlictronicGames.LegendsOfMaui.Utils
                 return;
             }
             playerStateMachine.PressToIntreract.gameObject.SetActive(false);
-            playerStateMachine.InteractCall += HandleInteraction;
+            playerStateMachine.InteractCall -= HandleInteraction;
         }
 
         private void HandleInteraction()
         {
+            if (_hasPlayed)
+            {
+                return;
+            }
             GetComponent<PlayableDirector>().Play();
         }
 
         public void TurnOffTrigger()
         {
+            _hasPlayed = true;
             GetComponent<Collider>().enabled = false;
-            FindFirstObjectByType<PlayerStateMachine>().InteractCall -= HandleInteraction;
         }
     }
 }
