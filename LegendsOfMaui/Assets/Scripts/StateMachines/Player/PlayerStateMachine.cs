@@ -161,6 +161,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleShapeShift()
         {
+            if (_birdForm == null || _humanForm == null)
+            {
+                return;
+            }
             IsShapeShifted ^= true;
             _humanForm.SetActive(!IsShapeShifted);
             _birdForm.SetActive(IsShapeShifted);
