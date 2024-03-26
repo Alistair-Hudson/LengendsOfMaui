@@ -26,6 +26,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Exit()
         {
+            stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
         }
 
         public override void Tick(float deltaTime)
