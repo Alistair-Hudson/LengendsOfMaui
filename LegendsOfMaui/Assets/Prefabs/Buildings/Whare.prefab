@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4771828742497035937}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carvings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535803513005156447}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 396434769797818625}
   - component: {fileID: 1991979186222919138}
   - component: {fileID: 1483318230191135776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackBackDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751822539469925415}
   - component: {fileID: 3623320770642681970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Whare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1920879874821647688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7434931082975211994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,6 +431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareDoorRight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40f899b703e5541429573959b0c30894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -509,6 +514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -589,6 +599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -667,6 +682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -747,6 +767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareUpperWall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6833eb77f6b780439b54dc9d4923afb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -825,6 +850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -905,6 +935,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -983,6 +1018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1063,6 +1103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1142,6 +1187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1220,6 +1270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1310,6 +1365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1399,6 +1459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1477,6 +1542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWallWindow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 021ede7eb15ea484fb8d6ead18e9886d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1562,6 +1632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmoTall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a1bf5074fd35aa41ad8e6d470785085,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1640,6 +1715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1720,6 +1800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1799,6 +1884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1877,6 +1967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1962,6 +2057,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareUpperWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6833eb77f6b780439b54dc9d4923afb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2040,6 +2140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2120,6 +2225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paepae (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2198,6 +2308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2288,6 +2403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2376,6 +2496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2466,6 +2591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2544,6 +2674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2624,6 +2759,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2702,6 +2842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2782,6 +2927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2860,6 +3010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2940,6 +3095,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3018,6 +3178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareMaihiRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 396bc03c608b1ab4b8619e81fed233de,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 396bc03c608b1ab4b8619e81fed233de,
         type: 3}
@@ -3123,6 +3288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koruru
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea99b1dd58af69c4a98873b6b73aa395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3201,6 +3371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3291,6 +3466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3369,6 +3549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3449,6 +3634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paepae (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3527,6 +3717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3617,6 +3812,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3706,6 +3906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3784,6 +3989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3864,6 +4074,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3942,6 +4157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4027,6 +4247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmoTall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a1bf5074fd35aa41ad8e6d470785085,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4105,6 +4330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4190,6 +4420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareUpperWall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6833eb77f6b780439b54dc9d4923afb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4268,6 +4503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4348,6 +4588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paepae (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4426,6 +4671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4506,6 +4756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paepae (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4584,6 +4839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4664,6 +4924,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4742,6 +5007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareUpperWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6833eb77f6b780439b54dc9d4923afb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4822,6 +5092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4900,6 +5175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4990,6 +5270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5068,6 +5353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paepae (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b90109cc8206a345b6eb2742f6804be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5148,6 +5438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5227,6 +5522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5305,6 +5605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5395,6 +5700,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5473,6 +5783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareMaihiLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15dadbd83cb53c847b6738db97415f6d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 15dadbd83cb53c847b6738db97415f6d,
         type: 3}
@@ -5568,6 +5883,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5646,6 +5966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5726,6 +6051,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5804,6 +6134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareRoof (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5884,6 +6219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5962,6 +6302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6042,6 +6387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareDoorLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d21131690735954587165c89a4f93f0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6120,6 +6470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6200,6 +6555,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareRoof (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 406f2f6d273deda46b2ee560fa1fafb4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6278,6 +6638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWallWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 021ede7eb15ea484fb8d6ead18e9886d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6358,6 +6723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhareWall (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6436,6 +6806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhareWall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de344d1b139d7434a8d795b67744d2bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
