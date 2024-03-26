@@ -24,6 +24,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, 0);
             stateMachine.InputReader.TargetEvent += HandleOnTarget;
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
+            stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
             if (_shouldFade)
             {
                 stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, ANIMATOR_DAMP_TIME);
@@ -38,6 +39,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             stateMachine.InputReader.TargetEvent -= HandleOnTarget;
             stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
+            stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
         }
 
         public override void Tick(float deltaTime)
@@ -46,9 +48,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }
+            
             if (stateMachine.InputReader.IsAttacking && !stateMachine.IsShapeShifted)
             {
                 stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+                return;
+            }
+
+            if (stateMachine.InputReader.IsBlocking && !stateMachine.IsShapeShifted)
+            {
+                stateMachine.SwitchState(new PlayerBlockState(stateMachine));
                 return;
             }
 
@@ -98,6 +107,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
         }
 
+        private void HandleOnDodgeEvent()
+        {
+            if (stateMachine.InputReader.MovementValue == Vector2.zero)
+            {
+                return;
+            }
+
+            stateMachine.SwitchState(new PlayerDodgingState(stateMachine, stateMachine.InputReader.MovementValue));
+        }
         #endregion
 
         #region PrivateMethods
