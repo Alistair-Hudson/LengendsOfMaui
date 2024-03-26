@@ -18,6 +18,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMachine
         public override void Enter()
         {
+            stateMachine.transform.forward = Camera.main.transform.forward;
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
             stateMachine.WeaponDamage.SetAttack(_attack.AttackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
         }
