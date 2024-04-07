@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 5405720992382641178}
   - component: {fileID: 2077649710036633257}
   - component: {fileID: 7176881963195527058}
+  - component: {fileID: 4476554950899416225}
   m_Layer: 0
   m_Name: PlayerMaui
   m_TagString: Player
@@ -500,6 +501,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _progessionTable: {fileID: 11400000, guid: 2b82d610b2d5b014b9f89c6f9ea8d762, type: 2}
+--- !u!114 &4476554950899416225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2157975427751165707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff3919b134991e4c8d89d4237f35c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: Player
 --- !u!1 &2191167613314529983
 GameObject:
   m_ObjectHideFlags: 0
