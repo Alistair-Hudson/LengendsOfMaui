@@ -10,6 +10,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private readonly int DEATH = Animator.StringToHash("Death");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
+        private float _respawnDelay = 30f;
+
         public EnemyDeathState(EnemyStateMachine playerStateMachine) : base(playerStateMachine)
         {
         }
@@ -30,7 +32,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Tick(float deltaTime)
         {
-
+            _respawnDelay -= deltaTime;
+            if (_respawnDelay <= 0)
+            {
+                var respawnedEnemy = GameObject.Instantiate(stateMachine.gameObject, stateMachine.transform.position, Quaternion.identity);
+                respawnedEnemy.GetComponent<CharacterController>().enabled = true;
+                GameObject.Destroy(stateMachine.gameObject);
+            }
         }
 
         public override void FixedTick()
