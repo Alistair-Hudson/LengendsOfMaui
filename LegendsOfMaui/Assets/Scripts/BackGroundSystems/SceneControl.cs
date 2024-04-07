@@ -19,22 +19,27 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             _splashScene = splashScene;
         }
 
-        private static void LoadSplashScene()
+        private static IEnumerator LoadSplashScene()
         {
-            SceneManager.LoadSceneAsync(_splashScene);
+           yield return SceneManager.LoadSceneAsync(_splashScene);
         }
 
-        private static void UnloadSplashScene()
+        private static IEnumerator UnloadSplashScene()
         {
-            SceneManager.UnloadSceneAsync(_splashScene);
+            yield return SceneManager.UnloadSceneAsync(_splashScene);
         }
 
         [Button("Load Scene")]
-        public static async void LoadNextScene(string sceneName)
+        private void CallLoadNextScene(string sceneName)
         {
-            LoadSplashScene();
-            await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-            UnloadSplashScene();
+            StartCoroutine(LoadNextScene(sceneName));
+        }
+
+        public static IEnumerator LoadNextScene(string sceneName)
+        {
+            yield return LoadSplashScene();
+            yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            yield return UnloadSplashScene();
         }
 
         public object CaptureState()
