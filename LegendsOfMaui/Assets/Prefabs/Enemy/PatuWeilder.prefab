@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 6561341109262540916, guid: ea6bfbfd40209a44c8af31549e3b59d1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.62697107
       objectReference: {fileID: 0}
     - target: {fileID: 6561341109262540916, guid: ea6bfbfd40209a44c8af31549e3b59d1,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 6561341109262540916, guid: ea6bfbfd40209a44c8af31549e3b59d1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7790426
       objectReference: {fileID: 0}
     - target: {fileID: 6561341109262540916, guid: ea6bfbfd40209a44c8af31549e3b59d1,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 6561341109262540916, guid: ea6bfbfd40209a44c8af31549e3b59d1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 102.346
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -104,6 +104,12 @@ PrefabInstance:
       propertyPath: _statsTable
       value: 
       objectReference: {fileID: 11400000, guid: 1084844d17030dc4e8eb9fa59c70e7b1,
+        type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
+      propertyPath: _animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: 15af0715d4a57514e923478437b5655f,
         type: 2}
     - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}

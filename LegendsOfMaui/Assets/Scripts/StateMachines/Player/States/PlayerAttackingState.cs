@@ -15,6 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             _attack = playerStateMachine.GetAttackAtIndex(attackIndex);
         }
+
         #region StateMachine
         public override void Enter()
         {
