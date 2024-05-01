@@ -127,6 +127,15 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenPauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c8678a2-a638-4639-bd64-4c4c4d44dd46"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -385,6 +394,17 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 },
                 {
                     ""name"": """",
+                    ""id"": ""447d1628-ba0b-422c-b075-0117e594e75a"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""OpenProgressMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""85b73132-cee5-4340-b870-9bc532c5f5e3"",
                     ""path"": ""<Keyboard>/leftCtrl"",
                     ""interactions"": """",
@@ -402,6 +422,28 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""processors"": """",
                     ""groups"": ""GamePad"",
                     ""action"": ""ReduceHeight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1d54104-373c-45d6-be1c-6336e8a4e222"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""OpenPauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab6ced5b-d4ca-4563-a31c-bf9809a5a15f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""OpenPauseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -451,6 +493,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
             m_Player_OpenProgressMenu = m_Player.FindAction("OpenProgressMenu", throwIfNotFound: true);
             m_Player_ReduceHeight = m_Player.FindAction("ReduceHeight", throwIfNotFound: true);
+            m_Player_OpenPauseMenu = m_Player.FindAction("OpenPauseMenu", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -523,6 +566,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private readonly InputAction m_Player_Action;
         private readonly InputAction m_Player_OpenProgressMenu;
         private readonly InputAction m_Player_ReduceHeight;
+        private readonly InputAction m_Player_OpenPauseMenu;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -538,6 +582,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             public InputAction @Action => m_Wrapper.m_Player_Action;
             public InputAction @OpenProgressMenu => m_Wrapper.m_Player_OpenProgressMenu;
             public InputAction @ReduceHeight => m_Wrapper.m_Player_ReduceHeight;
+            public InputAction @OpenPauseMenu => m_Wrapper.m_Player_OpenPauseMenu;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -580,6 +625,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @ReduceHeight.started += instance.OnReduceHeight;
                 @ReduceHeight.performed += instance.OnReduceHeight;
                 @ReduceHeight.canceled += instance.OnReduceHeight;
+                @OpenPauseMenu.started += instance.OnOpenPauseMenu;
+                @OpenPauseMenu.performed += instance.OnOpenPauseMenu;
+                @OpenPauseMenu.canceled += instance.OnOpenPauseMenu;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -617,6 +665,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @ReduceHeight.started -= instance.OnReduceHeight;
                 @ReduceHeight.performed -= instance.OnReduceHeight;
                 @ReduceHeight.canceled -= instance.OnReduceHeight;
+                @OpenPauseMenu.started -= instance.OnOpenPauseMenu;
+                @OpenPauseMenu.performed -= instance.OnOpenPauseMenu;
+                @OpenPauseMenu.canceled -= instance.OnOpenPauseMenu;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -665,6 +716,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             void OnAction(InputAction.CallbackContext context);
             void OnOpenProgressMenu(InputAction.CallbackContext context);
             void OnReduceHeight(InputAction.CallbackContext context);
+            void OnOpenPauseMenu(InputAction.CallbackContext context);
         }
     }
 }

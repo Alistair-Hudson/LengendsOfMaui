@@ -65,7 +65,7 @@ namespace AlictronicGames.LegendsOfMaui.UI
             _matuProgressDisplay.fillAmount = _playerManaProgression.ProgessPercentage(matuMana, matuLevel);
         }
 
-        private void KoruLevelUpHandler(float koruMana, int koruLevel, string nextKoruBonus)
+        private void KoruLevelUpHandler(float koruMana, int koruLevel, string nextKoruBonus)     
         {
             _koruLevelDisplay.text = $"Koru Level: {koruLevel}";
             _koruNextDisplay.text = nextKoruBonus;

@@ -22,6 +22,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action ShapeShift;
         public event Action PerformAction;
         public event Action OpenCloseProgressMenu;
+        public event Action OpenClosePauseMenu;
 
         private void Start()
         {
@@ -151,6 +152,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             else if (context.canceled)
             {
                 IsTravelingDown = false;
+            }
+        }
+
+        public void OnOpenPauseMenu(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OpenClosePauseMenu?.Invoke();
             }
         }
     }
