@@ -50,7 +50,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         private void LoadMainMenu()
         {
-            SceneControl.LoadNextScene("MainMenu");
+            StartCoroutine(SceneControl.LoadNextScene("MainMenu"));
         }
 
         private void OpenCloseMenuHandler()

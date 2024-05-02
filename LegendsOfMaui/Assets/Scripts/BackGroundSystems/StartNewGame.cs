@@ -11,7 +11,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         public void StartGame()
         {
-            SceneControl.LoadNextScene(firstScene);
+            FindFirstObjectByType<SceneControl>().StartCoroutine(SceneControl.LoadNextScene(firstScene));
         }
     }
 }
