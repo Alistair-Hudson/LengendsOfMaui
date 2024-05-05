@@ -38,24 +38,19 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             OpenCloseMenuHandler();
         }
 
-        private void OnEnable()
-        {
-            Cursor.visible = true;
-        }
-
-        private void OnDisable()
-        {
-            Cursor.visible = false;
-        }
-
         private void LoadMainMenu()
         {
+            Debug.Log("quiting game");
             StartCoroutine(SceneControl.LoadNextScene("MainMenu"));
         }
 
         private void OpenCloseMenuHandler()
         {
             menuBG.SetActive(!menuBG.activeSelf);
+            Cursor.visible = menuBG.activeSelf;
+            Cursor.lockState = menuBG.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+            Time.timeScale = menuBG.activeSelf ? 0 : 1;
+            FindFirstObjectByType<PlayerStateMachine>().GetComponent<InputReader>().enabled = !menuBG.activeSelf;
         }
     }
 }

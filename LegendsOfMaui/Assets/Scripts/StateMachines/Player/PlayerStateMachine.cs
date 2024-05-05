@@ -23,6 +23,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private List<AttackData> _attacks = new List<AttackData>();
 
         [field: SerializeField]
+        public GameObject DeathWindow { get; private set; } = null;
+        [field: SerializeField]
         public float FreeLookMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
         public float TargetingMoveSpeed { get; private set; } = 6f;
