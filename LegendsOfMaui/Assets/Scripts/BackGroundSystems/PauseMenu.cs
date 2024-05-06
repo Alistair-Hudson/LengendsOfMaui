@@ -42,6 +42,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         {
             Debug.Log("quiting game");
             StartCoroutine(SceneControl.LoadNextScene("MainMenu"));
+            OpenCloseMenuHandler();
         }
 
         private void OpenCloseMenuHandler()
