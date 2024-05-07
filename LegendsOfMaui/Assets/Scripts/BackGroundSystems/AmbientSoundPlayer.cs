@@ -9,39 +9,58 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
     public class AmbientSoundPlayer : MonoBehaviour
     {
         [SerializeField]
-        private float _delayBetweenSounds = 30;
+        private float _maxDelayBetweenSounds = 30;
         [SerializeField]
-        private AudioClip[] _dayBirdSounds;
+        private AudioClip _sound = null;
         [SerializeField]
-        private AudioClip[] _nightBirdSounds;
+        private bool _isNocturnal = false;
 
         private AudioSource _audioSource = null;
 
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+            if (_isNocturnal)
+            {
+                DayNightCycle.NightIsActiveEvent += Awaken;
+                Awaken(DayNightCycle.IsNight);
+            }
+            else
+            {
+                DayNightCycle.DayIsActiveEvent += Awaken;
+                Awaken(!DayNightCycle.IsNight);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_isNocturnal)
+            {
+                DayNightCycle.NightIsActiveEvent -= Awaken;
+            }
+            else
+            {
+                DayNightCycle.DayIsActiveEvent -= Awaken;
+            }
         }
 
         private IEnumerator Start()
         {
             while (true)
             {
-                if (DayNightCycle.IsNight)
-                {
-                    PlaySound(_nightBirdSounds);
-                }
-                else
-                {
-                    PlaySound(_dayBirdSounds);
-                }
-                yield return new WaitForSeconds(_delayBetweenSounds);
+                yield return new WaitForSeconds(UnityEngine.Random.Range(0, _maxDelayBetweenSounds));
+                PlaySound();
             }
         }
 
-        private void PlaySound(AudioClip[] sounds)
+        private void PlaySound()
         {
-            int index = UnityEngine.Random.Range(0, sounds.Length);
-            _audioSource.PlayOneShot(sounds[index]);
+            _audioSource.PlayOneShot(_sound);
+        }
+
+        private void Awaken(bool awaken)
+        {
+            gameObject.SetActive(awaken);
         }
     }
 }
