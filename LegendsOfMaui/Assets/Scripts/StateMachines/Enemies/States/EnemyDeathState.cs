@@ -23,6 +23,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             stateMachine.CharacterController.enabled = false;
             stateMachine.CallOnDeath();
             GameObject.Destroy(stateMachine.GetComponent<Target>());
+            GameObject.Destroy(stateMachine.gameObject, 4);
         }
 
         public override void Exit()
@@ -32,13 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Tick(float deltaTime)
         {
-            _respawnDelay -= deltaTime;
-            if (_respawnDelay <= 0)
-            {
-                var respawnedEnemy = GameObject.Instantiate(stateMachine.gameObject, stateMachine.transform.position, Quaternion.identity);
-                respawnedEnemy.GetComponent<CharacterController>().enabled = true;
-                GameObject.Destroy(stateMachine.gameObject);
-            }
+
         }
 
         public override void FixedTick()

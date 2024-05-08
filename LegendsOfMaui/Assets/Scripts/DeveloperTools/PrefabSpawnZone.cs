@@ -49,10 +49,11 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
             }
         }
 
-        private void SpawnNewEnemy(EnemyStateMachine enemy)
+        private async void SpawnNewEnemy(EnemyStateMachine enemy)
         {
             enemy.OnDeathEvent -= SpawnNewEnemy;
             _spawnedPrefabs.Remove(enemy.gameObject);
+            await System.Threading.Tasks.Task.Delay(5000);
             SpawnPrefab();
         }
     }

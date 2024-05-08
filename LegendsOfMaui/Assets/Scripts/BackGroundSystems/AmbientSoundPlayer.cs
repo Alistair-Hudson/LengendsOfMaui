@@ -20,6 +20,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+            _audioSource.clip = _sound;
             if (_isNocturnal)
             {
                 DayNightCycle.NightIsActiveEvent += Awaken;
@@ -50,12 +51,13 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             {
                 yield return new WaitForSeconds(UnityEngine.Random.Range(0, _maxDelayBetweenSounds));
                 PlaySound();
+                yield return new WaitUntil(() => !_audioSource.isPlaying);
             }
         }
 
         private void PlaySound()
         {
-            _audioSource.PlayOneShot(_sound);
+            _audioSource.Play();
         }
 
         private void Awaken(bool awaken)
