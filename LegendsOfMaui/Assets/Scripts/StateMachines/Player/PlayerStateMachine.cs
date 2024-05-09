@@ -2,6 +2,7 @@ using AlictronicGames.LegendsOfMaui.Combat;
 using AlictronicGames.LegendsOfMaui.Combat.Targeting;
 using AlictronicGames.LegendsOfMaui.Combat.Weapons;
 using AlictronicGames.LegendsOfMaui.Controls;
+using AlictronicGames.LegendsOfMaui.Stats;
 using AlictronicGames.LegendsOfMaui.Utils;
 using System;
 using System.Collections;
@@ -56,6 +57,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float AdditionalAttackDamage { get; private set; } = 0;
         public float DodgeDurationModifier { get; private set; } = 0;
         public float DodgeDistanceModifier { get; private set; } = 0;
+        public int Level {
+            get
+            {
+                return GetComponent<PlayerManaProgression>().Level;
+            }
+        }
         public bool IsShapeShifted { get; private set; } = false;
 
         public event Action InteractCall;

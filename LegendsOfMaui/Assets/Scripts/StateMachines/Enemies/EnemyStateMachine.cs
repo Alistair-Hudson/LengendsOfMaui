@@ -68,7 +68,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 Animator.runtimeAnimatorController = _animatorOverrideController;
             }
             NavMeshAgent.updatePosition = false;
-            NavMeshAgent.updateRotation = false;
+            NavMeshAgent.updateRotation = false; 
         }
 
         private void Start()
@@ -84,6 +84,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 DayNightCycle.DayIsActiveEvent += HandleDayActivation;
                 HandleDayActivation(!DayNightCycle.IsNight);
             }
+            _level = Player.Level;
             AttackDamage = _statsTable.AttackPerLevel[_level];
             _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
         }

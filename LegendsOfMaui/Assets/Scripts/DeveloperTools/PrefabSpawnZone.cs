@@ -39,7 +39,7 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Terrian")))
             {
                 Debug.Log("Hit Terrain");
-                GameObject prefabInstance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], hit.point, Quaternion.identity);
+                GameObject prefabInstance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], hit.point, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
                 prefabInstance.transform.parent = transform;
                 if (prefabInstance.TryGetComponent<EnemyStateMachine>(out var enemyStateMachine))
                 {

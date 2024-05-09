@@ -42,6 +42,13 @@ namespace AlictronicGames.LegendsOfMaui.Stats
 
         public int MaxMatuLevel { get => _progessionTable.MatuDatas.Count; }
         public int MaxKoruLevel { get => _progessionTable.KoruDatas.Count; }
+        public int Level
+        {
+            get
+            {
+                return (_matuLevel + _koruLevel) / 2;
+            }
+        }
         public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }
         public float ManaRequiredForMaxKoruLevel { get => ManaRequiredToLevelUp(MaxKoruLevel); }
 
