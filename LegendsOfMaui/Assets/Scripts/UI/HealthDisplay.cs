@@ -19,6 +19,12 @@ namespace AlictronicGames.LegendsOfMaui.UI
             _healthDisplay.fillAmount = 1;
         }
 
+        private void OnEnable()
+        {
+            Health health = GetComponentInParent<Health>();
+            _healthDisplay.fillAmount = health.CurrentHealth / health.MaxHealth;
+        }
+
         private void OnDestroy()
         {
             var health = GetComponentInParent<Health>();

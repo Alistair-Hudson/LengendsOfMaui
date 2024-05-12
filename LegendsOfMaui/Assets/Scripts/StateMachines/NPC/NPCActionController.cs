@@ -40,6 +40,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             {
                 _animator.runtimeAnimatorController = _animatorOverrideController;
             }
+            this.enabled = false;
         }
 
         private void Start()

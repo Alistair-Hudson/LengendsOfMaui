@@ -12,13 +12,13 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [field: SerializeField]
         public float HealthRegenPerSecond { get; private set; } = 0;
 
-        private float _currentHealth = 0;
+        public float CurrentHealth { get; private set; } = 0;
 
         private bool _isDodging = false;
         private bool _isBlocking = false;
         private bool _isInvulnerable = false;
 
-        public bool IsDead => _currentHealth <= 0;
+        public bool IsDead => CurrentHealth <= 0;
         
         public event Action<float, float, bool> OnTakeDamage;
         public event Action OnDeath;
@@ -27,7 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void Awake()
         {
-            _currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public void DealDamage(float damage, bool causesImpact = true)
@@ -54,9 +54,9 @@ namespace AlictronicGames.LegendsOfMaui.Combat
                 return;
             }
 
-            _currentHealth -= damage;
-            OnTakeDamage?.Invoke(MaxHealth, _currentHealth, causesImpact);
-            if (_currentHealth <= 0)
+            CurrentHealth -= damage;
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, causesImpact);
+            if (CurrentHealth <= 0)
             {
                 OnDeath?.Invoke();
             }
@@ -64,7 +64,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public void RestoreHealth(float heal)
         {
-            _currentHealth = Mathf.Min(_currentHealth + heal, MaxHealth);
+            CurrentHealth = Mathf.Min(CurrentHealth + heal, MaxHealth);
         }
 
         public void SetInvulnerability(bool invulnerable)
@@ -90,7 +90,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void SetMaxHealth(float newMaxHealth)
         {
             MaxHealth = newMaxHealth;
-            _currentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public void SetHealthRegen(float newHealthRegen)
