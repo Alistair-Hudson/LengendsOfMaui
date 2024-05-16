@@ -19,6 +19,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
         private float _wayPointStopDistance = 1;
         [SerializeField]
         private bool _isNocturnal = false;
+        [SerializeField]
+        private bool _isAlwaysActive = false;
 
         private readonly int FORWARD_SPEED = Animator.StringToHash("ForwardMovement");
         private readonly int MOVEMENT = Animator.StringToHash("Movement");
@@ -40,7 +42,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.NPC
             {
                 _animator.runtimeAnimatorController = _animatorOverrideController;
             }
-            this.enabled = false;
+            this.enabled = _isAlwaysActive;
         }
 
         private void Start()
