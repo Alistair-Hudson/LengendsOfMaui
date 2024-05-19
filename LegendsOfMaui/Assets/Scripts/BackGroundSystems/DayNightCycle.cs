@@ -88,7 +88,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             {
                 light.gameObject.SetActive(false);
             }
-            else if (light.intensity > 0 && light.gameObject.activeInHierarchy)
+            else if (light.intensity > 0 && !light.gameObject.activeInHierarchy)
             {
                 light.gameObject.SetActive(true);
             }

@@ -32,7 +32,7 @@ Transform:
   - {fileID: 3920053843085214603}
   - {fileID: 8366879477464404838}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6551189711342607303
 MonoBehaviour:
@@ -149,9 +149,9 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: -0.0000019038562
-      value: 1
-      inSlope: -2.8571274
-      outSlope: -2.8571274
+      value: 5
+      inSlope: -14.285637
+      outSlope: -14.285637
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -176,9 +176,9 @@ MonoBehaviour:
       outWeight: 0.13663086
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2.8571427
-      outSlope: 2.8571427
+      value: 5
+      inSlope: 14.285713
+      outSlope: 14.285713
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 7877160884237508897, guid: 7e76679861a06524c8853775b9b96561,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2000
       objectReference: {fileID: 0}
     - target: {fileID: 7877160884237508897, guid: 7e76679861a06524c8853775b9b96561,
         type: 3}
@@ -381,12 +381,12 @@ PrefabInstance:
     - target: {fileID: 8201602495018276046, guid: 632c7a6c726f99749bcc278b69ba6d56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8201602495018276046, guid: 632c7a6c726f99749bcc278b69ba6d56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8201602495018276046, guid: 632c7a6c726f99749bcc278b69ba6d56,
         type: 3}
