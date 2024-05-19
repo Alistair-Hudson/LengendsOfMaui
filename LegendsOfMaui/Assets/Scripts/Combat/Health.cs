@@ -30,6 +30,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             CurrentHealth = MaxHealth;
         }
 
+        private void Start()
+        {
+            OnTakeDamage.Invoke(MaxHealth, CurrentHealth, false);
+        }
+
         public void DealDamage(float damage, bool causesImpact = true)
         {
             if (IsDead)
