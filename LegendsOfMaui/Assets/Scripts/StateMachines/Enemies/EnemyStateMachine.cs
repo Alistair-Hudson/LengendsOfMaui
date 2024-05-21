@@ -69,7 +69,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             }
             NavMeshAgent.updatePosition = false;
             NavMeshAgent.updateRotation = false;
-            this.enabled = false;
         }
 
         private void Start()
