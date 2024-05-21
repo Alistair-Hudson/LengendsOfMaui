@@ -121,6 +121,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             SwitchState(new EnemyDeathState(this));
             float mana = _statsTable.ManaPerLevel[_level];
             PlayerManaProgression.AddManaToPool(mana);
+            NotificationDisplay.AddNotification($"You have received {mana}");
         }
 
         private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)

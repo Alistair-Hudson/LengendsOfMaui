@@ -46,7 +46,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         {
             get
             {
-                return (_matuLevel + _koruLevel) / 2;
+                return Math.Max((_matuLevel + _koruLevel) / 2, 1);
             }
         }
         public float ManaRequiredForMaxMatuLevel { get => ManaRequiredToLevelUp(MaxMatuLevel); }

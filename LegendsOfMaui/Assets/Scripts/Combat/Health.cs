@@ -32,7 +32,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void Start()
         {
-            OnTakeDamage.Invoke(MaxHealth, CurrentHealth, false);
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, false);
         }
 
         public void DealDamage(float damage, bool causesImpact = true)
