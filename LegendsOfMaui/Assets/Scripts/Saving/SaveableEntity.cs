@@ -68,6 +68,7 @@ namespace AlictronicGames.LegendsOfMaui.Saving
             }
 
             _globalLookUp[property.stringValue] = this;
+            Debug.Log(property.stringValue);
         }
 #endif
         private bool IsUnique(string candidate)

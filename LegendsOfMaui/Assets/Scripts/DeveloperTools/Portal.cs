@@ -1,4 +1,5 @@
 using AlictronicGames.LegendsOfMaui.BackGroundSystems;
+using AlictronicGames.LegendsOfMaui.Saving;
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using System;
 using System.Collections;
@@ -8,12 +9,15 @@ using UnityEngine.AI;
 
 namespace AlictronicGames.LegendsOfMaui.DeveloperTools
 {
-    public class Portal : MonoBehaviour
+    [RequireComponent(typeof(SaveableEntity))]
+    public class Portal : MonoBehaviour, ISaveable
     {
         public enum DestintionID
         {
             A, B, C, D, E, F, G, H
         }
+
+        private readonly string AUTO_SAVE_FILE = "Auto Save";
 
         [SerializeField]
         private string connectingScene = "";
@@ -21,10 +25,17 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
         private DestintionID destintionID = DestintionID.A;
         [SerializeField]
         private Transform spawnLocation = null;
+        [SerializeField]
+        private bool isOpen = true;
 
 
         public Transform SpawnLocation { get => spawnLocation; }
         public DestintionID Destintion { get => destintionID; }
+
+        private void Start()
+        {
+            gameObject.SetActive(isOpen);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -39,10 +50,13 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
         private IEnumerator Transition()
         {
             DontDestroyOnLoad(gameObject);
+            SaveSystemWrapper.Save(AUTO_SAVE_FILE);
             yield return SceneControl.LoadNextScene(connectingScene);
+            SaveSystemWrapper.Load(AUTO_SAVE_FILE);
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+            SaveSystemWrapper.Save(AUTO_SAVE_FILE);
 
             Destroy(gameObject);
         }
@@ -76,6 +90,17 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
         {
             Gizmos.color = Color.white;
             Gizmos.DrawSphere(spawnLocation.position, 1);
+        }
+
+        public object CaptureState()
+        {
+            return isOpen;
+        }
+
+        public void RestoreState(object state)
+        {
+            isOpen = (bool)state;
+            gameObject.SetActive(isOpen);
         }
     }
 }
