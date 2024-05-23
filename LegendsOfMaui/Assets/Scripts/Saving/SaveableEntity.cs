@@ -59,7 +59,7 @@ namespace AlictronicGames.LegendsOfMaui.Saving
             }
 
             SerializedObject serializedObject = new SerializedObject(this);
-            SerializedProperty property = serializedObject.FindProperty("uniqueId");
+            SerializedProperty property = serializedObject.FindProperty("_uniqueId");
 
             if (string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue))
             {
@@ -68,7 +68,6 @@ namespace AlictronicGames.LegendsOfMaui.Saving
             }
 
             _globalLookUp[property.stringValue] = this;
-            Debug.Log(property.stringValue);
         }
 #endif
         private bool IsUnique(string candidate)

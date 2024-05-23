@@ -70,14 +70,10 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
 
         private Portal GetOtherPortal()
         {
-            Portal[] portals = FindObjectsByType<Portal>(FindObjectsSortMode.None);
+            Portal[] portals = FindObjectsByType<Portal>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             foreach (Portal portal in portals)
             {
-                if (portal == this)
-                {
-                    continue;
-                }
-                if (portal.Destintion == destintionID)
+                if (portal.Destintion == destintionID && portal != this)
                 {
                     return portal;
                 }
@@ -94,6 +90,7 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
 
         public object CaptureState()
         {
+            isOpen = gameObject.activeSelf;
             return isOpen;
         }
 
