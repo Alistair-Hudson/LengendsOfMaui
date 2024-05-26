@@ -68,12 +68,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, inputValue.magnitude, ANIMATOR_DAMP_TIME, deltaTime);
 
+            stateMachine.Health.RestoreHealth(deltaTime);
+
             if (inputValue == Vector2.zero)
             {
                 return;
             }
 
-            stateMachine.Health.RestoreHealth(deltaTime);
             FaceMovementDirection(movement);
         }
 
