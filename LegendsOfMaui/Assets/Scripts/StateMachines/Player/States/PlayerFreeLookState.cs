@@ -110,12 +110,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnDodgeEvent()
         {
-            if (stateMachine.InputReader.MovementValue == Vector2.zero)
-            {
-                return;
-            }
+            Vector2 dodgeValue = stateMachine.InputReader.MovementValue == Vector2.zero ? -Vector2.up : stateMachine.InputReader.MovementValue;
 
-            stateMachine.SwitchState(new PlayerDodgingState(stateMachine, stateMachine.InputReader.MovementValue));
+            stateMachine.SwitchState(new PlayerDodgingState(stateMachine, dodgeValue));
         }
         #endregion
 

@@ -17,6 +17,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Enter()
         {
+            stateMachine.InputReader.TargetEvent += HandleOnTarget;
+            stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
+            stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
             stateMachine.Animator.CrossFadeInFixedTime(BLOCK, ANIMATOR_DAMP_TIME);
             stateMachine.Health.SetBlocking(true);
         }
@@ -29,7 +32,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Tick(float deltaTime)
         {
             Move(deltaTime);
-            if (!stateMachine.InputReader.IsBlocking)
+            if (!stateMachine.InputReader.IsBlocking || stateMachine.IsShapeShifted)
             {
                 SwitchBackToLocmotion();
             }
@@ -64,5 +67,32 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.Animator.SetFloat(BLOCK_RIGHT_BLENDTREE, inputValue.x, ANIMATOR_DAMP_TIME, deltaTime);
         }
         #endregion
+
+        #region EventHandlers
+        private void HandleOnTarget()
+        {
+            if (!stateMachine.Targeter.SelectTarget())
+            {
+                return;
+            }
+
+            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        }
+
+        private void HandleOnJumpEvent()
+        {
+            if (stateMachine.CharacterController.isGrounded)
+            {
+                stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+            }
+        }
+
+        private void HandleOnDodgeEvent()
+        {
+            Vector2 dodgeValue = stateMachine.InputReader.MovementValue == Vector2.zero ? -Vector2.up : stateMachine.InputReader.MovementValue;
+
+            stateMachine.SwitchState(new PlayerDodgingState(stateMachine, dodgeValue));
+        }
+#endregion
     }
 }
