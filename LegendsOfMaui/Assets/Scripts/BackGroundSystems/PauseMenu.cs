@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
@@ -35,7 +36,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             quitConfirmButton.onClick.AddListener(LoadMainMenu);
             exitConfirmButton.onClick.AddListener(Application.Quit);
 
-            OpenCloseMenuHandler();
+            SetMenuState();
         }
 
         private void LoadMainMenu()
@@ -47,11 +48,33 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         private void OpenCloseMenuHandler()
         {
+            if (IsCutScenePlaying())
+            {
+                return;
+            }
+            SetMenuState();
+        }
+
+        private void SetMenuState()
+        {
             menuBG.SetActive(!menuBG.activeSelf);
             Cursor.visible = menuBG.activeSelf;
             Cursor.lockState = menuBG.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Time.timeScale = menuBG.activeSelf ? 0 : 1;
             FindFirstObjectByType<PlayerStateMachine>().GetComponent<InputReader>().enabled = !menuBG.activeSelf;
+        }
+
+        private bool IsCutScenePlaying()
+        {
+            PlayableDirector[] directors = FindObjectsByType<PlayableDirector>(FindObjectsSortMode.None);
+            foreach (PlayableDirector director in directors)
+            {
+                if (director.state == PlayState.Playing)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
