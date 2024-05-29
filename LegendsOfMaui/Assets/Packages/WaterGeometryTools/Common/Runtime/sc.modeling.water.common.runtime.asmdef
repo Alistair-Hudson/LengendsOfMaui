@@ -1,0 +1,38 @@
+{
+    "name": "sc.modeling.water.common.runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:d04eb9c554ad44ceab303cecf0c0cf82"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.splines",
+            "expression": "2.1.0",
+            "define": "SPLINES"
+        },
+        {
+            "name": "com.unity.mathematics",
+            "expression": "1.2.6",
+            "define": "MATHEMATICS"
+        },
+        {
+            "name": "com.unity.visualeffectgraph",
+            "expression": "12.1.8",
+            "define": "VFX_GRAPH"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "12.1.8",
+            "define": "URP"
+        }
+    ],
+    "noEngineReferences": false
+}

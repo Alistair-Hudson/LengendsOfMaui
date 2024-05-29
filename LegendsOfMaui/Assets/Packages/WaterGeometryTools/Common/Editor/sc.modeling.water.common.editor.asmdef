@@ -1,0 +1,24 @@
+{
+    "name": "sc.modeling.water.common.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0f9e8f73c69964f1e8176f9a0b86f9b2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.formats.fbx",
+            "expression": "4.1.3",
+            "define": "FBX_EXPORTER"
+        }
+    ],
+    "noEngineReferences": false
+}
