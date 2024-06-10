@@ -17,7 +17,9 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         [SerializeField]
         private static float _duskTime = 0.7f;
         [SerializeField]
-        private Vector3 _noonRotation;
+        private float _xAngleOffset = 30;
+        [SerializeField]
+        private AnimationCurve _celestialRotation;
 
         [Header("Sun")]
         [SerializeField]
@@ -66,8 +68,10 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             NightIsActiveEvent?.Invoke(IsNight);
             DayIsActiveEvent?.Invoke(!IsNight);
 
-            _sun.transform.eulerAngles = (Time - 0.25f) * _noonRotation * 4;
-            _moon.transform.eulerAngles = (Time - 0.75f) * _noonRotation * 4;
+            transform.eulerAngles =  new Vector3(_xAngleOffset, 0, Time * 360);
+            var celestialRotation = _celestialRotation.Evaluate(Time);
+            _sun.transform.localEulerAngles= new Vector3(_sun.transform.localEulerAngles.x, 0, celestialRotation);
+            _moon.transform.localEulerAngles = new Vector3(_moon.transform.localEulerAngles.x, 0, -celestialRotation);
 
             _sun.intensity = _sunIntensity.Evaluate(Time);
             _moon.intensity = _moonIntensity.Evaluate(Time);
