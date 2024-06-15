@@ -10,6 +10,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
     {
         [SerializeField]
         private Collider _characterCollider = null;
+        [SerializeField]
+        private AttackType _attackType = AttackType.None;
 
         private List<Collider> _collidedWith = new List<Collider>();
 
@@ -43,7 +45,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(_damage);
+                health.DealDamage(_damage, _attackType);
                 _weaponCollisionAudio.Play();
             }
             if (other.TryGetComponent<ForceReceiver>(out var forceReceiver))

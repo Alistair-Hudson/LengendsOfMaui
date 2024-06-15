@@ -35,7 +35,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, false);
         }
 
-        public void DealDamage(float damage, bool causesImpact = true)
+        public void DealDamage(float damage, AttackType attackType, bool causesImpact = true)
         {
             if (IsDead)
             {
@@ -47,13 +47,15 @@ namespace AlictronicGames.LegendsOfMaui.Combat
                 return;
             }
 
-            if (_isBlocking)
+            bool attackIsBloackable = (attackType & AttackType.Bloackable) == AttackType.Bloackable ? true : false;
+            if (_isBlocking && attackIsBloackable)
             {
                 OnBlocked?.Invoke();
                 return;
             }
 
-            if (_isDodging)
+            bool attackIsDodgeable = (attackType & AttackType.Dodgeable) == AttackType.Dodgeable ? true : false;
+            if (_isDodging && attackIsDodgeable)
             {
                 OnDodged?.Invoke();
                 return;

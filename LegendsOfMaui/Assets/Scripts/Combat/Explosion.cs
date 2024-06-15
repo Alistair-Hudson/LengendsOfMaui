@@ -11,6 +11,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private float _lifeTime = 10;
         [SerializeField]
         private float _expansionRatePerSecond = 1f;
+        [SerializeField]
+        private AttackType _attackType = AttackType.None;
 
         private Collider _userCollider = null;
         private SphereCollider _explosionCollider;
@@ -47,7 +49,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(_damage);
+                health.DealDamage(_damage, _attackType);
             }
         }
 
