@@ -23,6 +23,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void OnTriggerEnter(Collider other)
         {
+            //Targeter is checked for because it uses a Collider to find targets
             if (other == _userCollider || other.TryGetComponent<Targeter>(out var targeter))
             {
                 return;

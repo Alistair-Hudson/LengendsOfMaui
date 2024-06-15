@@ -19388,6 +19388,7 @@ GameObject:
   - component: {fileID: 890296891329255697}
   - component: {fileID: 2031187659946524539}
   - component: {fileID: 7912542810354010288}
+  - component: {fileID: -7615438711068393383}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -19476,3 +19477,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeTime: 30
   _attackType: 2
+--- !u!114 &-7615438711068393383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7f2d0efc9a7e642845cb1ebc0cf406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRubble: 10
+  impulse: 10
+  rubblePrefabs:
+  - {fileID: 8653445268478352087, guid: bf346e720de33154696c3b7ea18a262d, type: 3}
+  - {fileID: 8653445268478352087, guid: c7e93b8772ce1ee439447f9a7073afbe, type: 3}
+  - {fileID: 8653445268478352087, guid: a8f4c85bebc48d8438fc927eb4e112e6, type: 3}
+  - {fileID: 8653445268478352087, guid: 7a4f92e7dee11cb448ce4fda145cea3f, type: 3}
+  - {fileID: 8653445268478352087, guid: d4ae3ab3f5f8ecb4c8d154f162b9fee4, type: 3}
+  - {fileID: 8653445268478352087, guid: 8164b7bffbcb6fd49b8bbdf83798d1e1, type: 3}
+  - {fileID: 8653445268478352087, guid: 5ab080c6271018746afffabd7f4d1e80, type: 3}
+  - {fileID: 8653445268478352087, guid: dfba5bb055e2c5546baaa47722a1fc0b, type: 3}
+  - {fileID: 8653445268478352087, guid: ee71677497e866642bf0b39d078a5fd0, type: 3}
+  - {fileID: 8653445268478352087, guid: da0bcf206a717f740b72fd236860eb94, type: 3}
