@@ -14,8 +14,12 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private Rigidbody[] rubblePrefabs;
 
-        private void OnDestroy()
+        private void OnTriggerEnter(Collider collider)
         {
+            if (!(collider is TerrainCollider))
+            {
+                return;
+            }
             ThrowRubble();
         }
 

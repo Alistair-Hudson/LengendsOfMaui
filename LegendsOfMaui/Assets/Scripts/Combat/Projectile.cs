@@ -28,12 +28,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             {
                 return;
             }
-            Debug.Log(other.gameObject.name);
+
             if (other.TryGetComponent<Health>(out var health))
             {
                 health.DealDamage(_damage, _attackType);
             }
-            Destroy(gameObject);
         }
 
         public void SetProjectile(Collider userCollider, float damage)
