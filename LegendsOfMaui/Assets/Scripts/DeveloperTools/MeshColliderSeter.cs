@@ -34,6 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.DeveloperTools
             else
             {
                 meshCollider.sharedMesh = mesh;
+                meshCollider.convex = true;
             }
 
 
