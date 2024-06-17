@@ -12,6 +12,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private float impulse = 10;
         [SerializeField]
+        private BlockingRock blockingRockPrefab = null;
+        [SerializeField]
         private Rigidbody[] rubblePrefabs;
 
         private void OnTriggerEnter(Collider collider)
@@ -20,7 +22,23 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             {
                 return;
             }
+
             ThrowRubble();
+
+            CreateBlockingRock(collider);
+        }
+
+        private void CreateBlockingRock(Collider collider)
+        {
+            if (blockingRockPrefab)
+            {
+                Quaternion direction = Quaternion.Euler(-transform.forward);
+                Ray ray = new Ray(transform.position, Vector3.down);
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+                    BlockingRock blockingRockInstance = Instantiate(blockingRockPrefab, hit.point, direction);
+                }
+            }
         }
 
         private void ThrowRubble()
