@@ -35,10 +35,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             }
         }
 
-        public void SetProjectile(Collider userCollider, float damage)
+        public void SetProjectile(Collider userCollider, float damage, float velocity)
         {
             _userCollider = userCollider;
             _damage = damage;
+            GetComponent<Rigidbody>().velocity = transform.forward * velocity;
         }
     }
 }

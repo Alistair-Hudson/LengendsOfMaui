@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2067641865046999705}
   - component: {fileID: 5674524403742626449}
   - component: {fileID: 91233586483935214}
+  - component: {fileID: 6279613263445063218}
   m_Layer: 0
-  m_Name: BlockingRock
+  m_Name: Te-RaFightRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf96adac2f47d9245bf51f39e9e567c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protectionDelay: 2
 --- !u!65 &91233586483935214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67,6 +69,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.415673, y: 3.26759, z: 5.535179}
   m_Center: {x: -0.25175285, y: 1.5308845, z: -2.26759}
+--- !u!114 &6279613263445063218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616779721393074013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbab6a387f71cd74381393f281af028b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3336389150154127743, guid: 7d2f587c73bd29047a4ebed3923b934c,
+    type: 3}
+  projectileDamage: 50
+  projectileSpeed: 10
 --- !u!1001 &1018705585131454082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,6 +93,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2067641865046999705}
     m_Modifications:
+    - target: {fileID: 5214335529546661170, guid: 244fe7240ba55ae4aab622581df24828,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8745562623446654623, guid: 244fe7240ba55ae4aab622581df24828,
         type: 3}
       propertyPath: m_LocalScale.x

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Combat
 {
-    public class BlockingRock : MonoBehaviour
+    public class ProtectingObject : MonoBehaviour
     {
         [SerializeField]
         private float protectionDelay = 2f;

@@ -43,8 +43,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
             attackInstance.transform.rotation = Quaternion.LookRotation(lookDir);
             attackInstance.transform.parent = transform.parent;
-            attackInstance.GetComponent<Rigidbody>().velocity = attackInstance.transform.forward * _attack0Speed;
-            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.Attacks[0].AttackDamage);
+            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.Attacks[0].AttackDamage, _attack0Speed);
         }
 
         public void CallAttack1()
