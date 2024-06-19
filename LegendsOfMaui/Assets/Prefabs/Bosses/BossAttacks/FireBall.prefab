@@ -19475,6 +19475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e2f68d91523bb4e988752e2003884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destoryAfterDamage: 0
   _lifeTime: 30
   _attackType: 2
 --- !u!114 &-7615438711068393383
@@ -19491,7 +19492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRubble: 10
   impulse: 10
-  blockingRockPrefab: {fileID: 5674524403742626449, guid: 86cf8cf412489684b800b10299411909,
+  protectingObjectPrefab: {fileID: 2616779721393074013, guid: 86cf8cf412489684b800b10299411909,
     type: 3}
   rubblePrefabs:
   - {fileID: 8653445268478352087, guid: bf346e720de33154696c3b7ea18a262d, type: 3}

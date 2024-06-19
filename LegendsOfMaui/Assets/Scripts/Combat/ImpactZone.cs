@@ -12,7 +12,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private float impulse = 10;
         [SerializeField]
-        private ProtectingObject blockingRockPrefab = null;
+        private GameObject protectingObjectPrefab = null;
         [SerializeField]
         private Rigidbody[] rubblePrefabs;
 
@@ -26,17 +26,19 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             ThrowRubble();
 
             CreateBlockingRock(collider);
+
+            Destroy(gameObject);
         }
 
         private void CreateBlockingRock(Collider collider)
         {
-            if (blockingRockPrefab)
+            if (protectingObjectPrefab)
             {
                 Quaternion direction = Quaternion.Euler(-transform.forward);
                 Ray ray = new Ray(transform.position, Vector3.down);
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
-                    ProtectingObject blockingRockInstance = Instantiate(blockingRockPrefab, hit.point, direction);
+                    var blockingRockInstance = Instantiate(protectingObjectPrefab, hit.point, direction);
                 }
             }
         }

@@ -8,6 +8,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField]
+        private bool _destoryAfterDamage = true;
+        [SerializeField]
         private float _lifeTime = 10;
         [SerializeField]
         private AttackType _attackType = AttackType.None;
@@ -32,6 +34,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (other.TryGetComponent<Health>(out var health))
             {
                 health.DealDamage(_damage, _attackType);
+
+                if (_destoryAfterDamage)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 
