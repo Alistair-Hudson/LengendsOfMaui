@@ -11,7 +11,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         {
             if (TryGetComponent<Health>(out Health health))
             {
-                health.OnDeath += HandleOnDeath;
+                health.OnDeath.AddListener(HandleOnDeath);
             }
         }
 

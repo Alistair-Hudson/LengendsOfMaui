@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace AlictronicGames.LegendsOfMaui.Combat
 {
@@ -11,6 +12,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public float MaxHealth { get; private set; } = 100f;
         [field: SerializeField]
         public float HealthRegenPerSecond { get; private set; } = 0;
+        [field: SerializeField]
+        public UnityEvent OnDeath;
 
         public float CurrentHealth { get; private set; } = 0;
 
@@ -21,7 +24,6 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public bool IsDead => CurrentHealth <= 0;
         
         public event Action<float, float, bool> OnTakeDamage;
-        public event Action OnDeath;
         public event Action OnBlocked;
         public event Action OnDodged;
 

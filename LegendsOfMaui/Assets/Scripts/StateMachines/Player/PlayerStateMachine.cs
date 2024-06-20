@@ -126,13 +126,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private void OnEnable()
         {
             Health.OnTakeDamage += HandleOnTakeDamage;
-            Health.OnDeath += HandleOnDeath;
+            Health.OnDeath.AddListener(HandleOnDeath);
         }
 
         private void OnDisable()
         {
             Health.OnTakeDamage -= HandleOnTakeDamage;
-            Health.OnDeath -= HandleOnDeath;
+            Health.OnDeath.RemoveListener(HandleOnDeath);
         }
         #endregion
 
