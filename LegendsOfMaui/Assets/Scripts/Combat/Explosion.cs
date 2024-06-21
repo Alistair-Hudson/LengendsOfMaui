@@ -7,6 +7,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 {
     public class Explosion : MonoBehaviour
     {
+        [SerializeField] private Transform explosionVisuals = null;
         [SerializeField]
         private float _lifeTime = 10;
         [SerializeField]
@@ -37,7 +38,9 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void Update()
         {
-            _explosionCollider.radius += _expansionRatePerSecond * Time.deltaTime;
+            float expansionIncrease = _expansionRatePerSecond * Time.deltaTime;
+            _explosionCollider.radius += expansionIncrease;
+            explosionVisuals.localScale += Vector3.one * (expansionIncrease * 2);//the 2 is to ensure the mesh expands at the same rate as the collider
         }
 
         private void OnTriggerEnter(Collider other)
