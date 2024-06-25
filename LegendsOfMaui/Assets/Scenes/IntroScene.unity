@@ -1089,55 +1089,18 @@ Transform:
   - {fileID: 2050271311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &66749992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4099802588778935635, guid: 05b7fff87b3960143ae3e208f4e552d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1475654968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &66749994 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4918801096590817294, guid: 05b7fff87b3960143ae3e208f4e552d2,
     type: 3}
   m_PrefabInstance: {fileID: 1475654968}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66749992}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e26823f26e94f040b84fdae7abeabc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &66749995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66749992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 023911a627e3ec94f856b5ff2b838690, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 66749994}
-          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.SceneControl,
-            Assembly-CSharp
-          m_MethodName: LoadNextScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: TamasKainga
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &73035491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,12 +2802,12 @@ PrefabInstance:
     - target: {fileID: 6337368316332432729, guid: 798c85588d5de794696e57e274c91a19,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.7193483e-15
+      value: -8.5967417e-16
       objectReference: {fileID: 0}
     - target: {fileID: 6337368316332432729, guid: 798c85588d5de794696e57e274c91a19,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.118482e-16
+      value: 3.1694641e-16
       objectReference: {fileID: 0}
     - target: {fileID: 6410230286820717268, guid: 798c85588d5de794696e57e274c91a19,
         type: 3}
@@ -3269,7 +3232,7 @@ PrefabInstance:
     - target: {fileID: 8682366732355139293, guid: 798c85588d5de794696e57e274c91a19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3826549e-14
+      value: 6.744025e-15
       objectReference: {fileID: 0}
     - target: {fileID: 8682366732355139293, guid: 798c85588d5de794696e57e274c91a19,
         type: 3}
@@ -4841,7 +4804,7 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.016628655
+      value: 0.016628658
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -4851,7 +4814,7 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009817882
+      value: -0.009817885
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6416,7 +6379,7 @@ PrefabInstance:
     - target: {fileID: 3355990947242305184, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: timeToSkipTo
-      value: 31.5
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4545831918830857223, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6561,22 +6524,22 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000002079004
+      value: 0.99986124
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000004907863
+      value: 0.016659802
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.973249
+      value: -0.000000087410655
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22975293
+      value: 0.000000001456445
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6743,7 +6706,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneBindings.Array.data[11].value
       value: 
-      objectReference: {fileID: 66749995}
+      objectReference: {fileID: 1532942731}
     - target: {fileID: 7393788546516088996, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_SceneBindings.Array.data[12].value
@@ -6912,6 +6875,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1532942727}
+    - targetCorrespondingSourceObject: {fileID: 546930621011095498, guid: d3f1ebab26ffa334898452c81c1c4ff7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1532942731}
     - targetCorrespondingSourceObject: {fileID: 4545831918830857223, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       insertIndex: -1
@@ -18292,11 +18259,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4099802588778935635, guid: 05b7fff87b3960143ae3e208f4e552d2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 66749995}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b7fff87b3960143ae3e208f4e552d2, type: 3}
 --- !u!1 &1480592800
 GameObject:
@@ -19031,6 +18994,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70efe300acc09247912a0270e7b6941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1532942731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532942724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 023911a627e3ec94f856b5ff2b838690, type: 2}
+    - {fileID: 11400000, guid: 45bc657d675ccfe49848658571b7a051, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 66749994}
+          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.SceneControl,
+            Assembly-CSharp
+          m_MethodName: CallLoadNextScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: TamasKainga
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 171405716}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1548319107
 GameObject:
   m_ObjectHideFlags: 0
