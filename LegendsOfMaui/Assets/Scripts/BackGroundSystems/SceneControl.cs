@@ -34,6 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         [Button("Load Scene")]
         public void CallLoadNextScene(string sceneName)
         {
+            Debug.Log($"Changing to {sceneName}");
             StartCoroutine(LoadNextScene(sceneName));
         }
 

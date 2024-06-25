@@ -74,6 +74,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void RestoreHealth(float heal)
         {
             CurrentHealth = Mathf.Min(CurrentHealth + heal, MaxHealth);
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, false);
         }
 
         public void SetInvulnerability(bool invulnerable)

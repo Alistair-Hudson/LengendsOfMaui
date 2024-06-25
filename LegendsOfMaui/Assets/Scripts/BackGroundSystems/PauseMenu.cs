@@ -61,7 +61,11 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
             Cursor.visible = menuBG.activeSelf;
             Cursor.lockState = menuBG.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Time.timeScale = menuBG.activeSelf ? 0 : 1;
-            FindFirstObjectByType<PlayerStateMachine>().GetComponent<InputReader>().enabled = !menuBG.activeSelf;
+            var player = FindFirstObjectByType<PlayerStateMachine>();
+            if (player != null)
+            {
+                player.GetComponent<InputReader>().enabled = !menuBG.activeSelf;
+            }
         }
 
         private bool IsCutScenePlaying()
