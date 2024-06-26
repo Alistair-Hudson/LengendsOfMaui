@@ -1226,22 +1226,22 @@ PrefabInstance:
     - target: {fileID: 4440102681124021889, guid: 2613db0700fb36f49967da62e15b6309,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.042795002
+      value: -0.042795066
       objectReference: {fileID: 0}
     - target: {fileID: 4440102681124021889, guid: 2613db0700fb36f49967da62e15b6309,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0024541896
+      value: -0.0024541917
       objectReference: {fileID: 0}
     - target: {fileID: 4440102681124021889, guid: 2613db0700fb36f49967da62e15b6309,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.98607904
+      value: -0.98607904
       objectReference: {fileID: 0}
     - target: {fileID: 4440102681124021889, guid: 2613db0700fb36f49967da62e15b6309,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.1606571
+      value: 0.1606571
       objectReference: {fileID: 0}
     - target: {fileID: 4455967566828074300, guid: 2613db0700fb36f49967da62e15b6309,
         type: 3}
@@ -2575,10 +2575,10 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1350328007}
-          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.SceneControl,
+        - m_Target: {fileID: 1773858133}
+          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.CinematicSceneChange,
             Assembly-CSharp
-          m_MethodName: CallLoadNextScene
+          m_MethodName: ChangeScene
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3567,18 +3567,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b7fff87b3960143ae3e208f4e552d2, type: 3}
---- !u!114 &1350328007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4918801096590817294, guid: 05b7fff87b3960143ae3e208f4e552d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1350328006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e26823f26e94f040b84fdae7abeabc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1480266394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4053,12 +4041,12 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -2.8370788e-22
+      value: -3.8220316e-36
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 6.667193e-24
+      value: 2.0009168e-37
       objectReference: {fileID: 0}
     - target: {fileID: 7393788546516088996, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -4299,6 +4287,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 957661609}
   m_SourcePrefab: {fileID: 100100000, guid: d3f1ebab26ffa334898452c81c1c4ff7, type: 3}
+--- !u!114 &1773858133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4498684333739111750, guid: d3f1ebab26ffa334898452c81c1c4ff7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1773858132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771026866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cdb314ab8f77d468460b0a5e2e379b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1810580192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4888,12 +4888,12 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001898116
+      value: 0.00000001898116
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000031288958
+      value: -0.0000000031288958
       objectReference: {fileID: 0}
     - target: {fileID: 7393788546516088996, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}

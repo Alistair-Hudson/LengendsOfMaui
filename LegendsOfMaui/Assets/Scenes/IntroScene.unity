@@ -1089,18 +1089,6 @@ Transform:
   - {fileID: 2050271311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &66749994 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4918801096590817294, guid: 05b7fff87b3960143ae3e208f4e552d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1475654968}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e26823f26e94f040b84fdae7abeabc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &73035491
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,7 +4792,7 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.016628658
+      value: 0.016628655
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -4814,7 +4802,7 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009817885
+      value: -0.009817882
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6524,12 +6512,12 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000028625783
+      value: 0.000000021195003
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000006757631
+      value: 0.0000000050034616
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6539,7 +6527,7 @@ PrefabInstance:
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22975294
+      value: -0.22975293
       objectReference: {fileID: 0}
     - target: {fileID: 7004018058209877314, guid: d3f1ebab26ffa334898452c81c1c4ff7,
         type: 3}
@@ -6896,6 +6884,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 616289348}
   m_SourcePrefab: {fileID: 100100000, guid: d3f1ebab26ffa334898452c81c1c4ff7, type: 3}
+--- !u!114 &342074355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4498684333739111750, guid: d3f1ebab26ffa334898452c81c1c4ff7,
+    type: 3}
+  m_PrefabInstance: {fileID: 342074354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475865713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cdb314ab8f77d468460b0a5e2e379b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345507228
 GameObject:
   m_ObjectHideFlags: 0
@@ -19013,10 +19013,10 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 66749994}
-          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.SceneControl,
+        - m_Target: {fileID: 342074355}
+          m_TargetAssemblyTypeName: AlictronicGames.LegendsOfMaui.BackGroundSystems.CinematicSceneChange,
             Assembly-CSharp
-          m_MethodName: CallLoadNextScene
+          m_MethodName: ChangeScene
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
