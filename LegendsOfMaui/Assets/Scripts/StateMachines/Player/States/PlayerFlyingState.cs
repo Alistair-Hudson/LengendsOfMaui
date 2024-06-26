@@ -46,6 +46,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
             }
 
+            stateMachine.Health.RestoreHealth(deltaTime);
+
             if (inputValue == Vector2.zero)
             {
                 return;
