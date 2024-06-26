@@ -5202,7 +5202,7 @@ PrefabInstance:
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
@@ -5212,7 +5212,7 @@ PrefabInstance:
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
@@ -5262,12 +5262,12 @@ PrefabInstance:
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 480
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -208.75
+      value: -331.25
       objectReference: {fileID: 0}
     - target: {fileID: 8547749888104946582, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
@@ -6475,6 +6475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OptionButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361148152055184341, guid: e64718945151fa34f848be2b6efa1635,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6444922669906271543, guid: e64718945151fa34f848be2b6efa1635,
         type: 3}
