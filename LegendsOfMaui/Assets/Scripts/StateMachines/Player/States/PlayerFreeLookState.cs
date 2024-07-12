@@ -25,6 +25,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.InputReader.TargetEvent += HandleOnTarget;
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
             stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
+            stateMachine.InputReader.FastAttackEvent += HandleFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent += HandleHeavyAttack;
             if (_shouldFade)
             {
                 stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, ANIMATOR_DAMP_TIME);
@@ -39,7 +41,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             stateMachine.InputReader.TargetEvent -= HandleOnTarget;
             stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
-            stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
+            stateMachine.InputReader.DodgeEvent -= HandleOnDodgeEvent;
+            stateMachine.InputReader.FastAttackEvent -= HandleFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent -= HandleHeavyAttack;
         }
 
         public override void Tick(float deltaTime)
@@ -47,12 +51,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             if (stateMachine.IsShapeShifted && !stateMachine.CharacterController.isGrounded)
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
-            }
-            
-            if (stateMachine.InputReader.IsAttacking && !stateMachine.IsShapeShifted)
-            {
-                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-                return;
             }
 
             if (stateMachine.InputReader.IsBlocking && !stateMachine.IsShapeShifted)
@@ -113,6 +111,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Vector2 dodgeValue = stateMachine.InputReader.MovementValue == Vector2.zero ? -Vector2.up : stateMachine.InputReader.MovementValue;
 
             stateMachine.SwitchState(new PlayerDodgingState(stateMachine, dodgeValue));
+        }
+
+        private void HandleHeavyAttack()
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, stateMachine.BasicHeavyAttack));
+        }
+
+        private void HandleFastAttack()
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, stateMachine.BasicFastAttack));
         }
         #endregion
 

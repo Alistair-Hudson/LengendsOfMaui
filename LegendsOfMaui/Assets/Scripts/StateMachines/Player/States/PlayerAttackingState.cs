@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,26 +8,36 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 {
     public class PlayerAttackingState : PlayerBaseState
     {
-        private AttackData _attack = null;
+        private IPlayerAttack _attack = null;
 
         private bool _isForcedApplied = false;
 
-        public PlayerAttackingState(PlayerStateMachine playerStateMachine, int attackIndex) : base(playerStateMachine)
+        public PlayerAttackingState(PlayerStateMachine playerStateMachine, IPlayerAttack playerAttack) : base(playerStateMachine)
         {
-            _attack = playerStateMachine.GetAttackAtIndex(attackIndex);
+            _attack = playerAttack;
         }
 
         #region StateMachine
         public override void Enter()
         {
             stateMachine.transform.forward = Camera.main.transform.forward;
-            stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
-            stateMachine.WeaponDamage.SetAttack(_attack.AttackDamage + stateMachine.AdditionalAttackDamage, _attack.KnockbackForce);
+            //TODO Reset how the animation transitions
+            //stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
+            stateMachine.WeaponDamage.SetAttack(_attack.BaseAttackDamage + stateMachine.AdditionalAttackDamage, _attack.BaseKnockBackForce);
+            stateMachine.InputReader.FastAttackEvent += OnFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent += OnHeavyAttack;
+            stateMachine.InputReader.JumpEvent += OnJump;
+            stateMachine.InputReader.DodgeEvent += OnDodge;
+            stateMachine.InputReader.BlockingEvent += OnBlocking;
         }
 
         public override void Exit()
         {
-            
+            stateMachine.InputReader.FastAttackEvent -= OnFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent -= OnHeavyAttack;
+            stateMachine.InputReader.JumpEvent -= OnJump;
+            stateMachine.InputReader.DodgeEvent -= OnDodge;
+            stateMachine.InputReader.BlockingEvent -= OnBlocking;
         }
 
         public override void Tick(float deltaTime)
@@ -36,19 +47,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
 
-            if (normalizedTime > _attack.ForceTime)
-            {
-                TryApplyForce();
-            }
+            //TODO new force apllication
+            //if (normalizedTime > _attack.ForceTime)
+            //{
+            //    TryApplyForce();
+            //}
 
-            if (normalizedTime < 1)
-            {
-                if (stateMachine.InputReader.IsAttacking)
-                {
-                    TryComboAttack(normalizedTime);
-                }
-            }
-            else
+            if (normalizedTime >= 1)
             {
                 SwitchBackToLocmotion();
             }
@@ -61,28 +66,86 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #endregion
 
         #region PrivateMethods
-        private void TryComboAttack(float normalizedTime)
-        {
-            if (_attack.ComboStateIndex == -1 || _attack.ComboStateIndex >= stateMachine.GetNumberOfAttacks())
-            {
-                return;
-            }
-
-            if (normalizedTime < _attack.ComboAttackTime)
-            {
-                return;
-            }
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.ComboStateIndex));
-        }
-
         private void TryApplyForce()
         {
             if (_isForcedApplied)
             {
                 return;
             }
-            stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
+            //stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
             _isForcedApplied = true;
+        }
+        #endregion
+
+        #region EventHandlers
+        private void OnBlocking()
+        {
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            if (normalizedTime < 0.9f)
+            {
+                return;
+            }
+
+            if (_attack.GetNextBlockAttack().IsLearnt)
+            {
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.GetNextBlockAttack()));
+            }
+        }
+
+        private void OnDodge()
+        {
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            if (normalizedTime < 0.9f)
+            {
+                return;
+            }
+
+            if (_attack.GetNextDodgeAttack().IsLearnt)
+            {
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.GetNextDodgeAttack()));
+            }
+        }
+
+        private void OnJump()
+        {
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            if (normalizedTime < 0.9f)
+            {
+                return;
+            }
+
+            if (_attack.GetNextJumpAttack().IsLearnt)
+            {
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.GetNextJumpAttack()));
+            }
+        }
+
+        private void OnHeavyAttack()
+        {
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            if (normalizedTime < 0.9f)
+            {
+                return;
+            }
+
+            if (_attack.GetNextHeavyAttack().IsLearnt)
+            {
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.GetNextHeavyAttack()));
+            }
+        }
+
+        private void OnFastAttack()
+        {
+            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            if (normalizedTime < 0.9f)
+            {
+                return;
+            }
+
+            if (_attack.GetNextFastAttack().IsLearnt)
+            {
+                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, _attack.GetNextFastAttack()));
+            }
         }
         #endregion
     }

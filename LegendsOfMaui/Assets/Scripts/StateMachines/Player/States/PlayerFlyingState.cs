@@ -58,10 +58,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void FixedTick()
         {
-            if (!stateMachine.InputReader.IsAttacking)
-            {
-                stateMachine.ForceReceiver.Jump(-Physics.gravity.y * Time.fixedDeltaTime);
-            }
+            stateMachine.ForceReceiver.Jump(-Physics.gravity.y * Time.fixedDeltaTime);
         }
         #endregion
 

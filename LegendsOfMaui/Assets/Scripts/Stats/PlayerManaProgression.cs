@@ -73,7 +73,7 @@ namespace AlictronicGames.LegendsOfMaui.Stats
             _playerStateMachine.IncreaseAdditionalAttackDamage(matuLevelData.AttackDamageIncrease);
             if (matuLevelData.NewAttack != null)
             {
-                _playerStateMachine.AddAttack(matuLevelData.NewAttack);
+                //TODO find another way of adding attacks
             }
         }
 

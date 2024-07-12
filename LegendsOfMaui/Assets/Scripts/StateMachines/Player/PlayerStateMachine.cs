@@ -20,8 +20,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private GameObject _humanForm = null;
         [SerializeField]
         private GameObject _birdForm = null;
-        [SerializeField]
-        private List<AttackData> _attacks = new List<AttackData>();
+
+        [Header("Basic Attacks")]
+        [field:SerializeField]
+        public FastAttack BasicFastAttack { get; } = null;
+        [field:SerializeField]
+        public HeavyAttack BasicHeavyAttack { get; } = null;
 
         [field: SerializeField]
         public GameObject DeathWindow { get; private set; } = null;
@@ -205,22 +209,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #endregion
 
         #region PublicMethods
-
-        public AttackData GetAttackAtIndex(int index)
-        {
-            return _attacks[index];
-        }
-
-        public void AddAttack(AttackData newAttack)
-        {
-            _attacks.Add(newAttack);
-        }
-
-        public int GetNumberOfAttacks()
-        {
-            return _attacks.Count;
-        }
-
         public void IncreaseAdditionalAttackDamage(float damageIncrease)
         {
             AdditionalAttackDamage += damageIncrease;

@@ -11,7 +11,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         private Controls _controls = null;
 
         public Vector2 MovementValue { get; private set; } = Vector2.zero;
-        public bool IsAttacking { get; private set; } = false;
         public bool IsBlocking { get; private set; } = false;
         public bool IsTravelingDown { get; private set; } = false;
 
@@ -23,6 +22,9 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         public event Action PerformAction;
         public event Action OpenCloseProgressMenu;
         public event Action OpenClosePauseMenu;
+        public event Action FastAttackEvent;
+        public event Action HeavyAttackEvent;
+        public event Action BlockingEvent;
 
         private void Start()
         {
@@ -89,14 +91,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (context.performed)
-            {
-                IsAttacking = true;
-            }
-            else if (context.canceled)
-            {
-                IsAttacking = false;
-            }
+            //TODO Changing attack controlls
         }
 
         public void OnBlock(InputAction.CallbackContext context)

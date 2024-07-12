@@ -22,6 +22,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.InputReader.TargetEvent += HandleOnCancelTargetEvent;
             stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
             stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
+            stateMachine.InputReader.FastAttackEvent += HandleFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent += HandleHeavyAttack;
             stateMachine.Animator.CrossFadeInFixedTime(TARGETING_BLENDTREE, 0.1f);
         }
 
@@ -30,16 +32,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.InputReader.TargetEvent -= HandleOnCancelTargetEvent;
             stateMachine.InputReader.DodgeEvent -= HandleOnDodgeEvent;
             stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
+            stateMachine.InputReader.FastAttackEvent -= HandleFastAttack;
+            stateMachine.InputReader.HeavyAttackEvent -= HandleHeavyAttack;
         }
 
         public override void Tick(float deltaTime)
         {
-            if (stateMachine.InputReader.IsAttacking)
-            {
-                stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-                return;
-            }
-
             if (stateMachine.InputReader.IsBlocking)
             {
                 stateMachine.SwitchState(new PlayerBlockState(stateMachine));
@@ -87,6 +85,17 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }
         }
+
+        private void HandleHeavyAttack()
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, stateMachine.BasicHeavyAttack));
+        }
+
+        private void HandleFastAttack()
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, stateMachine.BasicFastAttack));
+        }
+
         #endregion
 
         #region PrivateMethods
