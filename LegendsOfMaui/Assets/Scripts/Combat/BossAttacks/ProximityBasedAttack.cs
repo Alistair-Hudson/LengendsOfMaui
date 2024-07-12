@@ -21,12 +21,14 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public void InitializeAttackPattern(BossStateMachine bossStateMachine)
         {
-            
+            //listen to boss death
+            //start coroutine delay
         }
 
         public void InitiateAttack()
         {
-            
+            //use attack
+            //start new coroutine
         }
     }
 }
