@@ -22,10 +22,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private GameObject _birdForm = null;
 
         [Header("Basic Attacks")]
-        [field:SerializeField]
-        public FastAttack BasicFastAttack { get; } = null;
-        [field:SerializeField]
-        public HeavyAttack BasicHeavyAttack { get; } = null;
+        [SerializeField]
+        private FastAttack _baicFastAttack = null;
+        [SerializeField]
+        private HeavyAttack _basicHeavyAttack = null;
 
         [field: SerializeField]
         public GameObject DeathWindow { get; private set; } = null;
@@ -49,6 +49,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private WeaponHandler _weaponHandler = null;
         private Transform _mainCameraTransform = null;
 
+        public FastAttack BasicFastAttack => _baicFastAttack;
+        public HeavyAttack BasicHeavyAttack => _basicHeavyAttack;
         public Health Health { get; private set; } = null;
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;

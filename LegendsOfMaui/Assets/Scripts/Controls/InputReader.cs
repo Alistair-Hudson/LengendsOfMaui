@@ -91,7 +91,10 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            //TODO Changing attack controlls
+            if (context.performed)
+            {
+                FastAttackEvent?.Invoke();
+            }
         }
 
         public void OnBlock(InputAction.CallbackContext context)

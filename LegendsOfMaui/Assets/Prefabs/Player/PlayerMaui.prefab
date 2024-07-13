@@ -249,7 +249,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -106.22344
+    Value: 74.83053
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -396,23 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _humanForm: {fileID: 1982383330436581456}
   _birdForm: {fileID: 8688187063431979203}
-  _attacks:
-  - <AnimationName>k__BackingField: Attack1
-    <TransitionDuration>k__BackingField: 0.35
-    <ComboStateIndex>k__BackingField: 1
-    <ComboAttackTime>k__BackingField: 0.5
-    <ForceTime>k__BackingField: 0.5
-    <Force>k__BackingField: 0
-    <AttackDamage>k__BackingField: 5
-    <KnockbackForce>k__BackingField: 0
-  - <AnimationName>k__BackingField: Attack2
-    <TransitionDuration>k__BackingField: 0.35
-    <ComboStateIndex>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0.5
-    <ForceTime>k__BackingField: 0.5
-    <Force>k__BackingField: 0
-    <AttackDamage>k__BackingField: 5
-    <KnockbackForce>k__BackingField: 0
+  _baicFastAttack: {fileID: 11400000, guid: 187deaf9d7d24cc4087a436e3d7d123c, type: 2}
+  _basicHeavyAttack: {fileID: 11400000, guid: 3dc9d8fb3555d1b418f4e83fa5cf1eea, type: 2}
   <DeathWindow>k__BackingField: {fileID: 3483307168100037355, guid: 516d9f1a19769bb42a62238e454d765f,
     type: 3}
   <FreeLookMoveSpeed>k__BackingField: 6
@@ -488,6 +473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   <HealthRegenPerSecond>k__BackingField: 1
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7176881963195527058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2953,7 +2941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128686649769950305}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000002235174, y: -0.95416015, z: 0.28624782, w: -0.087409906}
+  m_LocalRotation: {x: 0.0000000074505797, y: 0.9577857, z: -0.28733572, w: -0.009197592}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3108,7 +3096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292066278084277662}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.003175132, y: -0.96392846, z: 0.25139916, w: -0.087352246}
+  m_LocalRotation: {x: 0.00033409148, y: 0.96759117, z: -0.25235462, w: -0.009191453}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3703,7 +3691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4176331117139593520}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0015899315, y: -0.9592091, z: 0.26884484, w: -0.08739543}
+  m_LocalRotation: {x: 0.00016729535, y: 0.96285385, z: -0.2698666, w: -0.009196014}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3836,7 +3824,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -106.22344
+    Value: 74.83053
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -4339,7 +4327,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -106.22344
+    Value: 74.83053
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -4605,8 +4593,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510306905866561925}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10807879, y: 0.66079104, z: -0.09698341, w: 0.73638874}
-  m_LocalPosition: {x: 3.8352253, y: 1.355075, z: 1.6150312}
+  m_LocalRotation: {x: 0.08716516, y: -0.79132986, z: 0.11614257, w: 0.5938942}
+  m_LocalPosition: {x: -5.7914534, y: 1.355075, z: -1.090263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4679,7 +4667,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: -106.22344
+    Value: 74.83053
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1

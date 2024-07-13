@@ -354,23 +354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _humanForm: {fileID: 1982383330436581456}
   _birdForm: {fileID: 0}
-  _attacks:
-  - <AnimationName>k__BackingField: Attack1
-    <TransitionDuration>k__BackingField: 0.35
-    <ComboStateIndex>k__BackingField: 1
-    <ComboAttackTime>k__BackingField: 0.5
-    <ForceTime>k__BackingField: 0.5
-    <Force>k__BackingField: 0
-    <AttackDamage>k__BackingField: 5
-    <KnockbackForce>k__BackingField: 0
-  - <AnimationName>k__BackingField: Attack2
-    <TransitionDuration>k__BackingField: 0.35
-    <ComboStateIndex>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0.5
-    <ForceTime>k__BackingField: 0.5
-    <Force>k__BackingField: 0
-    <AttackDamage>k__BackingField: 5
-    <KnockbackForce>k__BackingField: 0
+  _baicFastAttack: {fileID: 11400000, guid: 187deaf9d7d24cc4087a436e3d7d123c, type: 2}
+  _basicHeavyAttack: {fileID: 11400000, guid: 3dc9d8fb3555d1b418f4e83fa5cf1eea, type: 2}
   <DeathWindow>k__BackingField: {fileID: 3483307168100037355, guid: 516d9f1a19769bb42a62238e454d765f,
     type: 3}
   <FreeLookMoveSpeed>k__BackingField: 6
@@ -446,6 +431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   <HealthRegenPerSecond>k__BackingField: 1
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7176881963195527058
 MonoBehaviour:
   m_ObjectHideFlags: 0

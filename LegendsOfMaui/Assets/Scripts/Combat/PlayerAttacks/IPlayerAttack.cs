@@ -9,6 +9,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
     {
         float BaseAttackDamage { get; }
         float BaseKnockBackForce { get; }
+        float TransitionDuration { get; }
         bool IsLearnt { get; }
         string AttackName { get; }
         Animation AttackAnimation { get; }

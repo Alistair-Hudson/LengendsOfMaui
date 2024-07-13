@@ -15,6 +15,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private float _baseAttackDamge = 1;
         [SerializeField]
         private float _baseKnockBackForece = 0;
+        [SerializeField]
+        private float _tranisitionDuration = 0.1f;
+        [SerializeField]
+        private bool _isLearnt = false;
 
         [Header("Follow Up Attacks")]
         [SerializeField]
@@ -28,13 +32,12 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private BlockAttack _blockAttack = null;
 
-        private bool _isLearnt = false;
-
         public bool IsLearnt => _isLearnt;
         public string AttackName => _attackName;
         public Animation AttackAnimation => _attackAnimation;
         public float BaseAttackDamage => _baseAttackDamge;
         public float BaseKnockBackForce => _baseKnockBackForece;
+        public float TransitionDuration => _tranisitionDuration;
 
         public object CaptureState()
         {

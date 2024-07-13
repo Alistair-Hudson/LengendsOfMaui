@@ -21,8 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.transform.forward = Camera.main.transform.forward;
-            //TODO Reset how the animation transitions
-            //stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
+            stateMachine.Animator.CrossFadeInFixedTime(_attack.AttackName, _attack.TransitionDuration);
             stateMachine.WeaponDamage.SetAttack(_attack.BaseAttackDamage + stateMachine.AdditionalAttackDamage, _attack.BaseKnockBackForce);
             stateMachine.InputReader.FastAttackEvent += OnFastAttack;
             stateMachine.InputReader.HeavyAttackEvent += OnHeavyAttack;
@@ -81,7 +80,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private void OnBlocking()
         {
             float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.9f)
+            if (normalizedTime < 0.8f)
             {
                 return;
             }
