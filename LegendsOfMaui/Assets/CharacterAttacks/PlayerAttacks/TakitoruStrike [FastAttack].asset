@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92946b3462bf8b48a971a48270fc5d7, type: 3}
-  m_Name: BasicHeavyAttack
+  m_Script: {fileID: 11500000, guid: 366db8097765c3d449479823f7129bac, type: 3}
+  m_Name: 'TakitoruStrike [FastAttack]'
   m_EditorClassIdentifier: 
-  _attackName: Basic Heavy Attack
+  _attackName: Takitoru Strike
   _attackAnimation: {fileID: 0}
   _baseAttackDamge: 1
   _baseKnockBackForece: 0
   _tranisitionDuration: 0.1
   _isLearnt: 1
   _fastAttack: {fileID: 0}
-  _heavyAttack: {fileID: 11400000, guid: 35f17c70c7e74b24aa58428509f2de4e, type: 2}
+  _heavyAttack: {fileID: 0}
   _dodgeAttack: {fileID: 0}
   _jumpAttack: {fileID: 0}
   _blockAttack: {fileID: 0}
