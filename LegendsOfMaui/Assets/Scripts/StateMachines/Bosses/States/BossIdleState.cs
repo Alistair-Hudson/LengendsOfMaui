@@ -25,14 +25,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            for (int i = 0; i < stateMachine.Attacks.Length; i++)
-            {
-                stateMachine.Attacks[i].UpdateTimeSinceLastUsed(deltaTime);
-                if (stateMachine.Attacks[i].AttackIsReadyForUse())
-                {
-                    stateMachine.SwitchState(new BossAttackState(stateMachine, i));
-                }
-            }
+
         }
 
         public override void FixedTick()

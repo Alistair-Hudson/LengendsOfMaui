@@ -14,45 +14,28 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
     [RequireComponent(typeof(Collider), typeof(Health))]
     public class BossStateMachine : StateMachine
     {
-        [Serializable]
-        public class AttackData
-        {
-            [SerializeField]
-            private float _delayBetweenUse = 0;
-
-            [field: SerializeField]
-            public float AttackDamage { get; private set; } = 0;
-
-            public float TimeSinceLastUsed { get; private set; } = 0;
-
-            public void UpdateTimeSinceLastUsed(float deltaTime)
-            {
-                TimeSinceLastUsed += deltaTime;
-            }
-
-            public bool AttackIsReadyForUse()
-            {
-                if (TimeSinceLastUsed >= _delayBetweenUse)
-                {
-                    TimeSinceLastUsed = 0;
-                    return true;
-                }
-                return false;
-            }
-        }
-
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
+        
+        [Header("Attacks")]
+        [SerializeField]
+        private ProximityBasedAttack[] _proximityBasedAttacks;
+        [SerializeField]
+        private EventBasedAttack[] _eventBasedAttacks;
+        [SerializeField]
+        private TimeBasedAttack[] _timeBasedAttacks;
+
+        [field: Space]
         [field: SerializeField]
         public Animator Animator { get; private set; } = null;
-        [field: SerializeField]
-        public AttackData[] Attacks { get; private set; }
-        [field: SerializeField]
-        public float KnockBackForce { get; private set; } = 0f;
 
         private Health _health = null;
 
+        public Health Health => _health;
         public Collider Collider { get; private set; } = null;
+        public ProximityBasedAttack[] ProximityBasedAttacks => _proximityBasedAttacks;
+        public EventBasedAttack[] EventBasedAttacks => _eventBasedAttacks;
+        public TimeBasedAttack[] TimeBasedAttacks => _timeBasedAttacks;
 
         public event Action<BossStateMachine> OnDeathEvent;
 
@@ -64,6 +47,19 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             if (_animatorOverrideController != null)
             {
                 Animator.runtimeAnimatorController = _animatorOverrideController;
+            }
+
+            foreach (var proximityAttack in _proximityBasedAttacks)
+            {
+                proximityAttack.InitializeAttackPattern(this);
+            }
+            foreach (var eventAttack in _eventBasedAttacks)
+            {
+                eventAttack.InitializeAttackPattern(this);
+            }
+            foreach (var timedAttack in _timeBasedAttacks)
+            {
+                timedAttack.InitializeAttackPattern(this);
             }
         }
 

@@ -7,8 +7,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 {
     public interface IBossAttack
     {
-        bool AttackReady { get; }
+        string AttackName { get; }
+        float AttackDamage { get; }
+        float KnockBackForce { get; }
+        AttackType AttackType { get; }
         void InitializeAttackPattern(BossStateMachine bossStateMachine);
-        void InitiateAttack();
     }
 }

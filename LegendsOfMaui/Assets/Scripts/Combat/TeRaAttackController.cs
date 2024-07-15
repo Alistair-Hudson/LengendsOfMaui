@@ -43,19 +43,19 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
             attackInstance.transform.rotation = Quaternion.LookRotation(lookDir);
             attackInstance.transform.parent = transform.parent;
-            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.Attacks[0].AttackDamage, _attack0Speed);
+            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[0].AttackDamage, _attack0Speed);
         }
 
         public void CallAttack1()
         {
             var attackInstance = Instantiate(_attack1Prefab, _playerStateMachine.transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.Attacks[1].AttackDamage);
+            attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[1].AttackDamage);
         }
 
         public void CallAttack2()
         {
             var attackInstance = Instantiate(_attack2Prefab, transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.Attacks[2].AttackDamage);
+            attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[2].AttackDamage);
         }
     }
 }

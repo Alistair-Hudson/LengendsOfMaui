@@ -24,10 +24,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         [SerializeField]
         [Range(1, 100)]
         int _level = 1;
-        [SerializeField]
-        private bool _isNocternal = false;
-        [SerializeField]
-        private bool _isDiurnal = false;
 
         [field: SerializeField]
         public float PlayerChaseRange { get; private set; } = 0f;
@@ -74,16 +70,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void Start()
         {
             SwitchState(new EnemyIdleState(this));
-            if (_isNocternal)
-            {
-                DayNightCycle.NightIsActiveEvent += HandleNightActivation;
-                HandleNightActivation(DayNightCycle.IsNight);
-            }
-            if (_isDiurnal)
-            {
-                DayNightCycle.DayIsActiveEvent += HandleDayActivation;
-                HandleDayActivation(!DayNightCycle.IsNight);
-            }
             _level = Player.Level;
             AttackDamage = _statsTable.AttackPerLevel[_level];
             _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
@@ -109,10 +95,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         private void OnDestroy()
         {
-            if (_isNocternal)
-            {
-                DayNightCycle.NightIsActiveEvent -= HandleNightActivation;
-            }
+
         }
 
         private void HandleOnDeath()
@@ -128,22 +111,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             if (causesImpact)
             {
                 SwitchState(new EnemyImpactState(this));
-            }
-        }
-
-        private void HandleNightActivation(bool state)
-        {
-            if (_currentState is EnemyIdleState)
-            {
-                gameObject.SetActive(state);
-            }
-        }
-
-        private void HandleDayActivation(bool state)
-        {
-            if (_currentState is EnemyIdleState)
-            {
-                gameObject.SetActive(state);
             }
         }
 

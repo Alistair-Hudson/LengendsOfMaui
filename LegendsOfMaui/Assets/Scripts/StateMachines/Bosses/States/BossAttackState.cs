@@ -8,16 +8,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
     {
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
-        private int _attackIndex = 0;
+        private string _attackName = "";
 
-        public BossAttackState(BossStateMachine bossStateMachine, int attackIndex) : base(bossStateMachine)
+        public BossAttackState(BossStateMachine bossStateMachine, string attackName) : base(bossStateMachine)
         {
-            _attackIndex = attackIndex;
+            _attackName = attackName;
         }
 
         public override void Enter()
         {
-            int attack = Animator.StringToHash($"Attack{_attackIndex}");
+            int attack = Animator.StringToHash(_attackName);
             stateMachine.Animator.CrossFadeInFixedTime(attack, ANIMATOR_DAMP_TIME);
         }
 
