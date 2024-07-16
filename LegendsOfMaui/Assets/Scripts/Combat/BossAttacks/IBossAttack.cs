@@ -12,5 +12,6 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         float KnockBackForce { get; }
         AttackType AttackType { get; }
         void InitializeAttackPattern(BossStateMachine bossStateMachine);
+        void InitiateAttack();
     }
 }

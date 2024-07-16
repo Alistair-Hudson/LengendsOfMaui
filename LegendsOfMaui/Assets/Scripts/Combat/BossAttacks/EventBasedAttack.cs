@@ -54,11 +54,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private IEnumerator AttackTimer()
         {
             yield return new WaitForSeconds(_delayBeforeAttack);
-            yield return new WaitUntil(() => _stateMachine.CurrentState is BossIdleState);
-            PerformAttack();
+            _stateMachine.BossAttackQueue.Enqueue(this);
         }
 
-        private void PerformAttack()
+        public void InitiateAttack()
         {
             _stateMachine.SwitchState(new BossAttackState(_stateMachine, _attackName));
         }

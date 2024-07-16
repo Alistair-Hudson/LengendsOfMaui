@@ -41,7 +41,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private IEnumerator AttackTimer()
         {
             yield return new WaitForSeconds(_timeBetweenAttacks);
-            InitiateAttack();
+            _stateMachine.BossAttackQueue.Enqueue(this);
         }
 
         private void HandleOnDeath()
@@ -52,7 +52,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             }
         }
 
-        private void InitiateAttack()
+        public void InitiateAttack()
         {
             _stateMachine.SwitchState(new BossAttackState(_stateMachine, _attackName));
             _attackTimer = _stateMachine.StartCoroutine(AttackTimer());

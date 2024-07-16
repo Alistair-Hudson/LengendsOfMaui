@@ -36,6 +36,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         public ProximityBasedAttack[] ProximityBasedAttacks => _proximityBasedAttacks;
         public EventBasedAttack[] EventBasedAttacks => _eventBasedAttacks;
         public TimeBasedAttack[] TimeBasedAttacks => _timeBasedAttacks;
+        public Queue<IBossAttack> BossAttackQueue { get; private set; }
 
         public event Action<BossStateMachine> OnDeathEvent;
 
@@ -43,6 +44,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         {
             Collider = GetComponent<Collider>();
             _health = GetComponent<Health>();
+            BossAttackQueue = new Queue<IBossAttack>();
 
             if (_animatorOverrideController != null)
             {

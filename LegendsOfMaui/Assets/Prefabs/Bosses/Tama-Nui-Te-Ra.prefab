@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625645410601103408}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 17.6, z: 17.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8592918227696481782}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6010299453463657355
 PrefabInstance:
@@ -101,6 +101,29 @@ PrefabInstance:
       objectReference: {fileID: 7363528114574159249}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
+      propertyPath: _timeBasedAttacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: '_timeBasedAttacks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a9a420aaa4a65a49836d87499d1d3d9,
+        type: 2}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: '_timeBasedAttacks.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 671c41ca87ead7749bb2ede3a193e8fc,
+        type: 2}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: '_timeBasedAttacks.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 14be05f2445abc948ad7d0fdbc916eaf,
+        type: 2}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -138,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2].<AttackDamage>k__BackingField
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139243022204626920, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}

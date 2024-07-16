@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-
+            if (stateMachine.BossAttackQueue.TryDequeue(out IBossAttack attack))
+            {
+                attack.InitiateAttack();
+            }
         }
 
         public override void FixedTick()

@@ -44,7 +44,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private IEnumerator AttackTimer()
         {
             yield return new WaitForSeconds(_timeBetweenAttacks);
-            InitiateAttack();
+            _stateMachine.BossAttackQueue.Enqueue(this);
         }
 
         private void HandleOnDeath()
@@ -55,7 +55,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             }
         }
 
-        private void InitiateAttack()
+        public void InitiateAttack()
         {
             var proximity = Vector3.Distance(_stateMachine.transform.position, _player.transform.position);
             if (proximity <= _proximity)
