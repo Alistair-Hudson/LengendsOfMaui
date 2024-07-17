@@ -7,8 +7,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
     public abstract class EnemyBaseState : State
     {
         protected EnemyStateMachine stateMachine = null;
-        protected bool isInChaseRange { get => Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) <= stateMachine.PlayerChaseRange;}
-        protected bool isInAttackRange { get => Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) <= stateMachine.AttackRange; }
+        protected bool isInChaseRange { get => Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) <= stateMachine.EnemyStats.ChaseRange;}
+        protected bool isInAttackRange { get => Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) <= stateMachine.EnemyStats.AttackRange; }
 
         public EnemyBaseState(EnemyStateMachine enemyStateMachine)
         {

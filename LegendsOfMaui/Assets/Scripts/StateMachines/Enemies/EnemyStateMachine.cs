@@ -18,23 +18,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
     public class EnemyStateMachine : StateMachine
     {
         [SerializeField]
-        MonsterStats _statsTable = null;
-        [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
-        [SerializeField]
-        [Range(1, 100)]
-        int _level = 1;
 
         [field: SerializeField]
-        public float PlayerChaseRange { get; private set; } = 0f;
-        [field: SerializeField]
-        public float AttackRange { get; private set; } = 0f;
-        [field: SerializeField]
-        public float AttackDamage { get; private set; } = 0f;
-        [field: SerializeField]
-        public float KnockBackForce { get; private set; } = 0f;
-        [field: SerializeField]
-        public float MovementSpeed { get; private set; } = 0f;
+        public EnemyStats EnemyStats { get; private set; } = null;
 
         private Health _health = null;
 
@@ -70,9 +57,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void Start()
         {
             SwitchState(new EnemyIdleState(this));
-            _level = Player.Level;
-            AttackDamage = _statsTable.AttackPerLevel[_level];
-            _health.SetMaxHealth(_statsTable.HealthPerLevel[_level]);
+            _health.SetMaxHealth(EnemyStats.Health);
         }
 
         protected override void Update()
@@ -101,9 +86,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void HandleOnDeath()
         {
             SwitchState(new EnemyDeathState(this));
-            float mana = _statsTable.ManaPerLevel[_level];
-            PlayerManaProgression.AddManaToPool(mana);
-            NotificationDisplay.AddNotification($"You have received {mana}");
+            PlayerManaProgression.AddManaToPool(EnemyStats.ManaDrop);
+            NotificationDisplay.AddNotification($"You have received {EnemyStats.ManaDrop}");
         }
 
         private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
@@ -117,9 +101,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, PlayerChaseRange);
+            Gizmos.DrawWireSphere(transform.position, EnemyStats.ChaseRange);
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, AttackRange);
+            Gizmos.DrawWireSphere(transform.position, EnemyStats.AttackRange);
         }
 
         public void CallOnDeath()

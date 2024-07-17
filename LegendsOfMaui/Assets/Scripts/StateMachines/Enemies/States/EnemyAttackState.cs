@@ -15,7 +15,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Enter()
         {
-            stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.KnockBackForce);
+            stateMachine.Weapon.SetAttack(stateMachine.EnemyStats.AttackDamage, stateMachine.EnemyStats.KnockBackForce);
             stateMachine.Animator.CrossFadeInFixedTime(ATTACK, ANIMATOR_DAMP_TIME);
         }
 
