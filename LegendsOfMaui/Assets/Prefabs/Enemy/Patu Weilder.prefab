@@ -107,6 +107,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
+      propertyPath: <EnemyStats>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: d1e07793a50d18d4e8e614a1278c233d,
+        type: 2}
+    - target: {fileID: 161162870184717329, guid: 5c0d47298f45a1e41a264ba17638bb1f,
+        type: 3}
       propertyPath: _animatorOverrideController
       value: 
       objectReference: {fileID: 22100000, guid: 15af0715d4a57514e923478437b5655f,
@@ -174,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 7670955837092935697, guid: 5c0d47298f45a1e41a264ba17638bb1f,
         type: 3}
       propertyPath: m_Name
-      value: PatuWeilder
+      value: Patu Weilder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
