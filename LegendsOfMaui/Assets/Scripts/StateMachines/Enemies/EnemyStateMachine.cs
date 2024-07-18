@@ -25,6 +25,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         private Health _health = null;
 
+        public override string Name => EnemyStats.Name;
         public Animator Animator { get; private set; } = null;
         public PlayerStateMachine Player { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;

@@ -17,6 +17,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
     public class PlayerStateMachine : StateMachine
     {
         [SerializeField]
+        private string _name = "";
+        [SerializeField]
         private GameObject _humanForm = null;
         [SerializeField]
         private GameObject _birdForm = null;
@@ -49,6 +51,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private WeaponHandler _weaponHandler = null;
         private Transform _mainCameraTransform = null;
 
+        public override string Name => _name;
         public FastAttack BasicFastAttack => _baicFastAttack;
         public HeavyAttack BasicHeavyAttack => _basicHeavyAttack;
         public Health Health { get; private set; } = null;

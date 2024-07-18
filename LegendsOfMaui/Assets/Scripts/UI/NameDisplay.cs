@@ -9,14 +9,16 @@ namespace AlictronicGames.LegendsOfMaui.UI
     [RequireComponent(typeof(TMP_Text))]
     public class NameDisplay : MonoBehaviour
     {
-        private TMP_Text _nameDisplay;
+        private TMP_Text _nameDisplay = null;
 
         private void OnEnable()
         {
+            if (_nameDisplay == null)
+            {
+                return;
+            }
             _nameDisplay = GetComponent<TMP_Text>();
-            string name = GetComponentInParent<StateMachine>().gameObject.name;
-            name = name.Replace("(Clone)", "");
-            _nameDisplay.text = name;
+            _nameDisplay.text = GetComponentInParent<StateMachine>().Name;
         }
     }
 }

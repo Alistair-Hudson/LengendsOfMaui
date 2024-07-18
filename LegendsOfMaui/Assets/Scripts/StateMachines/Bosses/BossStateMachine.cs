@@ -15,6 +15,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
     public class BossStateMachine : StateMachine
     {
         [SerializeField]
+        private string _name = "";
+        [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
         
         [Header("Attacks")]
@@ -31,6 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         private Health _health = null;
 
+        public override string Name => _name;
         public Health Health => _health;
         public Collider Collider { get; private set; } = null;
         public ProximityBasedAttack[] ProximityBasedAttacks => _proximityBasedAttacks;

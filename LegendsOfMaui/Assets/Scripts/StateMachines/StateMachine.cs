@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines
 {
-    public abstract class StateMachine : MonoBehaviour
+    public abstract class StateMachine : MonoBehaviour, IStateMachine
     {
         private State _currentState = null;
 
+        public abstract string Name { get; }
         public State CurrentState => _currentState;
 
         virtual protected void Update()

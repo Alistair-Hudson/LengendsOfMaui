@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines
 {
-    public abstract class State
+    public abstract class State : IState
     {
         public abstract void Enter();
         public abstract void Tick(float deltaTime);
