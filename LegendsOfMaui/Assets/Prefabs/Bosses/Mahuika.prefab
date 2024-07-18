@@ -23,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6646008914540788574}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.63554335, y: -0.30997503, z: -0.63554275, w: -0.3099767}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0001, y: 0.00009999998, z: 0.000100000005}
@@ -31,7 +32,6 @@ Transform:
   - {fileID: 3343356136330234522}
   - {fileID: 2067834550250607692}
   m_Father: {fileID: 7020504072108049105}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1001 &1137170817529301641
 PrefabInstance:
@@ -95,6 +95,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: _name
+      value: Mahuika
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
