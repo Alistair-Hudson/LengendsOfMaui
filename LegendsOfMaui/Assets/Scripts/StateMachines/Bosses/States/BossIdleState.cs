@@ -30,6 +30,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             {
                 attack.InitiateAttack();
             }
+            if (stateMachine.AttackRange >= 0 && stateMachine.MovementSpeed >= 0)
+            {
+                stateMachine.SwitchState(new BossMoveState(stateMachine));
+            }
         }
 
         public override void FixedTick()
