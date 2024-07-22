@@ -30,12 +30,18 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         [field: Space]
         [field: SerializeField]
         public Animator Animator { get; private set; } = null;
+        [field: SerializeField]
+        public float AttackRange { get; private set; } = 0;
+        [field: SerializeField]
+        public float MovementSpeed { get; private set; } = 0;
 
         private Health _health = null;
 
         public override string Name => _name;
         public Health Health => _health;
         public Collider Collider { get; private set; } = null;
+        public NavMeshAgent NavMeshAgent { get; private set; } = null;
+        public PlayerStateMachine Player { get; private set; } = null;
         public ProximityBasedAttack[] ProximityBasedAttacks => _proximityBasedAttacks;
         public EventBasedAttack[] EventBasedAttacks => _eventBasedAttacks;
         public TimeBasedAttack[] TimeBasedAttacks => _timeBasedAttacks;
@@ -46,7 +52,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private void Awake()
         {
             Collider = GetComponent<Collider>();
+            NavMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<Health>();
+            Player = FindAnyObjectByType<PlayerStateMachine>();
             BossAttackQueue = new Queue<IBossAttack>();
 
             if (_animatorOverrideController != null)
