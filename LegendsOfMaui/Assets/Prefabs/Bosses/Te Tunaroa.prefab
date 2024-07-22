@@ -73,15 +73,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Te Tunaroa
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2035311608926356839, guid: cf14943fd9776a5479713572192f88e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1938949676833163168}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2776092159339277208}
   m_SourcePrefab: {fileID: 100100000, guid: cf14943fd9776a5479713572192f88e2, type: 3}
+--- !u!1 &528546867183598355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7078340599634313324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2776092159339277208
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528546867183598355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3.7223957
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.8594934, z: 0}
 --- !u!4 &5049559232623595025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2605598584841637501, guid: cf14943fd9776a5479713572192f88e2,
