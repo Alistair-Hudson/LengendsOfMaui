@@ -28,11 +28,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            if (GetNormalizedTime(stateMachine.Animator, $"Attack") >= 1)
-            {
-                Debug.Log("Finished Attack");
-                stateMachine.SwitchState(new BossIdleState(stateMachine));
-            }
+
         }
 
         public override void FixedTick()

@@ -1,12 +1,10 @@
 using AlictronicGames.LegendsOfMaui.StateMachines.Boss;
 using AlictronicGames.LegendsOfMaui.StateMachines.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Combat
 {
-    public class TeRaAttackController : MonoBehaviour
+    public sealed class TeRaAttackController : BossAttackController
     {
         [SerializeField]
         private Transform _attackSpawnpoint = null;
@@ -23,21 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private float _attack2Speed = 1f;
 
-
-        private BossStateMachine bossStateMachine = null;
-        private PlayerStateMachine _playerStateMachine = null;
-
-        private void Awake()
-        {
-            bossStateMachine = GetComponentInParent<BossStateMachine>();
-        }
-
-        private void Start()
-        {
-            _playerStateMachine = FindAnyObjectByType<PlayerStateMachine>();    
-        }
-
-        public void CallAttack0()
+        public void CallPyroBall()
         {
             var attackInstance = Instantiate(_attack0Prefab, _attackSpawnpoint.position, Quaternion.identity);
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
@@ -46,13 +30,13 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[0].AttackDamage, _attack0Speed);
         }
 
-        public void CallAttack1()
+        public void CallFlameVortex()
         {
             var attackInstance = Instantiate(_attack1Prefab, _playerStateMachine.transform.position, Quaternion.identity);
             attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[1].AttackDamage);
         }
 
-        public void CallAttack2()
+        public void CallExplosion()
         {
             var attackInstance = Instantiate(_attack2Prefab, transform.position, Quaternion.identity);
             attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[2].AttackDamage);
