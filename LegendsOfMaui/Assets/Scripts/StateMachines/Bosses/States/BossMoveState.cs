@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private readonly int FORWARD_SPEED = Animator.StringToHash("ForwardMovement");
         private readonly int MOVEMENT = Animator.StringToHash("Movement");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
-
-        private bool isInAttackRange => Vector3.Distance(stateMachine.transform.position, stateMachine.Player.transform.position) <= stateMachine.AttackRange;
 
         public BossMoveState(BossStateMachine enemyStateMachine) : base(enemyStateMachine)
         {
@@ -29,10 +28,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            if (isInAttackRange)
+            if (stateMachine.BossAttackQueue.TryDequeue(out IBossAttack attack))
             {
-                stateMachine.SwitchState(new BossIdleState(stateMachine));
-                return;
+                attack.InitiateAttack();
             }
             MoveToPlayer(deltaTime);
             FacePlayer();
