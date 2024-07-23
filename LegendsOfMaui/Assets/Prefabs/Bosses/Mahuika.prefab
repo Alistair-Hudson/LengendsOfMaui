@@ -171,6 +171,11 @@ PrefabInstance:
       propertyPath: <Attacks>k__BackingField.Array.data[3]._delayBetweenUse
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7139243022204626920, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: m_Name
@@ -454,7 +459,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8822187391700523327}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8476da9504e0424382025d655aa5c89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 949904567173184765}
   m_SourcePrefab: {fileID: 100100000, guid: c8476da9504e0424382025d655aa5c89, type: 3}
 --- !u!95 &906976011133770937 stripped
 Animator:
@@ -462,6 +471,24 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 6772477371484037416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5854052349099662457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c8476da9504e0424382025d655aa5c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 6772477371484037416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &949904567173184765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5854052349099662457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79283cd1972f87a4997aeef4afc79c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6518420827876099779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c8476da9504e0424382025d655aa5c89,
