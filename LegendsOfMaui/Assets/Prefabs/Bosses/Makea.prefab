@@ -159,7 +159,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7308946193230494591, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3587410957319929260}
+      addedObject: {fileID: 973831715722280973}
   m_SourcePrefab: {fileID: 100100000, guid: cf14943fd9776a5479713572192f88e2, type: 3}
 --- !u!4 &588416194954237875 stripped
 Transform:
@@ -173,8 +173,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3171250413473798606}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &3587410957319929260
-CapsuleCollider:
+--- !u!143 &973831715722280973
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -191,8 +191,11 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.34
-  m_Height: 1.99
-  m_Direction: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.29
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
