@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,10 +30,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Tick(float deltaTime)
         {
-            if (isInAttackRange)
+            if (stateMachine.BossAttackQueue.TryDequeue(out IBossAttack attack))
             {
-                stateMachine.SwitchState(new BossIdleState(stateMachine));
-                return;
+                attack.InitiateAttack();
             }
             MoveToPlayer(deltaTime);
             FacePlayer();

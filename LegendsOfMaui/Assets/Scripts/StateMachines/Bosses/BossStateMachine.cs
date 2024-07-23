@@ -31,8 +31,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         [field: SerializeField]
         public Animator Animator { get; private set; } = null;
         [field: SerializeField]
-        public float AttackRange { get; private set; } = -1;
-        [field: SerializeField]
         public float MovementSpeed { get; private set; } = -1;
 
         private Health _health = null;
