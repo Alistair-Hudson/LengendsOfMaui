@@ -82,7 +82,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private void OnEnable()
         {
             _health.OnTakeDamage += HandleOnTakeDamage;
-            _health.OnDeath.AddListener(HandleOnDeath);        }
+            _health.OnDeath.AddListener(HandleOnDeath);
+        }
 
         private void OnDisable()
         {

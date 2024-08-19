@@ -53,12 +53,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             }
             NavMeshAgent.updatePosition = false;
             NavMeshAgent.updateRotation = false;
+
+            
         }
 
         private void Start()
         {
             SwitchState(new EnemyIdleState(this));
             _health.SetMaxHealth(EnemyStats.Health);
+            Animator.gameObject.SetActive(false);
+            enabled = false;
         }
 
         protected override void Update()
