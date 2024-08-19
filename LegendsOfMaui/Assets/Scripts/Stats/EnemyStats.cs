@@ -15,8 +15,6 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         public float ChaseRange { get; private set; } = 0f;
         [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;
-        [field: SerializeField]
-        public float ManaProvided { get; private set; } = 0f;
         [field: Space]
         [Header("Attack Data")]
         [field: SerializeField]
