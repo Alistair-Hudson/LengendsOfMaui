@@ -11,12 +11,8 @@ namespace AlictronicGames.LegendsOfMaui.UI
     {
         private TMP_Text _nameDisplay = null;
 
-        private void OnEnable()
+        private void Awake()
         {
-            if (_nameDisplay == null)
-            {
-                return;
-            }
             _nameDisplay = GetComponent<TMP_Text>();
             _nameDisplay.text = GetComponentInParent<StateMachine>().Name;
         }
