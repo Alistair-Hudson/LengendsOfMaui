@@ -13,7 +13,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Targeting
         public event Action<Target> TargetDestroyed;
 
         #region UnityCalls
-        private void Awake()
+        private void Start()
         {
             SetDisplayState(false);
         }
