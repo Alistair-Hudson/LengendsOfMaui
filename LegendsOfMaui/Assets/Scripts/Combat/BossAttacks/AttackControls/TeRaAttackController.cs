@@ -9,37 +9,49 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private Transform _attackSpawnpoint = null;
         [SerializeField]
-        private GameObject _attack0Prefab = null;
+        private GameObject _pyroBallPrefab = null;
         [SerializeField]
-        private GameObject _attack1Prefab = null;
+        private GameObject _flameVortexPrefab = null;
         [SerializeField]
-        private GameObject _attack2Prefab = null;
+        private GameObject _explossionPrefab = null;
         [SerializeField]
-        private float _attack0Speed = 1f;
+        private AudioClip _pyroBallSound = null;
         [SerializeField]
-        private float _attack1Speed = 1f;
+        private AudioClip _flameVortexSound = null;
         [SerializeField]
-        private float _attack2Speed = 1f;
+        private AudioClip _explossionSound = null;
+        [SerializeField]
+        private float _pyroBallSpeed = 1f;
+
+        private AudioSource _audioSource = null;
+
+        private void Awake()
+        {
+            _audioSource = GetComponentInParent<AudioSource>(true);
+        }
 
         public void CallPyroBall()
         {
-            var attackInstance = Instantiate(_attack0Prefab, _attackSpawnpoint.position, Quaternion.identity);
+            var attackInstance = Instantiate(_pyroBallPrefab, _attackSpawnpoint.position, Quaternion.identity);
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
             attackInstance.transform.rotation = Quaternion.LookRotation(lookDir);
             attackInstance.transform.parent = transform.parent;
-            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[0].AttackDamage, _attack0Speed);
+            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[0].AttackDamage, _pyroBallSpeed);
+            _audioSource.PlayOneShot(_pyroBallSound);
         }
 
         public void CallFlameVortex()
         {
-            var attackInstance = Instantiate(_attack1Prefab, _playerStateMachine.transform.position, Quaternion.identity);
+            var attackInstance = Instantiate(_flameVortexPrefab, _playerStateMachine.transform.position, Quaternion.identity);
             attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[1].AttackDamage);
+            _audioSource.PlayOneShot(_flameVortexSound);
         }
 
         public void CallExplosion()
         {
-            var attackInstance = Instantiate(_attack2Prefab, transform.position, Quaternion.identity);
+            var attackInstance = Instantiate(_explossionPrefab, transform.position, Quaternion.identity);
             attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[2].AttackDamage);
+            _audioSource.PlayOneShot(_explossionSound);
         }
     }
 }

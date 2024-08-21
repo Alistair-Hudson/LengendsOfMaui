@@ -567,13 +567,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackSpawnpoint: {fileID: 1715947937941511854}
-  _attack0Prefab: {fileID: 100008, guid: 87a347a6f99d3224eab2eb8a05ad22ed, type: 3}
-  _attack1Prefab: {fileID: 1865603112017772757, guid: ad5c5c71a3198e64fa06d11e8fecf4dc,
+  _pyroBallPrefab: {fileID: 100008, guid: 87a347a6f99d3224eab2eb8a05ad22ed, type: 3}
+  _flameVortexPrefab: {fileID: 1865603112017772757, guid: ad5c5c71a3198e64fa06d11e8fecf4dc,
     type: 3}
-  _attack2Prefab: {fileID: 100010, guid: bff1f89ca779145478cf5f59dbd47ad9, type: 3}
-  _attack0Speed: 10
-  _attack1Speed: 1
-  _attack2Speed: 1
+  _explossionPrefab: {fileID: 100010, guid: bff1f89ca779145478cf5f59dbd47ad9, type: 3}
+  _pyroBallSound: {fileID: 0}
+  _flameVortexSound: {fileID: 0}
+  _explossionSound: {fileID: 0}
+  _pyroBallSpeed: 10
 --- !u!4 &8974178086155005403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2030086647175827319, guid: 27ee01f9bc2d2c946ba32fdeec56c2fa,

@@ -22,6 +22,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             stateMachine.transform.forward = Camera.main.transform.forward;
             stateMachine.Animator.CrossFadeInFixedTime(_attack.AttackName, _attack.TransitionDuration);
+            if (_attack.AttackSound != null)
+            {
+                stateMachine.AudioSource.PlayOneShot(_attack.AttackSound);
+            }
             stateMachine.WeaponDamage.SetAttack(_attack.BaseAttackDamage + stateMachine.AdditionalAttackDamage, _attack.BaseKnockBackForce);
             stateMachine.InputReader.FastAttackEvent += OnFastAttack;
             stateMachine.InputReader.HeavyAttackEvent += OnHeavyAttack;
