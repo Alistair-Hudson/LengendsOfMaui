@@ -13,6 +13,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         bool IsLearnt { get; }
         string AttackName { get; }
         Animation AttackAnimation { get; }
+        AudioClip AttackSound { get; }
         IPlayerAttack GetNextFastAttack();
         IPlayerAttack GetNextHeavyAttack();
         IPlayerAttack GetNextJumpAttack();

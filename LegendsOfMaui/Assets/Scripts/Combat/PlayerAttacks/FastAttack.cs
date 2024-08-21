@@ -12,6 +12,8 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         [SerializeField]
         private Animation _attackAnimation = null;
         [SerializeField]
+        private AudioClip _attackSound = null;
+        [SerializeField]
         private float _baseAttackDamge = 1;
         [SerializeField]
         private float _baseKnockBackForece = 0;
@@ -35,6 +37,9 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public bool IsLearnt => _isLearnt;
         public string AttackName => _attackName;
         public Animation AttackAnimation => _attackAnimation;
+
+        public AudioClip AttackSound => _attackSound;
+
         public float BaseAttackDamage => _baseAttackDamge;
         public float BaseKnockBackForce => _baseKnockBackForece;
 
