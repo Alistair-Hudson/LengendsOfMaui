@@ -18,6 +18,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Enter()
         {
+            if (stateMachine.EnemyStats.SoundBank.TryGetValue("Death", out AudioClip attackSound))
+            {
+                stateMachine.AudioSource.PlayOneShot(attackSound);
+            }
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
             stateMachine.Weapon.gameObject.SetActive(false);
             stateMachine.CharacterController.enabled = false;

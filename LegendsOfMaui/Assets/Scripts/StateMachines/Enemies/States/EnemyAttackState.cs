@@ -17,6 +17,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         {
             stateMachine.Weapon.SetAttack(stateMachine.EnemyStats.AttackDamage, stateMachine.EnemyStats.KnockBackForce);
             stateMachine.Animator.CrossFadeInFixedTime(ATTACK, ANIMATOR_DAMP_TIME);
+            if (stateMachine.EnemyStats.SoundBank.TryGetValue("Attack", out AudioClip attackSound))
+            {
+                stateMachine.AudioSource.PlayOneShot(attackSound);
+            }
         }
 
         public override void Exit()

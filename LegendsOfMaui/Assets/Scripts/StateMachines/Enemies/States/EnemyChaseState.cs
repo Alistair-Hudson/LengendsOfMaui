@@ -18,6 +18,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
+            if (stateMachine.EnemyStats.SoundBank.TryGetValue("Chase", out AudioClip attackSound))
+            {
+                stateMachine.AudioSource.PlayOneShot(attackSound);
+            }
         }
 
         public override void Exit()
