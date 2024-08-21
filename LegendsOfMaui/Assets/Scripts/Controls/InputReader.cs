@@ -31,7 +31,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             _controls = new Controls();
             if (_controls == null)
             {
-                Debug.LogError("Constrols not created!");
+                Debug.LogError("Controls not created!");
                 return;
             }
 
@@ -89,11 +89,19 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             }
         }
 
-        public void OnAttack(InputAction.CallbackContext context)
+        public void OnFastAttack(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
                 FastAttackEvent?.Invoke();
+            }
+        }
+
+        public void OnHeavyAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                HeavyAttackEvent?.Invoke();
             }
         }
 

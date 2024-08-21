@@ -30,24 +30,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             ""id"": ""96ae2193-596e-469e-87f5-8a8511f6c0eb"",
             ""actions"": [
                 {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""144a8d9c-8caf-4bd5-b86c-f67fd0037cb1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Dodge"",
-                    ""type"": ""Button"",
-                    ""id"": ""df7b0708-ffdf-4f9d-8c10-80ce7c0aa8dc"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""2947a1f5-48df-42b1-81d0-8ab0fb4d4128"",
@@ -75,9 +57,18 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""FastAttack"",
                     ""type"": ""Button"",
                     ""id"": ""bb33faff-0264-4d48-8c7d-a3560a74ab15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HeavyAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""22b71286-09bc-4961-9765-bb177b368743"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -87,6 +78,24 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""name"": ""Block"",
                     ""type"": ""Button"",
                     ""id"": ""a1e47ccc-6605-4707-b779-7539a5dabd3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""df7b0708-ffdf-4f9d-8c10-80ce7c0aa8dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""144a8d9c-8caf-4bd5-b86c-f67fd0037cb1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -141,116 +150,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""4b370881-d714-48fb-8d3f-16fcf08ce73d"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""304eba67-3455-4bb3-babe-1b1b8b83ba83"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b96d1940-7371-4981-8cd6-c3f0a45413dc"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Dodge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""69451992-8735-4cb9-88a3-5e1fb9a76210"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Dodge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""2affe9dc-3824-47b3-923f-0693e8acdada"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""a49e7737-5434-434e-a165-bcb498ef7628"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""67e3217d-dfcf-4d9e-8c21-71d35d9592d6"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9bacd43f-401a-4cdf-acd8-38a75ad49b80"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""83126c71-647b-4211-b3cd-08eb767bc946"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1831da71-159d-4035-b6df-2bb310b44b5d"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""66762275-1019-4a88-a17b-e5a66ff8637c"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -300,25 +199,25 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Attack"",
+                    ""action"": ""FastAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""23632d53-9b95-441d-ab06-683e0189f36c"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
-                    ""action"": ""Attack"",
+                    ""action"": ""FastAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""e183f243-8d54-4550-bd60-63ee39e30d3f"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -340,7 +239,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 {
                     ""name"": """",
                     ""id"": ""0d2c7154-344d-40a7-86e5-8fdd8b47ef72"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -373,7 +272,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 {
                     ""name"": """",
                     ""id"": ""3c9a74fa-bf72-49c3-ad3a-eed53da89da0"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -446,6 +345,138 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                     ""action"": ""OpenPauseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f7b4ee6-c69c-4a71-a018-26f74106020b"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b918bda-0cab-40f7-b687-07dff8b110fb"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""2affe9dc-3824-47b3-923f-0693e8acdada"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a49e7737-5434-434e-a165-bcb498ef7628"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""67e3217d-dfcf-4d9e-8c21-71d35d9592d6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9bacd43f-401a-4cdf-acd8-38a75ad49b80"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""83126c71-647b-4211-b3cd-08eb767bc946"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1831da71-159d-4035-b6df-2bb310b44b5d"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b370881-d714-48fb-8d3f-16fcf08ce73d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""304eba67-3455-4bb3-babe-1b1b8b83ba83"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b96d1940-7371-4981-8cd6-c3f0a45413dc"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69451992-8735-4cb9-88a3-5e1fb9a76210"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -482,13 +513,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 }");
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-            m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-            m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
             m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
-            m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+            m_Player_FastAttack = m_Player.FindAction("FastAttack", throwIfNotFound: true);
+            m_Player_HeavyAttack = m_Player.FindAction("HeavyAttack", throwIfNotFound: true);
             m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
+            m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
+            m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
             m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
             m_Player_OpenProgressMenu = m_Player.FindAction("OpenProgressMenu", throwIfNotFound: true);
@@ -555,13 +587,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         // Player
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-        private readonly InputAction m_Player_Jump;
-        private readonly InputAction m_Player_Dodge;
         private readonly InputAction m_Player_Movement;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Target;
-        private readonly InputAction m_Player_Attack;
+        private readonly InputAction m_Player_FastAttack;
+        private readonly InputAction m_Player_HeavyAttack;
         private readonly InputAction m_Player_Block;
+        private readonly InputAction m_Player_Dodge;
+        private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Transform;
         private readonly InputAction m_Player_Action;
         private readonly InputAction m_Player_OpenProgressMenu;
@@ -571,13 +604,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         {
             private @Controls m_Wrapper;
             public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Jump => m_Wrapper.m_Player_Jump;
-            public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
             public InputAction @Movement => m_Wrapper.m_Player_Movement;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Target => m_Wrapper.m_Player_Target;
-            public InputAction @Attack => m_Wrapper.m_Player_Attack;
+            public InputAction @FastAttack => m_Wrapper.m_Player_FastAttack;
+            public InputAction @HeavyAttack => m_Wrapper.m_Player_HeavyAttack;
             public InputAction @Block => m_Wrapper.m_Player_Block;
+            public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
+            public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Transform => m_Wrapper.m_Player_Transform;
             public InputAction @Action => m_Wrapper.m_Player_Action;
             public InputAction @OpenProgressMenu => m_Wrapper.m_Player_OpenProgressMenu;
@@ -592,12 +626,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
             {
                 if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
-                @Dodge.started += instance.OnDodge;
-                @Dodge.performed += instance.OnDodge;
-                @Dodge.canceled += instance.OnDodge;
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
@@ -607,12 +635,21 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Target.started += instance.OnTarget;
                 @Target.performed += instance.OnTarget;
                 @Target.canceled += instance.OnTarget;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
+                @FastAttack.started += instance.OnFastAttack;
+                @FastAttack.performed += instance.OnFastAttack;
+                @FastAttack.canceled += instance.OnFastAttack;
+                @HeavyAttack.started += instance.OnHeavyAttack;
+                @HeavyAttack.performed += instance.OnHeavyAttack;
+                @HeavyAttack.canceled += instance.OnHeavyAttack;
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
                 @Transform.started += instance.OnTransform;
                 @Transform.performed += instance.OnTransform;
                 @Transform.canceled += instance.OnTransform;
@@ -632,12 +669,6 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
             private void UnregisterCallbacks(IPlayerActions instance)
             {
-                @Jump.started -= instance.OnJump;
-                @Jump.performed -= instance.OnJump;
-                @Jump.canceled -= instance.OnJump;
-                @Dodge.started -= instance.OnDodge;
-                @Dodge.performed -= instance.OnDodge;
-                @Dodge.canceled -= instance.OnDodge;
                 @Movement.started -= instance.OnMovement;
                 @Movement.performed -= instance.OnMovement;
                 @Movement.canceled -= instance.OnMovement;
@@ -647,12 +678,21 @@ namespace AlictronicGames.LegendsOfMaui.Controls
                 @Target.started -= instance.OnTarget;
                 @Target.performed -= instance.OnTarget;
                 @Target.canceled -= instance.OnTarget;
-                @Attack.started -= instance.OnAttack;
-                @Attack.performed -= instance.OnAttack;
-                @Attack.canceled -= instance.OnAttack;
+                @FastAttack.started -= instance.OnFastAttack;
+                @FastAttack.performed -= instance.OnFastAttack;
+                @FastAttack.canceled -= instance.OnFastAttack;
+                @HeavyAttack.started -= instance.OnHeavyAttack;
+                @HeavyAttack.performed -= instance.OnHeavyAttack;
+                @HeavyAttack.canceled -= instance.OnHeavyAttack;
                 @Block.started -= instance.OnBlock;
                 @Block.performed -= instance.OnBlock;
                 @Block.canceled -= instance.OnBlock;
+                @Dodge.started -= instance.OnDodge;
+                @Dodge.performed -= instance.OnDodge;
+                @Dodge.canceled -= instance.OnDodge;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
                 @Transform.started -= instance.OnTransform;
                 @Transform.performed -= instance.OnTransform;
                 @Transform.canceled -= instance.OnTransform;
@@ -705,13 +745,14 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         }
         public interface IPlayerActions
         {
-            void OnJump(InputAction.CallbackContext context);
-            void OnDodge(InputAction.CallbackContext context);
             void OnMovement(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnTarget(InputAction.CallbackContext context);
-            void OnAttack(InputAction.CallbackContext context);
+            void OnFastAttack(InputAction.CallbackContext context);
+            void OnHeavyAttack(InputAction.CallbackContext context);
             void OnBlock(InputAction.CallbackContext context);
+            void OnDodge(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
             void OnTransform(InputAction.CallbackContext context);
             void OnAction(InputAction.CallbackContext context);
             void OnOpenProgressMenu(InputAction.CallbackContext context);
