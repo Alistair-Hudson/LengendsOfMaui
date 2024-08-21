@@ -66,13 +66,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float AdditionalAttackDamage { get; private set; } = 0;
         public float DodgeDurationModifier { get; private set; } = 0;
         public float DodgeDistanceModifier { get; private set; } = 0;
-        public int Level {
-            get
-            {
-                return GetComponent<PlayerManaProgression>().Level;
-            }
-        }
         public bool IsShapeShifted { get; private set; } = false;
+        public bool IsChainAttackReady { get; set; } = false;
 
         public event Action InteractCall;
 

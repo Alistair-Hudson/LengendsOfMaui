@@ -37,6 +37,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.InputReader.JumpEvent -= OnJump;
             stateMachine.InputReader.DodgeEvent -= OnDodge;
             stateMachine.InputReader.BlockingEvent -= OnBlocking;
+            stateMachine.IsChainAttackReady = false;
         }
 
         public override void Tick(float deltaTime)
@@ -79,8 +80,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region EventHandlers
         private void OnBlocking()
         {
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.8f)
+            if (!stateMachine.IsChainAttackReady)
             {
                 return;
             }
@@ -93,8 +93,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void OnDodge()
         {
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.9f)
+            if (!stateMachine.IsChainAttackReady)
             {
                 return;
             }
@@ -107,8 +106,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void OnJump()
         {
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.9f)
+            if (!stateMachine.IsChainAttackReady)
             {
                 return;
             }
@@ -121,8 +119,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void OnHeavyAttack()
         {
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.9f)
+            if (!stateMachine.IsChainAttackReady)
             {
                 return;
             }
@@ -135,8 +132,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void OnFastAttack()
         {
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if (normalizedTime < 0.9f)
+            if (!stateMachine.IsChainAttackReady)
             {
                 return;
             }

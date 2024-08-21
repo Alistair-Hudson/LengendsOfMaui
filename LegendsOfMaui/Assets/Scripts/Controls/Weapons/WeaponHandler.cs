@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
@@ -8,6 +10,13 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
     {
         [SerializeField]
         private List<WeaponDamage> _weaponLogics = new List<WeaponDamage>();
+
+        private PlayerStateMachine _playerStateMachine;
+
+        private void Awake()
+        {
+            _playerStateMachine = GetComponentInParent<PlayerStateMachine>(true);
+        }
 
         public void EnableWeapon()
         {
@@ -28,6 +37,16 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
         public void SetWeaponLogic(WeaponDamage weaponLogic)
         {
             _weaponLogics.Add(weaponLogic);
+        }
+
+        public void SetAttackChainReady()
+        {
+            if (_playerStateMachine == null)
+            {
+                return;
+            }
+
+            _playerStateMachine.IsChainAttackReady = true;
         }
     }
 }
