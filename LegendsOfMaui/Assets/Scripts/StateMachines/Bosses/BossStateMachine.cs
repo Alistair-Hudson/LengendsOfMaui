@@ -34,12 +34,14 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         public float MovementSpeed { get; private set; } = -1;
 
         private Health _health = null;
+        private AudioSource _audioSource = null;
 
         public override string Name => _name;
         public Health Health => _health;
         public Collider Collider { get; private set; } = null;
         public NavMeshAgent NavMeshAgent { get; private set; } = null;
         public PlayerStateMachine Player { get; private set; } = null;
+        public override AudioSource AudioSource => _audioSource;
         public ProximityBasedAttack[] ProximityBasedAttacks => _proximityBasedAttacks;
         public EventBasedAttack[] EventBasedAttacks => _eventBasedAttacks;
         public TimeBasedAttack[] TimeBasedAttacks => _timeBasedAttacks;
@@ -52,6 +54,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             Collider = GetComponent<Collider>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<Health>();
+            _audioSource = GetComponent<AudioSource>();
             Player = FindAnyObjectByType<PlayerStateMachine>();
             BossAttackQueue = new Queue<IBossAttack>();
 

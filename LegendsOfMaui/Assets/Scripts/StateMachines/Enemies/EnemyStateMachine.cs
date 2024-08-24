@@ -24,10 +24,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public EnemyStats EnemyStats { get; private set; } = null;
 
         private Health _health = null;
-
+        private AudioSource _audioSource = null;
         public override string Name => EnemyStats.Name;
         public Animator Animator { get; private set; } = null;
-        public AudioSource AudioSource { get; private set; } = null;
+        public override AudioSource AudioSource => _audioSource;
         public PlayerStateMachine Player { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
@@ -44,7 +44,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             _health = GetComponent<Health>();
 
             Animator = GetComponentInChildren<Animator>();
-            AudioSource = GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();
             Weapon = GetComponentInChildren<WeaponDamage>(true);
 
             Player = FindFirstObjectByType<PlayerStateMachine>();

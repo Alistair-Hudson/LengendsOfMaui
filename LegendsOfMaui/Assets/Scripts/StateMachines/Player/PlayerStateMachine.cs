@@ -50,6 +50,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private WeaponHandler _weaponHandler = null;
         private Transform _mainCameraTransform = null;
+        private AudioSource _audioSource = null;
 
         public override string Name => _name;
         public FastAttack BasicFastAttack => _baicFastAttack;
@@ -58,7 +59,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public InputReader InputReader { get; private set; } = null;
         public CharacterController CharacterController { get; private set; } = null;
         public Animator Animator { get; private set; } = null;
-        public AudioSource AudioSource { get; private set; } = null;
+        public override AudioSource AudioSource => _audioSource;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
         public WeaponDamage WeaponDamage { get; private set; } = null;
@@ -100,7 +101,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Targeter = GetComponentInChildren<Targeter>();
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
             Animator = _humanForm.GetComponent<Animator>();
-            AudioSource = GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();
             WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
         }
 

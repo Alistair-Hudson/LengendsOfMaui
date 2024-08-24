@@ -8,5 +8,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
     {
         string Name { get; }
         State CurrentState { get; }
+        AudioSource AudioSource { get; }
     }
 }

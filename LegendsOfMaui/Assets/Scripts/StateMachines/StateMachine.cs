@@ -9,6 +9,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines
         private State _currentState = null;
 
         public abstract string Name { get; }
+        public abstract AudioSource AudioSource { get; }
         public State CurrentState => _currentState;
 
         virtual protected void Update()
