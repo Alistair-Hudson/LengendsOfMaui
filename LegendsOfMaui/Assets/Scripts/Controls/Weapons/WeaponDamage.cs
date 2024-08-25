@@ -45,6 +45,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
             if (other.TryGetComponent<Health>(out var health))
             {
+                Debug.Log($"{name}: dealing {_damage} damage to {health.name}");
                 health.DealDamage(_damage, _attackType);
                 _weaponCollisionAudio.Play();
             }
@@ -57,6 +58,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
         public void SetAttack(float damage, float knockback)
         {
+            Debug.Log($"{name} is set to deal {damage} damage and {knockback} knockback");
             _damage = damage;
             _knockBack = knockback;
         }

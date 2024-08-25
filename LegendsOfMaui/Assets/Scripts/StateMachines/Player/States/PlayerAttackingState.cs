@@ -26,6 +26,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             {
                 stateMachine.AudioSource.PlayOneShot(_attack.AttackSound);
             }
+            Debug.Log($"{_attack.AttackName} will deal {_attack.BaseAttackDamage} damage");
             stateMachine.WeaponDamage.SetAttack(_attack.BaseAttackDamage + stateMachine.AdditionalAttackDamage, _attack.BaseKnockBackForce);
             stateMachine.InputReader.FastAttackEvent += OnFastAttack;
             stateMachine.InputReader.HeavyAttackEvent += OnHeavyAttack;

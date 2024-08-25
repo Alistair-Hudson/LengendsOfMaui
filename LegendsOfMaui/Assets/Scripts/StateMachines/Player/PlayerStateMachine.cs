@@ -23,6 +23,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [SerializeField]
         private GameObject _birdForm = null;
 
+        [SerializeField] private WeaponDamage _weaponDamage = null;
+
         [Header("Basic Attacks")]
         [SerializeField]
         private FastAttack _baicFastAttack = null;
@@ -62,7 +64,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override AudioSource AudioSource => _audioSource;
         public Targeter Targeter { get; private set; } = null;
         public ForceReceiver ForceReceiver { get; private set; } = null;
-        public WeaponDamage WeaponDamage { get; private set; } = null;
+        public WeaponDamage WeaponDamage => _weaponDamage;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
         public float AdditionalAttackDamage { get; private set; } = 0;
@@ -102,7 +104,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
             Animator = _humanForm.GetComponent<Animator>();
             _audioSource = GetComponent<AudioSource>();
-            WeaponDamage = GetComponentInChildren<WeaponDamage>(true);
         }
 
         private void Start()

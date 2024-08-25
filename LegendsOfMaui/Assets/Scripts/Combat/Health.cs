@@ -67,6 +67,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
                 return;
             }
 
+            Debug.Log($"{name} received {damage} damage");
             CurrentHealth -= damage;
             OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, causesImpact);
             if (CurrentHealth <= 0)
