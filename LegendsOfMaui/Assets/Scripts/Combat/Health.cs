@@ -41,17 +41,20 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         {
             if (IsDead)
             {
+                Debug.Log($"{name} is dead");
                 return;
             }
 
             if (_isInvulnerable)
             {
+                Debug.Log($"{name} is invulnerable");
                 return;
             }
 
-            bool attackIsBloackable = (attackType & AttackType.Bloackable) == AttackType.Bloackable ? true : false;
-            if (_isBlocking && attackIsBloackable)
+            bool attackIsBlockable = (attackType & AttackType.Bloackable) == AttackType.Bloackable ? true : false;
+            if (_isBlocking && attackIsBlockable)
             {
+                Debug.Log($"{name} blocked attack");
                 OnBlocked?.Invoke();
                 return;
             }
@@ -59,6 +62,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             bool attackIsDodgeable = (attackType & AttackType.Dodgeable) == AttackType.Dodgeable ? true : false;
             if (_isDodging && attackIsDodgeable)
             {
+                Debug.Log($"{name} dodged attack");
                 OnDodged?.Invoke();
                 return;
             }
