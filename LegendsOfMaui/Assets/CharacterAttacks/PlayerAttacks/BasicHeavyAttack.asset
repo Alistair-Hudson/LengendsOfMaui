@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackName: Basic Heavy Attack
   _attackAnimation: {fileID: 0}
-  _baseAttackDamge: 1
-  _baseKnockBackForece: 0
+  _attackSound: {fileID: 0}
+  _baseAttackDamge: 5
+  _baseKnockBackForece: 10
   _tranisitionDuration: 0.1
   _isLearnt: 1
   _fastAttack: {fileID: 0}
