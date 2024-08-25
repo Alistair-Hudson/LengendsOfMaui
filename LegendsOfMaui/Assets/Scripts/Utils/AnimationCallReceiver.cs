@@ -7,6 +7,8 @@ namespace AlictronicGames.LegendsOfMaui.Utils
 {
     public class AnimationCallReceiver : MonoBehaviour
     {
+        [SerializeField] private AudioClip _movementSound = null;
+
         private StateMachine _stateMachine;
 
         private void Awake()
@@ -29,14 +31,9 @@ namespace AlictronicGames.LegendsOfMaui.Utils
 
         }
 
-        public void PlayMovementSound(object sound)
+        public void PlayMovementSound()
         {
-            if (sound is not AudioClip)
-            {
-                return;
-            }
-
-            _stateMachine.AudioSource.PlayOneShot((AudioClip)sound);
+            _stateMachine.AudioSource.PlayOneShot(_movementSound);
         }
     }
 }
