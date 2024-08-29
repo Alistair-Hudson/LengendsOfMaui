@@ -102,7 +102,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             _weaponHandler = GetComponentInChildren<WeaponHandler>();
             Targeter = GetComponentInChildren<Targeter>();
             LedgeDetector = GetComponentInChildren<LedgeDetector>();
-            Animator = _humanForm.GetComponent<Animator>();
+            Animator = GetComponent<Animator>();
             _audioSource = GetComponent<AudioSource>();
         }
 
