@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366db8097765c3d449479823f7129bac, type: 3}
-  m_Name: 'TakitoruStrike [FastAttack]'
+  m_Script: {fileID: 11500000, guid: 932dcf487fbe0bc4d9fef40bdfc74b7d, type: 3}
+  m_Name: 'Umurangi(RedSky)(Uppercut) [JumpAttack]'
   m_EditorClassIdentifier: 
-  _attackName: Takitoru Strike
+  _attackName: Umurangi
   _attackAnimation: {fileID: 0}
   _attackSound: {fileID: 0}
-  _baseAttackDamge: 10
+  _baseAttackDamge: 1
   _baseKnockBackForece: 0
   _tranisitionDuration: 0.1
   _isLearnt: 1
-  _fastAttack: {fileID: 0}
-  _heavyAttack: {fileID: 0}
+  _fastAttack: {fileID: 11400000, guid: 58b2553f355eb4644ab0b0cdac68bfa1, type: 2}
+  _heavyAttack: {fileID: 11400000, guid: 14c9fa6d8b11f6041bbaee7b21b85500, type: 2}
   _dodgeAttack: {fileID: 0}
-  _jumpAttack: {fileID: 11400000, guid: ba6bebf1a811e0644a475d87977ba3b0, type: 2}
+  _jumpAttack: {fileID: 0}
   _blockAttack: {fileID: 0}
