@@ -8,6 +8,11 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
     {
         [SerializeField] private Transform _target = null;
 
+        public void SetTarget(Transform newTarget)
+        {
+            _target = newTarget;
+        }
+
         private void Update()
         {
             transform.position = _target.position;
