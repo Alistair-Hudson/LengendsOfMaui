@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.Utils;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
@@ -80,7 +81,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnJumpEvent()
         {
-            if (stateMachine.CharacterController.isGrounded || stateMachine.IsShapeShifted)
+            if (stateMachine.CharacterController.isGrounded || stateMachine.CurrentForm == MauiForms.Pigeon)
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }

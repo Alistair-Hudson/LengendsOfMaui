@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.Utils;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
@@ -32,7 +33,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Tick(float deltaTime)
         {
             Move(deltaTime);
-            if (!stateMachine.InputReader.IsBlocking || stateMachine.IsShapeShifted)
+            if (!stateMachine.InputReader.IsBlocking || stateMachine.CurrentForm == MauiForms.Pigeon)
             {
                 SwitchBackToLocmotion();
             }

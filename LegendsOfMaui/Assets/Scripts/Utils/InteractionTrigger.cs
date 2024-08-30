@@ -10,10 +10,8 @@ namespace AlictronicGames.LegendsOfMaui.Utils
     [RequireComponent(typeof(Collider), typeof(PlayableDirector))]
     public class InteractionTrigger : MonoBehaviour
     {
-        [SerializeField]
-        private bool NeedsToBeRupe = false;
-        [SerializeField]
-        private bool NeedsToBeHuman = false;
+        [SerializeField] 
+        private List<MauiForms> _interactionForms = new List<MauiForms>(); 
 
         private bool _hasPlayed = false;
 
@@ -23,11 +21,8 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             {
                 return;
             }
-            if (NeedsToBeHuman && playerStateMachine.IsShapeShifted)
-            {
-                return;
-            }
-            if (NeedsToBeRupe && !playerStateMachine.IsShapeShifted)
+
+            if (!_interactionForms.Contains(playerStateMachine.CurrentForm))
             {
                 return;
             }
@@ -41,12 +36,7 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             {
                 return;
             }
-            if (NeedsToBeHuman && playerStateMachine.IsShapeShifted)
-            {
-                OnTriggerExit(other);
-                return;
-            }
-            if (NeedsToBeRupe && !playerStateMachine.IsShapeShifted)
+            if (!_interactionForms.Contains(playerStateMachine.CurrentForm))
             {
                 OnTriggerExit(other);
                 return;

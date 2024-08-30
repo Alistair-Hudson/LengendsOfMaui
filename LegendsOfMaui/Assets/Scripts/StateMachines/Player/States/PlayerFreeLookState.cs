@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.Utils;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
@@ -8,7 +7,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
     public class PlayerFreeLookState : PlayerBaseState
     {
         private readonly int FREE_LOOK_SPEED = Animator.StringToHash("FreeLookSpeed");
-        private readonly int FREE_LOOK_MOVEMENT = Animator.StringToHash("FreeLookMovement");
+        private readonly int FREE_LOOK_HUMAN = Animator.StringToHash("FreeLookMovement");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
         private bool _shouldFade = true;
@@ -27,13 +26,14 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             stateMachine.InputReader.DodgeEvent += HandleOnDodgeEvent;
             stateMachine.InputReader.FastAttackEvent += HandleFastAttack;
             stateMachine.InputReader.HeavyAttackEvent += HandleHeavyAttack;
+
             if (_shouldFade)
             {
-                stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_MOVEMENT, ANIMATOR_DAMP_TIME);
+                stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_HUMAN, ANIMATOR_DAMP_TIME);
             }
             else
             {
-                stateMachine.Animator.Play(FREE_LOOK_MOVEMENT);
+                stateMachine.Animator.Play(FREE_LOOK_HUMAN);
             }
         }
 
@@ -48,12 +48,17 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
-            if (stateMachine.IsShapeShifted && !stateMachine.CharacterController.isGrounded)
+            if (stateMachine.CurrentForm == MauiForms.Pigeon && !stateMachine.CharacterController.isGrounded)
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }
 
-            if (stateMachine.InputReader.IsBlocking && !stateMachine.IsShapeShifted)
+            if (stateMachine.CurrentForm == MauiForms.Human && !stateMachine.CharacterController.isGrounded)
+            {
+                stateMachine.SwitchState(new PlayerFallingState(stateMachine));
+            }
+
+            if (stateMachine.InputReader.IsBlocking && stateMachine.CurrentForm == MauiForms.Human)
             {
                 stateMachine.SwitchState(new PlayerBlockState(stateMachine));
                 return;
@@ -85,7 +90,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region EventHandlers
         private void HandleOnTarget()
         {
-            if (stateMachine.IsShapeShifted)
+            if (stateMachine.CurrentForm == MauiForms.Pigeon)
             {
                 return;
             }
@@ -100,7 +105,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnJumpEvent()
         {
-            if (stateMachine.CharacterController.isGrounded || stateMachine.IsShapeShifted)
+            if (stateMachine.CharacterController.isGrounded || stateMachine.CurrentForm == MauiForms.Pigeon)
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
             }
