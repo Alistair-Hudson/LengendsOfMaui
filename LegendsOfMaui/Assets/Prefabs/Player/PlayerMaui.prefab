@@ -791,8 +791,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128686649769950305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.036461774, y: -0.00000008940697, z: -0.000000011175871, w: 0.99933505}
-  m_LocalPosition: {x: -0.00000011920554, y: -0.00000015908788, z: 0.0000009327249}
+  m_LocalRotation: {x: 0.036461763, y: -0.00000008940697, z: -0.000000018626451, w: 0.9993351}
+  m_LocalPosition: {x: -0.0000014304696, y: -0.0000019090544, z: 0.000011192699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -870,9 +870,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292066278084277662}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0001369156, y: -0.000000059604645, z: -0.0000000037252903,
+  m_LocalRotation: {x: 0.00013690814, y: -0.00000008940697, z: -0.000000014901161,
     w: 1}
-  m_LocalPosition: {x: -0.00000011920554, y: -0.00000015908788, z: 0.0000009327249}
+  m_LocalPosition: {x: -0.000000119205765, y: -0.00000015908788, z: 0.00000093272496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1093,8 +1093,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4176331117139593520}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.018278345, y: -0, z: -0.0000000037252903, w: 0.999833}
-  m_LocalPosition: {x: -0.00000011920554, y: -0.00000015908788, z: 0.0000009327249}
+  m_LocalRotation: {x: 0.018278336, y: -0.00000008940697, z: -0.000000011175871, w: 0.999833}
+  m_LocalPosition: {x: -0.000000119205765, y: -0.00000015908788, z: 0.00000093272496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1649,7 +1649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510306905866561925}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.055804297, y: 0.7473247, z: 0.06327588, w: 0.65908104}
+  m_LocalRotation: {x: -0.055804294, y: 0.74732476, z: 0.06327588, w: 0.65908104}
   m_LocalPosition: {x: -6.8899193, y: -0.91163737, z: 0.9644723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1916,7 +1916,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
