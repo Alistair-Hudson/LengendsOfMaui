@@ -38,6 +38,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         private void Awake()
         {
+            transform.parent = null;
             CharacterController = GetComponent<CharacterController>();
             ForceReceiver = GetComponent<ForceReceiver>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
