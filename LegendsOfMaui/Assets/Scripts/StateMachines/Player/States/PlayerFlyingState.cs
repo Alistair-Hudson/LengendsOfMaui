@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.Utils;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
@@ -31,6 +32,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void Tick(float deltaTime)
         {
+            if (stateMachine.CurrentForm == MauiForms.Human && !stateMachine.CharacterController.isGrounded)
+            {
+                stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+            }
+
             Vector2 inputValue = stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
 
