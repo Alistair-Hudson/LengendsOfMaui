@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f427620efa988141836c7300b9b6dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementSound: {fileID: 0}
 --- !u!114 &742174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8245,6 +8246,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 80919199131190096, guid: 05b7fff87b3960143ae3e208f4e552d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 543072399920706705, guid: 05b7fff87b3960143ae3e208f4e552d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 634520941069077299, guid: 05b7fff87b3960143ae3e208f4e552d2,
         type: 3}
       propertyPath: m_AnchorMax.y
