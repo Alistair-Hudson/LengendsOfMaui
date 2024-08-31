@@ -48,7 +48,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Tick(float deltaTime)
         {
             Move(deltaTime);
-            FaceTarget();
 
             float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
 
