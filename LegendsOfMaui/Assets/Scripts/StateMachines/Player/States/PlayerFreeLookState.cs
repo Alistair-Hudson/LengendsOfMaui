@@ -55,7 +55,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             if (stateMachine.CurrentForm == MauiForms.Human && !stateMachine.CharacterController.isGrounded)
             {
-                stateMachine.SwitchState(new PlayerFallingState(stateMachine));
+                if (!Physics.Raycast(stateMachine.transform.position, Vector3.down, 2.0f))
+                {
+                    stateMachine.SwitchState(new PlayerFallingState(stateMachine));
+                }
             }
 
             if (stateMachine.InputReader.IsBlocking && stateMachine.CurrentForm == MauiForms.Human)
