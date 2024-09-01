@@ -35,5 +35,20 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         {
             _stateMachine.AudioSource.PlayOneShot(_movementSound);
         }
+
+        public void PlayParticleSystem(ParticleSystem particleSystem)
+        {
+            particleSystem.Play();
+        }
+
+        public void TurnOnModel(GameObject model)
+        {
+            model.SetActive(true);
+        }
+
+        public void TurnOffModel(GameObject model)
+        {
+            model.SetActive(false);
+        }
     }
 }
