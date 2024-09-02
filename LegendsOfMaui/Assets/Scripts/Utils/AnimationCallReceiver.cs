@@ -1,13 +1,15 @@
-using AlictronicGames.LegendsOfMaui.StateMachines;
-using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.StateMachines;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.Utils
 {
-    public class AnimationCallReceiver : MonoBehaviour
+    public class AnimationCallReceiver : SerializedMonoBehaviour
     {
-        [SerializeField] private AudioClip _movementSound = null;
+        [SerializeField] 
+        private AudioClip _movementSound = null;
 
         private StateMachine _stateMachine;
 
@@ -34,21 +36,6 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         public void PlayMovementSound()
         {
             _stateMachine.AudioSource.PlayOneShot(_movementSound);
-        }
-
-        public void PlayParticleSystem(ParticleSystem particleSystem)
-        {
-            particleSystem.Play();
-        }
-
-        public void TurnOnModel(GameObject model)
-        {
-            model.SetActive(true);
-        }
-
-        public void TurnOffModel(GameObject model)
-        {
-            model.SetActive(false);
         }
     }
 }

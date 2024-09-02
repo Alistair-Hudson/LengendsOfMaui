@@ -11,13 +11,16 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
         [SerializeField]
         private Collider _characterCollider = null;
         [SerializeField]
+        private float _damage = 0;
+        [SerializeField]
+        private float _knockBack = 0;
+        [SerializeField]
         private AttackType _attackType = AttackType.None;
 
         private List<Collider> _collidedWith = new List<Collider>();
 
         private AudioSource _weaponCollisionAudio = null;
-        private float _damage = 0;
-        private float _knockBack = 0;
+
 
         private void Awake()
         {
