@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.BackGroundSystems;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
@@ -17,6 +18,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(MOVEMENT, ANIMATOR_DAMP_TIME);
+            AudioVolumeController.Instance.ExitCombat();
         }
 
         public override void Exit()

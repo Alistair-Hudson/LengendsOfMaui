@@ -1,6 +1,7 @@
 using AlictronicGames.LegendsOfMaui.Combat.Targeting;
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.BackGroundSystems;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
@@ -10,17 +11,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
         private readonly int DEATH = Animator.StringToHash("Death");
         private const float ANIMATOR_DAMP_TIME = 0.1f;
 
-        private float _respawnDelay = 30f;
-
         public EnemyDeathState(EnemyStateMachine playerStateMachine) : base(playerStateMachine)
         {
         }
 
         public override void Enter()
         {
-            if (stateMachine.EnemyStats.SoundBank.TryGetValue("Death", out AudioClip attackSound))
+            if (stateMachine.EnemyStats.SoundBank.TryGetValue("Death", out AudioClip deathSound))
             {
-                stateMachine.AudioSource.PlayOneShot(attackSound);
+                stateMachine.AudioSource.PlayOneShot(deathSound);
             }
             stateMachine.Animator.CrossFadeInFixedTime(DEATH, ANIMATOR_DAMP_TIME);
             stateMachine.Weapon.gameObject.SetActive(false);
@@ -28,6 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             stateMachine.CallOnDeath();
             GameObject.Destroy(stateMachine.GetComponent<Target>());
             GameObject.Destroy(stateMachine.gameObject, 4);
+            AudioVolumeController.Instance.ExitCombat();
         }
 
         public override void Exit()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.BackGroundSystems;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
@@ -22,6 +23,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             {
                 stateMachine.AudioSource.PlayOneShot(attackSound);
             }
+            AudioVolumeController.Instance.EnterCombat();
         }
 
         public override void Exit()
