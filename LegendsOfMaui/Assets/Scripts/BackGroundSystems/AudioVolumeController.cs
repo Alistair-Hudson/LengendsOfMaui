@@ -38,7 +38,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
 
         public void ExitCombat()
         {
-            _numEnemiesInCombat--;
+            _numEnemiesInCombat = Mathf.Max(_numEnemiesInCombat - 1, 0);
             if (_numEnemiesInCombat > 0)
             {
                 return;

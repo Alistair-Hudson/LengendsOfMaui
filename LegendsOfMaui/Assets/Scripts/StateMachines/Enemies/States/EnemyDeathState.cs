@@ -17,6 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Enter()
         {
+            AudioVolumeController.Instance.ExitCombat();
             if (stateMachine.EnemyStats.SoundBank.TryGetValue("Death", out AudioClip deathSound))
             {
                 stateMachine.AudioSource.PlayOneShot(deathSound);
@@ -27,7 +28,6 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             stateMachine.CallOnDeath();
             GameObject.Destroy(stateMachine.GetComponent<Target>());
             GameObject.Destroy(stateMachine.gameObject, 4);
-            AudioVolumeController.Instance.ExitCombat();
         }
 
         public override void Exit()
