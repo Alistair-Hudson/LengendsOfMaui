@@ -55,6 +55,7 @@ namespace AlictronicGames.LegendsOfMaui.BackGroundSystems
         {
             _audioSource = GetComponent<AudioSource>();
             Instance = this;
+            ExitCombat();
         }
 
         private IEnumerator FadeVolume(float currentVolume, float targetVolume)
