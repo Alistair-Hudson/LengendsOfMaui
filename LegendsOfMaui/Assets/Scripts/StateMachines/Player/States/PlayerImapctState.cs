@@ -18,6 +18,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(IMPACT, ANIMATOR_DAMP_TIME);
+            if (stateMachine.PlayerSoundBank.TryGetValue("Impact", out AudioClip attackSound))
+            {
+                stateMachine.AudioSource.PlayOneShot(attackSound);
+            }
         }
 
         public override void Exit()

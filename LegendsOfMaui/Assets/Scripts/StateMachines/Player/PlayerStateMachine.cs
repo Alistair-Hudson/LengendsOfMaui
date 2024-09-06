@@ -19,6 +19,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private string _name = "";
         [OdinSerialize]
         private Dictionary<MauiForms, GameObject> _mauiForms = new Dictionary<MauiForms, GameObject>();
+        [OdinSerialize]
+        private Dictionary<string, AudioClip> _playerSoundBank = new Dictionary<string, AudioClip>();
 
         [SerializeField] 
         private WeaponDamage _weaponDamage = null;
@@ -69,6 +71,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public WeaponDamage WeaponDamage => _weaponDamage;
         public LedgeDetector LedgeDetector { get; private set; } = null;
         public Dictionary<MauiForms, GameObject> MauiForms => _mauiForms;
+        public Dictionary<string, AudioClip> PlayerSoundBank => _playerSoundBank;
         public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
         public float AdditionalAttackDamage { get; private set; } = 0;
         public float DodgeDurationModifier { get; private set; } = 0;
