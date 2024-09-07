@@ -245,6 +245,15 @@ MonoBehaviour:
   - Taniwha are legendary water spirits. Some are enemies of humans while others
     are guardians
   - Ponaturi a vicous water goblins that come onto the land at night.
+  - Press <sprite=9>/<sprite=324> for fast attacks
+  - Press <sprite=34>/<sprite=328> for heavy attacks
+  - Press fast attack, heavy attack, jump, block and doidge at the right time to
+    create various combos
+  - Press <sprite=63>/<sprite=310> to jump
+  - Press <sprite=46>/<sprite=208> to block enemy attacks
+  - Press <sprite=33>/<sprite=155> to dodge enemy attacks
+  - Press <sprite=127>/<sprite=268> to transform into the Rupe  to fly around
+  - Press <sprite=134>/<sprite=77> to target the nearest enemy when in range
 --- !u!1 &369719902
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Press <sprite=9>/<sprite=324> for fast attacks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -302,9 +311,9 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 5616dc99af5e9684b9e69cdf56dc3ebe, type: 2}
   m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
+  m_StyleSheet: {fileID: 11400000, guid: f952c082cb03451daed3ee968ac6c63e, type: 2}
   m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
