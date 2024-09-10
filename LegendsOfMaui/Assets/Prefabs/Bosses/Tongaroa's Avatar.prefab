@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightWhale
       objectReference: {fileID: 0}
+    - target: {fileID: 7368996786653953149, guid: 1bf0926826625eb41b9f37ed61ac80f3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fb1b94ea56d23b24ca4a9bfffea22bb8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -142,6 +147,12 @@ PrefabInstance:
       propertyPath: _name
       value: Tongaroa's Avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
     - target: {fileID: 7139243022204626920, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'

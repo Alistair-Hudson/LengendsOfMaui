@@ -65,9 +65,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
       propertyPath: <Animator>k__BackingField
       value: 
       objectReference: {fileID: 6720261900275565101}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: _animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: 0b817a47fdb9bb944b965c449e1485ea,
+        type: 2}
     - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: _timeBasedAttacks.Array.size
@@ -507,6 +519,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f427620efa988141836c7300b9b6dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _movementSound: {fileID: 0}
 --- !u!114 &8540960399401433464
 MonoBehaviour:
   m_ObjectHideFlags: 0

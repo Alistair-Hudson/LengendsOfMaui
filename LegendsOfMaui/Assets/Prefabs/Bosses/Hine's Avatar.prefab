@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8737562326297088264}
     m_Modifications:
+    - target: {fileID: 2118678807382957009, guid: 5d7ae9409ad6a3a4990b27ad20ccb157,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7909a848cfe71104d9cdf8ea25de5306, type: 2}
     - target: {fileID: 2118678807390156189, guid: 5d7ae9409ad6a3a4990b27ad20ccb157,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,6 +142,12 @@ PrefabInstance:
       propertyPath: _name
       value: Hine's Avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3476957782658209461, guid: cf14943fd9776a5479713572192f88e2,
+        type: 3}
     - target: {fileID: 7139243022204626920, guid: cf14943fd9776a5479713572192f88e2,
         type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
