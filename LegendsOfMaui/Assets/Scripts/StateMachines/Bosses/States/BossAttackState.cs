@@ -1,3 +1,4 @@
+using AlictronicGames.LegendsOfMaui.StateMachines.Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,12 +24,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
 
         public override void Exit()
         {
-
+            stateMachine.CurrentAttack = null;
         }
 
         public override void Tick(float deltaTime)
         {
-
+            if (GetNormalizedTime(stateMachine.Animator, _attackName) >= 1)
+            {
+                stateMachine.SwitchState(new BossIdleState(stateMachine));
+            }
         }
 
         public override void FixedTick()

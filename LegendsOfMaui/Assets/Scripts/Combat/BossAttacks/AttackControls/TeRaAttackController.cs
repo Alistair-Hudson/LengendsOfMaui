@@ -36,21 +36,21 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
             attackInstance.transform.rotation = Quaternion.LookRotation(lookDir);
             attackInstance.transform.parent = transform.parent;
-            attackInstance.GetComponent<Projectile>().SetProjectile(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[0].AttackDamage, _pyroBallSpeed);
+            attackInstance.GetComponent<Projectile>().SetProjectile(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[0].AttackDamage, _pyroBallSpeed);
             _audioSource.PlayOneShot(_pyroBallSound);
         }
 
         public void CallFlameVortex()
         {
             var attackInstance = Instantiate(_flameVortexPrefab, _playerStateMachine.transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Vortex>().SetVortex(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[1].AttackDamage);
+            attackInstance.GetComponent<Vortex>().SetVortex(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[1].AttackDamage);
             _audioSource.PlayOneShot(_flameVortexSound);
         }
 
         public void CallExplosion()
         {
             var attackInstance = Instantiate(_explossionPrefab, transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Explosion>().SetExplosion(bossStateMachine.Collider, bossStateMachine.TimeBasedAttacks[2].AttackDamage);
+            attackInstance.GetComponent<Explosion>().SetExplosion(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[2].AttackDamage);
             _audioSource.PlayOneShot(_explossionSound);
         }
     }

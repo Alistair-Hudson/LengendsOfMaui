@@ -31,6 +31,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             if (stateMachine.BossAttackQueue.TryDequeue(out IBossAttack attack))
             {
                 attack.InitiateAttack();
+                stateMachine.CurrentAttack = attack;
             }
             MoveToPlayer(deltaTime);
             FacePlayer();

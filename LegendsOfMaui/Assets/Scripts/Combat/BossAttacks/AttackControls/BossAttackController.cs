@@ -6,12 +6,12 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 {
     public class BossAttackController : MonoBehaviour, IBossAttackController
     {
-        protected BossStateMachine bossStateMachine = null;
+        protected BossStateMachine _bossStateMachine = null;
         protected PlayerStateMachine _playerStateMachine = null;
 
         private void Awake()
         {
-            bossStateMachine = GetComponentInParent<BossStateMachine>();
+            _bossStateMachine = GetComponentInParent<BossStateMachine>();
         }
 
         private void Start()
@@ -21,7 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public void ReturnToIdle()
         {
-            bossStateMachine.SwitchState(new BossIdleState(bossStateMachine));
+            _bossStateMachine.SwitchState(new BossIdleState(_bossStateMachine));
         }
     }
 }

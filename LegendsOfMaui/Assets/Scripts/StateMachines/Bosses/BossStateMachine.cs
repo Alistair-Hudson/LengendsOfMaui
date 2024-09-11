@@ -46,6 +46,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         public EventBasedAttack[] EventBasedAttacks => _eventBasedAttacks;
         public TimeBasedAttack[] TimeBasedAttacks => _timeBasedAttacks;
         public Queue<IBossAttack> BossAttackQueue { get; private set; }
+        public IBossAttack CurrentAttack { get; set; } = null;
 
         public event Action<BossStateMachine> OnDeathEvent;
 
