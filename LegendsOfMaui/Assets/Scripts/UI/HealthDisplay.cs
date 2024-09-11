@@ -34,7 +34,7 @@ namespace AlictronicGames.LegendsOfMaui.UI
             }
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, float force)
         {
             _healthDisplay.fillAmount = currentHealth / maxHealth;
         }

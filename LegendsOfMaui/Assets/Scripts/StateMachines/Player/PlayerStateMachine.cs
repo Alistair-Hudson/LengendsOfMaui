@@ -34,6 +34,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [field: Space]
         [field: SerializeField]
         public GameObject DeathWindow { get; private set; } = null;
+        [field:SerializeField]
+        public float FlinchThreshold { get; private set; } = 0f;
         [field: SerializeField]
         public float FreeLookMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
@@ -154,9 +156,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             SwitchState(new PlayerDeathState(this));
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, float force)
         {
-            if (causesImpact)
+            if (force > FlinchThreshold)
             {
                 SwitchState(new PlayerImapctState(this));
             }

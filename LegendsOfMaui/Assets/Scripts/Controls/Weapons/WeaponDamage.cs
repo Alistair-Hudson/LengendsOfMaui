@@ -21,6 +21,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
 
         private AudioSource _weaponCollisionAudio = null;
 
+        public float KnockBack => _knockBack;
 
         private void Awake()
         {
@@ -49,7 +50,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat.Weapons
             if (other.TryGetComponent<Health>(out var health))
             {
                 Debug.Log($"{name}: dealing {_damage} damage to {health.name}");
-                health.DealDamage(_damage, _attackType);
+                health.DealDamage(_damage, _attackType, _knockBack);
                 _weaponCollisionAudio.Play();
             }
             if (other.TryGetComponent<ForceReceiver>(out var forceReceiver))

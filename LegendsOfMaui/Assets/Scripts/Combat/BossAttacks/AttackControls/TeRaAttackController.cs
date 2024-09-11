@@ -22,6 +22,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private AudioClip _explossionSound = null;
         [SerializeField]
         private float _pyroBallSpeed = 1f;
+        [SerializeField]
+        private float _pyroBallForce = 1f;
+        [SerializeField]
+        private float _explossionForce = 1f;
 
         private AudioSource _audioSource = null;
 
@@ -36,7 +40,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             Vector3 lookDir = _playerStateMachine.transform.position - attackInstance.transform.position;
             attackInstance.transform.rotation = Quaternion.LookRotation(lookDir);
             attackInstance.transform.parent = transform.parent;
-            attackInstance.GetComponent<Projectile>().SetProjectile(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[0].AttackDamage, _pyroBallSpeed);
+            attackInstance.GetComponent<Projectile>().SetProjectile(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[0].AttackDamage, _pyroBallSpeed, _pyroBallForce);
             _audioSource.PlayOneShot(_pyroBallSound);
         }
 
@@ -50,7 +54,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void CallExplosion()
         {
             var attackInstance = Instantiate(_explossionPrefab, transform.position, Quaternion.identity);
-            attackInstance.GetComponent<Explosion>().SetExplosion(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[2].AttackDamage);
+            attackInstance.GetComponent<Explosion>().SetExplosion(_bossStateMachine.Collider, _bossStateMachine.TimeBasedAttacks[2].AttackDamage, _explossionForce);
             _audioSource.PlayOneShot(_explossionSound);
         }
     }

@@ -14,6 +14,8 @@ namespace AlictronicGames.LegendsOfMaui.Stats
         [field: SerializeField]
         public float Health { get; private set; } = 0f;
         [field: SerializeField]
+        public float FlinchThreshold { get; private set; } = 0;
+        [field: SerializeField]
         public float ChaseRange { get; private set; } = 0f;
         [field: SerializeField]
         public float MovementSpeed { get; private set; } = 0f;

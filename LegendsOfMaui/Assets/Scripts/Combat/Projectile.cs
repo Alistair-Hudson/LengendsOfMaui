@@ -17,6 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private Collider _userCollider = null;
         private float _damage = 0f;
+        private float _impactForce = 0f;
 
         private IEnumerator Start()
         {
@@ -35,7 +36,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(_damage, _attackType);
+                health.DealDamage(_damage, _attackType, _impactForce);
 
                 if (_destoryAfterDamage)
                 {
@@ -44,10 +45,11 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             }
         }
 
-        public void SetProjectile(Collider userCollider, float damage, float velocity)
+        public void SetProjectile(Collider userCollider, float damage, float impactForce, float velocity)
         {
             _userCollider = userCollider;
             _damage = damage;
+            _impactForce = impactForce;
             GetComponent<Rigidbody>().velocity = transform.forward * velocity;
         }
     }

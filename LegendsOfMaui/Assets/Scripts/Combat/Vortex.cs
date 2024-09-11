@@ -48,7 +48,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(_damagePerSecond * Time.deltaTime, _attackType, false);
+                health.DealDamage(_damagePerSecond * Time.deltaTime, _attackType, 0);
             }
         }
 

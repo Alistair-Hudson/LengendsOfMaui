@@ -18,6 +18,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
         private string _name = "";
         [SerializeField]
         private AnimatorOverrideController _animatorOverrideController = null;
+        [SerializeField] 
+        private float _flinchThreshold = 9999f;
         
         [Header("Attacks")]
         [SerializeField]
@@ -105,9 +107,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Boss
             SwitchState(new BossDeathState(this));
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, float force)
         {
-            if (causesImpact)
+            if (force > _flinchThreshold)
             {
                 SwitchState(new BossImpactState(this));
             }

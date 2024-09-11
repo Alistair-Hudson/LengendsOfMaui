@@ -23,7 +23,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public bool IsDead => CurrentHealth <= 0;
         
-        public event Action<float, float, bool> OnTakeDamage;
+        public event Action<float, float, float> OnTakeDamage;
         public event Action OnBlocked;
         public event Action OnDodged;
 
@@ -34,10 +34,10 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         private void Start()
         {
-            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, false);
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, 0);
         }
 
-        public void DealDamage(float damage, AttackType attackType, bool causesImpact = true)
+        public void DealDamage(float damage, AttackType attackType, float force)
         {
             if (IsDead)
             {
@@ -69,7 +69,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             Debug.Log($"{name} received {damage} damage");
             CurrentHealth -= damage;
-            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, causesImpact);
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, force);
             if (CurrentHealth <= 0)
             {
                 OnDeath?.Invoke();
@@ -79,7 +79,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         public void RestoreHealth(float heal)
         {
             CurrentHealth = Mathf.Min(CurrentHealth + heal, MaxHealth);
-            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, false);
+            OnTakeDamage?.Invoke(MaxHealth, CurrentHealth, 0);
         }
 
         public void SetInvulnerability(bool invulnerable)

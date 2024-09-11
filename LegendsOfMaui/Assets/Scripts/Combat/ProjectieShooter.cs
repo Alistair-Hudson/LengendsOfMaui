@@ -27,7 +27,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             Debug.Log("Shooting projectile");                                                       
             var direction = other.transform.position - transform.position;
             var projectileInstance = Instantiate(projectilePrefab, GetComponent<Collider>().bounds.center, Quaternion.Euler(direction.normalized));
-            projectileInstance.SetProjectile(GetComponent<Collider>(), projectileDamage, projectileSpeed);
+            projectileInstance.SetProjectile(GetComponent<Collider>(), projectileDamage, projectileSpeed, weaponDamage.KnockBack);
             Destroy(gameObject);
         }
     }

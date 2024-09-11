@@ -98,9 +98,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             NotificationDisplay.AddNotification($"You have received {EnemyStats.ManaDrop}");
         }
 
-        private void HandleOnTakeDamage(float maxHealth, float currentHealth, bool causesImpact)
+        private void HandleOnTakeDamage(float maxHealth, float currentHealth, float force)
         {
-            if (causesImpact)
+            if (force > EnemyStats.FlinchThreshold)
             {
                 SwitchState(new EnemyImpactState(this));
             }

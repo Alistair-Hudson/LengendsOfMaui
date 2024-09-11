@@ -18,6 +18,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
         private Collider _userCollider = null;
         private SphereCollider _explosionCollider;
         private float _damage = 0f;
+        private float _force = 0f;
 
         private void Awake()
         {
@@ -52,14 +53,15 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
             if (other.TryGetComponent<Health>(out var health))
             {
-                health.DealDamage(_damage, _attackType);
+                health.DealDamage(_damage, _attackType, _force);
             }
         }
 
-        public void SetExplosion(Collider userCollider, float damage)
+        public void SetExplosion(Collider userCollider, float damage, float force)
         {
             _userCollider = userCollider;
             _damage = damage;
+            _force = force;
         }
     }
 }
