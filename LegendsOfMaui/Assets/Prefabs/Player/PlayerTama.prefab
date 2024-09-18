@@ -352,13 +352,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c97ddf347a335458dabc122292860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _mauiForms
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[AlictronicGames.LegendsOfMaui.Utils.MauiForms,
+        Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[AlictronicGames.LegendsOfMaui.Utils.MauiForms,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _playerSoundBank
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   _name: 
-  _humanForm: {fileID: 1982383330436581456}
-  _birdForm: {fileID: 0}
+  _weaponDamage: {fileID: 0}
   _baicFastAttack: {fileID: 11400000, guid: 187deaf9d7d24cc4087a436e3d7d123c, type: 2}
   _basicHeavyAttack: {fileID: 11400000, guid: 3dc9d8fb3555d1b418f4e83fa5cf1eea, type: 2}
   <DeathWindow>k__BackingField: {fileID: 3483307168100037355, guid: 516d9f1a19769bb42a62238e454d765f,
     type: 3}
+  <FlinchThreshold>k__BackingField: 0
   <FreeLookMoveSpeed>k__BackingField: 6
   <TargetingMoveSpeed>k__BackingField: 6
   <HangingSpeed>k__BackingField: 6
@@ -366,6 +421,7 @@ MonoBehaviour:
   <DodgeDistance>k__BackingField: 1
   <JumpForce>k__BackingField: 4
   <PullUpOffset>k__BackingField: {x: 0, y: 0, z: 0}
+  <CurrentForm>k__BackingField: 0
   <PressToIntreract>k__BackingField: {fileID: 0}
 --- !u!114 &3870679606312120490
 MonoBehaviour:
@@ -389,7 +445,7 @@ CharacterController:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1793
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5092,6 +5148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f427620efa988141836c7300b9b6dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _movementSound: {fileID: 0}
 --- !u!4 &7051851053293559678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8547422905307228799, guid: e72f56b58ad8feb4e91a5b8d2c9e51e1,
