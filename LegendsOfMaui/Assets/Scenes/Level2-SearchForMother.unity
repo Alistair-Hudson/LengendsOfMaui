@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9eda45e58cafec246a8b670e51c2ef5b, type: 2}
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_Sun: {fileID: 1875933919}
+  m_IndirectSpecularColor: {r: 0.38728508, g: 0.5295652, b: 0.77577066, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -93,7 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ab4ad856ff9fe85428a20423fbfb5352,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -18931,7 +18932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548302348}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.025572164, y: 0.949609, z: -0.08044749, w: 0.301856}
+  m_LocalRotation: {x: 0.0023569837, y: 0.7071029, z: -0.0023569835, w: 0.7071029}
   m_LocalPosition: {x: 300.81216, y: 6.527817, z: 1939.7256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23155,6 +23156,12 @@ PrefabInstance:
 --- !u!4 &1875933917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8201602495018276046, guid: 632c7a6c726f99749bcc278b69ba6d56,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875933916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1875933919 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4376452442391490061, guid: 632c7a6c726f99749bcc278b69ba6d56,
     type: 3}
   m_PrefabInstance: {fileID: 1875933916}
   m_PrefabAsset: {fileID: 0}
