@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d559ec07676f794ea460d4324322121, type: 3}
+  m_Name: R23_Lava_River_4_Tessseled_Dynamic
+  m_EditorClassIdentifier: 
+  invertUVDirection: 0
+  normalFromRaycast: 0
+  normalFromRaycastPerVertex: 0
+  normalFromRaycastLerp: 1
+  snapToTerrain: 0
+  width: 8
+  splineMaterial: {fileID: 2100000, guid: a859f97325931844d90003d3f687c9d8, type: 2}
+  meshCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.087017834
+      value: 0.09898101
+      inSlope: 3.4640138
+      outSlope: 3.4640138
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.342625
+    - serializedVersion: 3
+      time: 0.19003588
+      value: 0.26672357
+      inSlope: 0.17637387
+      outSlope: 0.17637387
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5170163
+      value: 0.28498065
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.77713466
+      value: 0.27519
+      inSlope: -0.11815965
+      outSlope: -0.11815965
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9304097
+      value: 0.10528952
+      inSlope: -1.3564248
+      outSlope: -1.3564248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.344092
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minVal: 50
+  maxVal: 50
+  vertsInShape: 17
+  triangleDensity: 16
+  uvScale: 1
+  uvUseFixedTile: 0
+  uvFixedTileLerp: 1
+  uvRotation: 1
+  snapMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  receiveShadows: 1
+  shadowCastingMode: 1
+  flowFlat:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.025
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5093857
+      value: 0.13151585
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.025
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  flowWaterfall:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.49988607
+      value: 0.2700429
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  noiseFlowMap: 0
+  noiseMultiplierFlowMap: 0.1
+  noiseSizeXFlowMap: 2
+  noiseSizeZFlowMap: 2
+  floatSpeed: 10
+  flowLerpDistance: 32
+  meshFlowSpeed: 1
+  simulatedRiverLength: 100
+  simulatedRiverPoints: 10
+  simulatedMinStepSize: 1
+  simulatedNoUp: 0
+  simulatedBreakOnUp: 1
+  noiseWidth: 1
+  noiseMultiplierWidth: 20
+  noiseSizeWidth: 0.3
+  terrainPainterData: {fileID: 11400000, guid: 7d1ef4299501c3e40b2cdd9a47e8aff0, type: 2}
+  biomeType: 0

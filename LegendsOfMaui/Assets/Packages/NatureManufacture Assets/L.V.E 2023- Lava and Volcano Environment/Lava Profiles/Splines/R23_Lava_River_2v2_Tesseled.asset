@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d559ec07676f794ea460d4324322121, type: 3}
+  m_Name: R23_Lava_River_2v2_Tesseled
+  m_EditorClassIdentifier: 
+  invertUVDirection: 0
+  normalFromRaycast: 0
+  normalFromRaycastPerVertex: 0
+  normalFromRaycastLerp: 1
+  snapToTerrain: 0
+  width: 8
+  splineMaterial: {fileID: 2100000, guid: b8eeb58d7fef42a49afe898b28475e75, type: 2}
+  meshCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0107389055
+      value: -0.19762087
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.04439698
+      value: 0.21238488
+      inSlope: 0.9827793
+      outSlope: 0.9827793
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.500623
+      value: 0.409173
+      inSlope: 0.24586916
+      outSlope: 0.24586916
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9518256
+      value: 0.2141943
+      inSlope: -0.79380625
+      outSlope: -0.79380625
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99598694
+      value: -0.18871832
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minVal: 50
+  maxVal: 50
+  vertsInShape: 17
+  triangleDensity: 16
+  uvScale: 1
+  uvUseFixedTile: 0
+  uvFixedTileLerp: 1
+  uvRotation: 0
+  snapMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  receiveShadows: 1
+  shadowCastingMode: 1
+  flowFlat:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.05
+      inSlope: 1.4538141
+      outSlope: 1.4538141
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.047130264
+    - serializedVersion: 3
+      time: 0.5282437
+      value: 0.3509114
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.05
+      inSlope: -1.3896753
+      outSlope: -1.3896753
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.070364766
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  flowWaterfall:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.016060859
+      value: 0.10042236
+      inSlope: 1.2216879
+      outSlope: 1.2216879
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.054985497
+    - serializedVersion: 3
+      time: 0.51218283
+      value: 0.40133378
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9839392
+      value: 0.10042236
+      inSlope: -1.7103726
+      outSlope: -1.7103726
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.061569035
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  noiseFlowMap: 0
+  noiseMultiplierFlowMap: 0.1
+  noiseSizeXFlowMap: 2
+  noiseSizeZFlowMap: 2
+  floatSpeed: 10
+  flowLerpDistance: 16
+  meshFlowSpeed: 1
+  simulatedRiverLength: 100
+  simulatedRiverPoints: 10
+  simulatedMinStepSize: 1
+  simulatedNoUp: 0
+  simulatedBreakOnUp: 1
+  noiseWidth: 1
+  noiseMultiplierWidth: 20
+  noiseSizeWidth: 0.3
+  terrainPainterData: {fileID: 11400000, guid: 7d1ef4299501c3e40b2cdd9a47e8aff0, type: 2}
+  biomeType: 0
