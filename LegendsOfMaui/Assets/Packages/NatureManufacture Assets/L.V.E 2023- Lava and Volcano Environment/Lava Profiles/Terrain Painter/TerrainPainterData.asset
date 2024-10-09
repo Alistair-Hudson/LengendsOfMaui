@@ -1,0 +1,932 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baa468ff29244a8a0c65fb7cfdc74f7, type: 3}
+  m_Name: TerrainPainterData
+  m_EditorClassIdentifier: 
+  toolbarInt: 1
+  toolbarStrings:
+  - Carve
+  - Paint
+  - Manage Foliage
+  workTerrain: {fileID: 0}
+  terrainsUnder:
+  - {fileID: 0}
+  currentWorkTerrain: 0
+  terrainCarve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.05
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: -0.05
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  smooth: 1
+  brushAdditionalSize: 5
+  terrainNoiseParametersCarve:
+    useUseNoise: 1
+    noiseMultiplierPower: 1
+    noiseMultiplierInside: 0
+    noiseMultiplierOutside: 1
+    noiseSizeX: 10
+    noiseSizeZ: 10
+  distanceClearFoliage: 1
+  distanceClearFoliageTrees: 1
+  terrainLayersData:
+  - layerName: Sea Sand
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 10
+      noiseSizeZ: 10
+    convexParameters:
+      convex: 0
+      steps: 1
+      stepSize: 1
+      strength: 1
+  - layerName: Volcanic Sand
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0622406
+        value: -0.0047302246
+        inSlope: 0.052049447
+        outSlope: 0.052049447
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.12083334
+      - serializedVersion: 3
+        time: 5.029721
+        value: 0.2858317
+        inSlope: 0.09905828
+        outSlope: 0.09905828
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 15
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 1
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 10
+      noiseSizeZ: 10
+    convexParameters:
+      convex: 0
+      steps: 1
+      stepSize: 1
+      strength: 1
+  - layerName: Volcanic Sand Mix
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.052049447
+        outSlope: 0.052049447
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.12083334
+      - serializedVersion: 3
+        time: 5.029721
+        value: 0.2858317
+        inSlope: 0.09905828
+        outSlope: 0.09905828
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 15
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 2
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1.95
+      noiseMultiplierInside: 0.8
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 30
+      noiseSizeZ: 30
+    convexParameters:
+      convex: 0
+      steps: 1
+      stepSize: 1
+      strength: 1
+  - layerName: Volcanic Sand Mix Concave
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.052049447
+        outSlope: 0.052049447
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.12083334
+      - serializedVersion: 3
+        time: 5.029721
+        value: 0.2858317
+        inSlope: 0.09905828
+        outSlope: 0.09905828
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 15
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 2
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1.8
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 40
+      noiseSizeZ: 40
+    convexParameters:
+      convex: 2
+      steps: 1
+      stepSize: 20
+      strength: 1
+  - layerName: Small Rocks Convex
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 3
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 2
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 40
+      noiseSizeZ: 40
+    convexParameters:
+      convex: 1
+      steps: 3
+      stepSize: 1
+      strength: 1.5
+  - layerName: Small Rocks Concave
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.3
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 12
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 3
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 13.125
+        value: 0.61203015
+        inSlope: 0.00090443424
+        outSlope: 0.00090443424
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.3966942
+      - serializedVersion: 3
+        time: 37.91452
+        value: 0.99960893
+        inSlope: -0.00019062452
+        outSlope: -0.00019062452
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 63
+        value: 0.80024385
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1.8
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 30
+      noiseSizeZ: 30
+    convexParameters:
+      convex: 2
+      steps: 7
+      stepSize: 50
+      strength: 1
+  - layerName: Small Rocks Mix
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.3
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 3
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 6
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 60
+      noiseSizeZ: 60
+    convexParameters:
+      convex: 0
+      steps: 2
+      stepSize: 2
+      strength: 2
+  - layerName: Rocks
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 12
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 4
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 3
+        value: 0
+        inSlope: 0.030728178
+        outSlope: 0.030728178
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.45698372
+      - serializedVersion: 3
+        time: 17.655434
+        value: 0.37506843
+        inSlope: 0.052083947
+        outSlope: 0.052083947
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 28.584198
+        value: 1.0060098
+        inSlope: -0.00026905266
+        outSlope: -0.00026905266
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08686365
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: -0.00009785457
+        outSlope: -0.00009785457
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 40
+      noiseSizeZ: 40
+    convexParameters:
+      convex: 1
+      steps: 7
+      stepSize: 20
+      strength: 1
+  - layerName: Volcanic Sand Mix  Lower
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.8
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 12
+        value: 1
+        inSlope: 0.042042572
+        outSlope: 0.042042572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.19166668
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 2
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 3.7159157
+        value: 0.036064148
+        inSlope: 0.103124775
+        outSlope: 0.103124775
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 13.061313
+        value: 0.9998061
+        inSlope: 0.00008501488
+        outSlope: 0.00008501488
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 25.05552
+        value: 0.99954265
+        inSlope: -0.0015297165
+        outSlope: -0.0015297165
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.7153427
+      - serializedVersion: 3
+        time: 42.76128
+        value: 0.07106049
+        inSlope: 0.0012132761
+        outSlope: 0.0012132761
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.14215152
+      - serializedVersion: 3
+        time: 90
+        value: 0
+        inSlope: -0.0015042849
+        outSlope: -0.0015042849
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.2
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 40
+      noiseSizeZ: 40
+    convexParameters:
+      convex: 2
+      steps: 3
+      stepSize: 1
+      strength: 1

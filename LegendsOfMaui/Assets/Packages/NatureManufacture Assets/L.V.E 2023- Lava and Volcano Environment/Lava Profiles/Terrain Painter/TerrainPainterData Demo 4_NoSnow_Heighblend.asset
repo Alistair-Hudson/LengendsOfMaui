@@ -1,0 +1,1499 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baa468ff29244a8a0c65fb7cfdc74f7, type: 3}
+  m_Name: TerrainPainterData Demo 4_NoSnow_Heighblend
+  m_EditorClassIdentifier: 
+  toolbarInt: 0
+  toolbarStrings:
+  - Carve
+  - Paint
+  - Manage Foliage
+  workTerrain: {fileID: 0}
+  terrainsUnder:
+  - {fileID: 0}
+  currentWorkTerrain: 0
+  terrainCarve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  smooth: 1.5
+  brushAdditionalSize: 1
+  terrainNoiseParametersCarve:
+    useUseNoise: 0
+    noiseMultiplierPower: 1
+    noiseMultiplierInside: 1
+    noiseMultiplierOutside: 0.25
+    noiseSizeX: 10
+    noiseSizeZ: 10
+  distanceClearFoliage: 1
+  distanceClearFoliageTrees: 1
+  terrainLayersData:
+  - layerName: BaseGrass
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -0.0055436874
+        outSlope: -0.0055436874
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 10
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 5
+      noiseSizeZ: 5
+    convexParameters:
+      convex: 0
+      steps: 1
+      stepSize: 1
+      strength: 1
+  - layerName: Grass Mix
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 2.0992723
+        outSlope: 2.0992723
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 2
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -0.0055436874
+        outSlope: -0.0055436874
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.62
+      noiseMultiplierInside: 0.8
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 200
+      noiseSizeZ: 200
+    convexParameters:
+      convex: 0
+      steps: 4
+      stepSize: 4
+      strength: 4
+  - layerName: Concave Grass Dark (Canyon)
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.8
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 2
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.3970604
+        value: 0.30714417
+        inSlope: -0.013939534
+        outSlope: -0.013939534
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.042647064
+      - serializedVersion: 3
+        time: 5.282649
+        value: 0.96527195
+        inSlope: -0.015314628
+        outSlope: -0.015314628
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 35.223953
+        value: 0.43807182
+        inSlope: -0.008844137
+        outSlope: -0.008844137
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.36
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.1
+      noiseSizeX: 100
+      noiseSizeZ: 100
+    convexParameters:
+      convex: 2
+      steps: 1
+      stepSize: 50
+      strength: 1
+  - layerName: Concave Mud (Canyon)
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 1
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.13118744
+        value: 0.9985504
+        inSlope: -0.001889133
+        outSlope: -0.001889133
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.11979986
+      - serializedVersion: 3
+        time: 85.06117
+        value: 0.91629755
+        inSlope: -0.0047429847
+        outSlope: -0.0047429847
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.11058071
+      - serializedVersion: 3
+        time: 90
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 0.6
+      noiseMultiplierOutside: 0.3
+      noiseSizeX: 100
+      noiseSizeZ: 100
+    convexParameters:
+      convex: 2
+      steps: 4
+      stepSize: 30
+      strength: 1
+  - layerName: Convex Grass (Hill)
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.6
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 5
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0.13663939
+        outSlope: 0.13663939
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.066025116
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.6
+      noiseMultiplierInside: 1.2
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 300
+      noiseSizeZ: 300
+    convexParameters:
+      convex: 1
+      steps: 10
+      stepSize: 15
+      strength: 0.2
+  - layerName: Pebbels
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 4
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -2.8467388
+        value: -0.0055751447
+        inSlope: 0.055436146
+        outSlope: 0.055436146
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09826349
+      - serializedVersion: 3
+        time: 18.642876
+        value: 0.99739575
+        inSlope: 0.029826412
+        outSlope: 0.029826412
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33180726
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 22.48239
+        value: 1.0011947
+        inSlope: 0.0021485414
+        outSlope: 0.0021485414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.2118713
+      - serializedVersion: 3
+        time: 43.03808
+        value: 0.0050605536
+        inSlope: 0.0003268346
+        outSlope: 0.0003268346
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90.76965
+        value: -0.018398285
+        inSlope: -0.00090801745
+        outSlope: -0.00090801745
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12357603
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 2
+      noiseMultiplierInside: 4
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 100
+      noiseSizeZ: 100
+    convexParameters:
+      convex: 2
+      steps: 5
+      stepSize: 14.05
+      strength: 1
+  - layerName: Top Snow
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 100
+        value: 0
+        inSlope: 0.00077877304
+        outSlope: 0.00077877304
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.18676469
+      - serializedVersion: 3
+        time: 130.94525
+        value: 1.9881557
+        inSlope: 0.015808126
+        outSlope: 0.015808126
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 390
+        value: 3.1019287
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.0007680845
+        outSlope: 0.0007680845
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 0.7
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 500
+      noiseSizeZ: 500
+    convexParameters:
+      convex: 0
+      steps: 2
+      stepSize: 5
+      strength: 1
+  - layerName: Rocks
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 6
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 10
+        value: 0
+        inSlope: 0.030728178
+        outSlope: 0.030728178
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.45698372
+      - serializedVersion: 3
+        time: 28.584198
+        value: 1.0060098
+        inSlope: -0.00026905266
+        outSlope: -0.00026905266
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08686365
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: -0.00009785457
+        outSlope: -0.00009785457
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 10
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 5
+      noiseSizeZ: 5
+    convexParameters:
+      convex: 0
+      steps: 8
+      stepSize: 20
+      strength: 1
+  - layerName: Dirt
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 800
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 3
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.36522293
+        value: 0.75155544
+        inSlope: 0.13663939
+        outSlope: 0.13663939
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.066025116
+      - serializedVersion: 3
+        time: 6.03196
+        value: 0.9950141
+        inSlope: 0.00033201126
+        outSlope: 0.00033201126
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.8770789
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 14.031202
+        value: 1.0011947
+        inSlope: 0.0021485414
+        outSlope: 0.0021485414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.2118713
+      - serializedVersion: 3
+        time: 14.812126
+        value: 1.0017292
+        inSlope: -0.00071039924
+        outSlope: -0.00071039924
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.5183213
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 43.03808
+        value: 0.0050605536
+        inSlope: 0.0003268346
+        outSlope: 0.0003268346
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90.76965
+        value: -0.018398285
+        inSlope: -0.00090801745
+        outSlope: -0.00090801745
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12357603
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 4
+      noiseMultiplierInside: 3
+      noiseMultiplierOutside: 1
+      noiseSizeX: 200
+      noiseSizeZ: 200
+    convexParameters:
+      convex: 2
+      steps: 1
+      stepSize: 2
+      strength: 1
+  - layerName: Snow Concave Lower
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 40.013603
+        value: 0.018157959
+        inSlope: 0.05317593
+        outSlope: 0.05317593
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.12575401
+      - serializedVersion: 3
+        time: 89.12726
+        value: 1.9732784
+        inSlope: 0.013193309
+        outSlope: 0.013193309
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08651287
+      - serializedVersion: 3
+        time: 390
+        value: 3.1019287
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 3.7159157
+        value: 0.036064148
+        inSlope: 0.103124775
+        outSlope: 0.103124775
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 13.061313
+        value: 0.9998061
+        inSlope: 0.00008501488
+        outSlope: 0.00008501488
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 25.05552
+        value: 0.99954265
+        inSlope: -0.0015297165
+        outSlope: -0.0015297165
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.7153427
+      - serializedVersion: 3
+        time: 42.76128
+        value: 0.07106049
+        inSlope: 0.0012132761
+        outSlope: 0.0012132761
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.14215152
+      - serializedVersion: 3
+        time: 90
+        value: 0
+        inSlope: -0.0015042849
+        outSlope: -0.0015042849
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.2
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 300
+      noiseSizeZ: 300
+    convexParameters:
+      convex: 2
+      steps: 2
+      stepSize: 10
+      strength: 1
+  - layerName: Sand Lake
+    isActive: 1
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -2.4332452
+        value: 1.0711505
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.7645708
+        value: 1.0737021
+        inSlope: -0.0042112544
+        outSlope: -0.0042112544
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4757328
+        value: 1.0050392
+        inSlope: -0.31274414
+        outSlope: -0.31274414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.04117648
+      - serializedVersion: 3
+        time: 3.8544903
+        value: 0.004810434
+        inSlope: 0.006185933
+        outSlope: 0.006185933
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09846073
+      - serializedVersion: 3
+        time: 6.470825
+        value: -0.0039889812
+        inSlope: -0.0014361828
+        outSlope: -0.0014361828
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 8.06786
+        value: 0
+        inSlope: 0.06686009
+        outSlope: 0.06686009
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1274773
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: -0.00041796986
+        outSlope: -0.00041796986
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 0.2
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 300
+      noiseSizeZ: 300
+    convexParameters:
+      convex: 2
+      steps: 2
+      stepSize: 10
+      strength: 1
+  - layerName: Sand Lake Wklesniecia
+    isActive: 0
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1.8757282
+        value: 1.0456713
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.788838
+        value: 1.0737021
+        inSlope: -0.0042112544
+        outSlope: -0.0042112544
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5.300873
+        value: 0.9503212
+        inSlope: -0.09775879
+        outSlope: -0.09775879
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.23810232
+        outWeight: 0.04117648
+      - serializedVersion: 3
+        time: 5.8877106
+        value: 0.000049691647
+        inSlope: 0.006185933
+        outSlope: 0.006185933
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09846073
+      - serializedVersion: 3
+        time: 6.4029655
+        value: -0.0039889812
+        inSlope: -0.0014361828
+        outSlope: -0.0014361828
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 8
+        value: 0
+        inSlope: 0.06686009
+        outSlope: 0.06686009
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1274773
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 9.529411
+        value: 0.9889221
+        inSlope: 0.0044462467
+        outSlope: 0.0044462467
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.28329328
+      - serializedVersion: 3
+        time: 20.039566
+        value: -0.0064070225
+        inSlope: -0.00026905266
+        outSlope: -0.00026905266
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08686365
+      - serializedVersion: 3
+        time: 89.17645
+        value: -0.020961761
+        inSlope: -0.00021052061
+        outSlope: -0.00021052061
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 0.3
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 300
+      noiseSizeZ: 300
+    convexParameters:
+      convex: 2
+      steps: 2
+      stepSize: 10
+      strength: 1
+  - layerName: Sand Lake 2 Pebbles
+    isActive: 0
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 1
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 4
+        value: 1.0050392
+        inSlope: -0.31274414
+        outSlope: -0.31274414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.04117648
+      - serializedVersion: 3
+        time: 4.107723
+        value: -0.010061145
+        inSlope: -0.044865217
+        outSlope: -0.044865217
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.1110233
+      - serializedVersion: 3
+        time: 8
+        value: 0
+        inSlope: 0.06686009
+        outSlope: 0.06686009
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1274773
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 1
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.08725363
+        outSlope: 0.08725363
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.057139594
+      - serializedVersion: 3
+        time: 28.584198
+        value: 1.0060098
+        inSlope: -0.00026905266
+        outSlope: -0.00026905266
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08686365
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: -0.00009785457
+        outSlope: -0.00009785457
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 1
+      noiseMultiplierPower: 1
+      noiseMultiplierInside: 1
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 300
+      noiseSizeZ: 300
+    convexParameters:
+      convex: 2
+      steps: 2
+      stepSize: 10
+      strength: 1
+  - layerName: Sand Lake
+    isActive: 0
+    power:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    powerMultiplier: 0.71
+    height:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.037431955
+        value: -0.00017099082
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightMultiplier: 1
+    heightPower: 1
+    splatMapID: 0
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0.13663939
+        outSlope: 0.13663939
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.066025116
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseParameters:
+      useUseNoise: 0
+      noiseMultiplierPower: 0.6
+      noiseMultiplierInside: 1.2
+      noiseMultiplierOutside: 0.25
+      noiseSizeX: 10
+      noiseSizeZ: 10
+    convexParameters:
+      convex: 0
+      steps: 10
+      stepSize: 4
+      strength: 1

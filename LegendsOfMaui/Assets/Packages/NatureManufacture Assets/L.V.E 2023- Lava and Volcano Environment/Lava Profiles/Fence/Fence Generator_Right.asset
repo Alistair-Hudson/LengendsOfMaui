@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71cab1c61c75824ea55d9837f802751, type: 3}
+  m_Name: Fence Generator_Right
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  triangleDensity: 5
+  distanceMultiplier: 1
+  additionalDistance: 3
+  bendMeshes: 1
+  firstSpan:
+    gameObject: {fileID: 0}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  lastSpan:
+    gameObject: {fileID: 0}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    <BoundsType>k__BackingField: 1
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  posts: []
+  postRandomType: 0
+  spans:
+  - gameObject: {fileID: 1197018791244750, guid: 8c923054666633c4abe57245124da4e7,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -0.8, z: 0}
+    rotationOffset: {x: 0, y: 0, z: -20}
+    scaleOffset: {x: 1, y: 0.7, z: 1}
+    <BoundsType>k__BackingField: 2
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 1813962927469088, guid: bb6212237abf3ee4ca27a3abe5ab46b0,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -0.8, z: 0}
+    rotationOffset: {x: 0, y: 0, z: -20}
+    scaleOffset: {x: 1, y: 0.7, z: 1}
+    <BoundsType>k__BackingField: 2
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  - gameObject: {fileID: 1009134565136916, guid: c4756aa29b969e64e8df371e00f3a8ff,
+      type: 3}
+    probability: 1
+    forward: 0
+    up: 1
+    positionOffset: {x: 0, y: -0.8, z: 0}
+    rotationOffset: {x: 0, y: 0, z: -20}
+    scaleOffset: {x: 1, y: 0.7, z: 1}
+    <BoundsType>k__BackingField: 2
+    <CustomBoundsSize>k__BackingField: {x: 1, y: 1, z: 1}
+    mirror: 0
+  spanRandomType: 0
+  scaleMesh: 1
+  holdUp: 0
+  randomSeed: 1
+  seed: 236392623
