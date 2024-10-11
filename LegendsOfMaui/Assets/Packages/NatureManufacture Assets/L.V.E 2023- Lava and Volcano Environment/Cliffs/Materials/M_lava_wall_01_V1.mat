@@ -9,16 +9,20 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_lava_wall_01_V1
   m_Shader: {fileID: 4800000, guid: 3ef0cb5a2319771478ac44698ebb6ef9, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - LEAKS_UV0_UV2_1_ON
+  - _USECOVERHEIGHTT_ON
+  - _USEDYNAMICCOVERTSTATICMASKF_ON
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
-  - _USEDYNAMICCOVERTSTATICMASKF_ON
+  - _DYNAMIC_FLOW_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   - TransparentBackface
@@ -77,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoverMaskMap:
-        m_Texture: {fileID: 2800000, guid: f1a6737108c1c484b8708460bd6f5773, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0103e248792c6f2488c6d80c530f6b19, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoverNormalMap:
@@ -168,6 +172,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -189,6 +197,17 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 0
+    - _BUILTIN_QueueControl: 1
+    - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
     - _Base2AORemapMax: 1
     - _Base2AORemapMin: 0
     - _Base2EmissionMaskIntensivity: 0.01
@@ -272,10 +291,10 @@ Material:
     - _DstBlend: 0
     - _DynamicShape_V_Curve_Power: 1.5
     - _DynamicStart_Position_Offset: 0
-    - _Dynamic_Flow: 0
+    - _Dynamic_Flow: 1
     - _Dynamic_Lava_Flow: 0
     - _Dynamic_Reaction_Offset: 0
-    - _Dynamic_Shape_Speed: 2
+    - _Dynamic_Shape_Speed: 0.07
     - _Dynamic_Shape_U_Curve_Power: 2.3
     - _Dynamic_Shape_V_Curve_Power: 1.5
     - _Dynamic_Start_Position_Offset: 0

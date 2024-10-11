@@ -11,14 +11,16 @@ Material:
   m_Shader: {fileID: 4800000, guid: a078bba5a980e3447a3b8f0ef47227d2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _Dynamic_Flow
+  - _UVVDIRECTION1UDIRECTION0_ON
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   - _TESSELLATION_PHONG
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
