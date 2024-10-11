@@ -9,14 +9,15 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Lava_River_4_Mesh
   m_Shader: {fileID: 4800000, guid: a078bba5a980e3447a3b8f0ef47227d2, type: 3}
-  m_ValidKeywords:
-  - _UVVDIRECTION1UDIRECTION0_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -25,6 +26,7 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - RayTracingPrepass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -57,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColdLavaMT_AO_H_EM:
-        m_Texture: {fileID: 2800000, guid: e02097e98b9351f4192bf1aab109f6d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1ef381cb3861894abd00868a52059db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColdLavaNormal:
@@ -470,7 +472,7 @@ Material:
     - _NoiseTiling: {r: 1, g: 1, b: 0, a: 0}
     - _RimColor: {r: 1, g: 0, b: 0, a: 0}
     - _ShalowColor: {r: 0.5060554, g: 0.6617647, b: 0.61666334, a: 0}
-    - _Slope_Speed_Influence: {r: 2, g: 2, b: 0, a: 0}
+    - _Slope_Speed_Influence: {r: 0.3, g: 0.3, b: 0, a: 0}
     - _SlowCascadeColor: {r: 20, g: 20, b: 20, a: 0}
     - _SmallCascadeColor: {r: 20, g: 20, b: 20, a: 0}
     - _SmallCascadeMainSpeed: {r: 0, g: 0.16, b: 0, a: 0}

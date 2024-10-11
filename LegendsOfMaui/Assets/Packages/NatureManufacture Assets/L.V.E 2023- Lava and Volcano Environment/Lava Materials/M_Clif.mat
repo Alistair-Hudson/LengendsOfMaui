@@ -9,9 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Clif
   m_Shader: {fileID: 4800000, guid: c0dfe728864ec2447a8672eec7e6bdd0, type: 3}
-  m_ValidKeywords:
-  - _Base2UsePlanarUV
-  - _Invert_Layer_Mask
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 2
@@ -20,7 +18,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
-    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   - TransparentBackface
@@ -151,22 +148,10 @@ Material:
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _AmbientOcclusionPower: 1
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: 0
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
     - _Base2AORemapMax: 1
     - _Base2AORemapMin: 0
     - _Base2EmissionMaskIntensivity: 4
     - _Base2EmissionMaskTreshold: 4.5
-    - _Base2EmissionMaskTreshold1: 0
     - _Base2Metallic: 1
     - _Base2NormalScale: 1
     - _Base2SmoothnessRemapMax: 1
@@ -195,7 +180,6 @@ Material:
     - _CoverNormalScale: 1
     - _CoverSmothnessPower: 1
     - _CoverTesselationDepth: 0.27
-    - _CoverUsePlanarUV: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -261,13 +245,6 @@ Material:
     - _TessMin: 0
     - _TessPhongStrength: 1
     - _TessValue: 11.2
-    - _Tess_Height_1_Max: 1
-    - _Tess_Height_1_Min: 0
-    - _Tess_Height_1_Offset: 0
-    - _Tess_Height_2_Max: 1
-    - _Tess_Height_2_Min: 0
-    - _Tess_Height_2_Offset: 0
-    - _Tess_Height_Blend_Transition: 0.001
     - _TesselationDepth: 0.22
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
