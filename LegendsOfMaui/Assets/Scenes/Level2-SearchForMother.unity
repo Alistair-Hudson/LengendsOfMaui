@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: d7f2f64e24f4ea84aa720ff3f59410be
+  m_OcclusionCullingData: {fileID: 36300000, guid: 1a3e04bb5ac8aff47a07b20c449594c7,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ GameObject:
   - component: {fileID: 12670904}
   - component: {fileID: 12670906}
   - component: {fileID: 12670905}
+  - component: {fileID: 12670907}
   m_Layer: 0
   m_Name: Terrain_(1469.47, 133.82, 1112.83)
   m_TagString: Untagged
@@ -302,6 +304,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &12670907
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12670903}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &17003493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,6 +761,7 @@ GameObject:
   - component: {fileID: 45534259}
   - component: {fileID: 45534261}
   - component: {fileID: 45534260}
+  - component: {fileID: 45534262}
   m_Layer: 0
   m_Name: Terrain_(100.00, 0.00, 100.00)
   m_TagString: Untagged
@@ -830,6 +844,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &45534262
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45534258}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &55011053
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +866,7 @@ GameObject:
   - component: {fileID: 55011054}
   - component: {fileID: 55011056}
   - component: {fileID: 55011055}
+  - component: {fileID: 55011057}
   m_Layer: 0
   m_Name: Terrain_(1669.47, 133.82, 1112.83)
   m_TagString: Untagged
@@ -923,6 +949,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &55011057
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55011053}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &59939215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,6 +1128,7 @@ GameObject:
   - component: {fileID: 74294203}
   - component: {fileID: 74294205}
   - component: {fileID: 74294204}
+  - component: {fileID: 74294206}
   m_Layer: 0
   m_Name: Terrain_(500.00, -1.00, 1800.00)
   m_TagString: Untagged
@@ -1173,6 +1211,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &74294206
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74294202}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &80162771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1258,6 +1307,7 @@ GameObject:
   - component: {fileID: 81525671}
   - component: {fileID: 81525673}
   - component: {fileID: 81525672}
+  - component: {fileID: 81525674}
   m_Layer: 0
   m_Name: Terrain_(100.00, 25.00, 300.00)
   m_TagString: Untagged
@@ -1340,6 +1390,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &81525674
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81525670}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &84654770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1519,6 +1580,7 @@ GameObject:
   - component: {fileID: 90201384}
   - component: {fileID: 90201386}
   - component: {fileID: 90201385}
+  - component: {fileID: 90201387}
   m_Layer: 0
   m_Name: Terrain_(300.00, 0.00, 1700.00)
   m_TagString: Untagged
@@ -1601,6 +1663,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &90201387
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90201383}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &101689121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1685,7 @@ GameObject:
   - component: {fileID: 101689122}
   - component: {fileID: 101689124}
   - component: {fileID: 101689123}
+  - component: {fileID: 101689125}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 612.83)
   m_TagString: Untagged
@@ -1694,6 +1768,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &101689125
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101689121}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &104038134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1790,7 @@ GameObject:
   - component: {fileID: 104038135}
   - component: {fileID: 104038137}
   - component: {fileID: 104038136}
+  - component: {fileID: 104038138}
   m_Layer: 0
   m_Name: Terrain_(1669.47, 133.82, -187.17)
   m_TagString: Untagged
@@ -1787,6 +1873,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &104038138
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104038134}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &106886949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1895,7 @@ GameObject:
   - component: {fileID: 106886950}
   - component: {fileID: 106886952}
   - component: {fileID: 106886951}
+  - component: {fileID: 106886953}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 800.00)
   m_TagString: Untagged
@@ -1880,6 +1978,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &106886953
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106886949}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &114637346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +2000,7 @@ GameObject:
   - component: {fileID: 114637347}
   - component: {fileID: 114637349}
   - component: {fileID: 114637348}
+  - component: {fileID: 114637350}
   m_Layer: 0
   m_Name: Terrain_(100.00, -1.00, 1900.00)
   m_TagString: Untagged
@@ -1973,6 +2083,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &114637350
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114637346}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &119258519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2261,6 +2382,7 @@ GameObject:
   - component: {fileID: 125471025}
   - component: {fileID: 125471027}
   - component: {fileID: 125471026}
+  - component: {fileID: 125471028}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1700.00)
   m_TagString: Untagged
@@ -2343,6 +2465,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &125471028
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125471024}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &134929672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2588,7 @@ GameObject:
   - component: {fileID: 137311806}
   - component: {fileID: 137311808}
   - component: {fileID: 137311807}
+  - component: {fileID: 137311809}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 1500.00)
   m_TagString: Untagged
@@ -2537,6 +2671,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &137311809
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137311805}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &150512689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2693,7 @@ GameObject:
   - component: {fileID: 150512690}
   - component: {fileID: 150512692}
   - component: {fileID: 150512691}
+  - component: {fileID: 150512693}
   m_Layer: 0
   m_Name: Terrain_(300.00, -1.00, 2000.00)
   m_TagString: Untagged
@@ -2630,6 +2776,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &150512693
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150512689}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &151242033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3259,6 +3416,7 @@ GameObject:
   - component: {fileID: 225893324}
   - component: {fileID: 225893326}
   - component: {fileID: 225893325}
+  - component: {fileID: 225893327}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 212.83)
   m_TagString: Untagged
@@ -3341,6 +3499,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &225893327
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225893323}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &231991699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3957,6 +4126,7 @@ GameObject:
   - component: {fileID: 268021594}
   - component: {fileID: 268021596}
   - component: {fileID: 268021595}
+  - component: {fileID: 268021597}
   m_Layer: 0
   m_Name: Terrain_(-400.00, 0.00, 2000.00)
   m_TagString: Untagged
@@ -4039,6 +4209,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &268021597
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268021593}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &273997156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,6 +4231,7 @@ GameObject:
   - component: {fileID: 273997157}
   - component: {fileID: 273997159}
   - component: {fileID: 273997158}
+  - component: {fileID: 273997160}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 400.00)
   m_TagString: Untagged
@@ -4132,6 +4314,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &273997160
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273997156}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &289215295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,6 +4336,7 @@ GameObject:
   - component: {fileID: 289215296}
   - component: {fileID: 289215298}
   - component: {fileID: 289215297}
+  - component: {fileID: 289215299}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 1712.83)
   m_TagString: Untagged
@@ -4225,6 +4419,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &289215299
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289215295}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &308979908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,6 +4441,7 @@ GameObject:
   - component: {fileID: 308979909}
   - component: {fileID: 308979911}
   - component: {fileID: 308979910}
+  - component: {fileID: 308979912}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 12.83)
   m_TagString: Untagged
@@ -4318,6 +4524,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &308979912
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308979908}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &343939335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,6 +4546,7 @@ GameObject:
   - component: {fileID: 343939336}
   - component: {fileID: 343939338}
   - component: {fileID: 343939337}
+  - component: {fileID: 343939339}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 312.83)
   m_TagString: Untagged
@@ -4411,6 +4629,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &343939339
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343939335}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &355679730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4714,6 +4943,7 @@ GameObject:
   - component: {fileID: 381714835}
   - component: {fileID: 381714837}
   - component: {fileID: 381714836}
+  - component: {fileID: 381714838}
   m_Layer: 0
   m_Name: Terrain_(1569.47, 133.82, 1712.83)
   m_TagString: Untagged
@@ -4796,6 +5026,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &381714838
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381714834}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &395996093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5484,6 +5725,7 @@ GameObject:
   - component: {fileID: 458973751}
   - component: {fileID: 458973753}
   - component: {fileID: 458973752}
+  - component: {fileID: 458973754}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 1612.83)
   m_TagString: Untagged
@@ -5566,6 +5808,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &458973754
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458973750}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &467901018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,6 +5945,7 @@ GameObject:
   - component: {fileID: 469590529}
   - component: {fileID: 469590531}
   - component: {fileID: 469590530}
+  - component: {fileID: 469590532}
   m_Layer: 0
   m_Name: Terrain_(300.00, 0.00, 2100.00)
   m_TagString: Untagged
@@ -5774,6 +6028,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &469590532
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469590528}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &489776073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6413,6 +6678,7 @@ GameObject:
   - component: {fileID: 555336414}
   - component: {fileID: 555336416}
   - component: {fileID: 555336415}
+  - component: {fileID: 555336417}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 412.83)
   m_TagString: Untagged
@@ -6495,6 +6761,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &555336417
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555336413}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &560171369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6906,6 +7183,7 @@ GameObject:
   - component: {fileID: 581302050}
   - component: {fileID: 581302052}
   - component: {fileID: 581302051}
+  - component: {fileID: 581302053}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 812.83)
   m_TagString: Untagged
@@ -6988,6 +7266,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &581302053
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581302049}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &582304573
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,6 +7288,7 @@ GameObject:
   - component: {fileID: 582304574}
   - component: {fileID: 582304576}
   - component: {fileID: 582304575}
+  - component: {fileID: 582304577}
   m_Layer: 0
   m_Name: Terrain_(-600.00, 0.00, 1600.00)
   m_TagString: Untagged
@@ -7081,6 +7371,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &582304577
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582304573}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &613056397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7186,6 +7487,7 @@ GameObject:
   - component: {fileID: 613908786}
   - component: {fileID: 613908788}
   - component: {fileID: 613908787}
+  - component: {fileID: 613908789}
   m_Layer: 0
   m_Name: Terrain_(100.00, 0.00, 1800.00)
   m_TagString: Untagged
@@ -7268,6 +7570,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &613908789
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613908785}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &619627766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7373,6 +7686,7 @@ GameObject:
   - component: {fileID: 622974480}
   - component: {fileID: 622974482}
   - component: {fileID: 622974481}
+  - component: {fileID: 622974483}
   m_Layer: 0
   m_Name: Terrain_(1469.47, 133.82, 1712.83)
   m_TagString: Untagged
@@ -7455,6 +7769,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &622974483
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622974479}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &629250106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,6 +8547,7 @@ GameObject:
   - component: {fileID: 713239418}
   - component: {fileID: 713239420}
   - component: {fileID: 713239419}
+  - component: {fileID: 713239421}
   m_Layer: 0
   m_Name: Terrain_(100.00, 0.00, 1700.00)
   m_TagString: Untagged
@@ -8304,6 +8630,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &713239421
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713239417}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &716334350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8409,6 +8746,7 @@ GameObject:
   - component: {fileID: 738731139}
   - component: {fileID: 738731141}
   - component: {fileID: 738731140}
+  - component: {fileID: 738731142}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 512.83)
   m_TagString: Untagged
@@ -8491,6 +8829,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &738731142
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738731138}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &749984041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9212,6 +9561,7 @@ GameObject:
   - component: {fileID: 838060871}
   - component: {fileID: 838060873}
   - component: {fileID: 838060872}
+  - component: {fileID: 838060874}
   m_Layer: 0
   m_Name: Terrain_(400.00, -1.00, 2000.00)
   m_TagString: Untagged
@@ -9294,6 +9644,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &838060874
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838060870}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &847620625
 GameObject:
   m_ObjectHideFlags: 0
@@ -9305,6 +9666,7 @@ GameObject:
   - component: {fileID: 847620626}
   - component: {fileID: 847620628}
   - component: {fileID: 847620627}
+  - component: {fileID: 847620629}
   m_Layer: 0
   m_Name: Terrain_(200.00, 0.00, 1700.00)
   m_TagString: Untagged
@@ -9387,6 +9749,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &847620629
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847620625}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &855988363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9764,6 +10137,7 @@ GameObject:
   - component: {fileID: 883958667}
   - component: {fileID: 883958669}
   - component: {fileID: 883958668}
+  - component: {fileID: 883958670}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 712.83)
   m_TagString: Untagged
@@ -9846,6 +10220,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &883958670
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883958666}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &888878626
 GameObject:
   m_ObjectHideFlags: 0
@@ -9857,6 +10242,7 @@ GameObject:
   - component: {fileID: 888878627}
   - component: {fileID: 888878629}
   - component: {fileID: 888878628}
+  - component: {fileID: 888878630}
   m_Layer: 0
   m_Name: Terrain_(100.00, 0.00, 2000.00)
   m_TagString: Untagged
@@ -9939,6 +10325,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &888878630
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888878626}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &905049284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9950,6 +10347,7 @@ GameObject:
   - component: {fileID: 905049285}
   - component: {fileID: 905049287}
   - component: {fileID: 905049286}
+  - component: {fileID: 905049288}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 600.00)
   m_TagString: Untagged
@@ -10032,6 +10430,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &905049288
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905049284}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &909003455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10137,6 +10546,7 @@ GameObject:
   - component: {fileID: 913346467}
   - component: {fileID: 913346469}
   - component: {fileID: 913346468}
+  - component: {fileID: 913346470}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 1012.83)
   m_TagString: Untagged
@@ -10219,6 +10629,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &913346470
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913346466}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &914678499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10319,6 +10740,7 @@ GameObject:
   - component: {fileID: 915254682}
   - component: {fileID: 915254684}
   - component: {fileID: 915254683}
+  - component: {fileID: 915254685}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 700.00)
   m_TagString: Untagged
@@ -10401,6 +10823,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &915254685
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915254681}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &926704635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10674,6 +11107,7 @@ GameObject:
   - component: {fileID: 951007578}
   - component: {fileID: 951007580}
   - component: {fileID: 951007579}
+  - component: {fileID: 951007581}
   m_Layer: 0
   m_Name: Terrain_(200.00, 0.00, 1900.00)
   m_TagString: Untagged
@@ -10756,6 +11190,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &951007581
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951007577}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &951250085
 GameObject:
   m_ObjectHideFlags: 0
@@ -10767,6 +11212,7 @@ GameObject:
   - component: {fileID: 951250086}
   - component: {fileID: 951250088}
   - component: {fileID: 951250087}
+  - component: {fileID: 951250089}
   m_Layer: 0
   m_Name: Terrain_(-600.00, 0.00, 1500.00)
   m_TagString: Untagged
@@ -10849,6 +11295,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &951250089
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951250085}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &953703525
 GameObject:
   m_ObjectHideFlags: 0
@@ -10860,6 +11317,7 @@ GameObject:
   - component: {fileID: 953703526}
   - component: {fileID: 953703528}
   - component: {fileID: 953703527}
+  - component: {fileID: 953703529}
   m_Layer: 0
   m_Name: Terrain_(300.00, -1.00, 1800.00)
   m_TagString: Untagged
@@ -10942,6 +11400,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &953703529
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953703525}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &957159202
 GameObject:
   m_ObjectHideFlags: 0
@@ -13071,6 +13540,7 @@ GameObject:
   - component: {fileID: 1040967244}
   - component: {fileID: 1040967246}
   - component: {fileID: 1040967245}
+  - component: {fileID: 1040967247}
   m_Layer: 0
   m_Name: Terrain_(300.00, 25.00, 1000.00)
   m_TagString: Untagged
@@ -13153,6 +13623,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1040967247
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040967243}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1043926958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13238,6 +13719,7 @@ GameObject:
   - component: {fileID: 1045588712}
   - component: {fileID: 1045588714}
   - component: {fileID: 1045588713}
+  - component: {fileID: 1045588715}
   m_Layer: 0
   m_Name: Terrain_(-500.00, 0.00, 2000.00)
   m_TagString: Untagged
@@ -13320,6 +13802,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1045588715
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045588711}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1046155893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14838,6 +15331,7 @@ GameObject:
   - component: {fileID: 1174366071}
   - component: {fileID: 1174366073}
   - component: {fileID: 1174366072}
+  - component: {fileID: 1174366074}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 2100.00)
   m_TagString: Untagged
@@ -14920,6 +15414,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1174366074
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174366070}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1174366129
 GameObject:
   m_ObjectHideFlags: 0
@@ -14931,6 +15436,7 @@ GameObject:
   - component: {fileID: 1174366130}
   - component: {fileID: 1174366132}
   - component: {fileID: 1174366131}
+  - component: {fileID: 1174366133}
   m_Layer: 0
   m_Name: Terrain_(100.00, 25.00, 1200.00)
   m_TagString: Untagged
@@ -15013,6 +15519,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1174366133
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174366129}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1182417942
 GameObject:
   m_ObjectHideFlags: 0
@@ -15024,6 +15541,7 @@ GameObject:
   - component: {fileID: 1182417943}
   - component: {fileID: 1182417945}
   - component: {fileID: 1182417944}
+  - component: {fileID: 1182417946}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, -87.17)
   m_TagString: Untagged
@@ -15106,6 +15624,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1182417946
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182417942}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1182897511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15206,6 +15735,7 @@ GameObject:
   - component: {fileID: 1189468877}
   - component: {fileID: 1189468879}
   - component: {fileID: 1189468878}
+  - component: {fileID: 1189468880}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 2000.00)
   m_TagString: Untagged
@@ -15288,6 +15818,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1189468880
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189468876}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1197615460
 GameObject:
   m_ObjectHideFlags: 0
@@ -15598,6 +16139,7 @@ GameObject:
   - component: {fileID: 1230879569}
   - component: {fileID: 1230879571}
   - component: {fileID: 1230879570}
+  - component: {fileID: 1230879572}
   m_Layer: 0
   m_Name: Terrain_(-500.00, 0.00, 1500.00)
   m_TagString: Untagged
@@ -15680,6 +16222,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1230879572
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230879568}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1248776966
 GameObject:
   m_ObjectHideFlags: 0
@@ -15691,6 +16244,7 @@ GameObject:
   - component: {fileID: 1248776967}
   - component: {fileID: 1248776969}
   - component: {fileID: 1248776968}
+  - component: {fileID: 1248776970}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 1400.00)
   m_TagString: Untagged
@@ -15773,6 +16327,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1248776970
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248776966}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1262646069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15868,6 +16433,7 @@ GameObject:
   - component: {fileID: 1273908115}
   - component: {fileID: 1273908117}
   - component: {fileID: 1273908116}
+  - component: {fileID: 1273908118}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1500.00)
   m_TagString: Untagged
@@ -15950,6 +16516,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1273908118
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273908114}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1294661368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15961,6 +16538,7 @@ GameObject:
   - component: {fileID: 1294661369}
   - component: {fileID: 1294661371}
   - component: {fileID: 1294661370}
+  - component: {fileID: 1294661372}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1900.00)
   m_TagString: Untagged
@@ -16043,6 +16621,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1294661372
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294661368}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1297145375
 GameObject:
   m_ObjectHideFlags: 0
@@ -16155,6 +16744,7 @@ GameObject:
   - component: {fileID: 1304382896}
   - component: {fileID: 1304382898}
   - component: {fileID: 1304382897}
+  - component: {fileID: 1304382899}
   m_Layer: 0
   m_Name: Terrain_(200.00, -1.00, 1800.00)
   m_TagString: Untagged
@@ -16237,6 +16827,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1304382899
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304382895}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1320155414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16918,6 +17519,7 @@ GameObject:
   - component: {fileID: 1366966445}
   - component: {fileID: 1366966447}
   - component: {fileID: 1366966446}
+  - component: {fileID: 1366966448}
   m_Layer: 0
   m_Name: Terrain_(200.00, 25.00, 1100.00)
   m_TagString: Untagged
@@ -17000,6 +17602,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1366966448
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366966444}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1371624852
 GameObject:
   m_ObjectHideFlags: 0
@@ -17011,6 +17624,7 @@ GameObject:
   - component: {fileID: 1371624853}
   - component: {fileID: 1371624855}
   - component: {fileID: 1371624854}
+  - component: {fileID: 1371624856}
   m_Layer: 0
   m_Name: Terrain_(400.00, -1.00, 1800.00)
   m_TagString: Untagged
@@ -17093,6 +17707,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1371624856
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371624852}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1385110026
 GameObject:
   m_ObjectHideFlags: 0
@@ -17104,6 +17729,7 @@ GameObject:
   - component: {fileID: 1385110027}
   - component: {fileID: 1385110029}
   - component: {fileID: 1385110028}
+  - component: {fileID: 1385110030}
   m_Layer: 0
   m_Name: Terrain_(1669.47, 133.82, 912.83)
   m_TagString: Untagged
@@ -17186,6 +17812,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1385110030
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110026}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1389081197
 GameObject:
   m_ObjectHideFlags: 0
@@ -17197,6 +17834,7 @@ GameObject:
   - component: {fileID: 1389081198}
   - component: {fileID: 1389081200}
   - component: {fileID: 1389081199}
+  - component: {fileID: 1389081201}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1300.00)
   m_TagString: Untagged
@@ -17279,6 +17917,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1389081201
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389081197}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1392913723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17819,6 +18468,7 @@ GameObject:
   - component: {fileID: 1430500815}
   - component: {fileID: 1430500817}
   - component: {fileID: 1430500816}
+  - component: {fileID: 1430500818}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -17877,9 +18527,9 @@ Terrain:
   m_TreeMaximumFullLODCount: 0
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 100
-  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMinimumLODSimplification: 3
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 0
   m_DrawHeightmap: 1
@@ -17901,6 +18551,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1430500818
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430500814}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1434731668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18359,6 +19020,7 @@ GameObject:
   - component: {fileID: 1449755747}
   - component: {fileID: 1449755749}
   - component: {fileID: 1449755748}
+  - component: {fileID: 1449755750}
   m_Layer: 0
   m_Name: Terrain_(200.00, 0.00, 2100.00)
   m_TagString: Untagged
@@ -18441,6 +19103,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1449755750
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449755746}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1468266126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18818,6 +19491,7 @@ GameObject:
   - component: {fileID: 1521847060}
   - component: {fileID: 1521847062}
   - component: {fileID: 1521847061}
+  - component: {fileID: 1521847063}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 1800.00)
   m_TagString: Untagged
@@ -18900,6 +19574,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1521847063
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521847059}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1536376039
 GameObject:
   m_ObjectHideFlags: 3
@@ -19101,6 +19786,7 @@ GameObject:
   - component: {fileID: 1572564199}
   - component: {fileID: 1572564201}
   - component: {fileID: 1572564200}
+  - component: {fileID: 1572564202}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 1700.00)
   m_TagString: Untagged
@@ -19183,6 +19869,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1572564202
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572564198}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1587511621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19283,6 +19980,7 @@ GameObject:
   - component: {fileID: 1588447695}
   - component: {fileID: 1588447697}
   - component: {fileID: 1588447696}
+  - component: {fileID: 1588447698}
   m_Layer: 0
   m_Name: Terrain_(300.00, 25.00, 1100.00)
   m_TagString: Untagged
@@ -19365,6 +20063,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1588447698
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588447694}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1593752348
 GameObject:
   m_ObjectHideFlags: 0
@@ -19376,6 +20085,7 @@ GameObject:
   - component: {fileID: 1593752349}
   - component: {fileID: 1593752351}
   - component: {fileID: 1593752350}
+  - component: {fileID: 1593752352}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 1512.83)
   m_TagString: Untagged
@@ -19458,6 +20168,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1593752352
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593752348}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1595702019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20145,6 +20866,7 @@ GameObject:
   - component: {fileID: 1631775159}
   - component: {fileID: 1631775161}
   - component: {fileID: 1631775160}
+  - component: {fileID: 1631775162}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 500.00)
   m_TagString: Untagged
@@ -20227,6 +20949,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1631775162
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631775158}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1641062871
 GameObject:
   m_ObjectHideFlags: 0
@@ -20238,6 +20971,7 @@ GameObject:
   - component: {fileID: 1641062872}
   - component: {fileID: 1641062874}
   - component: {fileID: 1641062873}
+  - component: {fileID: 1641062875}
   m_Layer: 0
   m_Name: Terrain_(-100.00, 0.00, 600.00)
   m_TagString: Untagged
@@ -20320,6 +21054,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1641062875
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641062871}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1648841700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20983,6 +21728,7 @@ GameObject:
   - component: {fileID: 1691971456}
   - component: {fileID: 1691971458}
   - component: {fileID: 1691971457}
+  - component: {fileID: 1691971459}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, -187.17)
   m_TagString: Untagged
@@ -21065,6 +21811,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1691971459
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691971455}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1692887378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21474,6 +22231,7 @@ GameObject:
   - component: {fileID: 1728478257}
   - component: {fileID: 1728478259}
   - component: {fileID: 1728478258}
+  - component: {fileID: 1728478260}
   m_Layer: 0
   m_Name: Terrain_(0.00, 50.00, 900.00)
   m_TagString: Untagged
@@ -21556,6 +22314,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1728478260
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728478256}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1729827064
 GameObject:
   m_ObjectHideFlags: 0
@@ -21567,6 +22336,7 @@ GameObject:
   - component: {fileID: 1729827065}
   - component: {fileID: 1729827067}
   - component: {fileID: 1729827066}
+  - component: {fileID: 1729827068}
   m_Layer: 0
   m_Name: Terrain_(200.00, -1.00, 2000.00)
   m_TagString: Untagged
@@ -21649,6 +22419,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1729827068
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729827064}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1730032556
 GameObject:
   m_ObjectHideFlags: 0
@@ -21660,6 +22441,7 @@ GameObject:
   - component: {fileID: 1730032557}
   - component: {fileID: 1730032559}
   - component: {fileID: 1730032558}
+  - component: {fileID: 1730032560}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 1112.83)
   m_TagString: Untagged
@@ -21742,6 +22524,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1730032560
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730032556}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1732944207
 GameObject:
   m_ObjectHideFlags: 0
@@ -22326,6 +23119,7 @@ GameObject:
   - component: {fileID: 1774899848}
   - component: {fileID: 1774899850}
   - component: {fileID: 1774899849}
+  - component: {fileID: 1774899851}
   m_Layer: 0
   m_Name: Terrain_(100.00, 0.00, 2100.00)
   m_TagString: Untagged
@@ -22408,6 +23202,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1774899851
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774899847}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1782956460
 GameObject:
   m_ObjectHideFlags: 0
@@ -22419,6 +23224,7 @@ GameObject:
   - component: {fileID: 1782956461}
   - component: {fileID: 1782956463}
   - component: {fileID: 1782956462}
+  - component: {fileID: 1782956464}
   m_Layer: 0
   m_Name: Terrain_(1469.47, 133.82, -187.17)
   m_TagString: Untagged
@@ -22501,6 +23307,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1782956464
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782956460}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1792296163
 GameObject:
   m_ObjectHideFlags: 0
@@ -22512,6 +23329,7 @@ GameObject:
   - component: {fileID: 1792296164}
   - component: {fileID: 1792296166}
   - component: {fileID: 1792296165}
+  - component: {fileID: 1792296167}
   m_Layer: 0
   m_Name: Terrain_(100.00, 50.00, 900.00)
   m_TagString: Untagged
@@ -22594,6 +23412,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1792296167
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792296163}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1795382206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22793,6 +23622,7 @@ GameObject:
   - component: {fileID: 1825391828}
   - component: {fileID: 1825391830}
   - component: {fileID: 1825391829}
+  - component: {fileID: 1825391831}
   m_Layer: 0
   m_Name: Terrain_(100.00, 25.00, 1000.00)
   m_TagString: Untagged
@@ -22875,6 +23705,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1825391831
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825391827}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1833719511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23044,6 +23885,7 @@ GameObject:
   - component: {fileID: 1835840241}
   - component: {fileID: 1835840243}
   - component: {fileID: 1835840242}
+  - component: {fileID: 1835840244}
   m_Layer: 0
   m_Name: Terrain_(1669.47, 133.82, 212.83)
   m_TagString: Untagged
@@ -23126,6 +23968,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1835840244
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835840240}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1847655485
 GameObject:
   m_ObjectHideFlags: 0
@@ -23137,6 +23990,7 @@ GameObject:
   - component: {fileID: 1847655486}
   - component: {fileID: 1847655488}
   - component: {fileID: 1847655487}
+  - component: {fileID: 1847655489}
   m_Layer: 0
   m_Name: Terrain_(500.00, -1.00, 2000.00)
   m_TagString: Untagged
@@ -23219,6 +24073,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1847655489
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847655485}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1859660139
 GameObject:
   m_ObjectHideFlags: 0
@@ -23230,6 +24095,7 @@ GameObject:
   - component: {fileID: 1859660140}
   - component: {fileID: 1859660142}
   - component: {fileID: 1859660141}
+  - component: {fileID: 1859660143}
   m_Layer: 0
   m_Name: Terrain_(1569.47, 133.82, 1112.83)
   m_TagString: Untagged
@@ -23312,6 +24178,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1859660143
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859660139}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1864461091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23501,6 +24378,7 @@ GameObject:
   - component: {fileID: 1875739162}
   - component: {fileID: 1875739164}
   - component: {fileID: 1875739163}
+  - component: {fileID: 1875739165}
   m_Layer: 0
   m_Name: Terrain_(1669.47, 133.82, 12.83)
   m_TagString: Untagged
@@ -23583,6 +24461,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1875739165
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875739161}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1875933916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23748,6 +24637,7 @@ GameObject:
   - component: {fileID: 1884215852}
   - component: {fileID: 1884215854}
   - component: {fileID: 1884215853}
+  - component: {fileID: 1884215855}
   m_Layer: 0
   m_Name: Terrain_(300.00, -1.00, 1900.00)
   m_TagString: Untagged
@@ -23830,6 +24720,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1884215855
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884215851}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!43 &1885634457
 Mesh:
   m_ObjectHideFlags: 0
@@ -24006,6 +24907,7 @@ GameObject:
   - component: {fileID: 1896075776}
   - component: {fileID: 1896075778}
   - component: {fileID: 1896075777}
+  - component: {fileID: 1896075779}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1600.00)
   m_TagString: Untagged
@@ -24088,6 +24990,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1896075779
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896075775}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1911957357
 GameObject:
   m_ObjectHideFlags: 0
@@ -24594,6 +25507,7 @@ GameObject:
   - component: {fileID: 1952173773}
   - component: {fileID: 1952173775}
   - component: {fileID: 1952173774}
+  - component: {fileID: 1952173776}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 912.83)
   m_TagString: Untagged
@@ -24676,6 +25590,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1952173776
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952173772}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1955991653
 GameObject:
   m_ObjectHideFlags: 0
@@ -24976,6 +25901,7 @@ GameObject:
   - component: {fileID: 1961897046}
   - component: {fileID: 1961897048}
   - component: {fileID: 1961897047}
+  - component: {fileID: 1961897049}
   m_Layer: 0
   m_Name: Terrain_(500.00, -1.00, 1900.00)
   m_TagString: Untagged
@@ -25058,6 +25984,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1961897049
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961897045}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1964045872
 GameObject:
   m_ObjectHideFlags: 0
@@ -25069,6 +26006,7 @@ GameObject:
   - component: {fileID: 1964045873}
   - component: {fileID: 1964045875}
   - component: {fileID: 1964045874}
+  - component: {fileID: 1964045876}
   m_Layer: 0
   m_Name: Terrain_(1369.47, 133.82, 112.83)
   m_TagString: Untagged
@@ -25151,6 +26089,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1964045876
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964045872}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1964488606
 GameObject:
   m_ObjectHideFlags: 0
@@ -25162,6 +26111,7 @@ GameObject:
   - component: {fileID: 1964488607}
   - component: {fileID: 1964488609}
   - component: {fileID: 1964488608}
+  - component: {fileID: 1964488610}
   m_Layer: 0
   m_Name: Terrain_(-400.00, 0.00, 1500.00)
   m_TagString: Untagged
@@ -25244,6 +26194,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1964488610
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964488606}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1981043795
 GameObject:
   m_ObjectHideFlags: 0
@@ -25255,6 +26216,7 @@ GameObject:
   - component: {fileID: 1981043796}
   - component: {fileID: 1981043798}
   - component: {fileID: 1981043797}
+  - component: {fileID: 1981043799}
   m_Layer: 0
   m_Name: Terrain_(0.00, 0.00, 2000.00)
   m_TagString: Untagged
@@ -25337,6 +26299,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1981043799
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981043795}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1986532447
 GameObject:
   m_ObjectHideFlags: 0
@@ -25348,6 +26321,7 @@ GameObject:
   - component: {fileID: 1986532448}
   - component: {fileID: 1986532450}
   - component: {fileID: 1986532449}
+  - component: {fileID: 1986532451}
   m_Layer: 0
   m_Name: Terrain_(0.00, 25.00, 200.00)
   m_TagString: Untagged
@@ -25430,6 +26404,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &1986532451
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986532447}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1 &1989015857
 GameObject:
   m_ObjectHideFlags: 0
@@ -26047,6 +27032,7 @@ GameObject:
   - component: {fileID: 2100543147}
   - component: {fileID: 2100543149}
   - component: {fileID: 2100543148}
+  - component: {fileID: 2100543150}
   m_Layer: 0
   m_Name: Terrain_(-300.00, 0.00, 1400.00)
   m_TagString: Untagged
@@ -26129,6 +27115,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &2100543150
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100543146}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &2117561142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26775,6 +27772,7 @@ GameObject:
   - component: {fileID: 2141265347}
   - component: {fileID: 2141265349}
   - component: {fileID: 2141265348}
+  - component: {fileID: 2141265350}
   m_Layer: 0
   m_Name: Terrain_(400.00, -1.00, 1900.00)
   m_TagString: Untagged
@@ -26857,6 +27855,17 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!192 &2141265350
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141265346}
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 50, y: 50, z: 50}
+  m_IsViewVolume: 1
 --- !u!1001 &1184224022208844320
 PrefabInstance:
   m_ObjectHideFlags: 0
