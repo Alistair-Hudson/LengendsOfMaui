@@ -15,8 +15,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.56078434, g: 0.6627451, b: 0.78823537, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.06
   m_LinearFogStart: 0
@@ -15936,7 +15936,7 @@ PrefabInstance:
     - target: {fileID: 2572209012598388889, guid: 9a76fe60569acdc43b8c228214eb1fc0,
         type: 3}
       propertyPath: far clip plane
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2572209012598388889, guid: 9a76fe60569acdc43b8c228214eb1fc0,
         type: 3}
