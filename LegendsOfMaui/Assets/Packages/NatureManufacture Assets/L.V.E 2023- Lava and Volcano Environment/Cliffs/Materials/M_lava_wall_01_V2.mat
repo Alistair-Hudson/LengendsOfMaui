@@ -9,19 +9,16 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_lava_wall_01_V2
   m_Shader: {fileID: 4800000, guid: 3ef0cb5a2319771478ac44698ebb6ef9, type: 3}
-  m_ValidKeywords:
-  - LEAKS_UV0_UV2_1_ON
-  - _USECOVERHEIGHTT_ON
-  - _USEDYNAMICCOVERTSTATICMASKF_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
+  - _USEDYNAMICCOVERTSTATICMASKF_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
-    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   - TransparentBackface
@@ -155,10 +152,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord3:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -180,17 +173,6 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: 1
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
     - _BaseAORemapMax: 1
     - _BaseAORemapMin: 0
     - _BaseBrightnessCurvMultply: 1
@@ -367,7 +349,7 @@ Material:
     - _DetailTilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LavaEmissionColor: {r: 0.49416864, g: 0.007761811, b: 0, a: 0}
+    - _LavaEmissionColor: {r: 1.4980392, g: 0.023529412, b: 0, a: 0}
     - _LavaNoiseSpeed: {r: -0.1, g: -0.2, b: 0, a: 0}
     - _LeaksTilingOffset: {r: 2, g: 2, b: 0, a: 0}
     - _NoiseSpeed: {r: 0.015, g: -0.015, b: 0, a: 0}
