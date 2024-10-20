@@ -11,9 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: a078bba5a980e3447a3b8f0ef47227d2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _Dynamic_Flow
-  - _UVVDIRECTION1UDIRECTION0_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   - _TESSELLATION_PHONG
@@ -23,13 +21,11 @@ Material:
   m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
-    RenderType: Opaque
   disabledShaderPasses:
-  - MOTIONVECTORS
+  - RayTracingPrepass
   - TransparentBackface
   - TransparentDepthPrepass
   - TransparentDepthPostpass
-  - RayTracingPrepass
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -239,17 +235,6 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
-    - _BUILTIN_AlphaClip: 0
-    - _BUILTIN_Blend: 0
-    - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 0
-    - _BUILTIN_QueueControl: 1
-    - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 1
-    - _BUILTIN_Surface: 0
-    - _BUILTIN_ZTest: 4
-    - _BUILTIN_ZWrite: 1
-    - _BUILTIN_ZWriteControl: 0
     - _BigCascadeAngle: 7
     - _BigCascadeAngleFalloff: 2.3
     - _BigCascadeFalloff: 80
@@ -306,7 +291,7 @@ Material:
     - _Dynamic_Lava_Emission_Intensivity: 1.52
     - _Dynamic_Lava_Emission_Treshold: 4.94
     - _Dynamic_Lava_Flow: 1
-    - _Dynamic_Shape_Speed: 0.15
+    - _Dynamic_Shape_Speed: 0.08
     - _Dynamic_Shape_U_Curve_Power: 1.4
     - _Dynamic_Shape_V_Curve_Power: 1.3
     - _Dynamic_Shape_Y_Offset: -1
@@ -514,3 +499,4 @@ Material:
     - _WaterMainSpeed: {r: 0.01, g: 0, b: 0, a: 0}
     - _WaterMixSpeed: {r: -0.007, g: 0.05, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

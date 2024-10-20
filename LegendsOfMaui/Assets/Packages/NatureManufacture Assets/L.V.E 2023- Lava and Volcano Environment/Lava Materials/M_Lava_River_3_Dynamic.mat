@@ -11,9 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 951e551eb5a54334ab498637e84fe777, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _Dynamic_Flow
-  - _UVVDIRECTION1UDIRECTION0_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   - _TESSELLATION_PHONG
@@ -181,10 +179,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord3:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _texcoord4:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -325,7 +319,7 @@ Material:
     - _HotLavaAlbedoColorMultiply: 1
     - _HotLavaAngle: 90
     - _HotLavaAngleFalloff: 0.6
-    - _HotLavaEmissionMaskIntensivity: 1.83
+    - _HotLavaEmissionMaskIntensivity: 1.93
     - _HotLavaEmissionMaskPower: 2.72
     - _HotLavaEmissionMaskTreshold: 18.4
     - _HotLavaFlowUVRefreshSpeed: 0.1
