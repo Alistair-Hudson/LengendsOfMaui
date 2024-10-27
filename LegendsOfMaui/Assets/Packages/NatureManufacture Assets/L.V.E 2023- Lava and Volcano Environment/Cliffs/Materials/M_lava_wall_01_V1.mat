@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_lava_wall_01_V1
   m_Shader: {fileID: 4800000, guid: 3ef0cb5a2319771478ac44698ebb6ef9, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -20,11 +22,11 @@ Material:
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
-  - MOTIONVECTORS
+  - RayTracingPrepass
   - TransparentBackface
   - TransparentDepthPrepass
   - TransparentDepthPostpass
-  - RayTracingPrepass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -394,3 +396,4 @@ Material:
     - _TopColor: {r: 1, g: 1, b: 1, a: 1}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

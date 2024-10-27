@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Lava_River_3_Frozen
   m_Shader: {fileID: 4800000, guid: c0dfe728864ec2447a8672eec7e6bdd0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -19,11 +21,11 @@ Material:
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
-  - MOTIONVECTORS
+  - RayTracingPrepass
   - TransparentBackface
   - TransparentDepthPrepass
   - TransparentDepthPostpass
-  - RayTracingPrepass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -275,3 +277,4 @@ Material:
     - _NoiseTiling: {r: 1, g: 1, b: 0, a: 0}
     - _RimColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
