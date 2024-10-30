@@ -108,10 +108,25 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnJumpEvent()
         {
-            if (stateMachine.CharacterController.isGrounded || stateMachine.CurrentForm == MauiForms.Pigeon)
+            if (stateMachine.CharacterController.isGrounded)
             {
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+                return;
             }
+
+            if (stateMachine.CurrentForm == MauiForms.Pigeon)
+            {
+                if (!AtMaxFlyingHeight())
+                {
+                    stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+                }
+            }
+        }
+
+        private bool AtMaxFlyingHeight()
+        {
+            Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
+            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
         }
 
         private void HandleOnDodgeEvent()

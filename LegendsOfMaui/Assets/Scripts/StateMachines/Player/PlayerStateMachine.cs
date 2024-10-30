@@ -40,6 +40,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public float FreeLookMoveSpeed { get; private set; } = 6f;
         [field: SerializeField]
         public float TargetingMoveSpeed { get; private set; } = 6f;
+
+        [field: SerializeField] 
+        public float MaxFlyingHeight { get; private set; } = 10f;
         [field: SerializeField]
         public float HangingSpeed { get; private set; } = 6f;
         [field: SerializeField]

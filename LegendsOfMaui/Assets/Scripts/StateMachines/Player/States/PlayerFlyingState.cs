@@ -64,13 +64,28 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void FixedTick()
         {
-            stateMachine.ForceReceiver.Jump(-Physics.gravity.y * Time.fixedDeltaTime);
+            if (AtMaxFlyingHeight())
+            {
+                Debug.Log("Flying to high, descending");
+                return;
+            }
+            stateMachine.ForceReceiver.ResetForces();//Jump(-Physics.gravity.y * Time.fixedDeltaTime);
+        }
+
+        private bool AtMaxFlyingHeight()
+        {
+            Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
+            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
         }
         #endregion
 
         #region EventHandlers
         private void HandleOnJumpEvent()
         {
+            if (AtMaxFlyingHeight())
+            {
+                return;
+            }
             stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
             stateMachine.StartCoroutine(ResetForceAfterJump());
         }
