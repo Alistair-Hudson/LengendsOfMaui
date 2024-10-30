@@ -21,13 +21,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(FLYING, ANIMATOR_DAMP_TIME);
-            stateMachine.InputReader.JumpEvent += HandleOnJumpEvent;
-            stateMachine.StartCoroutine(ResetForceAfterJump());
         }
 
         public override void Exit()
         {
-            stateMachine.InputReader.JumpEvent -= HandleOnJumpEvent;
         }
 
         public override void Tick(float deltaTime)
@@ -39,6 +36,11 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
             Vector2 inputValue = stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
+
+            if (stateMachine.InputReader.IsTravelingUp && !AtMaxFlyingHeight())
+            {
+                movement += Vector3.up;
+            }
 
             if (stateMachine.InputReader.IsTravelingDown)
             {
@@ -71,24 +73,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
             stateMachine.ForceReceiver.ResetForces();//Jump(-Physics.gravity.y * Time.fixedDeltaTime);
         }
-
-        private bool AtMaxFlyingHeight()
-        {
-            Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
-            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
-        }
         #endregion
 
         #region EventHandlers
-        private void HandleOnJumpEvent()
-        {
-            if (AtMaxFlyingHeight())
-            {
-                return;
-            }
-            stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
-            stateMachine.StartCoroutine(ResetForceAfterJump());
-        }
         #endregion
 
         #region PrivateMethods
@@ -111,10 +98,10 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             return forward * inputValue.y + right * inputValue.x;
         }
 
-        private IEnumerator ResetForceAfterJump()
+        private bool AtMaxFlyingHeight()
         {
-            yield return new WaitForSeconds(_delayBeforeForceReset);
-            stateMachine.ForceReceiver.ResetForces();
+            Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
+            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
         }
         #endregion
     }

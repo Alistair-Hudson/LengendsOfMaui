@@ -12,6 +12,7 @@ namespace AlictronicGames.LegendsOfMaui.Controls
 
         public Vector2 MovementValue { get; private set; } = Vector2.zero;
         public bool IsBlocking { get; private set; } = false;
+        public bool IsTravelingUp { get; private set; } = false;
         public bool IsTravelingDown { get; private set; } = false;
 
         public event Action JumpEvent;
@@ -59,7 +60,12 @@ namespace AlictronicGames.LegendsOfMaui.Controls
         {
             if (context.performed)
             {
+                IsTravelingUp = true;
                 JumpEvent?.Invoke();
+            }
+            else if (context.canceled)
+            {
+                IsTravelingUp = false;
             }
         }
 
