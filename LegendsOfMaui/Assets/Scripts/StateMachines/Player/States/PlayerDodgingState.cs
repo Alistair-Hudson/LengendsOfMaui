@@ -22,7 +22,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMethods
         public override void Enter()
         {
-            _remainingDodgeTime = stateMachine.DodgeDuration;
+            _remainingDodgeTime = stateMachine.PlayerStats.DodgeDuration;
 
             stateMachine.Animator.SetFloat(DODGE_FORWARD, _dodgeDirection.y);
             stateMachine.Animator.SetFloat(DODGE_RIGHT, _dodgeDirection.x);
@@ -40,8 +40,8 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         {
             Vector3 movement = Vector3.zero;
 
-            movement += stateMachine.transform.right * _dodgeDirection.x * stateMachine.DodgeDistance / stateMachine.DodgeDuration;
-            movement += stateMachine.transform.forward * _dodgeDirection.y * stateMachine.DodgeDistance / stateMachine.DodgeDuration;
+            movement += stateMachine.transform.right * _dodgeDirection.x * stateMachine.PlayerStats.DodgeDistance / stateMachine.PlayerStats.DodgeDuration;
+            movement += stateMachine.transform.forward * _dodgeDirection.y * stateMachine.PlayerStats.DodgeDistance / stateMachine.PlayerStats.DodgeDuration;
 
             Move(movement, deltaTime);
             FaceTarget();

@@ -52,7 +52,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             }
 
             Vector3 movement = CalculateMovement(deltaTime);
-            Move(movement * stateMachine.TargetingMoveSpeed, deltaTime);
+            Move(movement * stateMachine.PlayerStats.TargetingMovementSpeed, deltaTime);
 
             UpdateAnimator(deltaTime);
 

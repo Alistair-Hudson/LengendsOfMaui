@@ -19,7 +19,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         #region StateMethods
         public override void Enter()
         {
-            stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
+            stateMachine.ForceReceiver.Jump(stateMachine.PlayerStats.JumpForce);
             momentum = stateMachine.CharacterController.velocity;
             momentum.y = 0;
             stateMachine.Animator.CrossFadeInFixedTime(FALL, ANIMATOR_DAMP_TIME);

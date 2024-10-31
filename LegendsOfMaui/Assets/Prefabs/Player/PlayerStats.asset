@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: Assembly-CSharp:AlictronicGames.LegendsOfMaui.Stats:PlayerStats
+  <MaxHealth>k__BackingField: 100
+  <FlinchThreshold>k__BackingField: 10
+  <FreeLockMovementSpeed>k__BackingField: 6
+  <TargetingMovementSpeed>k__BackingField: 6
+  <MaxFlyingHeight>k__BackingField: 10
+  <DodgeDuration>k__BackingField: 0.1
+  <DodgeDistance>k__BackingField: 1
+  <JumpForce>k__BackingField: 4

@@ -47,7 +47,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
                 movement += Vector3.down;
             }
 
-            Move(movement * stateMachine.FreeLookMoveSpeed * 2, deltaTime); //The 2 is to make flying faster than walking
+            Move(movement * stateMachine.PlayerStats.FreeLookMovementSpeed * 2, deltaTime); //The 2 is to make flying faster than walking
 
             if (stateMachine.CharacterController.isGrounded)
             {
@@ -101,7 +101,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private bool AtMaxFlyingHeight()
         {
             Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
-            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
+            return !Physics.Raycast(ray, stateMachine.PlayerStats.MaxFlyingHeight);
         }
         #endregion
     }

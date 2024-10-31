@@ -5,6 +5,7 @@ using AlictronicGames.LegendsOfMaui.Controls;
 using AlictronicGames.LegendsOfMaui.Utils;
 using System;
 using System.Collections.Generic;
+using AlictronicGames.LegendsOfMaui.Stats;
 using Sirenix.Serialization;
 using TMPro;
 using UnityEngine;
@@ -31,26 +32,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         [SerializeField]
         private HeavyAttack _basicHeavyAttack = null;
 
-        [field: Space]
+        [field: Space] 
+        [field: SerializeField] 
+        public PlayerStats PlayerStats { get; private set; } = null;
         [field: SerializeField]
         public GameObject DeathWindow { get; private set; } = null;
-        [field:SerializeField]
-        public float FlinchThreshold { get; private set; } = 0f;
-        [field: SerializeField]
-        public float FreeLookMoveSpeed { get; private set; } = 6f;
-        [field: SerializeField]
-        public float TargetingMoveSpeed { get; private set; } = 6f;
-
-        [field: SerializeField] 
-        public float MaxFlyingHeight { get; private set; } = 10f;
         [field: SerializeField]
         public float HangingSpeed { get; private set; } = 6f;
-        [field: SerializeField]
-        public float DodgeDuration { get; private set; } = 0f;
-        [field: SerializeField]
-        public float DodgeDistance { get; private set; } = 0f;
-        [field: SerializeField]
-        public float JumpForce { get; private set; } = 0f;
         [field: SerializeField]
         public Vector3 PullUpOffset { get; private set; } = Vector3.zero;
         [field: SerializeField]
@@ -129,6 +117,9 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             InputReader.ShapeShift += HandleShapeShift;
             InputReader.PerformAction += HandlePerformAction;
 
+            Health.SetMaxHealth(PlayerStats.MaxHealth);
+            Health.SetHealthRegen(PlayerStats.HealthRegen);
+
             SwitchState(new PlayerFreeLookState(this));
         }
 
@@ -161,7 +152,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         private void HandleOnTakeDamage(float maxHealth, float currentHealth, float force)
         {
-            if (force > FlinchThreshold)
+            if (force > PlayerStats.FlinchThreshold)
             {
                 SwitchState(new PlayerImapctState(this));
             }

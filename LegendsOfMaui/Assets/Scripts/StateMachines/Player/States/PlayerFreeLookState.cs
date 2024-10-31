@@ -70,7 +70,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
             Vector2 inputValue = stateMachine.InputReader.MovementValue;
             Vector3 movement = CalculateMovement(inputValue);
 
-            Move(movement * stateMachine.FreeLookMoveSpeed, deltaTime);
+            Move(movement * stateMachine.PlayerStats.FreeLookMovementSpeed, deltaTime);
 
             stateMachine.Animator.SetFloat(FREE_LOOK_SPEED, inputValue.magnitude, ANIMATOR_DAMP_TIME, deltaTime);
 
@@ -126,7 +126,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         private bool AtMaxFlyingHeight()
         {
             Ray ray = new Ray(stateMachine.transform.position, Vector3.down);
-            return !Physics.Raycast(ray, stateMachine.MaxFlyingHeight);
+            return !Physics.Raycast(ray, stateMachine.PlayerStats.MaxFlyingHeight);
         }
 
         private void HandleOnDodgeEvent()
