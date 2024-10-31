@@ -47,7 +47,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
 
         public object CaptureState()
         {
-            return _isLearnt;
+            return this;
         }
 
         public IPlayerAttack GetNextBlockAttack()
@@ -55,10 +55,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_blockAttack == null)
                 return null;
 
-            if (_blockAttack.IsLearnt)
-                return _blockAttack;
-
-            return null;
+            return _blockAttack.IsLearnt ? _blockAttack : null;
         }
 
         public IPlayerAttack GetNextDodgeAttack()
@@ -66,10 +63,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_dodgeAttack == null)
                 return null;
 
-            if (_dodgeAttack.IsLearnt)
-                return _dodgeAttack;
-
-            return null;
+            return _dodgeAttack.IsLearnt ? _dodgeAttack : null;
         }
 
         public IPlayerAttack GetNextFastAttack()
@@ -77,10 +71,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_fastAttack == null)
                 return null;
 
-            if (_fastAttack.IsLearnt)
-                return _fastAttack;
-
-            return null;
+            return _fastAttack.IsLearnt ? _fastAttack : null;
         }
 
         public IPlayerAttack GetNextHeavyAttack()
@@ -88,10 +79,7 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_heavyAttack == null)
                 return null;
 
-            if (_heavyAttack.IsLearnt)
-                return _heavyAttack;
-
-            return null;
+            return _heavyAttack.IsLearnt ? _heavyAttack : null;
         }
 
         public IPlayerAttack GetNextJumpAttack()
@@ -99,15 +87,22 @@ namespace AlictronicGames.LegendsOfMaui.Combat
             if (_jumpAttack == null)
                 return null;
 
-            if (_jumpAttack.IsLearnt)
-                return _jumpAttack;
-
-            return null;
+            return _jumpAttack.IsLearnt ? _jumpAttack : null;
         }
 
         public void RestoreState(object state)
         {
-            _isLearnt = (bool)state;
+            if (state is not FastAttack attack)
+            {
+                return;
+            }
+
+            if (attack.AttackName != AttackName)
+            {
+                return;
+            }
+
+            _isLearnt = attack.IsLearnt;
         }
     }
 }
