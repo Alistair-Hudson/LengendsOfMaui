@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 03ac9d003d36ce345961797800d152f0, type: 3}
   m_Name: PlayerStats
-  m_EditorClassIdentifier: Assembly-CSharp:AlictronicGames.LegendsOfMaui.Stats:PlayerStats
-  <MaxHealth>k__BackingField: 100
-  <FlinchThreshold>k__BackingField: 10
-  <FreeLockMovementSpeed>k__BackingField: 6
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  FlinchThreshold: 10
+  HealthRegen: 1
+  <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 6
   <MaxFlyingHeight>k__BackingField: 10
   <DodgeDuration>k__BackingField: 0.1

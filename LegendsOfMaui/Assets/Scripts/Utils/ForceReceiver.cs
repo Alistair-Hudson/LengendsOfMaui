@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 namespace AlictronicGames.LegendsOfMaui.Utils
 {
-    [RequireComponent(typeof(CharacterController))]
     public class ForceReceiver : MonoBehaviour
     {
         [SerializeField]
@@ -30,6 +29,14 @@ namespace AlictronicGames.LegendsOfMaui.Utils
 
         private void FixedUpdate()
         {
+            _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, _drag);
+
+            if (_impact.sqrMagnitude <= 0.2f * 0.2f && _navMeshAgent != null)
+            {
+                _impact = Vector3.zero;
+                _navMeshAgent.enabled = true;
+            }
+
             if (_vertVelocity < 0 && _controller.isGrounded)
             {
                 _vertVelocity = Physics.gravity.y * Time.fixedDeltaTime;
@@ -37,14 +44,6 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             else
             {
                 _vertVelocity += Physics.gravity.y * Time.fixedDeltaTime;
-            }
-
-            _impact = Vector3.SmoothDamp(_impact, Vector3.zero, ref _dampingVelocity, _drag);
-
-            if (_impact.sqrMagnitude <= 0.2f * 0.2f && _navMeshAgent != null)
-            {
-                _impact = Vector3.zero;
-                _navMeshAgent.enabled = true;
             }
         }
         #endregion
