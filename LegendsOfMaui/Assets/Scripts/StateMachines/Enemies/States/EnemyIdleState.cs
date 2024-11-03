@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using AlictronicGames.LegendsOfMaui.BackGroundSystems;
+using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
@@ -32,8 +33,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
             if (isInChaseRange && !stateMachine.Player.Health.IsDead)
             {
-                stateMachine.SwitchState(new EnemyChaseState(stateMachine));
-                return;
+                Ray ray = new Ray(stateMachine.transform.position,
+                    stateMachine.Player.transform.position + Vector3.up - stateMachine.transform.position);
+
+                Physics.Raycast(ray, out RaycastHit hit, stateMachine.EnemyStats.ChaseRange);
+                if (hit.transform.TryGetComponent<PlayerStateMachine>(out PlayerStateMachine player))
+                {
+                    stateMachine.SwitchState(new EnemyChaseState(stateMachine));
+                    return;
+                }
             }
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 0, ANIMATOR_DAMP_TIME, deltaTime);
         }

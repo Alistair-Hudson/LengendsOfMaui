@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AlictronicGames.LegendsOfMaui.BackGroundSystems;
+using AlictronicGames.LegendsOfMaui.StateMachines.Player;
 using UnityEngine;
 
 namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
@@ -28,20 +29,26 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
 
         public override void Exit()
         {
+            if (stateMachine.EnemyStats.IsAerial)
+            {
+                return;
+            }
             stateMachine.NavMeshAgent.ResetPath();
             stateMachine.NavMeshAgent.velocity = Vector3.zero;
+
         }
 
         public override void Tick(float deltaTime)
         {
-            if (!isInChaseRange || stateMachine.Player.Health.IsDead)
-            {
-                stateMachine.SwitchState(new EnemyIdleState(stateMachine));
-                return;
-            }
             if (isInAttackRange)
             {
                 stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                return;
+            }
+
+            if (!isInChaseRange || stateMachine.Player.Health.IsDead || !IsPlayerVisable())
+            {
+                stateMachine.SwitchState(new EnemyIdleState(stateMachine));
                 return;
             }
 
@@ -78,6 +85,15 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
             Vector3 lookDir = stateMachine.Player.transform.position - stateMachine.transform.position;
             stateMachine.transform.rotation = Quaternion.LookRotation(lookDir);
             Move(stateMachine.transform.forward * stateMachine.EnemyStats.MovementSpeed, deltaTime);
+        }
+
+        private bool IsPlayerVisable()
+        {
+            Ray ray = new Ray(stateMachine.transform.position,
+                stateMachine.Player.transform.position + Vector3.up - stateMachine.transform.position);
+
+            Physics.Raycast(ray, out RaycastHit hit, stateMachine.EnemyStats.ChaseRange);
+            return hit.transform.TryGetComponent<PlayerStateMachine>(out PlayerStateMachine player);
         }
     }
 }
