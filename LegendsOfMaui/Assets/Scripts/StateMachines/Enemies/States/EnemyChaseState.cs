@@ -44,8 +44,16 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 stateMachine.SwitchState(new EnemyAttackState(stateMachine));
                 return;
             }
-            MoveToPlayer(deltaTime);
-            FacePlayer();
+
+            if (stateMachine.EnemyStats.IsAerial)
+            {
+                FlyToPlayer(deltaTime);
+            }
+            else
+            {
+                MoveToPlayer(deltaTime);
+                FacePlayer();
+            }
             stateMachine.Animator.SetFloat(FORWARD_SPEED, 1, ANIMATOR_DAMP_TIME, deltaTime);
         }
 
@@ -63,6 +71,13 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 Move(stateMachine.NavMeshAgent.desiredVelocity.normalized * stateMachine.EnemyStats.MovementSpeed, deltaTime);
             }
             stateMachine.NavMeshAgent.velocity = stateMachine.CharacterController.velocity;
+        }
+
+        private void FlyToPlayer(float deltaTime)
+        {
+            Vector3 lookDir = stateMachine.Player.transform.position - stateMachine.transform.position;
+            stateMachine.transform.rotation = Quaternion.LookRotation(lookDir);
+            Move(stateMachine.transform.forward * stateMachine.EnemyStats.MovementSpeed, deltaTime);
         }
     }
 }

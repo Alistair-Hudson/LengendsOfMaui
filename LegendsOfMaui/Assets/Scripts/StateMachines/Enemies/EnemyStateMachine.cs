@@ -62,7 +62,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Enemy
                 NavMeshAgent.enabled = false;
                 Vector3 startPos = transform.position + Vector3.up * (EnemyStats.ChaseRange / 2);
                 transform.position = startPos;
-                ForceReceiver.SetIgnoreGravity(true);
+                ForceReceiver.SetIsIgnoringGravity(true);
             }
             
         }

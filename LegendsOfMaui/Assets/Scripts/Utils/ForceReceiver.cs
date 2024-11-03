@@ -17,6 +17,7 @@ namespace AlictronicGames.LegendsOfMaui.Utils
         private Vector3 _dampingVelocity = Vector3.zero;
 
         private float _vertVelocity = 0;
+        private bool _isIgnoringGravity = false;
 
         public Vector3 Movement => _impact + Vector3.up * _vertVelocity;
 
@@ -34,14 +35,14 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             if (_impact.sqrMagnitude <= 0.2f * 0.2f && _navMeshAgent != null)
             {
                 _impact = Vector3.zero;
-                _navMeshAgent.enabled = true;
+                _navMeshAgent.enabled = !_isIgnoringGravity;
             }
 
             if (_vertVelocity < 0 && _controller.isGrounded)
             {
                 _vertVelocity = Physics.gravity.y * Time.fixedDeltaTime;
             }
-            else
+            else if (!_isIgnoringGravity)
             {
                 _vertVelocity += Physics.gravity.y * Time.fixedDeltaTime;
             }
@@ -68,6 +69,16 @@ namespace AlictronicGames.LegendsOfMaui.Utils
             _impact = Vector3.zero;
             _vertVelocity = 0;
         }
+
+        public void SetIsIgnoringGravity(bool ignoringGravity)
+        {
+            _isIgnoringGravity = ignoringGravity;
+            if (_isIgnoringGravity)
+            {
+                ResetForces();
+            }
+        }
+
         #endregion
     }
 }

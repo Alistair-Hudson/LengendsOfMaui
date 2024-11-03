@@ -21,10 +21,12 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.CrossFadeInFixedTime(FLYING, ANIMATOR_DAMP_TIME);
+            stateMachine.ForceReceiver.SetIsIgnoringGravity(true);
         }
 
         public override void Exit()
         {
+            stateMachine.ForceReceiver.SetIsIgnoringGravity(false);
         }
 
         public override void Tick(float deltaTime)
@@ -66,12 +68,7 @@ namespace AlictronicGames.LegendsOfMaui.StateMachines.Player
 
         public override void FixedTick()
         {
-            if (AtMaxFlyingHeight())
-            {
-                Debug.Log("Flying to high, descending");
-                return;
-            }
-            stateMachine.ForceReceiver.ResetForces();//Jump(-Physics.gravity.y * Time.fixedDeltaTime);
+            stateMachine.ForceReceiver.SetIsIgnoringGravity(!AtMaxFlyingHeight());
         }
         #endregion
 
