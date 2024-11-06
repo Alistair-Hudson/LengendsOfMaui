@@ -36,15 +36,12 @@ namespace NatureManufacture.RAM
 
             var polygon = new Polygon();
 
-            
+
             List<Vertex> vertexes = new();
-            
-            
+
 
             for (int i = 0; i < verticesList.Count; i++)
             {
-                
-                
                 //round values to 3 decimal places
                 var vert = new Vertex((int)(verticesList[i].x * 100) / 100.0f, (int)(verticesList[i].z * 100) / 100.0f)
                 {
@@ -54,6 +51,7 @@ namespace NatureManufacture.RAM
 
                 vertexes.Add(vert);
             }
+
 
             //generate holes from lakeHoles
             if (lakeHoles != null)
@@ -127,7 +125,7 @@ namespace NatureManufacture.RAM
                 }
                 catch (Exception)
                 {
-                    Debug.LogError("Wrong lake shape");
+                    Debug.LogError("Wrong  shape");
                 }
             }
 

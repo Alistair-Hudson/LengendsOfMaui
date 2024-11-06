@@ -527,7 +527,13 @@ namespace NatureManufacture.RAM
 
             if (BaseProfile.ScaleMesh)
             {
-                localScale = GetLocalScale(probability, quick, sizeSpan, newPosition, nextPosition, sizePrefab, canBend, localScale, currentLength);
+                float distance = sizePrefab;
+                if(!BaseProfile.ScaleMeshUnified)
+                    distance = Vector3.Distance(newPosition.Position, nextPosition.Position);
+                
+                localScale = GetLocalScale(probability, quick, sizeSpan, newPosition, nextPosition, distance, canBend, localScale, currentLength);
+                //localScale = GetLocalScale(probability, quick, sizeSpan, newPosition, nextPosition, sizePrefab, canBend, localScale, currentLength);
+               
             }
 
 
@@ -550,8 +556,6 @@ namespace NatureManufacture.RAM
             if (BaseProfile.HoldUp)
                 lookPosition.y = 0;
 
-         
-            
 
             go.transform.rotation = Quaternion.LookRotation(lookPosition, newPosition.Normal) * newPosition.Rotation * Quaternion.Euler(probability.rotationOffset) * rotation;
 

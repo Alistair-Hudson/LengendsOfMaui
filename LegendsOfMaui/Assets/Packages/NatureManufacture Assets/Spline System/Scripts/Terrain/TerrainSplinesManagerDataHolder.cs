@@ -10,15 +10,21 @@ namespace NatureManufacture.RAM
     public class TerrainSplinesManagerDataHolder : MonoBehaviour
     {
         [SerializeField] private List<Object> terrainPainterObjects = new List<Object>();
-
+        [SerializeField] private TerrainPainterData terrainPainterData;
 
         public List<Object> TerrainPainterObjects
         {
             get => terrainPainterObjects;
             set => terrainPainterObjects = value;
         }
-        
-        
+
+        public TerrainPainterData PainterData
+        {
+            get => terrainPainterData;
+            set => terrainPainterData = value;
+        }
+
+
         public List<ITerrainPainterGetData> GetTerrainPainterObjects()
         {
             List<ITerrainPainterGetData> terrainPainterObjects = new List<ITerrainPainterGetData>();

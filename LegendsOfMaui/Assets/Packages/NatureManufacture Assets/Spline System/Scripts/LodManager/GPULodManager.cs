@@ -230,6 +230,9 @@ namespace NatureManufacture.RAM
         {
             //Debug.Log("UpdateLod");
 
+            if (cameraLod == null)
+                return;
+
 #if UNITY_EDITOR
             if (SceneView.lastActiveSceneView != null && SceneView.lastActiveSceneView.camera != null)
             {

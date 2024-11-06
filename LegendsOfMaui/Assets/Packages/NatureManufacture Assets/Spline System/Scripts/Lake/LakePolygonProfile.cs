@@ -1,14 +1,16 @@
-﻿namespace NatureManufacture.RAM
+﻿using UnityEngine;
+using UnityEngine.Rendering;
+
+namespace NatureManufacture.RAM
 {
-    using UnityEngine;
-    using UnityEngine.Rendering;
+ 
 
     [CreateAssetMenu(fileName = "LakePolygonProfile", menuName = "NatureManufacture/LakePolygonProfile", order = 1)]
     public class LakePolygonProfile : ScriptableObject, IProfile<LakePolygonProfile>
     {
         #region basic
 
-        public GameObject gameObject;
+        //public GameObject gameObject;
         public Material lakeMaterial;
         public float uvScale = 1;
         public float maximumTriangleAmount = 200;
@@ -58,6 +60,9 @@
         public float noiseMultiplierFlowMap = 1f;
         public float noiseSizeXFlowMap = 0.2f;
         public float noiseSizeZFlowMap = 0.2f;
+        
+        public float floatSpeed = 3;
+        public float physicalDensity = 1;
 
         #endregion
 
@@ -124,6 +129,9 @@
             noiseMultiplierFlowMap = otherProfile.noiseMultiplierFlowMap;
             noiseSizeXFlowMap = otherProfile.noiseSizeXFlowMap;
             noiseSizeZFlowMap = otherProfile.noiseSizeZFlowMap;
+            
+            floatSpeed = otherProfile.floatSpeed;
+            physicalDensity = otherProfile.physicalDensity;
 
             redColorCurve = otherProfile.redColorCurve;
             greenColorCurve = otherProfile.greenColorCurve;
@@ -196,6 +204,12 @@
                 return true;
             if (noiseSizeZFlowMap != otherProfile.noiseSizeZFlowMap)
                 return true;
+            
+            if (floatSpeed != otherProfile.floatSpeed)
+                return true;
+            if (physicalDensity != otherProfile.physicalDensity)
+                return true;
+            
             if (PainterData != otherProfile.PainterData)
                 return true;
 

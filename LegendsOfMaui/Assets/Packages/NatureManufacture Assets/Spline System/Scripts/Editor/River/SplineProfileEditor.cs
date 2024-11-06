@@ -7,7 +7,7 @@
     using AwesomeTechnologies.VegetationSystem;
 #endif
 
-    [CustomEditor(typeof(SplineProfile)), CanEditMultipleObjects]
+    [CustomEditor(typeof(SplineProfile))]
     public class SplineProfileEditor : Editor
     {
         private void OnSceneDrag(SceneView sceneView, int index)
@@ -118,6 +118,8 @@
             GUILayout.Label("Flow Map Physic: ", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
             splineProfile.floatSpeed = EditorGUILayout.FloatField("River float speed", splineProfile.floatSpeed);
+            splineProfile.floatSpeedWaterfallMultiplier = EditorGUILayout.FloatField("Waterfall float speed multiplier", splineProfile.floatSpeedWaterfallMultiplier);
+            splineProfile.physicalDensity = EditorGUILayout.FloatField("Physical Density", splineProfile.physicalDensity);
             splineProfile.meshFlowSpeed = EditorGUILayout.FloatField("River flow speed multiplier", splineProfile.meshFlowSpeed);
             EditorGUI.indentLevel--;
 

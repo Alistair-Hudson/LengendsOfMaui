@@ -20,7 +20,7 @@ namespace NatureManufacture.RAM
 
         [SerializeField] private NmSpline nmSpline;
 
-        [SerializeField] private float triangleDensity;
+        [SerializeField] private float triangleDensity = 1;
 
         [SerializeField] private RamTerrainManager ramTerrainManager;
 
@@ -39,9 +39,10 @@ namespace NatureManufacture.RAM
 
         [field: SerializeField] public float MaximumTriangleSize { get; set; } = 50;
 
-        
-        [field: SerializeField]  public UnityEvent OnGenerationStarted { get; set; }
-        [field: SerializeField]  public UnityEvent OnGenerationEnded { get; set; }
+
+        [field: SerializeField] public UnityEvent OnGenerationStarted { get; set; }
+        [field: SerializeField] public UnityEvent OnGenerationEnded { get; set; }
+
         public TerrainPainterData PainterData
         {
             get => terrainPainterData;
@@ -125,7 +126,7 @@ namespace NatureManufacture.RAM
 
             return terrainSpline;
         }
-        
+
         public void GenerateForTerrain()
         {
             GeneratePolygon();
@@ -134,7 +135,7 @@ namespace NatureManufacture.RAM
         public void GeneratePolygon()
         {
             OnGenerationStarted?.Invoke();
-            
+
             MainMeshFilter = GetComponent<MeshFilter>();
 
             if (MainMeshFilter.sharedMesh != null)
@@ -151,7 +152,7 @@ namespace NatureManufacture.RAM
 
             SetLockHeight();
 
-            if (!NmSpline.CanGenerateSpline())
+            if (!NmSpline.CanGenerateSpline(3))
                 return;
 
             NmSpline.CenterSplinePivot();
@@ -176,7 +177,7 @@ namespace NatureManufacture.RAM
 
             //find terrain under spline which bounding box overlaps
             SetTerrain();
-            
+
             OnGenerationEnded?.Invoke();
         }
 
@@ -250,6 +251,5 @@ namespace NatureManufacture.RAM
                 NmSpline.MainControlPoints[i].position = vec;
             }
         }
-
     }
 }

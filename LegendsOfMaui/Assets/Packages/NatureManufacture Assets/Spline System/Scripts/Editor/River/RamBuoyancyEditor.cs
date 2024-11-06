@@ -3,10 +3,13 @@ namespace NatureManufacture.RAM.Editor
     using UnityEditor;
     using UnityEngine;
 
-    [CustomEditor(typeof(RamBuoyancy))]
+    [CustomEditor(typeof(RamBuoyancy)), CanEditMultipleObjects]
     public class RamBuoyancyEditor : Editor
     {
+
+        
         private SerializedProperty _buoyancyProperty;
+        
         private SerializedProperty _viscosityProperty;
         private SerializedProperty _viscosityAngularProperty;
         private SerializedProperty _rotateToSpeedProperty;
@@ -18,9 +21,12 @@ namespace NatureManufacture.RAM.Editor
         private SerializedProperty _autoGenerateVolumePointsProperty;
         private SerializedProperty _debugForcesProperty;
         private SerializedProperty _debugVolumePointsProperty;
+        private SerializedProperty _checkWaterDistance;
+
 
         private void OnEnable()
         {
+            
             _buoyancyProperty = serializedObject.FindProperty("buoyancy");
             _viscosityProperty = serializedObject.FindProperty("viscosity");
             _viscosityAngularProperty = serializedObject.FindProperty("viscosityAngular");
@@ -33,12 +39,20 @@ namespace NatureManufacture.RAM.Editor
             _autoGenerateVolumePointsProperty = serializedObject.FindProperty("autoGenerateVolumePoints");
             _debugForcesProperty = serializedObject.FindProperty("debugForces");
             _debugVolumePointsProperty = serializedObject.FindProperty("debugVolumePoints");
+            _checkWaterDistance = serializedObject.FindProperty("checkWaterDistance");
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+            
+            EditorGUILayout.LabelField("test Settings", EditorStyles.boldLabel);
 
+            
+            
+            
+
+            EditorGUILayout.Space();
             EditorGUILayout.PropertyField(_buoyancyProperty);
             EditorGUILayout.PropertyField(_viscosityProperty);
             EditorGUILayout.PropertyField(_viscosityAngularProperty);
@@ -67,9 +81,18 @@ namespace NatureManufacture.RAM.Editor
             if (!_autoGenerateVolumePointsProperty.boolValue)
             {
                 EditorGUI.indentLevel++;
+                if(GUILayout.Button("Generate Volume Points"))
+                {
+                    foreach (RamBuoyancy buoyancy in targets)
+                    {
+                        buoyancy.AutoGenerateVolumePoints();
+                    }
+                }
                 EditorGUILayout.PropertyField(_volumePointsProperty, true);
                 EditorGUI.indentLevel--;
             }
+            
+            EditorGUILayout.PropertyField(_checkWaterDistance);
 
             EditorGUILayout.Space();
 

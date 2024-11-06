@@ -117,6 +117,8 @@ namespace NatureManufacture.RAM.Editor
             GUILayout.Label("Spline settings:", EditorStyles.boldLabel);
             _simpleSpline.TriangleDensity = EditorGUILayout.IntSlider("Spline density", (int)(_simpleSpline.TriangleDensity), 1, 100);
 
+            _simpleSpline.CenterPivot = EditorGUILayout.Toggle("Center pivot", _simpleSpline.CenterPivot);
+            _simpleSpline.LockHeight = EditorGUILayout.Toggle("Lock height", _simpleSpline.LockHeight);
 
             if (EditorGUI.EndChangeCheck())
             {

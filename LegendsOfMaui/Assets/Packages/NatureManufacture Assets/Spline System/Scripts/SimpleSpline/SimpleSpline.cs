@@ -16,6 +16,10 @@ namespace NatureManufacture.RAM
 
         [SerializeField] private float triangleDensity;
         
+        [SerializeField] private bool centerPivot;
+
+        [SerializeField] private bool lockHeight;
+        
         
         [field: SerializeField]  public UnityEvent OnGenerationStarted { get; set; }
         [field: SerializeField]  public UnityEvent OnGenerationEnded { get; set; }
@@ -42,6 +46,18 @@ namespace NatureManufacture.RAM
             set => triangleDensity = value;
         }
 
+        public bool CenterPivot
+        {
+            get => centerPivot;
+            set => centerPivot = value;
+        }
+
+        public bool LockHeight
+        {
+            get => lockHeight;
+            set => lockHeight = value;
+        }
+
 
         #region spline
 
@@ -58,6 +74,11 @@ namespace NatureManufacture.RAM
 
         public void GenerateSplineObjects()
         {
+            SetLockHeight();
+            
+            if(CenterPivot)
+                nmSpline.CenterSplinePivot();
+            
             OnGenerationStarted?.Invoke();
             if (!NmSpline.CanGenerateSpline())
                 return;
@@ -66,6 +87,19 @@ namespace NatureManufacture.RAM
             
             
             OnGenerationEnded?.Invoke();
+        }
+
+        
+        private void SetLockHeight()
+        {
+            if (!LockHeight) return;
+
+            for (int i = 1; i < NmSpline.MainControlPoints.Count; i++)
+            {
+                Vector4 vec = NmSpline.MainControlPoints[i].position;
+                vec.y = NmSpline.MainControlPoints[0].position.y;
+                NmSpline.MainControlPoints[i].position = vec;
+            }
         }
 
 

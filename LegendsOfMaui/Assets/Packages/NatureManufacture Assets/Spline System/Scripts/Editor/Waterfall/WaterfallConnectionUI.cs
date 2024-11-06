@@ -22,13 +22,14 @@ namespace NatureManufacture.RAM.Editor
 
             if (waterfallConnection.Spline != null)
             {
-                waterfallConnection.Offset = EditorGUILayout.FloatField("Offset", waterfallConnection.Offset);
+                waterfall.BaseProfile.Offset = EditorGUILayout.FloatField("Offset", waterfall.BaseProfile.Offset);
                 if (GUILayout.Button("Calculate offset"))
                 {
                     waterfallConnection.CalculateOffset(waterfall);
                 }
 
-                waterfallConnection.YOffset = EditorGUILayout.FloatField("Y offset", waterfallConnection.YOffset);
+                waterfall.BaseProfile.YOffset = EditorGUILayout.FloatField("Y offset", waterfall.BaseProfile.YOffset);
+                waterfall.BaseProfile.AngleOffset = EditorGUILayout.FloatField("Angle offset", waterfall.BaseProfile.AngleOffset);
 
                 EditorGUILayout.Space();
                 waterfallConnection.NumberOfPoints = EditorGUILayout.IntField("Number of points", waterfallConnection.NumberOfPoints);
@@ -102,7 +103,7 @@ namespace NatureManufacture.RAM.Editor
         }
 
 
-        public static void ShowConnectionOnSpline(WaterfallConnection waterfallConnection)
+        public static void ShowConnectionOnSpline(Waterfall waterfall, WaterfallConnection waterfallConnection)
         {
             if (waterfallConnection.Spline == null) return;
             if (waterfallConnection.FirstPoint < 0 || waterfallConnection.LastPoint < 0) return;
@@ -119,8 +120,8 @@ namespace NatureManufacture.RAM.Editor
 
             float firstPoint = waterfallConnection.FirstPoint;
             float lasPoint = waterfallConnection.LastPoint;
-            ShowPointPosition(firstPoint, spline, count, waterfallConnection.Offset);
-            ShowPointPosition(lasPoint, spline, count, waterfallConnection.Offset);
+            ShowPointPosition(firstPoint, spline, count, waterfall.BaseProfile.Offset);
+            ShowPointPosition(lasPoint, spline, count, waterfall.BaseProfile.Offset);
         }
 
         private static void ShowPointPosition(float lerpValue, NmSpline spline, int count, float offset)

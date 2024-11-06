@@ -379,7 +379,8 @@ namespace NatureManufacture.RAM.Editor
 
             EditorGUILayout.Space();
             GUILayout.Label("Flow Map Physic: ", EditorStyles.boldLabel);
-            _lakePolygon.floatSpeed = EditorGUILayout.FloatField("Float speed", _lakePolygon.floatSpeed);
+            _lakePolygon.BaseProfile.floatSpeed = EditorGUILayout.FloatField("Float speed", _lakePolygon.BaseProfile.floatSpeed);
+            _lakePolygon.BaseProfile.physicalDensity = EditorGUILayout.FloatField("Physical density", _lakePolygon.BaseProfile.physicalDensity);
 
             if (EditorGUI.EndChangeCheck())
             {

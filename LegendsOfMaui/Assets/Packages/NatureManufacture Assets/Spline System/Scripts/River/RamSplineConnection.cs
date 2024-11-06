@@ -152,5 +152,68 @@ namespace NatureManufacture.RAM
 
             ramSpline.NmSpline.MainControlPoints[connectionPointId].position = position;
         }
+
+        public static void GenerateBeginningPointsFromParent(RamSpline ramSpline)
+        {
+            ramSpline.BaseProfile.vertsInShape = (int)Mathf.Round((ramSpline.beginningSpline.BaseProfile.vertsInShape - 1)
+                * (ramSpline.beginningMaxWidth - ramSpline.beginningMinWidth) + 1);
+            ramSpline.BaseProfile.uvFixedWidth = ramSpline.beginningSpline.BaseProfile.uvFixedWidth * (ramSpline.beginningMaxWidth - ramSpline.beginningMinWidth);
+
+            if (ramSpline.BaseProfile.vertsInShape < 1)
+                ramSpline.BaseProfile.vertsInShape = 1;
+
+            if (!ramSpline.beginningSpline.NmSpline.CanGenerateSpline())
+                return;
+
+            if (ramSpline.beginningSpline.NmSpline.PointsDown.Count == 0)
+            {
+                ramSpline.beginningSpline.GenerateSpline();
+            }
+
+            ramSpline.beginningConnectionID = ramSpline.beginningSpline.NmSpline.Points.Count - 1;
+            Vector4 pos = ramSpline.beginningSpline.NmSpline.MainControlPoints[^1].position;
+            float widthNew = pos.w;
+            widthNew *= ramSpline.beginningMaxWidth - ramSpline.beginningMinWidth;
+            pos = Vector3.Lerp(ramSpline.beginningSpline.NmSpline.PointsDown[ramSpline.beginningConnectionID].Position,
+                    ramSpline.beginningSpline.NmSpline.PointsUp[ramSpline.beginningConnectionID].Position,
+                    ramSpline.beginningMinWidth + (ramSpline.beginningMaxWidth - ramSpline.beginningMinWidth) * 0.5f)
+                + ramSpline.beginningSpline.transform.position - ramSpline.transform.position;
+            pos.w = widthNew;
+            ramSpline.NmSpline.MainControlPoints[0].position = pos;
+
+            if (!ramSpline.uvScaleOverride)
+                ramSpline.BaseProfile.uvScale = ramSpline.beginningSpline.BaseProfile.uvScale;
+        }
+
+        public static void GenerateEndingPointsFromParent(RamSpline ramSpline)
+        {
+            if (ramSpline.beginningSpline == null)
+            {
+                ramSpline.BaseProfile.vertsInShape = (int)Mathf.Round((ramSpline.endingSpline.BaseProfile.vertsInShape - 1)
+                    * (ramSpline.endingMaxWidth - ramSpline.endingMinWidth) + 1);
+                ramSpline.BaseProfile.uvFixedWidth = ramSpline.endingSpline.BaseProfile.uvFixedWidth * (ramSpline.endingMaxWidth - ramSpline.endingMinWidth);
+
+                if (ramSpline.BaseProfile.vertsInShape < 1)
+                    ramSpline.BaseProfile.vertsInShape = 1;
+            }
+
+            if (ramSpline.endingSpline.NmSpline.PointsDown.Count == 0)
+            {
+                ramSpline.endingSpline.GenerateSpline();
+            }
+
+            ramSpline.endingConnectionID = 0;
+            Vector4 pos = ramSpline.endingSpline.NmSpline.MainControlPoints[0].position;
+            float widthNew = pos.w;
+            widthNew *= ramSpline.endingMaxWidth - ramSpline.endingMinWidth;
+            pos = Vector3.Lerp(ramSpline.endingSpline.NmSpline.PointsDown[ramSpline.endingConnectionID].Position, ramSpline.endingSpline.NmSpline.PointsUp[ramSpline.endingConnectionID].Position,
+                      ramSpline.endingMinWidth + (ramSpline.endingMaxWidth - ramSpline.endingMinWidth) * 0.5f) + ramSpline.endingSpline.transform.position -
+                  ramSpline.transform.position;
+            pos.w = widthNew;
+            ramSpline.NmSpline.MainControlPoints[^1].position = pos;
+
+            if (!ramSpline.uvScaleOverride && ramSpline.beginningSpline == null)
+                ramSpline.BaseProfile.uvScale = ramSpline.endingSpline.BaseProfile.uvScale;
+        }
     }
 }

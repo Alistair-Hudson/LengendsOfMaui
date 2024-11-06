@@ -1,13 +1,14 @@
 ﻿namespace NatureManufacture.RAM.Editor
 {
     using UnityEngine;
-    using UnityEditor;
     using UnityEngine.Rendering;
+    using UnityEditor;
+
 #if VEGETATION_STUDIO_PRO
 using AwesomeTechnologies.VegetationSystem;
 #endif
 
-    [CustomEditor(typeof(LakePolygonProfile)), CanEditMultipleObjects]
+    [CustomEditor(typeof(LakePolygonProfile))]
     public class LakePolygonProfileEditor : Editor
     {
         private void OnSceneDrag(SceneView sceneView, int index)
@@ -20,13 +21,11 @@ using AwesomeTechnologies.VegetationSystem;
 
             var lakePolygon = go.GetComponent<LakePolygon>();
 
-
             switch (e.type)
             {
                 case EventType.DragUpdated:
                 {
                     DragAndDrop.visualMode = lakePolygon ? DragAndDropVisualMode.Link : DragAndDropVisualMode.Rejected;
-
                     e.Use();
                     break;
                 }
@@ -48,7 +47,6 @@ using AwesomeTechnologies.VegetationSystem;
 
                     DestroyImmediate(lakePolygonEditor);
 
-
                     DragAndDrop.AcceptDrag();
                     e.Use();
                     break;
@@ -60,76 +58,75 @@ using AwesomeTechnologies.VegetationSystem;
         {
             EditorGUI.BeginChangeCheck();
 
-            LakePolygonProfile lakePolygon = (LakePolygonProfile)target;
+            LakePolygonProfile lakePolygonProfile = (LakePolygonProfile)target;
             GUILayout.Label("Basic: ", EditorStyles.boldLabel);
-            lakePolygon.lakeMaterial = (Material)EditorGUILayout.ObjectField("Material", lakePolygon.lakeMaterial, typeof(Material), false);
+            lakePolygonProfile.lakeMaterial = (Material)EditorGUILayout.ObjectField("Material", lakePolygonProfile.lakeMaterial, typeof(Material), false);
 
             GUILayout.Label("Mesh settings:", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
 
-            lakePolygon.maximumTriangleAmount = EditorGUILayout.FloatField("Maximum triangle amount", lakePolygon.maximumTriangleAmount);
-            lakePolygon.maximumTriangleSize = EditorGUILayout.FloatField("Maximum triangle size", lakePolygon.maximumTriangleSize);
-            lakePolygon.triangleDensity = (float)EditorGUILayout.IntSlider("Spline density", (int)(lakePolygon.triangleDensity), 1, 100);
-            lakePolygon.uvScale = EditorGUILayout.FloatField("UV scale", lakePolygon.uvScale);
-            lakePolygon.snapMask = LayerMaskField.ShowLayerMaskField("Layers", lakePolygon.snapMask, true);
-            lakePolygon.NormalFromRaycast =
-                EditorGUILayout.Toggle("Take Normal from terrain", lakePolygon.NormalFromRaycast);
-            if (lakePolygon.NormalFromRaycast)
+            lakePolygonProfile.maximumTriangleAmount = EditorGUILayout.FloatField("Maximum triangle amount", lakePolygonProfile.maximumTriangleAmount);
+            lakePolygonProfile.maximumTriangleSize = EditorGUILayout.FloatField("Maximum triangle size", lakePolygonProfile.maximumTriangleSize);
+            lakePolygonProfile.triangleDensity = (float)EditorGUILayout.IntSlider("Spline density", (int)(lakePolygonProfile.triangleDensity), 1, 100);
+            lakePolygonProfile.uvScale = EditorGUILayout.FloatField("UV scale", lakePolygonProfile.uvScale);
+            lakePolygonProfile.snapMask = LayerMaskField.ShowLayerMaskField("Layers", lakePolygonProfile.snapMask, true);
+            lakePolygonProfile.NormalFromRaycast = EditorGUILayout.Toggle("Take Normal from terrain", lakePolygonProfile.NormalFromRaycast);
+            if (lakePolygonProfile.NormalFromRaycast)
             {
                 EditorGUI.indentLevel++;
-                lakePolygon.NormalFromRaycastLerp = EditorGUILayout.Slider("Normal from terrain lerp", lakePolygon.NormalFromRaycastLerp, 0, 1);
+                lakePolygonProfile.NormalFromRaycastLerp = EditorGUILayout.Slider("Normal from terrain lerp", lakePolygonProfile.NormalFromRaycastLerp, 0, 1);
                 EditorGUI.indentLevel--;
             }
-
 
             GUILayout.Label("Flow Map Automatic: ", EditorStyles.boldLabel);
-            lakePolygon.automaticFlowMapScale = EditorGUILayout.FloatField("Automatic speed", lakePolygon.automaticFlowMapScale);
-            lakePolygon.noiseFlowMap = EditorGUILayout.Toggle("Add noise", lakePolygon.noiseFlowMap);
-            if (lakePolygon.noiseFlowMap)
+            lakePolygonProfile.automaticFlowMapScale = EditorGUILayout.FloatField("Automatic speed", lakePolygonProfile.automaticFlowMapScale);
+            lakePolygonProfile.noiseFlowMap = EditorGUILayout.Toggle("Add noise", lakePolygonProfile.noiseFlowMap);
+            if (lakePolygonProfile.noiseFlowMap)
             {
                 EditorGUI.indentLevel++;
-                lakePolygon.noiseMultiplierFlowMap = EditorGUILayout.FloatField("Noise multiplier inside", lakePolygon.noiseMultiplierFlowMap);
-                lakePolygon.noiseSizeXFlowMap = EditorGUILayout.FloatField("Noise scale X", lakePolygon.noiseSizeXFlowMap);
-                lakePolygon.noiseSizeZFlowMap = EditorGUILayout.FloatField("Noise scale Z", lakePolygon.noiseSizeZFlowMap);
+                lakePolygonProfile.noiseMultiplierFlowMap = EditorGUILayout.FloatField("Noise multiplier inside", lakePolygonProfile.noiseMultiplierFlowMap);
+                lakePolygonProfile.noiseSizeXFlowMap = EditorGUILayout.FloatField("Noise scale X", lakePolygonProfile.noiseSizeXFlowMap);
+                lakePolygonProfile.noiseSizeZFlowMap = EditorGUILayout.FloatField("Noise scale Z", lakePolygonProfile.noiseSizeZFlowMap);
                 EditorGUI.indentLevel--;
             }
 
+            lakePolygonProfile.floatSpeed = EditorGUILayout.FloatField("Float speed", lakePolygonProfile.floatSpeed);
+            lakePolygonProfile.physicalDensity = EditorGUILayout.FloatField("Physical density", lakePolygonProfile.physicalDensity);
 
             GUILayout.Label("Lightning settings:", EditorStyles.boldLabel);
 
             EditorGUI.indentLevel++;
-            lakePolygon.receiveShadows = EditorGUILayout.Toggle("Receive Shadows", lakePolygon.receiveShadows);
+            lakePolygonProfile.receiveShadows = EditorGUILayout.Toggle("Receive Shadows", lakePolygonProfile.receiveShadows);
 
-            lakePolygon.shadowCastingMode = (ShadowCastingMode)EditorGUILayout.EnumPopup("Shadow Casting Mode", lakePolygon.shadowCastingMode);
+            lakePolygonProfile.shadowCastingMode = (ShadowCastingMode)EditorGUILayout.EnumPopup("Shadow Casting Mode", lakePolygonProfile.shadowCastingMode);
             EditorGUI.indentLevel--;
 
             EditorGUILayout.Space();
             GUILayout.Label("Terrain settings:", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
-            lakePolygon.PainterData = (TerrainPainterData)EditorGUILayout.ObjectField("Terrain Painter Data", lakePolygon.PainterData, typeof(TerrainPainterData), false);
+            lakePolygonProfile.PainterData = (TerrainPainterData)EditorGUILayout.ObjectField("Terrain Painter Data", lakePolygonProfile.PainterData, typeof(TerrainPainterData), false);
 
             EditorGUI.indentLevel--;
 
 #if VEGETATION_STUDIO_PRO
-        GUILayout.Label("Vegetation stuio pro:", EditorStyles.boldLabel);
-        lakePolygon.biomeType = System.Convert.ToInt32(EditorGUILayout.EnumPopup("Select biome", (BiomeType)lakePolygon.biomeType));
+           GUILayout.Label("Vegetation studio pro:", EditorStyles.boldLabel);
+           lakePolygonProfile.biomeType = System.Convert.ToInt32(EditorGUILayout.EnumPopup("Select biome", (BiomeType)lakePolygonProfile.biomeType));
 #else
             GUILayout.Label("Vegetation studio:", EditorStyles.boldLabel);
-            lakePolygon.biomeType = EditorGUILayout.IntField("Select biome", lakePolygon.biomeType);
+            lakePolygonProfile.biomeType = EditorGUILayout.IntField("Select biome", lakePolygonProfile.biomeType);
 #endif
             EditorGUILayout.Space();
             GUILayout.Label("Vertex Color Automatic: ", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
-            lakePolygon.redColorCurve = EditorGUILayout.CurveField("Red color curve", lakePolygon.redColorCurve);
-            lakePolygon.greenColorCurve = EditorGUILayout.CurveField("Green color curve", lakePolygon.greenColorCurve);
-            lakePolygon.blueColorCurve = EditorGUILayout.CurveField("Blue color curve", lakePolygon.blueColorCurve);
-            lakePolygon.alphaColorCurve = EditorGUILayout.CurveField("Alpha color curve", lakePolygon.alphaColorCurve);
+            lakePolygonProfile.redColorCurve = EditorGUILayout.CurveField("Red color curve", lakePolygonProfile.redColorCurve);
+            lakePolygonProfile.greenColorCurve = EditorGUILayout.CurveField("Green color curve", lakePolygonProfile.greenColorCurve);
+            lakePolygonProfile.blueColorCurve = EditorGUILayout.CurveField("Blue color curve", lakePolygonProfile.blueColorCurve);
+            lakePolygonProfile.alphaColorCurve = EditorGUILayout.CurveField("Alpha color curve", lakePolygonProfile.alphaColorCurve);
             EditorGUI.indentLevel--;
-
 
             if (EditorGUI.EndChangeCheck())
             {
-                EditorUtility.SetDirty(lakePolygon);
+                EditorUtility.SetDirty(lakePolygonProfile);
                 // AssetDatabase.Refresh();
             }
         }

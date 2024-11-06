@@ -270,7 +270,7 @@ namespace NatureManufacture.RAM
         {
             if (Application.isPlaying && CameraLod == null)
             {
-                Debug.LogWarning("No camera set");
+                //Debug.LogWarning("No camera set");
                 return;
             }
 

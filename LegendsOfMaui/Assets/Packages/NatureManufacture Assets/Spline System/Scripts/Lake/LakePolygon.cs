@@ -93,7 +93,7 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
         public bool snapToTerrain;
 
 
-        public float floatSpeed = 10;
+        
 
         public bool ShowDebug { get; set; }
 

@@ -5,7 +5,7 @@ namespace NatureManufacture.RAM.Editor
     using UnityEditor;
 
 
-    [CustomEditor(typeof(LakePolygonProfile)), CanEditMultipleObjects]
+    //[CustomEditor(typeof(LakePolygonProfile)), CanEditMultipleObjects]
     public class FenceProfileEditor : Editor
     {
         

@@ -1,3 +1,10 @@
+/*
+ * Changed by Pawel Homenko on  08/2022
+ *
+ * Optimized the code, added uv2, uv3, color support
+ * Changed the weld vertices method
+ */
+
 /*====================================================
 *
 * Francesco Cucchiara - 3POINT SOFT
@@ -21,6 +28,7 @@
  *          don't get back to you just go ahead and use it anyway!
  */
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,12 +42,15 @@ namespace TB
             Vector2[] uvs = mesh.uv;
             Vector2[] uvs2 = mesh.uv2;
             Vector2[] uvs3 = mesh.uv3;
+            Color[] colors = mesh.colors;
+
 
             List<Vector3> unweldedVerticesList = new();
             int[][] unweldedSubTriangles = new int[mesh.subMeshCount][];
             List<Vector2> unweldedUvsList = new();
             List<Vector2> unweldedUvs2List = new();
             List<Vector2> unweldedUvs3List = new();
+            List<Color> unweldedColorsList = new();
             int currVertex = 0;
 
             for (int i = 0; i < mesh.subMeshCount; i++)
@@ -50,6 +61,7 @@ namespace TB
                 Vector2[] unweldedUVs = new Vector2[unweldedVertices.Length];
                 Vector2[] unweldedUVs2 = new Vector2[unweldedVertices.Length];
                 Vector2[] unweldedUVs3 = new Vector2[unweldedVertices.Length];
+                Color[] unweldedColors = new Color[unweldedVertices.Length];
 
                 for (int j = 0; j < triangles.Length; j++)
                 {
@@ -65,6 +77,9 @@ namespace TB
                     if (uvs3 != null && uvs3.Length > triangles[j])
                         unweldedUVs3[j] = uvs3[triangles[j]];
 
+                    if (colors != null && colors.Length > triangles[j])
+                        unweldedColors[j] = colors[triangles[j]];
+
                     unweldedTriangles[j] = currVertex; //the unwelded triangle array will contain global progressive vertex indexes (1, 2, 3, ...)
                     currVertex++;
                 }
@@ -76,6 +91,8 @@ namespace TB
                     unweldedUvs2List.AddRange(unweldedUVs2);
                 if (uvs3 != null)
                     unweldedUvs3List.AddRange(unweldedUVs3);
+                if (colors != null)
+                    unweldedColorsList.AddRange(unweldedColors);
             }
 
             //Debug.Log(unweldedVerticesList.Count);
@@ -87,10 +104,16 @@ namespace TB
 
             mesh.vertices = unweldedVerticesList.ToArray();
             mesh.uv = unweldedUvsList.ToArray();
-            if (uvs2 != null)
+            if (uvs2 is { Length: > 0 })
                 mesh.uv2 = unweldedUvs2List.ToArray();
-            if (uvs3 != null)
+            if (uvs3 is { Length: > 0 })
                 mesh.uv3 = unweldedUvs3List.ToArray();
+
+
+            //Debug.Log($"unweldedVerticesList {unweldedVerticesList.Count} unweldedUvsList {unweldedUvsList.Count} colors {unweldedColorsList.Count}");
+
+            if (colors is { Length: > 0 })
+                mesh.colors = unweldedColorsList.ToArray();
 
             for (int i = 0; i < mesh.subMeshCount; i++)
             {
@@ -185,7 +208,7 @@ namespace TB
             {
                 for (int i = 0; i < vertList.Count; ++i)
                 {
-                    Vector3 sum = new Vector3();
+                    var sum = new Vector3();
                     VertexEntry lhsEntry = vertList[i];
 
                     for (int j = 0; j < vertList.Count; ++j)
@@ -220,77 +243,125 @@ namespace TB
             //WeldVertices(mesh);
         }
 
-        private static void WeldVertices(Mesh mesh)
+        public static Mesh WeldVertices(Mesh mesh)
         {
             Vector3[] vertices = mesh.vertices;
             Vector3[] normals = mesh.normals;
+            Vector4[] tangents = mesh.tangents;
             Vector2[] uvs = mesh.uv;
             Vector2[] uvs2 = mesh.uv2;
+            Vector2[] uvs3 = mesh.uv3;
+            Color[] colors = mesh.colors;
 
-            Dictionary<VertexKey, int> welds = new(vertices.Length);
+            List<Vector3> newVertices = new();
+            List<Vector3> newNormals = new();
+            List<Vector4> newTangents = new();
+            List<Vector2> newUVs = new();
+            List<Vector2> newUVs2 = new();
+            List<Vector2> newUVs3 = new();
+            List<Color> newColors = new();
+
+            Dictionary<VertexKey, int> welds = new();
 
             for (int i = 0; i < vertices.Length; ++i)
             {
-                VertexKey key = new VertexKey(vertices[i]);
-                int index;
-                if (welds.TryGetValue(key, out index))
-                {
-                    vertices[i] = vertices[index];
-                    normals[i] = normals[index];
-                    uvs[i] = uvs[index];
-                    uvs2[i] = uvs2[index];
-                }
-                else
-                {
-                    welds.Add(key, i);
-                }
+                var key = new VertexKey(vertices[i], uvs[i]);
+
+                if (welds.TryGetValue(key, out int index)) continue;
+
+                index = newVertices.Count;
+                welds.Add(key, index);
+                newVertices.Add(vertices[i]);
+                newNormals.Add(normals[i]);
+                newTangents.Add(tangents[i]);
+                newUVs.Add(uvs[i]);
+                if (uvs2.Length > 0) newUVs2.Add(uvs2[i]);
+                if (uvs3.Length > 0) newUVs3.Add(uvs3[i]);
+                if (colors.Length > 0) newColors.Add(colors[i]);
             }
 
-            mesh.vertices = vertices;
-            mesh.normals = normals;
-            mesh.uv = uvs;
-            mesh.uv2 = uvs2;
+            int[] triangles = mesh.triangles;
+            List<int> newTriangles = new(triangles.Length);
+            for (int i = 0; i < triangles.Length; ++i)
+            {
+                newTriangles.Add(welds[new VertexKey(vertices[triangles[i]], uvs[triangles[i]])]);
+            }
+
+            
+            //mesh.Clear();
+                string name = mesh.name;
+          mesh = new Mesh
+             {
+                 name = name
+             };
+            mesh.SetVertices(newVertices);
+            mesh.SetNormals(newNormals);
+            mesh.SetTangents(newTangents);
+            mesh.SetUVs(0, newUVs);
+            mesh.SetUVs(1, newUVs2);
+            if (uvs3.Length > 0)
+                mesh.SetUVs(2, newUVs3);
+            if (colors.Length > 0)
+                mesh.SetColors(newColors);
+            mesh.SetTriangles(newTriangles, 0);
+            return mesh;
         }
 
-        private struct VertexKey
+        private readonly struct VertexKey : IEquatable<VertexKey>
         {
             private readonly long _x;
             private readonly long _y;
             private readonly long _z;
+            private readonly long _u;
+            private readonly long _v;
 
-            // Change this if you require a different precision.
             private const int Tolerance = 10000;
-            //private const int Tolerance = 1;
+            private const long Fnv32Init = 23;
+            private const long Fnv32Prime = 31;
 
-            // Magic FNV values. Do not change these.
-            private const long FNV32Init = 23; // 0x811c9dc5;
-            private const long FNV32Prime = 31; // 0x01000193;
 
             public VertexKey(Vector3 position)
             {
                 _x = (long)(Mathf.Round(position.x * Tolerance));
                 _y = (long)(Mathf.Round(position.y * Tolerance));
                 _z = (long)(Mathf.Round(position.z * Tolerance));
+                _u = 0;
+                _v = 0;
+            }
+
+            public VertexKey(Vector3 position, Vector2 uv)
+            {
+                _x = (long)(Mathf.Round(position.x * Tolerance));
+                _y = (long)(Mathf.Round(position.y * Tolerance));
+                _z = (long)(Mathf.Round(position.z * Tolerance));
+                _u = (long)(Mathf.Round(uv.x * Tolerance));
+                _v = (long)(Mathf.Round(uv.y * Tolerance));
             }
 
             public override bool Equals(object obj)
             {
-                VertexKey key = (VertexKey)obj;
-                //bool equals = key._x == _x && key._y == _y && key._z == _z;
-                // if(equals)
-                //    Debug.Log($"Equals");
-                return key._x == _x && key._y == _y && key._z == _z;
+                return obj is VertexKey key && Equals(key);
+            }
+
+            public bool Equals(VertexKey other)
+            {
+                return _x == other._x && _y == other._y && _z == other._z &&
+                       _u == other._u && _v == other._v;
             }
 
             public override int GetHashCode()
             {
-                long rv = FNV32Init;
+                long rv = Fnv32Init;
                 rv ^= _x;
-                rv *= FNV32Prime;
+                rv *= Fnv32Prime;
                 rv ^= _y;
-                rv *= FNV32Prime;
+                rv *= Fnv32Prime;
                 rv ^= _z;
-                rv *= FNV32Prime;
+                rv *= Fnv32Prime;
+                rv ^= _u;
+                rv *= Fnv32Prime;
+                rv ^= _v;
+                rv *= Fnv32Prime;
 
                 return rv.GetHashCode();
             }
@@ -298,9 +369,9 @@ namespace TB
 
         private struct VertexEntry
         {
-            public int MeshIndex;
-            public int TriangleIndex;
-            public int VertexIndex;
+            public readonly int MeshIndex;
+            public readonly int TriangleIndex;
+            public readonly int VertexIndex;
 
             public VertexEntry(int meshIndex, int triIndex, int vertIndex)
             {
@@ -367,8 +438,8 @@ namespace TB
                 float div = s1 * t2 - s2 * t1;
                 float r = div == 0.0f ? 0.0f : 1.0f / div;
 
-                Vector3 sDir = new Vector3((t2 * x1 - t1 * x2) * r, (t2 * y1 - t1 * y2) * r, (t2 * z1 - t1 * z2) * r);
-                Vector3 tDir = new Vector3((s1 * x2 - s2 * x1) * r, (s1 * y2 - s2 * y1) * r, (s1 * z2 - s2 * z1) * r);
+                var sDir = new Vector3((t2 * x1 - t1 * x2) * r, (t2 * y1 - t1 * y2) * r, (t2 * z1 - t1 * z2) * r);
+                var tDir = new Vector3((s1 * x2 - s2 * x1) * r, (s1 * y2 - s2 * y1) * r, (s1 * z2 - s2 * z1) * r);
 
                 tan1[i1] += sDir;
                 tan1[i2] += sDir;

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace NatureManufacture.RAM
 {
     [CreateAssetMenu(fileName = "TerrainPainterData", menuName = "NatureManufacture/TerrainPainterData", order = 1)]
-    public class  TerrainPainterData : ScriptableObject, IProfile<TerrainPainterData>
+    public class TerrainPainterData : ScriptableObject, IProfile<TerrainPainterData>
     {
         public enum TerrainCarveQualityEnum
         {
@@ -244,6 +244,7 @@ namespace NatureManufacture.RAM
             //for each layer check if it has changed
             for (int i = 0; i < terrainLayersData.Count; i++)
             {
+                if (terrainLayersData.Count != otherProfile.terrainLayersData.Count || terrainLayersData[i] == null || otherProfile.terrainLayersData[i] == null) continue;
                 if (terrainLayersData[i].CheckProfileChange(otherProfile.terrainLayersData[i]))
                 {
                     return true;

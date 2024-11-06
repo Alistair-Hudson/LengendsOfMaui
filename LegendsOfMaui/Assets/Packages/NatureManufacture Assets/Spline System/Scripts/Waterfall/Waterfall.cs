@@ -265,11 +265,21 @@ namespace NatureManufacture.RAM
             double setupMeshTime = Time.realtimeSinceStartupAsDouble;
             SetupMesh(verticesArray);
 
+            CheckMeshColliderMesh();
+
             if (BaseDebug)
                 Debug.Log($"Setup mesh time: {(Time.realtimeSinceStartupAsDouble - setupMeshTime):0.00000} s");
 
             if (BaseDebug)
                 Debug.Log($"Full generation time: {(Time.realtimeSinceStartupAsDouble - fullGeneratioTime):0.00000} s");
+        }
+
+        private void CheckMeshColliderMesh()
+        {
+            if (TryGetComponent(out MeshCollider meshCollider))
+            {
+                meshCollider.sharedMesh = mesh;
+            }
         }
 
         private void GetMeshVertexData(List<Vector4> uv4)
@@ -294,8 +304,7 @@ namespace NatureManufacture.RAM
                 for (int j = 0; j < simulationPoints[i].Count; j++)
                 {
                     WaterfallSimulator.MeshSimulation meshSimulation = simulationPoints[i][j];
-                    //meshSimulation.DistanceU = (float)j / (simulationPoints[i].Count - 1);
-                    //meshSimulation.DistanceV = (float)i / (simulationPoints.Count - 1);
+
 
                     //generate uv based on distance to previous point
                     if (j > 0)
@@ -306,20 +315,7 @@ namespace NatureManufacture.RAM
                     {
                         meshSimulation.DistanceU = 0;
                     }
-/*
-                    if (i > 0 && simulationPoints[i - 1].Count > j)
-                    {
-                        //  meshSimulation.DistanceV = simulationPoints[i - 1][j].DistanceV + Vector3.Distance(simulationPoints[i - 1][j].Position, meshSimulation.Position);
-                    }
-                    else if (i > 0)
-                    {
-                        //   meshSimulation.DistanceV = simulationPoints[i][j-1].DistanceV;
-                    }
-                    else
-                    {
-                        //  meshSimulation.DistanceV = 0;
-                    }
-*/
+
 
                     meshSimulation.DistanceV *= uvVMultiplier;
 
@@ -329,7 +325,7 @@ namespace NatureManufacture.RAM
         }
 
 
-        private void  SetupMesh(Vector3[] verticesArray = null)
+        private void SetupMesh(Vector3[] verticesArray = null)
         {
             int vertexCount = verticesArray?.Length ?? vertices.Count;
 
@@ -439,6 +435,7 @@ namespace NatureManufacture.RAM
             if (MainMeshFilter.sharedMesh == null)
             {
                 mesh = new Mesh();
+                mesh.name = "Waterfall Mesh";
                 MainMeshFilter.sharedMesh = mesh;
             }
             else
@@ -483,6 +480,9 @@ namespace NatureManufacture.RAM
             tangents.Add(new Vector4(meshSimulation.Tangent.x, meshSimulation.Tangent.y, meshSimulation.Tangent.z, 1));
             binormals.Add(meshSimulation.Binormal);
             colorsFlowMap.Add(new Vector2(0, 0.5f));
+
+            //Debug.DrawRay(transform.TransformPoint(meshSimulation.Position), meshSimulation.Velocity.normalized, Color.red, 2.5f);
+
             VerticeDirection.Add(meshSimulation.Velocity.normalized);
 
             //Debug.Log(meshSimulation.Distance);

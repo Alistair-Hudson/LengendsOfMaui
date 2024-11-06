@@ -12,38 +12,185 @@ namespace NatureManufacture.RAM
         [HideInInspector] [SerializeField] private GameObject gameObject;
 
         [SerializeField] private float triangleDensity = 8f;
+        [SerializeField] private Material waterfallMaterial;
+        [SerializeField] private float simulationTime = 10;
+        [SerializeField] private float timeStep = 0.1f;
+        [SerializeField] private float baseStrength = 10f;
+        [SerializeField] private Vector2 uvScale = new(0.1f, 0.03f);
+        [SerializeField] private float restitutionCoeff = 0.1f;
+        [SerializeField] private float restitutionAnglelerp = 0f;
+        [SerializeField] private LayerMask raycastMask = ~0;
+        [SerializeField] private float blurVelocityStrength = 2f;
+        [SerializeField] private int blurVelocityIterations = 2;
+        [SerializeField] private int blurVelocitySize = 2;
+        [SerializeField] private float blurPositionStrength = 2f;
+        [SerializeField] private int blurPositionIterations = 2;
+        [SerializeField] private int blurPositionSize = 2;
+        [SerializeField] private float maxWaterfallDistance = 20;
+        [SerializeField] private float minPointDistance = 0.5f;
+        [SerializeField] private AnimationCurve terrainOffset = new(new Keyframe(0, 0), new Keyframe(0.1f, 0.1f), new Keyframe(0.9f, 0.1f), new Keyframe(1, 0));
+        [SerializeField] private AnimationCurve alphaByDistance = AnimationCurve.Constant(0, 1, 1);
+        [SerializeField] private float floatSpeed = 3;
+        [SerializeField] private float floatSpeedWaterfallMultiplier = 3;
+        [SerializeField] private float physicalDensity = 1;
+        [SerializeField] private bool clipUnderTerrain = false;
 
-        [field: SerializeField] public Material WaterfallMaterial { get; set; }
-        [field: SerializeField] public float SimulationTime { get; set; } = 10;
-        [field: SerializeField] public float TimeStep { get; set; } = 0.1f;
+        #region Connection
 
-        [field: SerializeField] public float BaseStrength { get; set; } = 10f;
-        [field: SerializeField] public Vector2 UvScale { get; set; } = new(0.1f, 0.03f);
+        [SerializeField] private float offset;
 
-        [field: SerializeField] public float RestitutionCoeff { get; set; } = 0.1f;
-        [field: SerializeField] public float RestitutionAnglelerp { get; set; } = 0f;
-        [field: SerializeField] public LayerMask RaycastMask { get; set; } = ~0;
+        [SerializeField] private float yOffset = 0.05f;
+        [SerializeField] private float angleOffset = 0f;
 
+        #endregion
 
-        [field: SerializeField] public float BlurVelocityStrength { get; set; } = 2f;
-        [field: SerializeField] public int BlurVelocityIterations { get; set; } = 2;
-        [field: SerializeField] public int BlurVelocitySize { get; set; } = 2;
         
-        
-        [field: SerializeField] public float BlurPositionStrength { get; set; } = 2f;
-        [field: SerializeField] public int BlurPositionIterations { get; set; } = 2;
-        [field: SerializeField] public int BlurPositionSize { get; set; } = 2;
-        
-        [field: SerializeField] public float MaxWaterfallDistance { get; set; } = 20;
-        [field: SerializeField] public float MinPointDistance { get; set; } = 0.5f;
+        public Material WaterfallMaterial
+        {
+            get => waterfallMaterial;
+            set => waterfallMaterial = value;
+        }
 
-        [field: SerializeField] public AnimationCurve TerrainOffset { get; set; } = new(new Keyframe(0, 0), new Keyframe(0.1f, 0.1f), new Keyframe(0.9f, 0.1f),new Keyframe(1, 0));
         
-        [field: SerializeField] public AnimationCurve AlphaByDistance { get; set; } = AnimationCurve.Constant(0, 1, 1);
+        public float SimulationTime
+        {
+            get => simulationTime;
+            set => simulationTime = value;
+        }
 
-        [field: SerializeField] public float FloatSpeed { get; set; } = 10;
+        
+        public float TimeStep
+        {
+            get => timeStep;
+            set => timeStep = value;
+        }
 
-        [field: SerializeField] public bool ClipUnderTerrain { get; set; } = false;
+        
+        public float BaseStrength
+        {
+            get => baseStrength;
+            set => baseStrength = value;
+        }
+
+        
+        public Vector2 UvScale
+        {
+            get => uvScale;
+            set => uvScale = value;
+        }
+
+        
+        public float RestitutionCoeff
+        {
+            get => restitutionCoeff;
+            set => restitutionCoeff = value;
+        }
+
+        
+        public float RestitutionAnglelerp
+        {
+            get => restitutionAnglelerp;
+            set => restitutionAnglelerp = value;
+        }
+
+        
+        public LayerMask RaycastMask
+        {
+            get => raycastMask;
+            set => raycastMask = value;
+        }
+
+
+        
+        public float BlurVelocityStrength
+        {
+            get => blurVelocityStrength;
+            set => blurVelocityStrength = value;
+        }
+
+        
+        public int BlurVelocityIterations
+        {
+            get => blurVelocityIterations;
+            set => blurVelocityIterations = value;
+        }
+
+        
+        public int BlurVelocitySize
+        {
+            get => blurVelocitySize;
+            set => blurVelocitySize = value;
+        }
+
+
+        
+        public float BlurPositionStrength
+        {
+            get => blurPositionStrength;
+            set => blurPositionStrength = value;
+        }
+
+        
+        public int BlurPositionIterations
+        {
+            get => blurPositionIterations;
+            set => blurPositionIterations = value;
+        }
+
+        
+        public int BlurPositionSize
+        {
+            get => blurPositionSize;
+            set => blurPositionSize = value;
+        }
+
+        
+        public float MaxWaterfallDistance
+        {
+            get => maxWaterfallDistance;
+            set => maxWaterfallDistance = value;
+        }
+
+        
+        public float MinPointDistance
+        {
+            get => minPointDistance;
+            set => minPointDistance = value;
+        }
+
+        
+        public AnimationCurve TerrainOffset
+        {
+            get => terrainOffset;
+            set => terrainOffset = value;
+        }
+
+        
+        public AnimationCurve AlphaByDistance
+        {
+            get => alphaByDistance;
+            set => alphaByDistance = value;
+        }
+
+        
+        public float FloatSpeed
+        {
+            get => floatSpeed;
+            set => floatSpeed = value;
+        }
+        
+        public float FloatSpeedWaterfallMultiplier
+        {
+            get => floatSpeedWaterfallMultiplier;
+            set => floatSpeedWaterfallMultiplier = value;
+        }
+
+        
+        public bool ClipUnderTerrain
+        {
+            get => clipUnderTerrain;
+            set => clipUnderTerrain = value;
+        }
 
 
         public float TriangleDensity
@@ -56,6 +203,30 @@ namespace NatureManufacture.RAM
         {
             get => gameObject;
             set => gameObject = value;
+        }
+
+        public float Offset
+        {
+            get => offset;
+            set => offset = value;
+        }
+
+        public float YOffset
+        {
+            get => yOffset;
+            set => yOffset = value;
+        }
+
+        public float AngleOffset
+        {
+            get => angleOffset;
+            set => angleOffset = value;
+        }
+
+        public float PhysicalDensity
+        {
+            get => physicalDensity;
+            set => physicalDensity = value;
         }
 
 
@@ -81,7 +252,14 @@ namespace NatureManufacture.RAM
             TerrainOffset = otherProfile.TerrainOffset;
             AlphaByDistance = otherProfile.AlphaByDistance;
             FloatSpeed = otherProfile.FloatSpeed;
+            FloatSpeedWaterfallMultiplier = otherProfile.FloatSpeedWaterfallMultiplier;
+            PhysicalDensity = otherProfile.PhysicalDensity;
             ClipUnderTerrain = otherProfile.ClipUnderTerrain;
+            
+            Offset = otherProfile.Offset;
+            YOffset = otherProfile.YOffset;
+            AngleOffset = otherProfile.AngleOffset;
+            
         }
 
         public bool CheckProfileChange(WaterfallProfile otherProfile)
@@ -124,8 +302,20 @@ namespace NatureManufacture.RAM
           
             if (FloatSpeed != otherProfile.FloatSpeed)
                 return true;
+            if (FloatSpeedWaterfallMultiplier != otherProfile.FloatSpeedWaterfallMultiplier)
+                return true;
+            if (PhysicalDensity != otherProfile.PhysicalDensity)
+                return true;
             if (ClipUnderTerrain != otherProfile.ClipUnderTerrain)
                 return true;
+            
+            if (Offset != otherProfile.Offset)
+                return true;
+            if (YOffset != otherProfile.YOffset)
+                return true;
+            if (AngleOffset != otherProfile.AngleOffset)
+                return true;
+            
 
             return false;
         }

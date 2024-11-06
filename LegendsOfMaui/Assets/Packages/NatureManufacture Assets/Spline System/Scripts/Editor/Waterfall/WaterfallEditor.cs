@@ -143,7 +143,9 @@ namespace NatureManufacture.RAM.Editor
 
             GUILayout.Label("Flow Map Physic: ", EditorStyles.boldLabel);
             _waterfall.BaseProfile.FloatSpeed = EditorGUILayout.FloatField("Float speed", _waterfall.BaseProfile.FloatSpeed);
-
+            _waterfall.BaseProfile.FloatSpeedWaterfallMultiplier = EditorGUILayout.FloatField("Waterfall float speed  multiplier", _waterfall.BaseProfile.FloatSpeedWaterfallMultiplier);
+            _waterfall.BaseProfile.PhysicalDensity = EditorGUILayout.FloatField("Physical density", _waterfall.BaseProfile.PhysicalDensity);
+            
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(_waterfall, "Waterfall changed");
@@ -390,7 +392,7 @@ namespace NatureManufacture.RAM.Editor
             NmSplineManager.SceneGUI(_waterfall);
 
             if (_waterfall.Connection.Spline != null)
-                WaterfallConnectionUI.ShowConnectionOnSpline(_waterfall.Connection);
+                WaterfallConnectionUI.ShowConnectionOnSpline(_waterfall, _waterfall.Connection);
 
             if (_waterfall.BaseDebug)
                 WaterfallDebugger.ShowBaseDebug(_waterfall.Simulator.AllSimulationPoints, _waterfall.transform.position);

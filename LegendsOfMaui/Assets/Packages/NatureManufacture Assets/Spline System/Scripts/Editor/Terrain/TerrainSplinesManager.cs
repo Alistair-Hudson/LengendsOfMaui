@@ -10,11 +10,12 @@ namespace NatureManufacture.RAM.Editor
 
     public class TerrainSplinesManager : EditorWindow
     {
-        private readonly TerrainManager terrainManager = new TerrainManager();
-        private TerrainSplinesManagerDataHolder dataHolder;
+        private readonly TerrainManager _terrainManager = new TerrainManager();
+        private TerrainSplinesManagerDataHolder _dataHolder;
 
-        private SerializedObject serializedDataHolder;
-        private ReorderableList reorderableList;
+        private SerializedObject _serializedDataHolder;
+        private ReorderableList _reorderableList;
+        private SerializedProperty _terrainPainterData;
 
         [MenuItem("Tools/Nature Manufacture/Terrain Splines Manager")]
         public static void ShowWindow()
@@ -23,6 +24,11 @@ namespace NatureManufacture.RAM.Editor
         }
 
         private void OnEnable()
+        {
+            GetDataObject();
+        }
+
+        private void GetDataObject()
         {
             GameObject dataHolderObject = GameObject.Find("TerrainSplineDataHolder");
 
@@ -35,22 +41,23 @@ namespace NatureManufacture.RAM.Editor
             dataHolderObject.hideFlags = HideFlags.HideInHierarchy | HideFlags.DontSaveInBuild;
             //dataHolderObject.hideFlags = HideFlags.None;
 
-            dataHolder = dataHolderObject.GetComponent<TerrainSplinesManagerDataHolder>();
+            _dataHolder = dataHolderObject.GetComponent<TerrainSplinesManagerDataHolder>();
 
-            if (dataHolder == null)
+            if (_dataHolder == null)
             {
-                dataHolder = dataHolderObject.AddComponent<TerrainSplinesManagerDataHolder>();
+                _dataHolder = dataHolderObject.AddComponent<TerrainSplinesManagerDataHolder>();
             }
 
-            serializedDataHolder = new SerializedObject(dataHolder);
+            _serializedDataHolder = new SerializedObject(_dataHolder);
+            _terrainPainterData = _serializedDataHolder.FindProperty("terrainPainterData");
 
-            reorderableList = new ReorderableList(serializedDataHolder, serializedDataHolder.FindProperty("terrainPainterObjects"), true, true, true, true)
+            _reorderableList = new ReorderableList(_serializedDataHolder, _serializedDataHolder.FindProperty("terrainPainterObjects"), true, true, true, true)
             {
                 drawHeaderCallback = (Rect rect) => { EditorGUI.LabelField(rect, "Terrain Splines"); },
 
                 drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) =>
                 {
-                    SerializedProperty element = reorderableList.serializedProperty.GetArrayElementAtIndex(index);
+                    SerializedProperty element = _reorderableList.serializedProperty.GetArrayElementAtIndex(index);
                     rect.y += 2;
                     EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element, GUIContent.none);
                 }
@@ -59,36 +66,45 @@ namespace NatureManufacture.RAM.Editor
 
         private void OnGUI()
         {
-            serializedDataHolder.Update();
+            if (_serializedDataHolder.targetObject == null)
+            {
+                GetDataObject();
+                return;
+            }
+
+            _serializedDataHolder.Update();
+
             EditorGUILayout.Space();
 
-            reorderableList.DoLayoutList();
+
+            _reorderableList.DoLayoutList();
+
 
             //get only terrain splines
             if (GUILayout.Button("Get Only Terrain Splines"))
             {
                 TerrainSpline[] terrainSplines = FindObjectsByType<TerrainSpline>(FindObjectsSortMode.None);
-                dataHolder.TerrainPainterObjects.Clear();
+                _dataHolder.TerrainPainterObjects.Clear();
                 AddRangeWithoutDuplicates(terrainSplines);
-                serializedDataHolder.Update();
+                _serializedDataHolder.Update();
             }
 
             //get only lake polygons
             if (GUILayout.Button("Get Only Lake Polygons"))
             {
                 LakePolygon[] lakePolygons = FindObjectsByType<LakePolygon>(FindObjectsSortMode.None);
-                dataHolder.TerrainPainterObjects.Clear();
+                _dataHolder.TerrainPainterObjects.Clear();
                 AddRangeWithoutDuplicates(lakePolygons);
-                serializedDataHolder.Update();
+                _serializedDataHolder.Update();
             }
 
             //get only ram splines
             if (GUILayout.Button("Get Only Ram Splines"))
             {
                 RamSpline[] ramSplines = FindObjectsByType<RamSpline>(FindObjectsSortMode.None);
-                dataHolder.TerrainPainterObjects.Clear();
+                _dataHolder.TerrainPainterObjects.Clear();
                 AddRangeWithoutDuplicates(ramSplines);
-                serializedDataHolder.Update();
+                _serializedDataHolder.Update();
             }
 
 
@@ -98,63 +114,38 @@ namespace NatureManufacture.RAM.Editor
                 LakePolygon[] lakePolygons = FindObjectsByType<LakePolygon>(FindObjectsSortMode.None);
                 RamSpline[] ramSplines = FindObjectsByType<RamSpline>(FindObjectsSortMode.None);
 
-                dataHolder.TerrainPainterObjects.Clear();
+                _dataHolder.TerrainPainterObjects.Clear();
                 AddRangeWithoutDuplicates(terrainSplines);
                 AddRangeWithoutDuplicates(lakePolygons);
                 AddRangeWithoutDuplicates(ramSplines);
-                serializedDataHolder.Update();
+                _serializedDataHolder.Update();
             }
 
             if (GUILayout.Button("Clear All Spline Painters"))
             {
-                dataHolder.TerrainPainterObjects.Clear();
-                serializedDataHolder.Update();
+                _dataHolder.TerrainPainterObjects.Clear();
+                _serializedDataHolder.Update();
             }
 
 
-            serializedDataHolder.ApplyModifiedProperties();
+        
 
             EditorGUILayout.Space();
 
 
             if (GUILayout.Button("Paint All Terrain Splines"))
             {
-                List<ITerrainPainterGetData> terrainPainterDatas = dataHolder.GetTerrainPainterObjects();
-
-                for (int i = 0; i < terrainPainterDatas.Count; i++)
+                if (EditorUtility.DisplayDialog("Confirmation", "Are you sure you want to paint all terrains?", "Yes", "No"))
                 {
-                    ITerrainPainterGetData terrainSpline = terrainPainterDatas[i];
+                    List<ITerrainPainterGetData> terrainPainterDatas = _dataHolder.GetTerrainPainterObjects();
 
-                    if (PrepareTerrainSpline(terrainSpline)) continue;
-
-                    terrainManager.PaintTerrain(terrainSpline.RamTerrainManager.BasePainterData);
-
-                    // Calculate progress as a float between 0 and 1 and display it
-                    float progress = (float)i / terrainPainterDatas.Count;
-                    if (EditorUtility.DisplayCancelableProgressBar("Painting progress", $"Painting {i + 1}/{terrainPainterDatas.Count}", progress))
-                    {
-                        // If the user clicked the Cancel button, break out of the loop
-                        break;
-                    }
-                }
-
-                // Clear the progress bar when the operation is complete
-                EditorUtility.ClearProgressBar();
-            }
-
-            if (GUILayout.Button("Carve All Terrains"))
-            {
-                // Display a confirmation dialog
-                if (EditorUtility.DisplayDialog("Confirmation", "Are you sure you want to carve all terrains?", "Yes", "No"))
-                {
-                    List<ITerrainPainterGetData> terrainPainterDatas = dataHolder.GetTerrainPainterObjects();
                     for (int i = 0; i < terrainPainterDatas.Count; i++)
                     {
                         ITerrainPainterGetData terrainSpline = terrainPainterDatas[i];
 
                         if (PrepareTerrainSpline(terrainSpline)) continue;
 
-                        terrainManager.CarveTerrain(terrainSpline.RamTerrainManager.BasePainterData);
+                        _terrainManager.PaintTerrain(terrainSpline.RamTerrainManager.BasePainterData);
 
                         // Calculate progress as a float between 0 and 1 and display it
                         float progress = (float)i / terrainPainterDatas.Count;
@@ -164,17 +155,99 @@ namespace NatureManufacture.RAM.Editor
                             break;
                         }
                     }
+
+                    // Clear the progress bar when the operation is complete
+                    EditorUtility.ClearProgressBar();
                 }
             }
+
+            if (GUILayout.Button("Carve All Terrains"))
+            {
+                // Display a confirmation dialog
+                if (EditorUtility.DisplayDialog("Confirmation", "Are you sure you want to carve all terrains?", "Yes", "No"))
+                {
+                    List<ITerrainPainterGetData> terrainPainterDatas = _dataHolder.GetTerrainPainterObjects();
+                    for (int i = 0; i < terrainPainterDatas.Count; i++)
+                    {
+                        ITerrainPainterGetData terrainSpline = terrainPainterDatas[i];
+
+                        if (PrepareTerrainSpline(terrainSpline)) continue;
+
+                        _terrainManager.CarveTerrain(terrainSpline.RamTerrainManager.BasePainterData);
+
+                        // Calculate progress as a float between 0 and 1 and display it
+                        float progress = (float)i / terrainPainterDatas.Count;
+                        if (EditorUtility.DisplayCancelableProgressBar("Carving progress", $"Carving {i + 1}/{terrainPainterDatas.Count}", progress))
+                        {
+                            // If the user clicked the Cancel button, break out of the loop
+                            break;
+                        }
+                    }
+                }
+            }
+
+            EditorGUILayout.Space();
+
+            EditorGUILayout.PropertyField(_terrainPainterData, true);
+
+            if (GUILayout.Button("Paint All Terrain Splines"))
+            {
+                // Display a confirmation dialog
+                if (EditorUtility.DisplayDialog("Confirmation", "Are you sure you want to paint all terrains?", "Yes", "No"))
+                {
+                    if (PrepareForTerrainData())
+                        _terrainManager.PaintTerrain(_dataHolder.PainterData);
+                }
+            }
+
+            if (GUILayout.Button("Carve All Terrains With Painter Data"))
+            {
+                // Display a confirmation dialog
+                if (EditorUtility.DisplayDialog("Confirmation", "Are you sure you want to carve all terrains?", "Yes", "No"))
+                {
+                    if (PrepareForTerrainData())
+                        _terrainManager.CarveTerrain(_dataHolder.PainterData);
+                }
+            }
+            
+            _serializedDataHolder.ApplyModifiedProperties();
         }
+
+        private bool PrepareForTerrainData()
+        {
+            List<ITerrainPainterGetData> terrainPainterDatas = _dataHolder.GetTerrainPainterObjects();
+            _terrainManager.MeshFilters.Clear();
+            HashSet<Terrain> terrainsUnder = new HashSet<Terrain>();
+            for (int i = 0; i < terrainPainterDatas.Count; i++)
+            {
+                ITerrainPainterGetData terrainSpline = terrainPainterDatas[i];
+                if (terrainSpline == null) continue;
+
+                terrainSpline.GenerateForTerrain();
+
+                if (terrainSpline.MainMeshFilter == null) continue;
+                _terrainManager.MeshFilters.Add(terrainSpline.MainMeshFilter);
+
+                if (terrainSpline.RamTerrainManager.BasePainterData != null)
+                    terrainsUnder.UnionWith(terrainSpline.RamTerrainManager.BasePainterData.TerrainsUnder);
+            }
+
+            if (_terrainManager.MeshFilters.Count <= 0 || terrainsUnder.Count <= 0) return false;
+
+            _dataHolder.PainterData.TerrainsUnder.Clear();
+            _dataHolder.PainterData.TerrainsUnder.AddRange(terrainsUnder);
+
+            return true;
+        }
+
 
         private void AddRangeWithoutDuplicates(Object[] terrainSplines)
         {
             foreach (Object terrainSpline in terrainSplines)
             {
-                if (terrainSpline != null && !dataHolder.TerrainPainterObjects.Contains(terrainSpline))
+                if (terrainSpline != null && !_dataHolder.TerrainPainterObjects.Contains(terrainSpline))
                 {
-                    dataHolder.TerrainPainterObjects.Add(terrainSpline);
+                    _dataHolder.TerrainPainterObjects.Add(terrainSpline);
                 }
             }
         }
@@ -187,8 +260,8 @@ namespace NatureManufacture.RAM.Editor
 
             if (CheckTerrainSpline(terrainSpline)) return true;
 
-            terrainManager.MeshFilters.Clear();
-            terrainManager.MeshFilters.Add(terrainSpline.MainMeshFilter);
+            _terrainManager.MeshFilters.Clear();
+            _terrainManager.MeshFilters.Add(terrainSpline.MainMeshFilter);
             return false;
         }
 

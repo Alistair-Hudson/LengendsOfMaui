@@ -37,6 +37,7 @@ namespace NatureManufacture.RAM
             foreach (MeshFilter item in meshFilter)
             {
                 var mesh = Object.Instantiate(item.sharedMesh);
+
                 Vector3[] vertices = mesh.vertices;
                 int verticeCount = vertices.Length;
                 Transform meshFilterTransform = item.transform;
@@ -70,9 +71,11 @@ namespace NatureManufacture.RAM
 
                 TB.FrancNormalSolver.RecalculateNormals(mesh, 60);
                 TB.FrancNormalSolver.RecalculateTangents(mesh);
-
+                mesh = TB.FrancNormalSolver.WeldVertices(mesh);
+                //mesh.Optimize();
 
                 mesh.RecalculateBounds();
+                // mesh.mesh
                 //Unwrapping.GenerateSecondaryUVSet(mesh);
 
 

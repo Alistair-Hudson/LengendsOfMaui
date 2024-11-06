@@ -49,9 +49,11 @@ namespace NatureManufacture.RAM
             MeshSimulation meshSimulation;
             for (int i = 0; i < AllSimulationPoints.Count; i++)
             {
+                Quaternion orientation = _waterfall.NmSpline.Points[i].Orientation;
                 cleanedSimulation.Add(new List<MeshSimulation>());
                 meshSimulation = AllSimulationPoints[i][0];
                 meshSimulation.Distance = 0;
+                meshSimulation.Velocity = orientation * Vector3.right * _waterfall.BaseProfile.BaseStrength;
                 cleanedSimulation[i].Add(meshSimulation);
             }
 
@@ -113,7 +115,7 @@ namespace NatureManufacture.RAM
 
                 for (int i = 0; i < simulationPoints.Count; i++)
                 {
-                    for (int j = 0; j < simulationPoints[i].Count; j++)
+                    for (int j = 1; j < simulationPoints[i].Count; j++)
                     {
                         MeshSimulation simulationPoint = simulationPoints[i][j];
                         simulationPoint.Position = new Vector3(simulationPoint.Position.x, blurredYValues[i][j].position, simulationPoint.Position.z);
@@ -387,6 +389,7 @@ namespace NatureManufacture.RAM
                     Binormal = -_waterfall.NmSpline.Points[i].Tangent,
                     DistanceU = 0,
                     DistanceV = _waterfall.NmSpline.Points[i].Distance,
+                    Velocity = orientation * Vector3.right * _waterfall.BaseProfile.BaseStrength
                 });
 
                 CurrentVelocities.Add((orientation * Vector3.right * _waterfall.BaseProfile.BaseStrength));

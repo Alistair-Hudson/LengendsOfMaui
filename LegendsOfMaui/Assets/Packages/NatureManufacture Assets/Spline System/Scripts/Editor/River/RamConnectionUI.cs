@@ -12,7 +12,7 @@ namespace NatureManufacture.RAM.Editor
 
             ramSpline.BeginningSplineConnection.ConnectionType =
                 (RamSplineConnection.ConnectionTypeEnum)EditorGUILayout.EnumPopup("Beginning connection type", ramSpline.BeginningSplineConnection.ConnectionType);
-            
+
 
             if (ramSpline.BeginningSplineConnection.ConnectionType == RamSplineConnection.ConnectionTypeEnum.Split)
             {
@@ -27,6 +27,8 @@ namespace NatureManufacture.RAM.Editor
                 LakeConnectionUI("Beginning spline", ramSpline, ramSpline.BeginningSplineConnection, 0);
                 ramSpline.beginningSpline = null;
             }
+
+            RamSplineBeginningCheck(ramSpline);
 
             EditorGUILayout.Space();
 
@@ -45,27 +47,21 @@ namespace NatureManufacture.RAM.Editor
 
                 ramSpline.endingSpline = null;
             }
-          
 
-            RamSplineConnectionCheck(ramSpline);
+            RamSplineEndingCheck(ramSpline);
         }
 
-        private static void RamSplineConnectionCheck(RamSpline ramSpline)
+        private static void RamSplineBeginningCheck(RamSpline ramSpline)
         {
             if (ramSpline.beginningSpline == ramSpline)
                 ramSpline.beginningSpline = null;
-
-
-            if (ramSpline.endingSpline == ramSpline)
-                ramSpline.endingSpline = null;
-
 
             if (ramSpline.beginningSpline != null)
             {
                 if (ramSpline.NmSpline.MainControlPoints.Count > 0 && ramSpline.beginningSpline.NmSpline.Points.Count > 0)
                 {
-                    ramSpline.beginningMinWidth = ramSpline.beginningMinWidth * (ramSpline.beginningSpline.BaseProfile.vertsInShape - 1);
-                    ramSpline.beginningMaxWidth = ramSpline.beginningMaxWidth * (ramSpline.beginningSpline.BaseProfile.vertsInShape - 1);
+                    ramSpline.beginningMinWidth *= ramSpline.beginningSpline.BaseProfile.vertsInShape - 1;
+                    ramSpline.beginningMaxWidth *= ramSpline.beginningSpline.BaseProfile.vertsInShape - 1;
                     EditorGUILayout.MinMaxSlider("Part parent", ref ramSpline.beginningMinWidth, ref ramSpline.beginningMaxWidth,
                         0, ramSpline.beginningSpline.BaseProfile.vertsInShape - 1);
                     ramSpline.beginningMinWidth = (int)ramSpline.beginningMinWidth;
@@ -83,10 +79,10 @@ namespace NatureManufacture.RAM.Editor
                     }
 
                     ramSpline.BaseProfile.vertsInShape = (int)(ramSpline.beginningMaxWidth - ramSpline.beginningMinWidth) + 1;
-                    ramSpline.beginningMinWidth = ramSpline.beginningMinWidth / (ramSpline.beginningSpline.BaseProfile.vertsInShape - 1);
-                    ramSpline.beginningMaxWidth = ramSpline.beginningMaxWidth / (ramSpline.beginningSpline.BaseProfile.vertsInShape - 1);
+                    ramSpline.beginningMinWidth /= ramSpline.beginningSpline.BaseProfile.vertsInShape - 1;
+                    ramSpline.beginningMaxWidth /= ramSpline.beginningSpline.BaseProfile.vertsInShape - 1;
 
-                    ramSpline.GenerateBeginningPointsFromParent();
+                    RamSplineConnection.GenerateBeginningPointsFromParent(ramSpline);
                 }
             }
             else
@@ -94,14 +90,20 @@ namespace NatureManufacture.RAM.Editor
                 ramSpline.beginningMaxWidth = 1;
                 ramSpline.beginningMinWidth = 0;
             }
+        }
+
+        private static void RamSplineEndingCheck(RamSpline ramSpline)
+        {
+            if (ramSpline.endingSpline == ramSpline)
+                ramSpline.endingSpline = null;
 
 
             if (ramSpline.endingSpline != null)
             {
                 if (ramSpline.NmSpline.MainControlPoints.Count > 1 && ramSpline.endingSpline.NmSpline.Points.Count > 0)
                 {
-                    ramSpline.endingMinWidth = ramSpline.endingMinWidth * (ramSpline.endingSpline.BaseProfile.vertsInShape - 1);
-                    ramSpline.endingMaxWidth = ramSpline.endingMaxWidth * (ramSpline.endingSpline.BaseProfile.vertsInShape - 1);
+                    ramSpline.endingMinWidth *= ramSpline.endingSpline.BaseProfile.vertsInShape - 1;
+                    ramSpline.endingMaxWidth *= ramSpline.endingSpline.BaseProfile.vertsInShape - 1;
 
                     EditorGUILayout.MinMaxSlider("Part parent", ref ramSpline.endingMinWidth, ref ramSpline.endingMaxWidth, 0,
                         ramSpline.endingSpline.BaseProfile.vertsInShape - 1);
@@ -119,10 +121,10 @@ namespace NatureManufacture.RAM.Editor
                     }
 
                     ramSpline.BaseProfile.vertsInShape = (int)(ramSpline.endingMaxWidth - ramSpline.endingMinWidth) + 1;
-                    ramSpline.endingMinWidth = ramSpline.endingMinWidth / (ramSpline.endingSpline.BaseProfile.vertsInShape - 1);
-                    ramSpline.endingMaxWidth = ramSpline.endingMaxWidth / (ramSpline.endingSpline.BaseProfile.vertsInShape - 1);
+                    ramSpline.endingMinWidth /= ramSpline.endingSpline.BaseProfile.vertsInShape - 1;
+                    ramSpline.endingMaxWidth /= ramSpline.endingSpline.BaseProfile.vertsInShape - 1;
 
-                    ramSpline.GenerateEndingPointsFromParent();
+                    RamSplineConnection.GenerateEndingPointsFromParent(ramSpline);
                 }
             }
             else

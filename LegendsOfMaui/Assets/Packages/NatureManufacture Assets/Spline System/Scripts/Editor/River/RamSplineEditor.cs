@@ -338,6 +338,7 @@ namespace NatureManufacture.RAM.Editor
 
                 RamConnectionUI.ParentingSplineUI(_ramSpline);
                 EditorGUILayout.Space();
+                
                 EditorGUILayout.Space();
                 GUILayout.Label("Mesh splitting:", EditorStyles.boldLabel);
                 _ramSpline.generateMeshParts = EditorGUILayout.Toggle("Split mesh into submeshes", _ramSpline.generateMeshParts);
@@ -781,6 +782,9 @@ namespace NatureManufacture.RAM.Editor
             EditorGUILayout.Space();
             GUILayout.Label("Flow Map Physic: ", EditorStyles.boldLabel);
             _ramSpline.BaseProfile.floatSpeed = EditorGUILayout.FloatField("River float speed", _ramSpline.BaseProfile.floatSpeed);
+            _ramSpline.BaseProfile.floatSpeedWaterfallMultiplier = EditorGUILayout.FloatField("Waterfall float speed multiplier", _ramSpline.BaseProfile.floatSpeedWaterfallMultiplier);
+           _ramSpline.BaseProfile.physicalDensity = EditorGUILayout.FloatField("Physical Density", _ramSpline.BaseProfile.physicalDensity);
+            
             _ramSpline.BaseProfile.meshFlowSpeed = EditorGUILayout.FloatField("River flow speed multiplier", _ramSpline.BaseProfile.meshFlowSpeed);
         }
 

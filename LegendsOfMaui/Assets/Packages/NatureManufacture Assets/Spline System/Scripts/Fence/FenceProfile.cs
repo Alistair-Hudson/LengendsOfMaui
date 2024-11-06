@@ -30,6 +30,7 @@ namespace NatureManufacture.RAM
 
 
         [SerializeField] private bool scaleMesh = true;
+        [SerializeField] private bool scaleMeshUnified = true;
         [SerializeField] private bool holdUp;
         [SerializeField] private bool randomSeed = true;
         [SerializeField] private int seed;
@@ -126,6 +127,12 @@ namespace NatureManufacture.RAM
             set => lastSpan = value;
         }
 
+        public bool ScaleMeshUnified
+        {
+            get => scaleMeshUnified;
+            set => scaleMeshUnified = value;
+        }
+
         public void SetProfileData(FenceProfile otherProfile)
         {
             triangleDensity = otherProfile.triangleDensity;
@@ -135,6 +142,7 @@ namespace NatureManufacture.RAM
             postRandomType = otherProfile.postRandomType;
             spanRandomType = otherProfile.spanRandomType;
             scaleMesh = otherProfile.scaleMesh;
+            scaleMeshUnified = otherProfile.scaleMeshUnified;
             holdUp = otherProfile.holdUp;
             seed = otherProfile.seed;
             randomSeed = otherProfile.randomSeed;
@@ -191,6 +199,11 @@ namespace NatureManufacture.RAM
             }
 
             if (scaleMesh != otherProfile.scaleMesh)
+            {
+                return true;
+            }
+            
+            if (scaleMeshUnified != otherProfile.scaleMeshUnified)
             {
                 return true;
             }

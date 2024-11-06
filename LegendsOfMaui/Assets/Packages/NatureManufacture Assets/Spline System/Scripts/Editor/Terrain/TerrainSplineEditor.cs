@@ -15,7 +15,6 @@ namespace NatureManufacture.RAM.Editor
         private TerrainSpline _terrainSpline;
 
 
-     
         private bool _dragged;
 
 
@@ -157,6 +156,8 @@ namespace NatureManufacture.RAM.Editor
 
             GUILayout.Label("Spline settings:", EditorStyles.boldLabel);
             _terrainSpline.TriangleDensity = EditorGUILayout.IntSlider("Spline density", (int)(_terrainSpline.TriangleDensity), 1, 100);
+            if (_terrainSpline.TriangleDensity < 1)
+                _terrainSpline.TriangleDensity = 1;
 
             _terrainSpline.LockHeight = EditorGUILayout.Toggle("Lock height", _terrainSpline.LockHeight);
 

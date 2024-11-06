@@ -128,11 +128,9 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
         [SerializeField] private RamVertexColors ramVertexColors;
         [SerializeField] private VertexPainterData vertexPainterData = new(true);
 
-        
 
         [SerializeField] private RamSplineConnection beginningSplineConnection = new() { BlendOffset = 2, BlendDistance = 2, BlendStrength = 0.5f };
         [SerializeField] private RamSplineConnection endingSplineConnection = new() { BlendOffset = 2, BlendDistance = 2, BlendStrength = 0.5f };
-
 
 
         private bool _duplicate;
@@ -208,8 +206,7 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
             set => onGeneratedMeshSpline = value;
         }
 
-      
-        
+
         public RamSplineConnection EndingSplineConnection
         {
             get => endingSplineConnection;
@@ -316,66 +313,6 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
             GenerateSpline();
         }
 
-        public void GenerateBeginningPointsFromParent()
-        {
-            BaseProfile.vertsInShape = (int)Mathf.Round((beginningSpline.BaseProfile.vertsInShape - 1) * (beginningMaxWidth - beginningMinWidth) + 1);
-            BaseProfile.uvFixedWidth = beginningSpline.BaseProfile.uvFixedWidth * (beginningMaxWidth - beginningMinWidth);
-
-            if (BaseProfile.vertsInShape < 1)
-                BaseProfile.vertsInShape = 1;
-
-            if (!beginningSpline.NmSpline.CanGenerateSpline())
-                return;
-
-            if (beginningSpline.NmSpline.PointsDown.Count == 0)
-            {
-                beginningSpline.GenerateSpline();
-            }
-
-            beginningConnectionID = beginningSpline.NmSpline.Points.Count - 1;
-            Vector4 pos = beginningSpline.NmSpline.MainControlPoints[^1].position;
-            float widthNew = pos.w;
-            widthNew *= beginningMaxWidth - beginningMinWidth;
-            pos = Vector3.Lerp(beginningSpline.NmSpline.PointsDown[beginningConnectionID].Position,
-                    beginningSpline.NmSpline.PointsUp[beginningConnectionID].Position,
-                    beginningMinWidth + (beginningMaxWidth - beginningMinWidth) * 0.5f)
-                + beginningSpline.transform.position - transform.position;
-            pos.w = widthNew;
-            NmSpline.MainControlPoints[0].position = pos;
-
-            if (!uvScaleOverride)
-                BaseProfile.uvScale = beginningSpline.BaseProfile.uvScale;
-        }
-
-        public void GenerateEndingPointsFromParent()
-        {
-            if (beginningSpline == null)
-            {
-                BaseProfile.vertsInShape = (int)Mathf.Round((endingSpline.BaseProfile.vertsInShape - 1) * (endingMaxWidth - endingMinWidth) + 1);
-                BaseProfile.uvFixedWidth = endingSpline.BaseProfile.uvFixedWidth * (endingMaxWidth - endingMinWidth);
-
-                if (BaseProfile.vertsInShape < 1)
-                    BaseProfile.vertsInShape = 1;
-            }
-
-            if (endingSpline.NmSpline.PointsDown.Count == 0)
-            {
-                endingSpline.GenerateSpline();
-            }
-
-            endingConnectionID = 0;
-            Vector4 pos = endingSpline.NmSpline.MainControlPoints[0].position;
-            float widthNew = pos.w;
-            widthNew *= endingMaxWidth - endingMinWidth;
-            pos = Vector3.Lerp(endingSpline.NmSpline.PointsDown[endingConnectionID].Position, endingSpline.NmSpline.PointsUp[endingConnectionID].Position,
-                      endingMinWidth + (endingMaxWidth - endingMinWidth) * 0.5f) + endingSpline.transform.position -
-                  transform.position;
-            pos.w = widthNew;
-            NmSpline.MainControlPoints[^1].position = pos;
-
-            if (!uvScaleOverride && beginningSpline == null)
-                BaseProfile.uvScale = endingSpline.BaseProfile.uvScale;
-        }
 
         public void OnValidate()
         {
@@ -436,9 +373,9 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
                 return;
             }
 
-            if (beginningSpline) GenerateBeginningPointsFromParent();
+            if (beginningSpline) RamSplineConnection.GenerateBeginningPointsFromParent(this);
 
-            if (endingSpline) GenerateEndingPointsFromParent();
+            if (endingSpline) RamSplineConnection.GenerateEndingPointsFromParent(this);
 
             if (BeginningSplineConnection.Spline != null)
                 RamSplineConnection.SetBlendPosition(this, BeginningSplineConnection, 0);
@@ -555,7 +492,16 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
             RamVegetationStudioIntegration.RegenerateVegetationMask();
 #endif
 
+
             OnGenerationEnded?.Invoke();
+        }
+
+        private void CheckMeshColliderMesh(Mesh mesh)
+        {
+            if (TryGetComponent(out MeshCollider meshCollider))
+            {
+                meshCollider.sharedMesh = mesh;
+            }
         }
 
         /// <summary>
@@ -734,13 +680,6 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
                     {
                         GenerateEndingVertices(vertices, id, j, normals);
                     }
-                    /*  else if (i >= NmSpline.PointsDown.Count - 2 && EndingLakePolygon != null && EndingLakePolygon.NmSpline.Points.Count > 0)
-                      {
-                          if (i == NmSpline.PointsDown.Count - 1)
-                              GenerateEndingLakeVertices(vertices, id, j, normals, verticeWidthCount, 1);
-                          else
-                              GenerateEndingLakeVertices(vertices, id, j, normals, verticeWidthCount);
-                      }*/
                     else
                     {
                         GenerateSplineVertices(vertices, id, i, pos, normals);
@@ -769,7 +708,8 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
 
             GenerateTriangles(segments, triangleIndices);
 
-            GenerateVerticeDirection(vertices);
+            GenerateVerticeDirection(segments, vertices);
+            //GenerateVerticeDirection(vertices);
 
 
             mesh.Clear();
@@ -801,6 +741,8 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
 
 
             OnGeneratedMeshSpline?.Invoke(mesh);
+
+            CheckMeshColliderMesh(mesh);
         }
 
         private void ConnectionBlendColors(Color[] colors, int id, int row, int column, int columnCount, int beginningBlendDistance, int endingBlendDistance)
@@ -822,7 +764,6 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
                 widthBlend = BeginningSplineConnection.SideBlendCurve.Evaluate(column / (float)(columnCount - 1));
                 colors[id].a = widthBlend * lengthBlend;
             }
-            
         }
 
         private void FixNormalAfterVertex(Mesh mesh, Vector3[] vertices)
@@ -849,10 +790,7 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
                     {
                         GenerateEndingVertices(vertices, id, j, normals, true);
                     }
-                    /*     else if (i == NmSpline.PointsDown.Count - 1 && EndingLakePolygon != null && EndingLakePolygon.NmSpline.Points.Count > 0)
-                         {
-                             GenerateEndingLakeVertices(vertices, id, j, normals, verticeWidthCount, 0, true);
-                         }*/
+                 
 
 
                     SetExtremeNormals(normals, id, i);
@@ -868,30 +806,82 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
         }
 
 
-        private void GenerateVerticeDirection(Vector3[] vertices)
+        private void GenerateVerticeDirection(int segments, Vector3[] vertices)
         {
+            List<Vector3> newVerticeDirection = new();
+
+            Vector3 direction;
+            int offset = 0;
+            for (int i = 0; i < segments; i++)
+            {
+                int vertsCount = BaseProfile.vertsInShape * NmSpline.Points[i].Density;
+                int vertsCountNext = BaseProfile.vertsInShape * NmSpline.Points[i + 1].Density;
+
+
+                if (vertsCount < vertsCountNext)
+                {
+                    int difference = vertsCountNext / vertsCount;
+
+
+                    for (int l = 0; l < vertsCount; l += 1)
+                    {
+                        int a = offset + l;
+                        int b = offset + vertsCount + (l) * difference;
+
+                        direction = (vertices[b] - vertices[a]).normalized;
+                        newVerticeDirection.Add(direction);
+                        // Debug.DrawRay(transform.TransformPoint(vertices[a])+Vector3.up*0.1f, direction*0.1f, Color.blue, 1);
+
+                        //Debug.DrawLine(transform.TransformPoint( vertices[a])+Vector3.up*0.1f, transform.TransformPoint( vertices[b]), Color.magenta, 1);
+                    }
+                }
+                else if (vertsCount > vertsCountNext)
+                {
+                    int difference = vertsCount / vertsCountNext;
+
+                    for (int l = 0; l < vertsCount; l += 1)
+                    {
+                        int a = offset + l;
+                        int b = offset + vertsCount + l / difference;
+
+
+                        direction = (vertices[b] - vertices[a]).normalized;
+                        newVerticeDirection.Add(direction);
+                        // Debug.DrawRay(transform.TransformPoint(vertices[a])+Vector3.up*0.1f, direction*0.1f, Color.yellow, 1);
+
+                        // Debug.DrawLine(transform.TransformPoint( vertices[a])+Vector3.up*0.1f, transform.TransformPoint( vertices[b]), Color.yellow, 1);
+                    }
+                }
+                else
+                {
+                    for (int l = 0; l < vertsCount; l += 1)
+                    {
+                        int a = offset + l;
+                        int b = offset + l + vertsCount;
+
+                        // Debug.DrawLine(transform.TransformPoint( vertices[a])+Vector3.up*0.1f, transform.TransformPoint( vertices[b]), Color.red, 1);
+                        direction = (vertices[b] - vertices[a]).normalized;
+                        newVerticeDirection.Add(direction);
+                        // Debug.DrawRay(transform.TransformPoint(vertices[a])+Vector3.up*0.1f, direction*0.1f, Color.red, 1);
+                    }
+                }
+
+                offset += vertsCount;
+            }
+
+
+            int verticesLeft = vertices.Length - newVerticeDirection.Count;
+            Vector3 last = newVerticeDirection[^1];
+            for (int i = 0; i < verticesLeft; i++)
+            {
+                newVerticeDirection.Add(last);
+            }
+
             verticeDirection.Clear();
-            for (int i = 0; i < vertices.Length - BaseProfile.vertsInShape; i++)
-            {
-                Vector3 dir = (vertices[i + BaseProfile.vertsInShape] - vertices[i]).normalized;
-
-                if (BaseProfile.uvRotation)
-                    dir = new Vector3(dir.z, 0, -dir.x);
-
-
-                verticeDirection.Add(dir);
-            }
-
-
-            for (int i = vertices.Length - BaseProfile.vertsInShape; i < vertices.Length; i++)
-            {
-                Vector3 dir = (vertices[i] - vertices[i - BaseProfile.vertsInShape]).normalized;
-
-                if (BaseProfile.uvRotation)
-                    dir = new Vector3(dir.z, 0, -dir.x);
-                verticeDirection.Add(dir);
-            }
+            verticeDirection.AddRange(newVerticeDirection);
         }
+
+     
 
         private void GenerateTriangles(int segments, List<int> triangleIndices)
         {
@@ -1248,8 +1238,12 @@ using AwesomeTechnologies.VegetationSystem.Biomes;
 
         private void GenerateEndingVertices(Vector3[] vertices, int id, int j, Vector3[] normals, bool normalsOnly = false)
         {
+        
             int pos2 = (int)(endingSpline.BaseProfile.vertsInShape * endingMinWidth);
+            
+         
 
+           
             if (!normalsOnly)
             {
                 vertices[id] =

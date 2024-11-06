@@ -70,7 +70,9 @@ namespace NatureManufacture.RAM
         public float noiseSizeXFlowMap = 2f;
         public float noiseSizeZFlowMap = 2f;
 
-        public float floatSpeed = 10;
+        public float floatSpeed = 3;
+        public float floatSpeedWaterfallMultiplier = 3;
+        public float physicalDensity = 1;
         public float flowLerpDistance = 10;
 
         public float meshFlowSpeed = 1;
@@ -169,6 +171,9 @@ namespace NatureManufacture.RAM
 
 
             floatSpeed = otherProfile.floatSpeed;
+            floatSpeedWaterfallMultiplier = otherProfile.floatSpeedWaterfallMultiplier;
+            physicalDensity = otherProfile.physicalDensity;
+            
             flowLerpDistance = otherProfile.flowLerpDistance;
             meshFlowSpeed = otherProfile.meshFlowSpeed;
 
@@ -257,6 +262,13 @@ namespace NatureManufacture.RAM
 
             if (floatSpeed != otherProfile.floatSpeed)
                 return true;
+            
+            if (floatSpeedWaterfallMultiplier != otherProfile.floatSpeedWaterfallMultiplier)
+                return true;
+            
+            if (physicalDensity != otherProfile.physicalDensity)
+                return true;
+            
 
             if (flowLerpDistance != otherProfile.flowLerpDistance)
                 return true;

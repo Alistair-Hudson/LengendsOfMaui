@@ -18,9 +18,7 @@ namespace NatureManufacture.RAM
         [SerializeField] private float lastPoint = 1;
         [SerializeField] private float connectionPoint = 0;
 
-        [SerializeField] private float offset;
 
-        [SerializeField] private float yOffset = 0.05f;
         [SerializeField] private int numberOfPoints = 2;
         [SerializeField] private bool invert;
         [SerializeField] private ConnectionTypeEnum connectionType;
@@ -45,17 +43,6 @@ namespace NatureManufacture.RAM
             set => lastPoint = value;
         }
 
-        public float Offset
-        {
-            get => offset;
-            set => offset = value;
-        }
-
-        public float YOffset
-        {
-            get => yOffset;
-            set => yOffset = value;
-        }
 
         public int NumberOfPoints
         {
@@ -107,6 +94,12 @@ namespace NatureManufacture.RAM
                 Across(waterfall);
             }
 
+            foreach (RamControlPoint controlPoint in waterfall.NmSpline.MainControlPoints)
+            {
+              
+                controlPoint.rotation = Quaternion.Euler(0, 0, waterfall.BaseProfile.AngleOffset);
+            }
+
 
             if (Invert)
                 waterfall.NmSpline.ReversePoints();
@@ -135,7 +128,7 @@ namespace NatureManufacture.RAM
             Vector3 position = positionLerp;
 
             position += spline.transform.position - waterfall.transform.position;
-            position.y += yOffset;
+            position.y += waterfall.BaseProfile.YOffset;
 
             float step = positionLerp.w / (numberOfPoints - 1);
 
@@ -143,7 +136,7 @@ namespace NatureManufacture.RAM
             for (int j = 0; j < numberOfPoints; j++)
             {
                 Vector3 transformPosition = position - binormalLerp * (step * j) + binormalLerp * (positionLerp.w * 0.5f);
-                transformPosition.y += yOffset;
+                transformPosition.y += waterfall.BaseProfile.YOffset;
 
                 waterfall.NmSpline.AddPoint(transformPosition);
             }
@@ -187,10 +180,10 @@ namespace NatureManufacture.RAM
 
                 Vector3 transformPosition = positionLerp + spline.transform.position - waterfall.transform.position;
 
-                transformPosition += binormalLerp * (offset * (Invert ? -1 : 1));
+                transformPosition += binormalLerp * (waterfall.BaseProfile.Offset * (Invert ? -1 : 1));
 
 
-                transformPosition.y += yOffset;
+                transformPosition.y += waterfall.BaseProfile.YOffset;
 
 
                 waterfall.NmSpline.AddPoint(transformPosition);
@@ -203,7 +196,7 @@ namespace NatureManufacture.RAM
 
         public void CalculateOffset(Waterfall waterfall)
         {
-            offset = -0.11f * waterfall.BaseProfile.BaseStrength;
+            waterfall.BaseProfile.Offset = -0.11f * waterfall.BaseProfile.BaseStrength;
         }
     }
 }

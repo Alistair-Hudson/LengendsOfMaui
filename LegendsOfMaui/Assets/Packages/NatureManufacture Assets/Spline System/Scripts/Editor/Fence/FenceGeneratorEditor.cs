@@ -318,6 +318,12 @@ namespace NatureManufacture.RAM.Editor
         {
             EditorGUILayout.Space();
             _fenceGenerator.BaseProfile.ScaleMesh = EditorGUILayout.Toggle("Scale Mesh", _fenceGenerator.BaseProfile.ScaleMesh);
+            if (_fenceGenerator.BaseProfile.ScaleMesh)
+            {
+                EditorGUI.indentLevel++;
+                _fenceGenerator.BaseProfile.ScaleMeshUnified = EditorGUILayout.Toggle("Unified scale", _fenceGenerator.BaseProfile.ScaleMeshUnified);
+                EditorGUI.indentLevel--;
+            }
             _fenceGenerator.BaseProfile.HoldUp = EditorGUILayout.Toggle("Hold up", _fenceGenerator.BaseProfile.HoldUp);
             EditorGUILayout.Space();
             _fenceGenerator.NmSpline.IsLooping = EditorGUILayout.Toggle("Loop", _fenceGenerator.NmSpline.IsLooping);
