@@ -65,7 +65,6 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
-  - MOTIONVECTORS
   - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
@@ -608,6 +607,7 @@ Material:
     - _NoiseTiling: {r: 3, g: 4, b: 0, a: 0}
     - _NoiseTling: {r: 4, g: 4, b: 0, a: 0}
     - _ShalowColor: {r: 0.087474935, g: 0.122641504, b: 0.027189389, a: 0}
+    - _Side_Foam_Tiling: {r: 8, g: 8, b: 0, a: 0}
     - _Slope_Speed_Influence: {r: 1, g: 0, b: 0, a: 0}
     - _SlowCascadeColor: {r: 20, g: 20, b: 20, a: 0}
     - _SlowWaterMixSpeed: {r: 0.05, g: -0.05, b: 0, a: 0}
@@ -623,3 +623,4 @@ Material:
     - _WaterMainSpeed: {r: 0.3, g: 0.3, b: 0, a: 0}
     - _WaterMixSpeed: {r: 0.002, g: 0.002, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
