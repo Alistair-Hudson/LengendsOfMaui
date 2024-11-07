@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: Waterfall1_Level7
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
-  triangleDensity: 8
-  <WaterfallMaterial>k__BackingField: {fileID: 0}
-  <SimulationTime>k__BackingField: 10
-  <TimeStep>k__BackingField: 0.1
-  <BaseStrength>k__BackingField: 10
-  <UvScale>k__BackingField: {x: 0.1, y: 0.03}
-  <RestitutionCoeff>k__BackingField: 0.1
-  <RestitutionAnglelerp>k__BackingField: 0
-  <RaycastMask>k__BackingField:
+  triangleDensity: 10
+  waterfallMaterial: {fileID: 2100000, guid: 76e6f1179c1089043944260508dd9952, type: 2}
+  simulationTime: 10
+  timeStep: 0.1
+  baseStrength: 4
+  uvScale: {x: 0.1, y: 0.03}
+  restitutionCoeff: 2
+  restitutionAnglelerp: 1
+  raycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  <BlurVelocityStrength>k__BackingField: 2
-  <BlurVelocityIterations>k__BackingField: 2
-  <BlurVelocitySize>k__BackingField: 2
-  <BlurPositionStrength>k__BackingField: 2
-  <BlurPositionIterations>k__BackingField: 2
-  <BlurPositionSize>k__BackingField: 2
-  <MaxWaterfallDistance>k__BackingField: 20
-  <MinPointDistance>k__BackingField: 0.5
-  <TerrainOffset>k__BackingField:
+  blurVelocityStrength: 2
+  blurVelocityIterations: 2
+  blurVelocitySize: 2
+  blurPositionStrength: 2
+  blurPositionIterations: 2
+  blurPositionSize: 2
+  maxWaterfallDistance: 55
+  minPointDistance: 0.5
+  terrainOffset:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -74,7 +74,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <AlphaByDistance>k__BackingField:
+  alphaByDistance:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -98,5 +98,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <FloatSpeed>k__BackingField: 10
-  <ClipUnderTerrain>k__BackingField: 0
+  floatSpeed: 3
+  floatSpeedWaterfallMultiplier: 3
+  physicalDensity: 1
+  clipUnderTerrain: 0
+  offset: 0
+  yOffset: 0.05
+  angleOffset: 0
