@@ -6050,6 +6050,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 358851191703344287, guid: 98f00d895b7786147882e9ed539f8324,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 358851191703344289, guid: 98f00d895b7786147882e9ed539f8324,
         type: 3}
       propertyPath: m_Name
@@ -14411,6 +14416,11 @@ PrefabInstance:
     - target: {fileID: 2911788715443251156, guid: 3fc2d32fcba737947b579b6f2ec1db39,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911788715443251158, guid: 3fc2d32fcba737947b579b6f2ec1db39,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911788715443251176, guid: 3fc2d32fcba737947b579b6f2ec1db39,
@@ -23357,6 +23367,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1989110930237852334, guid: d8ba99bd2619ac54fb203b7bcd0019f5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24225,6 +24240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911788715443251158, guid: 3fc2d32fcba737947b579b6f2ec1db39,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911788715443251176, guid: 3fc2d32fcba737947b579b6f2ec1db39,
         type: 3}
@@ -26087,6 +26107,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 358851191703344287, guid: 98f00d895b7786147882e9ed539f8324,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 358851191703344289, guid: 98f00d895b7786147882e9ed539f8324,
         type: 3}
       propertyPath: m_Name
@@ -27508,7 +27533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &783072523
 Transform:
   m_ObjectHideFlags: 0
@@ -76984,6 +77009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989110930237852334, guid: d8ba99bd2619ac54fb203b7bcd0019f5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
