@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3710431156634321734}
+  - component: {fileID: 6657464709937518617}
+  - component: {fileID: 5905161636542656069}
+  - component: {fileID: 1262333861376944747}
   m_Layer: 0
   m_Name: DesrtuctableTree
   m_TagString: Untagged
@@ -32,6 +35,69 @@ Transform:
   - {fileID: 3716381178555492940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6657464709937518617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584214955332174588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d21b49c8eaa3c4ebdd1e0bb3c49d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fellTime: 3
+--- !u!65 &5905161636542656069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584214955332174588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 23.59002, z: 2}
+  m_Center: {x: 0, y: 11.29501, z: 0}
+--- !u!114 &1262333861376944747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584214955332174588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d191763f11fff1e4a8a751a9f37f9c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 1
+  <HealthRegenPerSecond>k__BackingField: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6657464709937518617}
+        m_TargetAssemblyTypeName: TreeFeller, Assembly-CSharp
+        m_MethodName: StartFell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1385823123111198994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,6 +159,11 @@ PrefabInstance:
     - target: {fileID: 2353221190256929630, guid: 987094f792fe9f946b536b171a0114c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545608677321580899, guid: 987094f792fe9f946b536b171a0114c1,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
