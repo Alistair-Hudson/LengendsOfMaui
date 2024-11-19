@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3710431156634321734}
   - component: {fileID: 6657464709937518617}
-  - component: {fileID: 5905161636542656069}
   - component: {fileID: 1262333861376944747}
+  - component: {fileID: 1936654009181058425}
   m_Layer: 0
   m_Name: DesrtuctableTree
   m_TagString: Untagged
@@ -48,27 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fellTime: 3
---- !u!65 &5905161636542656069
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6584214955332174588}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 23.59002, z: 2}
-  m_Center: {x: 0, y: 11.29501, z: 0}
 --- !u!114 &1262333861376944747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +77,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!136 &1936654009181058425
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584214955332174588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39
+  m_Height: 23.25473
+  m_Direction: 1
+  m_Center: {x: -0.07, y: 11.7, z: -0.16}
 --- !u!1001 &1385823123111198994
 PrefabInstance:
   m_ObjectHideFlags: 0
